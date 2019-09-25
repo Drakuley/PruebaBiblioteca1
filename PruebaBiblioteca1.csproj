@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Class1.cs" />
+    <Compile Include="Forms\Libros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Libros.Designer.cs">
+      <DependentUpon>Libros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Prestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Libros.resx">
+      <DependentUpon>Libros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prestamo.resx">
       <DependentUpon>Prestamo.cs</DependentUpon>
     </EmbeddedResource>
