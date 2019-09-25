@@ -16,5 +16,11 @@ namespace PruebaBiblioteca1
         {
             InitializeComponent();
         }
+
+        private void BtnPrestamoNuevo_Click(object sender, EventArgs e)
+        {
+            Forms.RegistroDePrestamo registro = new Forms.RegistroDePrestamo();
+            registro.Show();
+        }
     }
 }

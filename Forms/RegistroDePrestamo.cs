@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PruebaBiblioteca1.Forms
 {
-    public partial class Miguel2 : Form
+    public partial class RegistroDePrestamo : Form
     {
-        public Miguel2()
+        public RegistroDePrestamo()
         {
             InitializeComponent();
-        }
-
-        private void Miguel2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
