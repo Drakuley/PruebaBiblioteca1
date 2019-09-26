@@ -16,5 +16,17 @@ namespace PruebaBiblioteca1.Forms
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Bibliotecarios
+            // 
+            this.ClientSize = new System.Drawing.Size(592, 384);
+            this.Name = "Bibliotecarios";
+            this.ResumeLayout(false);
+
+        }
     }
 }

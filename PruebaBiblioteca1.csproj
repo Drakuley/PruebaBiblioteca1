@@ -77,6 +77,12 @@
     <Compile Include="Forms\Prestamos\RegistroDePrestamo.Designer.cs">
       <DependentUpon>RegistroDePrestamo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Usuarios\Bibliotecarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Libros\Autores.resx">
@@ -93,6 +99,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prestamos\RegistroDePrestamo.resx">
       <DependentUpon>RegistroDePrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\Bibliotecarios.resx">
+      <DependentUpon>Bibliotecarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,8 +132,6 @@
     <Content Include="NewFile1.txt" />
     <Content Include="NewFile2.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Usuarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

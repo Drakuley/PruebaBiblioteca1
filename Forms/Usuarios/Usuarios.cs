@@ -17,5 +17,16 @@ namespace PruebaBiblioteca1.Forms
             InitializeComponent();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Usuarios
+            // 
+            this.ClientSize = new System.Drawing.Size(525, 373);
+            this.Name = "Usuarios";
+            this.ResumeLayout(false);
+
+        }
     }
 }
