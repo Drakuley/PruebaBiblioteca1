@@ -47,61 +47,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Class1.cs" />
-    <Compile Include="Forms\Bibliotecarios.cs">
+    <Compile Include="Forms\Libros\Autores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Bibliotecarios.Designer.cs">
-      <DependentUpon>Bibliotecarios.cs</DependentUpon>
+    <Compile Include="Forms\Libros\Autores.Designer.cs">
+      <DependentUpon>Autores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Prestamo.cs">
+    <Compile Include="Forms\Libros\Libros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Prestamo.Designer.cs">
+    <Compile Include="Forms\Libros\Libros.Designer.cs">
+      <DependentUpon>Libros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prestamos\GenerarReportePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prestamos\GenerarReportePrestamos.Designer.cs">
+      <DependentUpon>GenerarReportePrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prestamos\Prestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prestamos\Prestamo.Designer.cs">
       <DependentUpon>Prestamo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RegistroDePrestamo.cs">
+    <Compile Include="Forms\Prestamos\RegistroDePrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RegistroDePrestamo.Designer.cs">
+    <Compile Include="Forms\Prestamos\RegistroDePrestamo.Designer.cs">
       <DependentUpon>RegistroDePrestamo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\sofia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\sofia.Designer.cs">
-      <DependentUpon>sofia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\sofia2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\sofia2.Designer.cs">
-      <DependentUpon>sofia2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Usuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Usuarios.Designer.cs">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Bibliotecarios.resx">
-      <DependentUpon>Bibliotecarios.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Libros\Autores.resx">
+      <DependentUpon>Autores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Prestamo.resx">
+    <EmbeddedResource Include="Forms\Libros\Libros.resx">
+      <DependentUpon>Libros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prestamos\GenerarReportePrestamos.resx">
+      <DependentUpon>GenerarReportePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prestamos\Prestamo.resx">
       <DependentUpon>Prestamo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegistroDePrestamo.resx">
+    <EmbeddedResource Include="Forms\Prestamos\RegistroDePrestamo.resx">
       <DependentUpon>RegistroDePrestamo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\sofia.resx">
-      <DependentUpon>sofia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\sofia2.resx">
-      <DependentUpon>sofia2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usuarios.resx">
-      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,6 +119,9 @@
   <ItemGroup>
     <Content Include="NewFile1.txt" />
     <Content Include="NewFile2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

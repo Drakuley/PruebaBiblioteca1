@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PruebaBiblioteca1.Forms
+namespace PruebaBiblioteca1.Forms.Autores
 {
-    public partial class sofia : Form
+    public partial class Autores : Form
     {
-        public sofia()
+        public Autores()
         {
             InitializeComponent();
         }
