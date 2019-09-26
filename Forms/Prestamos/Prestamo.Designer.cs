@@ -103,7 +103,7 @@
             // 
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrestamos.Location = new System.Drawing.Point(596, 20);
+            this.lblPrestamos.Location = new System.Drawing.Point(575, 19);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(98, 22);
             this.lblPrestamos.TabIndex = 5;

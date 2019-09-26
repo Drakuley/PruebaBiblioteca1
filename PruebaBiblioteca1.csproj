@@ -47,10 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Class1.cs" />
-    <Compile Include="Forms\Autores\Autores.cs">
+    <Compile Include="Forms\Libros\Autores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Autores\Autores.Designer.cs">
+    <Compile Include="Forms\Libros\Autores.Designer.cs">
       <DependentUpon>Autores.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Libros\Libros.cs">
@@ -58,6 +58,12 @@
     </Compile>
     <Compile Include="Forms\Libros\Libros.Designer.cs">
       <DependentUpon>Libros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prestamos\GenerarReportePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prestamos\GenerarReportePrestamos.Designer.cs">
+      <DependentUpon>GenerarReportePrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Prestamos\Prestamo.cs">
       <SubType>Form</SubType>
@@ -73,11 +79,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Autores\Autores.resx">
+    <EmbeddedResource Include="Forms\Libros\Autores.resx">
       <DependentUpon>Autores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Libros\Libros.resx">
       <DependentUpon>Libros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prestamos\GenerarReportePrestamos.resx">
+      <DependentUpon>GenerarReportePrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prestamos\Prestamo.resx">
       <DependentUpon>Prestamo.cs</DependentUpon>
