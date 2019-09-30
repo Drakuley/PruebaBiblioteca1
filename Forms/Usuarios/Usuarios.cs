@@ -32,7 +32,6 @@ namespace PruebaBiblioteca1.Forms
         private DataGridViewTextBoxColumn GeneroUsuario;
         private Label Nombre;
         private TextBox txtNombreUsuario;
-        private Panel panel1;
 
         public Usuarios()
         {
@@ -61,14 +60,13 @@ namespace PruebaBiblioteca1.Forms
             this.GeneroUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGenerarReporteUsuario
             // 
             this.btnGenerarReporteUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporteUsuario.Location = new System.Drawing.Point(705, 212);
+            this.btnGenerarReporteUsuario.Location = new System.Drawing.Point(704, 412);
             this.btnGenerarReporteUsuario.Name = "btnGenerarReporteUsuario";
             this.btnGenerarReporteUsuario.Size = new System.Drawing.Size(156, 23);
             this.btnGenerarReporteUsuario.TabIndex = 46;
@@ -79,7 +77,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(261, 9);
+            this.label6.Location = new System.Drawing.Point(436, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 24);
             this.label6.TabIndex = 45;
@@ -88,7 +86,7 @@ namespace PruebaBiblioteca1.Forms
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(787, 183);
+            this.btnEliminar.Location = new System.Drawing.Point(786, 383);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 44;
@@ -99,7 +97,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(706, 183);
+            this.btnGuardar.Location = new System.Drawing.Point(705, 383);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 43;
@@ -117,9 +115,9 @@ namespace PruebaBiblioteca1.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(635, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 16);
@@ -138,9 +136,9 @@ namespace PruebaBiblioteca1.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(635, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 16);
@@ -150,9 +148,9 @@ namespace PruebaBiblioteca1.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(635, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 16);
@@ -178,9 +176,9 @@ namespace PruebaBiblioteca1.Forms
             // direccion
             // 
             this.direccion.AutoSize = true;
-            this.direccion.BackColor = System.Drawing.Color.RoyalBlue;
+            this.direccion.BackColor = System.Drawing.SystemColors.Control;
             this.direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.direccion.ForeColor = System.Drawing.Color.White;
+            this.direccion.ForeColor = System.Drawing.Color.Black;
             this.direccion.Location = new System.Drawing.Point(635, 92);
             this.direccion.Name = "direccion";
             this.direccion.Size = new System.Drawing.Size(68, 16);
@@ -230,9 +228,9 @@ namespace PruebaBiblioteca1.Forms
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Nombre.BackColor = System.Drawing.SystemColors.Control;
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.ForeColor = System.Drawing.Color.White;
+            this.Nombre.ForeColor = System.Drawing.Color.Black;
             this.Nombre.Location = new System.Drawing.Point(635, 68);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(60, 16);
@@ -247,17 +245,9 @@ namespace PruebaBiblioteca1.Forms
             this.txtNombreUsuario.Size = new System.Drawing.Size(171, 22);
             this.txtNombreUsuario.TabIndex = 32;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Location = new System.Drawing.Point(629, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 465);
-            this.panel1.TabIndex = 47;
-            // 
             // Usuarios
             // 
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.btnGenerarReporteUsuario);
             this.Controls.Add(this.label6);
@@ -274,7 +264,6 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.txtNombreUsuario);
-            this.Controls.Add(this.panel1);
             this.Name = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
