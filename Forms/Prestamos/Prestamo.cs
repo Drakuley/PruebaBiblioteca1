@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PruebaBiblioteca1
 {
-    public partial class Form1 : Form
+    public partial class Menú : Form
     {
-        public Form1()
+        public Menú()
         {
             InitializeComponent();
         }
