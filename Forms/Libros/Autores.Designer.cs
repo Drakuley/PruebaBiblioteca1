@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvAutores = new System.Windows.Forms.DataGridView();
+            this.IdAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -36,8 +38,6 @@
             this.lblNombreAutor = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_Registrar = new System.Windows.Forms.Button();
-            this.IdAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +52,18 @@
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.Size = new System.Drawing.Size(466, 286);
             this.dgvAutores.TabIndex = 0;
+            // 
+            // IdAutor
+            // 
+            this.IdAutor.HeaderText = "ID Autor";
+            this.IdAutor.Name = "IdAutor";
+            this.IdAutor.ReadOnly = true;
+            // 
+            // NombreAutor
+            // 
+            this.NombreAutor.HeaderText = "Nombre";
+            this.NombreAutor.Name = "NombreAutor";
+            this.NombreAutor.ReadOnly = true;
             // 
             // txtAutoresRegistrados
             // 
@@ -101,8 +113,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(530, 287);
             this.button2.Name = "button2";
@@ -113,8 +124,7 @@
             // 
             // btn_Registrar
             // 
-            this.btn_Registrar.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btn_Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.Location = new System.Drawing.Point(530, 233);
             this.btn_Registrar.Name = "btn_Registrar";
@@ -122,18 +132,6 @@
             this.btn_Registrar.TabIndex = 35;
             this.btn_Registrar.Text = "Aceptar";
             this.btn_Registrar.UseVisualStyleBackColor = false;
-            // 
-            // IdAutor
-            // 
-            this.IdAutor.HeaderText = "ID Autor";
-            this.IdAutor.Name = "IdAutor";
-            this.IdAutor.ReadOnly = true;
-            // 
-            // NombreAutor
-            // 
-            this.NombreAutor.HeaderText = "Nombre";
-            this.NombreAutor.Name = "NombreAutor";
-            this.NombreAutor.ReadOnly = true;
             // 
             // Autores
             // 
