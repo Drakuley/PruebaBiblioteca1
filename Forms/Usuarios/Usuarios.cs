@@ -66,9 +66,9 @@ namespace PruebaBiblioteca1.Forms
             // btnGenerarReporteUsuario
             // 
             this.btnGenerarReporteUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporteUsuario.Location = new System.Drawing.Point(704, 412);
+            this.btnGenerarReporteUsuario.Location = new System.Drawing.Point(620, 406);
             this.btnGenerarReporteUsuario.Name = "btnGenerarReporteUsuario";
-            this.btnGenerarReporteUsuario.Size = new System.Drawing.Size(156, 23);
+            this.btnGenerarReporteUsuario.Size = new System.Drawing.Size(260, 48);
             this.btnGenerarReporteUsuario.TabIndex = 46;
             this.btnGenerarReporteUsuario.Text = "Generar Reporte";
             this.btnGenerarReporteUsuario.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@ namespace PruebaBiblioteca1.Forms
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(786, 383);
+            this.btnEliminar.Location = new System.Drawing.Point(751, 364);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(129, 36);
             this.btnEliminar.TabIndex = 44;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(705, 383);
+            this.btnGuardar.Location = new System.Drawing.Point(620, 364);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(129, 36);
             this.btnGuardar.TabIndex = 43;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
