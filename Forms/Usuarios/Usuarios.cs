@@ -77,11 +77,11 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(436, 9);
+            this.label6.Location = new System.Drawing.Point(212, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 24);
+            this.label6.Size = new System.Drawing.Size(207, 24);
             this.label6.TabIndex = 45;
-            this.label6.Text = "Usuarios";
+            this.label6.Text = "Usuarios Registrados";
             // 
             // btnEliminar
             // 
@@ -265,6 +265,7 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.txtNombreUsuario);
             this.Name = "Usuarios";
+            this.Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

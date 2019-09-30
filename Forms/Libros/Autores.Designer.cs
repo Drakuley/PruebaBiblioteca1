@@ -68,10 +68,10 @@
             // txtAutoresRegistrados
             // 
             this.txtAutoresRegistrados.AutoSize = true;
-            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(188, 9);
+            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(160, 10);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
-            this.txtAutoresRegistrados.Size = new System.Drawing.Size(150, 16);
+            this.txtAutoresRegistrados.Size = new System.Drawing.Size(198, 24);
             this.txtAutoresRegistrados.TabIndex = 1;
             this.txtAutoresRegistrados.Text = "Autores Registrados";
             // 
@@ -80,15 +80,15 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(608, 49);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 2;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(608, 114);
+            this.textBox2.Location = new System.Drawing.Point(608, 77);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 3;
             // 
             // lblIdAutor
@@ -97,15 +97,15 @@
             this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdAutor.Location = new System.Drawing.Point(507, 49);
             this.lblIdAutor.Name = "lblIdAutor";
-            this.lblIdAutor.Size = new System.Drawing.Size(61, 16);
+            this.lblIdAutor.Size = new System.Drawing.Size(27, 16);
             this.lblIdAutor.TabIndex = 4;
-            this.lblIdAutor.Text = "ID Autor :";
+            this.lblIdAutor.Text = "ID :";
             // 
             // lblNombreAutor
             // 
             this.lblNombreAutor.AutoSize = true;
             this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAutor.Location = new System.Drawing.Point(507, 120);
+            this.lblNombreAutor.Location = new System.Drawing.Point(507, 83);
             this.lblNombreAutor.Name = "lblNombreAutor";
             this.lblNombreAutor.Size = new System.Drawing.Size(63, 16);
             this.lblNombreAutor.TabIndex = 5;
@@ -115,9 +115,9 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(530, 287);
+            this.button2.Location = new System.Drawing.Point(509, 272);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 36);
+            this.button2.Size = new System.Drawing.Size(231, 51);
             this.button2.TabIndex = 36;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
@@ -126,11 +126,11 @@
             // 
             this.btn_Registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Registrar.Location = new System.Drawing.Point(530, 233);
+            this.btn_Registrar.Location = new System.Drawing.Point(509, 215);
             this.btn_Registrar.Name = "btn_Registrar";
-            this.btn_Registrar.Size = new System.Drawing.Size(178, 36);
+            this.btn_Registrar.Size = new System.Drawing.Size(231, 51);
             this.btn_Registrar.TabIndex = 35;
-            this.btn_Registrar.Text = "Aceptar";
+            this.btn_Registrar.Text = "Guardar";
             this.btn_Registrar.UseVisualStyleBackColor = false;
             // 
             // Autores

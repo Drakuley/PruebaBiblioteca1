@@ -54,6 +54,7 @@
             this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNumAdquisicion = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.btnRegistrarAutores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(708, 152);
+            this.comboBox1.Location = new System.Drawing.Point(708, 116);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 24);
             this.comboBox1.TabIndex = 37;
@@ -80,7 +81,7 @@
             // 
             this.lblAutor.AutoSize = true;
             this.lblAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutor.Location = new System.Drawing.Point(614, 152);
+            this.lblAutor.Location = new System.Drawing.Point(616, 116);
             this.lblAutor.Name = "lblAutor";
             this.lblAutor.Size = new System.Drawing.Size(45, 16);
             this.lblAutor.TabIndex = 36;
@@ -116,7 +117,7 @@
             this.btn_Registrar.Name = "btn_Registrar";
             this.btn_Registrar.Size = new System.Drawing.Size(129, 36);
             this.btn_Registrar.TabIndex = 33;
-            this.btn_Registrar.Text = "Aceptar";
+            this.btn_Registrar.Text = "Guardar";
             this.btn_Registrar.UseVisualStyleBackColor = false;
             // 
             // lblEstatus
@@ -192,7 +193,7 @@
             // 
             this.cbb_Ubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Ubicacion.FormattingEnabled = true;
-            this.cbb_Ubicacion.Location = new System.Drawing.Point(708, 193);
+            this.cbb_Ubicacion.Location = new System.Drawing.Point(708, 190);
             this.cbb_Ubicacion.Name = "cbb_Ubicacion";
             this.cbb_Ubicacion.Size = new System.Drawing.Size(148, 24);
             this.cbb_Ubicacion.TabIndex = 25;
@@ -201,21 +202,21 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(614, 98);
+            this.lblTitulo.Location = new System.Drawing.Point(614, 64);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(47, 16);
             this.lblTitulo.TabIndex = 24;
-            this.lblTitulo.Text = "Titulo :";
+            this.lblTitulo.Text = "Título :";
             // 
             // lblNumAdq
             // 
             this.lblNumAdq.AutoSize = true;
             this.lblNumAdq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumAdq.Location = new System.Drawing.Point(614, 48);
+            this.lblNumAdq.Location = new System.Drawing.Point(614, 15);
             this.lblNumAdq.Name = "lblNumAdq";
             this.lblNumAdq.Size = new System.Drawing.Size(84, 32);
             this.lblNumAdq.TabIndex = 23;
-            this.lblNumAdq.Text = "Numero de \r\nAdquisicion :";
+            this.lblNumAdq.Text = "Numero de \r\nAdquisición :";
             // 
             // dgvLibros
             // 
@@ -284,7 +285,7 @@
             // txtNumAdquisicion
             // 
             this.txtNumAdquisicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumAdquisicion.Location = new System.Drawing.Point(708, 58);
+            this.txtNumAdquisicion.Location = new System.Drawing.Point(704, 25);
             this.txtNumAdquisicion.Name = "txtNumAdquisicion";
             this.txtNumAdquisicion.Size = new System.Drawing.Size(148, 22);
             this.txtNumAdquisicion.TabIndex = 39;
@@ -292,17 +293,27 @@
             // txtTitulo
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(708, 98);
+            this.txtTitulo.Location = new System.Drawing.Point(708, 64);
             this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(148, 38);
             this.txtTitulo.TabIndex = 40;
+            // 
+            // btnRegistrarAutores
+            // 
+            this.btnRegistrarAutores.Location = new System.Drawing.Point(751, 152);
+            this.btnRegistrarAutores.Name = "btnRegistrarAutores";
+            this.btnRegistrarAutores.Size = new System.Drawing.Size(105, 23);
+            this.btnRegistrarAutores.TabIndex = 41;
+            this.btnRegistrarAutores.Text = "Registrar Autores";
+            this.btnRegistrarAutores.UseVisualStyleBackColor = true;
             // 
             // Libros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 431);
+            this.Controls.Add(this.btnRegistrarAutores);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtNumAdquisicion);
             this.Controls.Add(this.lblLibrosRegistrados);
@@ -358,5 +369,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
         private System.Windows.Forms.TextBox txtNumAdquisicion;
         private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.Button btnRegistrarAutores;
     }
 }
