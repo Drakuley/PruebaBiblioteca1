@@ -141,9 +141,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(32, 334);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(136, 16);
+            this.label9.Size = new System.Drawing.Size(115, 16);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Fecha de Devolución";
+            this.label9.Text = "Fecha a Devolver";
             // 
             // txtIdPrestamo
             // 

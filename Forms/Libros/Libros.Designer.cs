@@ -89,7 +89,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(604, 378);
             this.button4.Name = "button4";
@@ -296,7 +296,7 @@
             this.txtTitulo.Location = new System.Drawing.Point(708, 64);
             this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(148, 38);
+            this.txtTitulo.Size = new System.Drawing.Size(148, 21);
             this.txtTitulo.TabIndex = 40;
             // 
             // btnRegistrarAutores
