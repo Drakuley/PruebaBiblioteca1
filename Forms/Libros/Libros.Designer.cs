@@ -88,8 +88,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.NavajoWhite;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(604, 378);
             this.button4.Name = "button4";
@@ -100,8 +99,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(739, 336);
             this.button2.Name = "button2";
@@ -112,8 +110,7 @@
             // 
             // btn_Registrar
             // 
-            this.btn_Registrar.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btn_Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.Location = new System.Drawing.Point(604, 336);
             this.btn_Registrar.Name = "btn_Registrar";
