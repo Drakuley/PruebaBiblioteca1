@@ -27,6 +27,8 @@ namespace PruebaBiblioteca1.Forms
         private Label Nombre;
         private Button btnGuardar;
         private Button btnEliminar;
+        private TextBox textBox1;
+        private Label label1;
         private TextBox txtNombreBibliotecario;
 
         public Bibliotecarios()
@@ -36,7 +38,7 @@ namespace PruebaBiblioteca1.Forms
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.NombreBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +55,8 @@ namespace PruebaBiblioteca1.Forms
             this.txtNombreBibliotecario = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +88,7 @@ namespace PruebaBiblioteca1.Forms
             // txtIdBibliotecario
             // 
             this.txtIdBibliotecario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdBibliotecario.Location = new System.Drawing.Point(721, 40);
+            this.txtIdBibliotecario.Location = new System.Drawing.Point(783, 40);
             this.txtIdBibliotecario.Name = "txtIdBibliotecario";
             this.txtIdBibliotecario.Size = new System.Drawing.Size(151, 22);
             this.txtIdBibliotecario.TabIndex = 39;
@@ -105,7 +109,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.cbTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTurno.FormattingEnabled = true;
-            this.cbTurno.Location = new System.Drawing.Point(721, 120);
+            this.cbTurno.Location = new System.Drawing.Point(783, 272);
             this.cbTurno.Name = "cbTurno";
             this.cbTurno.Size = new System.Drawing.Size(151, 24);
             this.cbTurno.TabIndex = 37;
@@ -116,7 +120,7 @@ namespace PruebaBiblioteca1.Forms
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(640, 125);
+            this.label4.Location = new System.Drawing.Point(640, 280);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 36;
@@ -125,7 +129,7 @@ namespace PruebaBiblioteca1.Forms
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(721, 92);
+            this.txtContraseña.Location = new System.Drawing.Point(783, 161);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(151, 22);
             this.txtContraseña.TabIndex = 35;
@@ -136,7 +140,7 @@ namespace PruebaBiblioteca1.Forms
             this.direccion.BackColor = System.Drawing.SystemColors.Control;
             this.direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccion.ForeColor = System.Drawing.Color.Black;
-            this.direccion.Location = new System.Drawing.Point(640, 97);
+            this.direccion.Location = new System.Drawing.Point(640, 167);
             this.direccion.Name = "direccion";
             this.direccion.Size = new System.Drawing.Size(80, 16);
             this.direccion.TabIndex = 34;
@@ -151,14 +155,14 @@ namespace PruebaBiblioteca1.Forms
             this.NombreBibliotecario,
             this.Contraseña,
             this.Turno});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBibliotecarios.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBibliotecarios.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBibliotecarios.Location = new System.Drawing.Point(6, 40);
             this.dgvBibliotecarios.Name = "dgvBibliotecarios";
             this.dgvBibliotecarios.Size = new System.Drawing.Size(615, 410);
@@ -175,7 +179,7 @@ namespace PruebaBiblioteca1.Forms
             this.Nombre.BackColor = System.Drawing.SystemColors.Control;
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre.ForeColor = System.Drawing.Color.Black;
-            this.Nombre.Location = new System.Drawing.Point(640, 69);
+            this.Nombre.Location = new System.Drawing.Point(640, 111);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(60, 16);
             this.Nombre.TabIndex = 32;
@@ -184,7 +188,7 @@ namespace PruebaBiblioteca1.Forms
             // txtNombreBibliotecario
             // 
             this.txtNombreBibliotecario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreBibliotecario.Location = new System.Drawing.Point(721, 66);
+            this.txtNombreBibliotecario.Location = new System.Drawing.Point(783, 105);
             this.txtNombreBibliotecario.Name = "txtNombreBibliotecario";
             this.txtNombreBibliotecario.Size = new System.Drawing.Size(151, 22);
             this.txtNombreBibliotecario.TabIndex = 31;
@@ -193,9 +197,9 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(641, 334);
+            this.btnGuardar.Location = new System.Drawing.Point(657, 341);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(231, 51);
+            this.btnGuardar.Size = new System.Drawing.Size(277, 51);
             this.btnGuardar.TabIndex = 27;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -203,17 +207,39 @@ namespace PruebaBiblioteca1.Forms
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(641, 398);
+            this.btnEliminar.Location = new System.Drawing.Point(657, 398);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(231, 51);
+            this.btnEliminar.Size = new System.Drawing.Size(277, 51);
             this.btnEliminar.TabIndex = 28;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(783, 221);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 22);
+            this.textBox1.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(640, 227);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 16);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Confirmar Contraseña";
+            // 
             // Bibliotecarios
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(947, 461);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnGuardar);
