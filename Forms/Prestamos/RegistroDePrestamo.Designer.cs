@@ -50,6 +50,7 @@
             this.txtFechaPrestamo = new System.Windows.Forms.TextBox();
             this.lblPrestamos = new System.Windows.Forms.Label();
             this.txtListo = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,7 +98,7 @@
             this.label5.AutoSize = true;
             this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(92, 186);
+            this.label5.Location = new System.Drawing.Point(97, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
             this.label5.TabIndex = 4;
@@ -169,7 +170,7 @@
             // txtTitulo
             // 
             this.txtTitulo.Enabled = false;
-            this.txtTitulo.Location = new System.Drawing.Point(224, 182);
+            this.txtTitulo.Location = new System.Drawing.Point(224, 179);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(135, 20);
             this.txtTitulo.TabIndex = 12;
@@ -207,7 +208,7 @@
             // btnRegistrarLibro
             // 
             this.btnRegistrarLibro.Enabled = false;
-            this.btnRegistrarLibro.Location = new System.Drawing.Point(435, 179);
+            this.btnRegistrarLibro.Location = new System.Drawing.Point(435, 176);
             this.btnRegistrarLibro.Name = "btnRegistrarLibro";
             this.btnRegistrarLibro.Size = new System.Drawing.Size(132, 23);
             this.btnRegistrarLibro.TabIndex = 17;
@@ -250,11 +251,21 @@
             this.txtListo.Text = "Listo";
             this.txtListo.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(62, 158);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(10, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = ".";
+            // 
             // RegistroDePrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 404);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtListo);
             this.Controls.Add(this.lblPrestamos);
             this.Controls.Add(this.txtFechaPrestamo);
@@ -308,5 +319,6 @@
         private System.Windows.Forms.TextBox txtFechaPrestamo;
         private System.Windows.Forms.Label lblPrestamos;
         private System.Windows.Forms.Button txtListo;
+        private System.Windows.Forms.Label label10;
     }
 }
