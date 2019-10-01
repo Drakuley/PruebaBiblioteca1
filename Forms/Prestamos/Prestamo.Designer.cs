@@ -51,6 +51,7 @@
             this.btnBibliotecarios = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,9 +70,9 @@
             this.fechaDevolver,
             this.nombreUsuario,
             this.idBibliotecario});
-            this.dgvPrestamos.Location = new System.Drawing.Point(245, 55);
+            this.dgvPrestamos.Location = new System.Drawing.Point(246, 55);
             this.dgvPrestamos.Name = "dgvPrestamos";
-            this.dgvPrestamos.Size = new System.Drawing.Size(715, 433);
+            this.dgvPrestamos.Size = new System.Drawing.Size(721, 433);
             this.dgvPrestamos.TabIndex = 1;
             // 
             // idPrestamo
@@ -107,7 +108,7 @@
             this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
             this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(453, 494);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(459, 494);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(165, 37);
             this.btnGenerarReporte.TabIndex = 2;
@@ -122,7 +123,7 @@
             this.btnPrestamoNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
             this.btnPrestamoNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestamoNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnPrestamoNuevo.Location = new System.Drawing.Point(795, 494);
+            this.btnPrestamoNuevo.Location = new System.Drawing.Point(801, 494);
             this.btnPrestamoNuevo.Name = "btnPrestamoNuevo";
             this.btnPrestamoNuevo.Size = new System.Drawing.Size(165, 37);
             this.btnPrestamoNuevo.TabIndex = 3;
@@ -138,7 +139,7 @@
             this.btnModificarPrestamo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
             this.btnModificarPrestamo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarPrestamo.ForeColor = System.Drawing.Color.White;
-            this.btnModificarPrestamo.Location = new System.Drawing.Point(624, 494);
+            this.btnModificarPrestamo.Location = new System.Drawing.Point(630, 494);
             this.btnModificarPrestamo.Name = "btnModificarPrestamo";
             this.btnModificarPrestamo.Size = new System.Drawing.Size(165, 37);
             this.btnModificarPrestamo.TabIndex = 4;
@@ -149,7 +150,7 @@
             // 
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrestamos.Location = new System.Drawing.Point(575, 19);
+            this.lblPrestamos.Location = new System.Drawing.Point(578, 19);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(98, 22);
             this.lblPrestamos.TabIndex = 5;
@@ -165,7 +166,7 @@
             this.btnPrestamos.ForeColor = System.Drawing.Color.White;
             this.btnPrestamos.Image = ((System.Drawing.Image)(resources.GetObject("btnPrestamos.Image")));
             this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrestamos.Location = new System.Drawing.Point(-2, 55);
+            this.btnPrestamos.Location = new System.Drawing.Point(-4, 55);
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Size = new System.Drawing.Size(251, 66);
             this.btnPrestamos.TabIndex = 7;
@@ -180,9 +181,7 @@
             this.btnDevoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDevoluciones.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
-            this.btnDevoluciones.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.Image")));
-            this.btnDevoluciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDevoluciones.Location = new System.Drawing.Point(-2, 127);
+            this.btnDevoluciones.Location = new System.Drawing.Point(-4, 127);
             this.btnDevoluciones.Name = "btnDevoluciones";
             this.btnDevoluciones.Size = new System.Drawing.Size(251, 66);
             this.btnDevoluciones.TabIndex = 8;
@@ -197,9 +196,7 @@
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(-2, 199);
+            this.btnUsuarios.Location = new System.Drawing.Point(-4, 199);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(251, 66);
             this.btnUsuarios.TabIndex = 9;
@@ -214,9 +211,7 @@
             this.btnLibros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLibros.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibros.ForeColor = System.Drawing.Color.White;
-            this.btnLibros.Image = ((System.Drawing.Image)(resources.GetObject("btnLibros.Image")));
-            this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibros.Location = new System.Drawing.Point(-2, 271);
+            this.btnLibros.Location = new System.Drawing.Point(-4, 271);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Size = new System.Drawing.Size(251, 66);
             this.btnLibros.TabIndex = 10;
@@ -231,7 +226,7 @@
             this.btnBibliotecarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBibliotecarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBibliotecarios.ForeColor = System.Drawing.Color.White;
-            this.btnBibliotecarios.Location = new System.Drawing.Point(-2, 343);
+            this.btnBibliotecarios.Location = new System.Drawing.Point(-4, 343);
             this.btnBibliotecarios.Name = "btnBibliotecarios";
             this.btnBibliotecarios.Size = new System.Drawing.Size(251, 66);
             this.btnBibliotecarios.TabIndex = 11;
@@ -246,7 +241,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(-2, 416);
+            this.button5.Location = new System.Drawing.Point(-4, 416);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(251, 66);
             this.button5.TabIndex = 12;
@@ -267,15 +262,27 @@
             this.panel1.Controls.Add(this.btnPrestamos);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 608);
+            this.panel1.Size = new System.Drawing.Size(239, 608);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
+            this.panel2.Location = new System.Drawing.Point(239, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 546);
+            this.panel2.TabIndex = 6;
             // 
             // Menú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(973, 543);
+            this.ClientSize = new System.Drawing.Size(979, 543);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblPrestamos);
             this.Controls.Add(this.btnModificarPrestamo);
             this.Controls.Add(this.btnPrestamoNuevo);
@@ -283,7 +290,7 @@
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.panel1);
             this.Name = "Menú";
-            this.Text = "Préstamos";
+            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -310,6 +317,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBibliotecario;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
