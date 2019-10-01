@@ -33,7 +33,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menú));
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
+            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevolver = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.btnPrestamoNuevo = new System.Windows.Forms.Button();
             this.btnModificarPrestamo = new System.Windows.Forms.Button();
@@ -45,11 +51,6 @@
             this.btnBibliotecarios = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolver = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +73,31 @@
             this.dgvPrestamos.Name = "dgvPrestamos";
             this.dgvPrestamos.Size = new System.Drawing.Size(715, 433);
             this.dgvPrestamos.TabIndex = 1;
+            // 
+            // idPrestamo
+            // 
+            this.idPrestamo.HeaderText = "ID Préstamo";
+            this.idPrestamo.Name = "idPrestamo";
+            // 
+            // titulo
+            // 
+            this.titulo.HeaderText = "Título";
+            this.titulo.Name = "titulo";
+            // 
+            // fechaDevolver
+            // 
+            this.fechaDevolver.HeaderText = "Fecha a devolver";
+            this.fechaDevolver.Name = "fechaDevolver";
+            // 
+            // nombreUsuario
+            // 
+            this.nombreUsuario.HeaderText = "Nombre del Usuario";
+            this.nombreUsuario.Name = "nombreUsuario";
+            // 
+            // idBibliotecario
+            // 
+            this.idBibliotecario.HeaderText = "ID Bibliotecario";
+            this.idBibliotecario.Name = "idBibliotecario";
             // 
             // btnGenerarReporte
             // 
@@ -137,6 +163,8 @@
             this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPrestamos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrestamos.ForeColor = System.Drawing.Color.White;
+            this.btnPrestamos.Image = ((System.Drawing.Image)(resources.GetObject("btnPrestamos.Image")));
+            this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrestamos.Location = new System.Drawing.Point(-2, 55);
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Size = new System.Drawing.Size(251, 66);
@@ -235,31 +263,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 608);
             this.panel1.TabIndex = 0;
-            // 
-            // idPrestamo
-            // 
-            this.idPrestamo.HeaderText = "ID Préstamo";
-            this.idPrestamo.Name = "idPrestamo";
-            // 
-            // titulo
-            // 
-            this.titulo.HeaderText = "Título";
-            this.titulo.Name = "titulo";
-            // 
-            // fechaDevolver
-            // 
-            this.fechaDevolver.HeaderText = "Fecha a devolver";
-            this.fechaDevolver.Name = "fechaDevolver";
-            // 
-            // nombreUsuario
-            // 
-            this.nombreUsuario.HeaderText = "Nombre del Usuario";
-            this.nombreUsuario.Name = "nombreUsuario";
-            // 
-            // idBibliotecario
-            // 
-            this.idBibliotecario.HeaderText = "ID Bibliotecario";
-            this.idBibliotecario.Name = "idBibliotecario";
             // 
             // Menú
             // 
