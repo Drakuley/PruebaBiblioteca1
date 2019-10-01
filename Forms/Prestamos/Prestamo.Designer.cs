@@ -231,7 +231,6 @@
             this.btnBibliotecarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBibliotecarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBibliotecarios.ForeColor = System.Drawing.Color.White;
-            this.btnBibliotecarios.Image = ((System.Drawing.Image)(resources.GetObject("btnBibliotecarios.Image")));
             this.btnBibliotecarios.Location = new System.Drawing.Point(-2, 343);
             this.btnBibliotecarios.Name = "btnBibliotecarios";
             this.btnBibliotecarios.Size = new System.Drawing.Size(251, 66);

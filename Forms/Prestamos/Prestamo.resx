@@ -132,6 +132,21 @@
   <metadata name="idBibliotecario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="idPrestamo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="titulo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="fechaDevolver.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="nombreUsuario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="idBibliotecario.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPrestamos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -215,23 +230,6 @@
         cl3D+r/CJ+hxpIWoyeuZ7WGiSZJrXPTsQAOiP2fkoo+7xiWXkUAjnk3N6YYW1SozrrMCDdmE/lWrWqAZ
         1atd1NyBRt2MtACWw0soTfjPSWjcJWjaSQ7QSp+mrhY6dO5CIxchLWRpFVtvIJr40Cipx4FWv7U4dqrt
         Q2Bs7H+47BdrLT4DTgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnBibliotecarios.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAKPSURBVGhD7dlLqE1RHMfx4xXyVgYmBpKiPKaMZKAwUUJJXokBhZJHqTswkYnMPMpApsojUoqJ
-        kGdEMqBMJOT9GHh+f7dLq9Pv3L3X2dve69T51WdyWnvd/+re899rrdvopptuKs9QrMUVvMZvvMIFrMQA
-        dEym4i60iFa0sFEYg6SjxbyBW0Qrz7EOyWUgbsIVnccmJJWFcIXm9RFJ/QmehSs0hhpJEhmBH3BFxjiF
-        JDIXrsBYj5BE9IV2Bcb6iiSyHa7AWL+QRLbAFRhLC1L7/5vhcOOKysxquAdjvUOYiXDjisrMTLgHY91H
-        mGlw44rKzCDEbnmcMwgzCW5cUZmZD/dgrM9IYie+Aa7AdiSxoMVwxcV6jyQyFl/gioxxGsnkMFyReekd
-        pC1UMpkMHbNdsXkcRHKZA1dslntQ6w8zD25sGaLyDG6S/uxEmMG4Bje2DFHZBTdJK28xHmF64MaWJSqj
-        8QJuIkc79TAjofbtxpYlOgugruUmCz2F7vA6InlugHTs6IjoHPMSbhGh5Ug+6lDH4BbQTB1xCfS9SSra
-        5m+Fti7tHCO+4xb2YQZqiX4TK3AVeRpADN2Nr8IQVJKlaOcFGusJFqE56ox34J7J41/G4RzcoP/pKJrb
-        +xTo+tiNz9IbfU/03nADqnAZzYvaATc2S+9V78Pgg7ocRxjV9QFubH8ae5s+qIuaz2wUzmO4H1CHPSgc
-        vSfc5HXQybhw3MR1OYLCcRPXpZQFfYKbvA4bUTiH4Cavkk6261FKtKfajzLu3mL8xHVsht45pWcCdGeg
-        t/Y3uCKKUDd9AHWyNdC/UyrLMMzCMuyG7tVO4iIuBXQsuN3nRt9n53ECB7AN2uxOR2W762666abdNBp/
-        ADZXXlnVH+mQAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
