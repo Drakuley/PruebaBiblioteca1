@@ -181,6 +181,8 @@
             this.btnDevoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDevoluciones.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
+            this.btnDevoluciones.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.Image")));
+            this.btnDevoluciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDevoluciones.Location = new System.Drawing.Point(-4, 127);
             this.btnDevoluciones.Name = "btnDevoluciones";
             this.btnDevoluciones.Size = new System.Drawing.Size(251, 66);
@@ -196,6 +198,8 @@
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsuarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.Location = new System.Drawing.Point(-4, 199);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(251, 66);
@@ -211,6 +215,8 @@
             this.btnLibros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLibros.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibros.ForeColor = System.Drawing.Color.White;
+            this.btnLibros.Image = ((System.Drawing.Image)(resources.GetObject("btnLibros.Image")));
+            this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLibros.Location = new System.Drawing.Point(-4, 271);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Size = new System.Drawing.Size(251, 66);
@@ -290,7 +296,7 @@
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.panel1);
             this.Name = "Menú";
-            this.Text = "Form1";
+            this.Text = "Préstamos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
