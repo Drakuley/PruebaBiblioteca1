@@ -66,7 +66,7 @@ namespace PruebaBiblioteca1.Forms
             // btnGenerarReporteUsuario
             // 
             this.btnGenerarReporteUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporteUsuario.Location = new System.Drawing.Point(620, 406);
+            this.btnGenerarReporteUsuario.Location = new System.Drawing.Point(635, 401);
             this.btnGenerarReporteUsuario.Name = "btnGenerarReporteUsuario";
             this.btnGenerarReporteUsuario.Size = new System.Drawing.Size(260, 48);
             this.btnGenerarReporteUsuario.TabIndex = 46;
@@ -86,7 +86,7 @@ namespace PruebaBiblioteca1.Forms
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(751, 364);
+            this.btnEliminar.Location = new System.Drawing.Point(766, 359);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 36);
             this.btnEliminar.TabIndex = 44;
@@ -97,7 +97,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(620, 364);
+            this.btnGuardar.Location = new System.Drawing.Point(635, 359);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(129, 36);
             this.btnGuardar.TabIndex = 43;
@@ -248,7 +248,7 @@ namespace PruebaBiblioteca1.Forms
             // Usuarios
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(907, 461);
             this.Controls.Add(this.btnGenerarReporteUsuario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminar);
