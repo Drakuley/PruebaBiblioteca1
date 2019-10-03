@@ -34,6 +34,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.dgvDevoluciones = new System.Windows.Forms.DataGridView();
+            this.IdDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroAdquisicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,12 +51,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.IdDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroAdquisicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDevolucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             // 
             this.txtAutoresRegistrados.AutoSize = true;
             this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(487, 20);
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(456, 18);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
             this.txtAutoresRegistrados.Size = new System.Drawing.Size(188, 16);
             this.txtAutoresRegistrados.TabIndex = 38;
@@ -115,6 +115,36 @@
             this.dgvDevoluciones.Name = "dgvDevoluciones";
             this.dgvDevoluciones.Size = new System.Drawing.Size(570, 413);
             this.dgvDevoluciones.TabIndex = 37;
+            // 
+            // IdDevolucion
+            // 
+            this.IdDevolucion.HeaderText = "ID Devolución";
+            this.IdDevolucion.Name = "IdDevolucion";
+            // 
+            // IdPrestamo
+            // 
+            this.IdPrestamo.HeaderText = "ID Prestamo";
+            this.IdPrestamo.Name = "IdPrestamo";
+            // 
+            // NumeroAdquisicion
+            // 
+            this.NumeroAdquisicion.HeaderText = "n°Adquisición";
+            this.NumeroAdquisicion.Name = "NumeroAdquisicion";
+            // 
+            // FechaDevolucion
+            // 
+            this.FechaDevolucion.HeaderText = "FechaDevolucion";
+            this.FechaDevolucion.Name = "FechaDevolucion";
+            // 
+            // IdBibliotecario
+            // 
+            this.IdBibliotecario.HeaderText = "IDBibliotecario";
+            this.IdBibliotecario.Name = "IdBibliotecario";
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
             // 
             // label1
             // 
@@ -220,41 +250,11 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 57;
             // 
-            // IdDevolucion
-            // 
-            this.IdDevolucion.HeaderText = "ID Devolución";
-            this.IdDevolucion.Name = "IdDevolucion";
-            // 
-            // IdPrestamo
-            // 
-            this.IdPrestamo.HeaderText = "ID Prestamo";
-            this.IdPrestamo.Name = "IdPrestamo";
-            // 
-            // NumeroAdquisicion
-            // 
-            this.NumeroAdquisicion.HeaderText = "n°Adquisición";
-            this.NumeroAdquisicion.Name = "NumeroAdquisicion";
-            // 
-            // FechaDevolucion
-            // 
-            this.FechaDevolucion.HeaderText = "FechaDevolucion";
-            this.FechaDevolucion.Name = "FechaDevolucion";
-            // 
-            // IdBibliotecario
-            // 
-            this.IdBibliotecario.HeaderText = "IDBibliotecario";
-            this.IdBibliotecario.Name = "IdBibliotecario";
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.HeaderText = "Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            // 
             // Devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 498);
+            this.ClientSize = new System.Drawing.Size(983, 482);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox4);

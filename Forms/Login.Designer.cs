@@ -42,9 +42,9 @@
             this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreAutor.Location = new System.Drawing.Point(49, 99);
             this.lblNombreAutor.Name = "lblNombreAutor";
-            this.lblNombreAutor.Size = new System.Drawing.Size(85, 16);
+            this.lblNombreAutor.Size = new System.Drawing.Size(80, 16);
             this.lblNombreAutor.TabIndex = 46;
-            this.lblNombreAutor.Text = "ID Prestamo:";
+            this.lblNombreAutor.Text = "Contraseña:";
             // 
             // lblIdAutor
             // 
@@ -52,9 +52,9 @@
             this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdAutor.Location = new System.Drawing.Point(49, 65);
             this.lblIdAutor.Name = "lblIdAutor";
-            this.lblIdAutor.Size = new System.Drawing.Size(95, 16);
+            this.lblIdAutor.Size = new System.Drawing.Size(83, 16);
             this.lblIdAutor.TabIndex = 45;
-            this.lblIdAutor.Text = "ID Devolución:";
+            this.lblIdAutor.Text = "Bibliotecario";
             // 
             // textBox2
             // 
@@ -80,7 +80,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 36);
             this.button2.TabIndex = 53;
-            this.button2.Text = "Eliminar";
+            this.button2.Text = "Sailr";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // btn_Registrar
