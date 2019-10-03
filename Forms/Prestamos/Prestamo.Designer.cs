@@ -70,9 +70,9 @@
             this.fechaDevolver,
             this.nombreUsuario,
             this.idBibliotecario});
-            this.dgvPrestamos.Location = new System.Drawing.Point(246, 55);
+            this.dgvPrestamos.Location = new System.Drawing.Point(253, 55);
             this.dgvPrestamos.Name = "dgvPrestamos";
-            this.dgvPrestamos.Size = new System.Drawing.Size(721, 433);
+            this.dgvPrestamos.Size = new System.Drawing.Size(714, 433);
             this.dgvPrestamos.TabIndex = 1;
             // 
             // idPrestamo
@@ -152,10 +152,10 @@
             // lblPrestamos
             // 
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblPrestamos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrestamos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrestamos.Location = new System.Drawing.Point(578, 19);
             this.lblPrestamos.Name = "lblPrestamos";
-            this.lblPrestamos.Size = new System.Drawing.Size(98, 22);
+            this.lblPrestamos.Size = new System.Drawing.Size(107, 22);
             this.lblPrestamos.TabIndex = 5;
             this.lblPrestamos.Text = "Préstamos";
             // 
@@ -245,11 +245,13 @@
             this.btnBibliotecarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBibliotecarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBibliotecarios.ForeColor = System.Drawing.Color.White;
+            this.btnBibliotecarios.Image = ((System.Drawing.Image)(resources.GetObject("btnBibliotecarios.Image")));
+            this.btnBibliotecarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBibliotecarios.Location = new System.Drawing.Point(-4, 343);
             this.btnBibliotecarios.Name = "btnBibliotecarios";
             this.btnBibliotecarios.Size = new System.Drawing.Size(251, 66);
             this.btnBibliotecarios.TabIndex = 11;
-            this.btnBibliotecarios.Text = "Bibliotecarios";
+            this.btnBibliotecarios.Text = "    Bibliotecarios";
             this.btnBibliotecarios.UseVisualStyleBackColor = false;
             // 
             // button5
