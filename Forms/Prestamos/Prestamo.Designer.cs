@@ -196,6 +196,7 @@
             this.btnDevoluciones.TabIndex = 8;
             this.btnDevoluciones.Text = "Devoluciones";
             this.btnDevoluciones.UseVisualStyleBackColor = false;
+            this.btnDevoluciones.Click += new System.EventHandler(this.BtnDevoluciones_Click);
             // 
             // btnUsuarios
             // 

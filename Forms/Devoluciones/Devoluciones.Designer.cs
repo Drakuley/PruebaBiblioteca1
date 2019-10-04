@@ -45,32 +45,39 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Registrar = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPrestamos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombreAutor
             // 
             this.lblNombreAutor.AutoSize = true;
-            this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAutor.Location = new System.Drawing.Point(633, 86);
+            this.lblNombreAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreAutor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNombreAutor.Location = new System.Drawing.Point(14, 90);
             this.lblNombreAutor.Name = "lblNombreAutor";
-            this.lblNombreAutor.Size = new System.Drawing.Size(85, 16);
+            this.lblNombreAutor.Size = new System.Drawing.Size(97, 16);
             this.lblNombreAutor.TabIndex = 42;
             this.lblNombreAutor.Text = "ID Prestamo:";
             // 
             // lblIdAutor
             // 
             this.lblIdAutor.AutoSize = true;
-            this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdAutor.Location = new System.Drawing.Point(633, 52);
+            this.lblIdAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdAutor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblIdAutor.Location = new System.Drawing.Point(14, 56);
             this.lblIdAutor.Name = "lblIdAutor";
-            this.lblIdAutor.Size = new System.Drawing.Size(95, 16);
+            this.lblIdAutor.Size = new System.Drawing.Size(109, 16);
             this.lblIdAutor.TabIndex = 41;
             this.lblIdAutor.Text = "ID Devolución:";
             // 
@@ -93,16 +100,18 @@
             // txtAutoresRegistrados
             // 
             this.txtAutoresRegistrados.AutoSize = true;
-            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(456, 18);
+            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(99, 13);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
-            this.txtAutoresRegistrados.Size = new System.Drawing.Size(188, 16);
+            this.txtAutoresRegistrados.Size = new System.Drawing.Size(214, 20);
             this.txtAutoresRegistrados.TabIndex = 38;
             this.txtAutoresRegistrados.Text = "Registro de Devoluciones";
             // 
             // dgvDevoluciones
             // 
             this.dgvDevoluciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDevoluciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvDevoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDevoluciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdDevolucion,
@@ -111,9 +120,9 @@
             this.FechaDevolucion,
             this.IdBibliotecario,
             this.Observaciones});
-            this.dgvDevoluciones.Location = new System.Drawing.Point(29, 52);
+            this.dgvDevoluciones.Location = new System.Drawing.Point(0, -1);
             this.dgvDevoluciones.Name = "dgvDevoluciones";
-            this.dgvDevoluciones.Size = new System.Drawing.Size(570, 413);
+            this.dgvDevoluciones.Size = new System.Drawing.Size(619, 487);
             this.dgvDevoluciones.TabIndex = 37;
             // 
             // IdDevolucion
@@ -149,10 +158,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(633, 122);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(14, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
+            this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 46;
             this.label1.Text = "NúmAdquisición:";
             // 
@@ -167,65 +178,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(633, 160);
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(14, 164);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.Size = new System.Drawing.Size(137, 16);
             this.label2.TabIndex = 47;
             this.label2.Text = "Fecha Devolución:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(633, 193);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(14, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.Size = new System.Drawing.Size(119, 16);
             this.label3.TabIndex = 48;
             this.label3.Text = "ID Bibliotecario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(633, 235);
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(14, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 16);
+            this.label4.Size = new System.Drawing.Size(117, 16);
             this.label4.TabIndex = 49;
             this.label4.Text = "Observaciones:";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(636, 417);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(335, 48);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "Generar Reporte";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(818, 375);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 36);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btn_Registrar
-            // 
-            this.btn_Registrar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Registrar.Location = new System.Drawing.Point(636, 375);
-            this.btn_Registrar.Name = "btn_Registrar";
-            this.btn_Registrar.Size = new System.Drawing.Size(166, 36);
-            this.btn_Registrar.TabIndex = 50;
-            this.btn_Registrar.Text = "Aceptar";
-            this.btn_Registrar.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -250,31 +234,114 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 57;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(137)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnPrestamos);
+            this.panel1.Controls.Add(this.lblIdAutor);
+            this.panel1.Controls.Add(this.lblNombreAutor);
+            this.panel1.Controls.Add(this.txtAutoresRegistrados);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(619, -4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(367, 493);
+            this.panel1.TabIndex = 58;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
+            this.panel2.Location = new System.Drawing.Point(-2, -27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 546);
+            this.panel2.TabIndex = 62;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.AutoSize = true;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(17, 436);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(335, 36);
+            this.button2.TabIndex = 61;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(189, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(163, 36);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnPrestamos
+            // 
+            this.btnPrestamos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrestamos.AutoSize = true;
+            this.btnPrestamos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(136)))), ((int)(((byte)(255)))));
+            this.btnPrestamos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPrestamos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
+            this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrestamos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrestamos.ForeColor = System.Drawing.Color.White;
+            this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrestamos.Location = new System.Drawing.Point(17, 394);
+            this.btnPrestamos.Name = "btnPrestamos";
+            this.btnPrestamos.Size = new System.Drawing.Size(166, 36);
+            this.btnPrestamos.TabIndex = 59;
+            this.btnPrestamos.Text = "Aceptar";
+            this.btnPrestamos.UseVisualStyleBackColor = false;
+            // 
             // Devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(983, 482);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btn_Registrar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.lblNombreAutor);
-            this.Controls.Add(this.lblIdAutor);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtAutoresRegistrados);
             this.Controls.Add(this.dgvDevoluciones);
+            this.Controls.Add(this.panel1);
             this.Name = "Devoluciones";
             this.Text = "Devoluciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,11 +365,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDevolucion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdBibliotecario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnPrestamos;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
