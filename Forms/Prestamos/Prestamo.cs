@@ -21,5 +21,10 @@ namespace PruebaBiblioteca1
         
 
         private void BtnDevoluciones_Click(object sender, EventArgs e) => new Forms.Devoluciones.Devoluciones().Show();
+
+        private void Menú_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
