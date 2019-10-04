@@ -163,7 +163,7 @@
             // 
             this.btnPrestamos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrestamos.AutoSize = true;
-            this.btnPrestamos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.btnPrestamos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.btnPrestamos.FlatAppearance.BorderSize = 0;
             this.btnPrestamos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPrestamos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -182,7 +182,7 @@
             // 
             this.btnDevoluciones.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDevoluciones.AutoSize = true;
-            this.btnDevoluciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.btnDevoluciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.btnDevoluciones.FlatAppearance.BorderSize = 0;
             this.btnDevoluciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDevoluciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -202,7 +202,7 @@
             // 
             this.btnUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUsuarios.AutoSize = true;
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.btnUsuarios.FlatAppearance.BorderSize = 0;
             this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -221,7 +221,7 @@
             // 
             this.btnLibros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLibros.AutoSize = true;
-            this.btnLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.btnLibros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.btnLibros.FlatAppearance.BorderSize = 0;
             this.btnLibros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLibros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,7 +240,7 @@
             // 
             this.btnBibliotecarios.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBibliotecarios.AutoSize = true;
-            this.btnBibliotecarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.btnBibliotecarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.btnBibliotecarios.FlatAppearance.BorderSize = 0;
             this.btnBibliotecarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBibliotecarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -259,7 +259,7 @@
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -277,7 +277,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.btnBibliotecarios);
             this.panel1.Controls.Add(this.btnLibros);
