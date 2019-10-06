@@ -16,5 +16,10 @@ namespace PruebaBiblioteca1.Forms
         {
             InitializeComponent();
         }
+
+        private void DgvLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -36,9 +36,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblIdAutor = new System.Windows.Forms.Label();
             this.lblNombreAutor = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Registrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.panel1.SuspendLayout();
@@ -52,9 +52,9 @@
             this.dgvAutores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdAutor,
             this.NombreAutor});
-            this.dgvAutores.Location = new System.Drawing.Point(0, -4);
+            this.dgvAutores.Location = new System.Drawing.Point(-3, -4);
             this.dgvAutores.Name = "dgvAutores";
-            this.dgvAutores.Size = new System.Drawing.Size(492, 340);
+            this.dgvAutores.Size = new System.Drawing.Size(495, 340);
             this.dgvAutores.TabIndex = 0;
             // 
             // IdAutor
@@ -73,6 +73,7 @@
             // 
             this.txtAutoresRegistrados.AutoSize = true;
             this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.Control;
             this.txtAutoresRegistrados.Location = new System.Drawing.Point(100, 16);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
             this.txtAutoresRegistrados.Size = new System.Drawing.Size(88, 24);
@@ -90,7 +91,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(81, 106);
+            this.textBox2.Location = new System.Drawing.Point(81, 120);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(186, 22);
             this.textBox2.TabIndex = 3;
@@ -99,6 +100,7 @@
             // 
             this.lblIdAutor.AutoSize = true;
             this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdAutor.ForeColor = System.Drawing.SystemColors.Control;
             this.lblIdAutor.Location = new System.Drawing.Point(12, 84);
             this.lblIdAutor.Name = "lblIdAutor";
             this.lblIdAutor.Size = new System.Drawing.Size(27, 16);
@@ -109,43 +111,18 @@
             // 
             this.lblNombreAutor.AutoSize = true;
             this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAutor.Location = new System.Drawing.Point(12, 112);
+            this.lblNombreAutor.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNombreAutor.Location = new System.Drawing.Point(12, 126);
             this.lblNombreAutor.Name = "lblNombreAutor";
             this.lblNombreAutor.Size = new System.Drawing.Size(63, 16);
             this.lblNombreAutor.TabIndex = 5;
             this.lblNombreAutor.Text = "Nombre :";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(15, 271);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(252, 51);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btn_Registrar
-            // 
-            this.btn_Registrar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Registrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Registrar.Location = new System.Drawing.Point(15, 214);
-            this.btn_Registrar.Name = "btn_Registrar";
-            this.btn_Registrar.Size = new System.Drawing.Size(252, 51);
-            this.btn_Registrar.TabIndex = 35;
-            this.btn_Registrar.Text = "Guardar";
-            this.btn_Registrar.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(205)))));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btn_Registrar);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.txtAutoresRegistrados);
             this.panel1.Controls.Add(this.lblNombreAutor);
             this.panel1.Controls.Add(this.lblIdAutor);
@@ -156,13 +133,53 @@
             this.panel1.Size = new System.Drawing.Size(301, 373);
             this.panel1.TabIndex = 37;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminar.AutoSize = true;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(29, 291);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(228, 36);
+            this.btnEliminar.TabIndex = 62;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAceptar.AutoSize = true;
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(29, 239);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(228, 36);
+            this.btnAceptar.TabIndex = 61;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(78)))));
-            this.panel2.Location = new System.Drawing.Point(490, -24);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Location = new System.Drawing.Point(491, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 404);
-            this.panel2.TabIndex = 38;
+            this.panel2.Size = new System.Drawing.Size(8, 546);
+            this.panel2.TabIndex = 63;
             // 
             // Autores
             // 
@@ -191,9 +208,9 @@
         private System.Windows.Forms.Label lblNombreAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreAutor;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panel2;
     }
 }
