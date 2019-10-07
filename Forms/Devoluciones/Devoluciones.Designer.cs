@@ -100,11 +100,11 @@
             // txtAutoresRegistrados
             // 
             this.txtAutoresRegistrados.AutoSize = true;
-            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(99, 13);
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(64, 13);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
-            this.txtAutoresRegistrados.Size = new System.Drawing.Size(214, 20);
+            this.txtAutoresRegistrados.Size = new System.Drawing.Size(250, 24);
             this.txtAutoresRegistrados.TabIndex = 38;
             this.txtAutoresRegistrados.Text = "Registro de Devoluciones";
             // 
@@ -221,6 +221,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.richTextBox1.Location = new System.Drawing.Point(636, 254);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(335, 106);

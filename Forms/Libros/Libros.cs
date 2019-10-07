@@ -21,5 +21,10 @@ namespace PruebaBiblioteca1.Forms
         {
 
         }
+
+        private void Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

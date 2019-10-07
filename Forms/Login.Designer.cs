@@ -32,27 +32,30 @@
             this.lblIdAutor = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_Registrar = new System.Windows.Forms.Button();
+            this.lblPrestamos = new System.Windows.Forms.Label();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNombreAutor
             // 
             this.lblNombreAutor.AutoSize = true;
-            this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblNombreAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblNombreAutor.Location = new System.Drawing.Point(49, 99);
             this.lblNombreAutor.Name = "lblNombreAutor";
-            this.lblNombreAutor.Size = new System.Drawing.Size(80, 16);
+            this.lblNombreAutor.Size = new System.Drawing.Size(91, 16);
             this.lblNombreAutor.TabIndex = 46;
             this.lblNombreAutor.Text = "Contraseña:";
             // 
             // lblIdAutor
             // 
             this.lblIdAutor.AutoSize = true;
-            this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblIdAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblIdAutor.Location = new System.Drawing.Point(49, 65);
             this.lblIdAutor.Name = "lblIdAutor";
-            this.lblIdAutor.Size = new System.Drawing.Size(83, 16);
+            this.lblIdAutor.Size = new System.Drawing.Size(96, 16);
             this.lblIdAutor.TabIndex = 45;
             this.lblIdAutor.Text = "Bibliotecario";
             // 
@@ -72,35 +75,58 @@
             this.textBox1.Size = new System.Drawing.Size(200, 22);
             this.textBox1.TabIndex = 43;
             // 
-            // button2
+            // lblPrestamos
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(234, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 36);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "Sailr";
-            this.button2.UseVisualStyleBackColor = false;
+            this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.lblPrestamos.Location = new System.Drawing.Point(104, 19);
+            this.lblPrestamos.Name = "lblPrestamos";
+            this.lblPrestamos.Size = new System.Drawing.Size(243, 22);
+            this.lblPrestamos.TabIndex = 54;
+            this.lblPrestamos.Text = "Generar Reporte Prestamos";
             // 
-            // btn_Registrar
+            // btnGenerarReporte
             // 
-            this.btn_Registrar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Registrar.Location = new System.Drawing.Point(52, 154);
-            this.btn_Registrar.Name = "btn_Registrar";
-            this.btn_Registrar.Size = new System.Drawing.Size(166, 36);
-            this.btn_Registrar.TabIndex = 52;
-            this.btn_Registrar.Text = "Aceptar";
-            this.btn_Registrar.UseVisualStyleBackColor = false;
+            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarReporte.AutoSize = true;
+            this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporte.Location = new System.Drawing.Point(52, 141);
+            this.btnGenerarReporte.Name = "btnGenerarReporte";
+            this.btnGenerarReporte.Size = new System.Drawing.Size(159, 37);
+            this.btnGenerarReporte.TabIndex = 55;
+            this.btnGenerarReporte.Text = "Aceptar";
+            this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(228, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 37);
+            this.button1.TabIndex = 56;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 230);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btn_Registrar);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(448, 194);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGenerarReporte);
+            this.Controls.Add(this.lblPrestamos);
             this.Controls.Add(this.lblNombreAutor);
             this.Controls.Add(this.lblIdAutor);
             this.Controls.Add(this.textBox2);
@@ -118,7 +144,8 @@
         private System.Windows.Forms.Label lblIdAutor;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_Registrar;
+        private System.Windows.Forms.Label lblPrestamos;
+        private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.Button button1;
     }
 }

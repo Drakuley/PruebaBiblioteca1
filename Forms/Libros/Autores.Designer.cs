@@ -47,7 +47,7 @@
             // dgvAutores
             // 
             this.dgvAutores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAutores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAutores.BackgroundColor = System.Drawing.Color.White;
             this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAutores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdAutor,
@@ -72,17 +72,17 @@
             // txtAutoresRegistrados
             // 
             this.txtAutoresRegistrados.AutoSize = true;
-            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutoresRegistrados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.Control;
             this.txtAutoresRegistrados.Location = new System.Drawing.Point(100, 16);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
-            this.txtAutoresRegistrados.Size = new System.Drawing.Size(88, 24);
+            this.txtAutoresRegistrados.Size = new System.Drawing.Size(84, 23);
             this.txtAutoresRegistrados.TabIndex = 1;
             this.txtAutoresRegistrados.Text = "Autores ";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox1.Location = new System.Drawing.Point(81, 78);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(186, 22);
@@ -90,7 +90,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.textBox2.Location = new System.Drawing.Point(81, 120);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(186, 22);
@@ -99,22 +99,22 @@
             // lblIdAutor
             // 
             this.lblIdAutor.AutoSize = true;
-            this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblIdAutor.ForeColor = System.Drawing.SystemColors.Control;
             this.lblIdAutor.Location = new System.Drawing.Point(12, 84);
             this.lblIdAutor.Name = "lblIdAutor";
-            this.lblIdAutor.Size = new System.Drawing.Size(27, 16);
+            this.lblIdAutor.Size = new System.Drawing.Size(31, 16);
             this.lblIdAutor.TabIndex = 4;
             this.lblIdAutor.Text = "ID :";
             // 
             // lblNombreAutor
             // 
             this.lblNombreAutor.AutoSize = true;
-            this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNombreAutor.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNombreAutor.Location = new System.Drawing.Point(12, 126);
             this.lblNombreAutor.Name = "lblNombreAutor";
-            this.lblNombreAutor.Size = new System.Drawing.Size(63, 16);
+            this.lblNombreAutor.Size = new System.Drawing.Size(71, 16);
             this.lblNombreAutor.TabIndex = 5;
             this.lblNombreAutor.Text = "Nombre :";
             // 
@@ -185,6 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(781, 335);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
