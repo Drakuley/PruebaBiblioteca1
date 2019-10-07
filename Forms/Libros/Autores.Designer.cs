@@ -74,11 +74,11 @@
             this.txtAutoresRegistrados.AutoSize = true;
             this.txtAutoresRegistrados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(100, 16);
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(48, 13);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
-            this.txtAutoresRegistrados.Size = new System.Drawing.Size(84, 23);
+            this.txtAutoresRegistrados.Size = new System.Drawing.Size(192, 23);
             this.txtAutoresRegistrados.TabIndex = 1;
-            this.txtAutoresRegistrados.Text = "Autores ";
+            this.txtAutoresRegistrados.Text = "Registro de Autores ";
             // 
             // textBox1
             // 

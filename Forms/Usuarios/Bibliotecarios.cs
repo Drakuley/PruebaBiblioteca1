@@ -41,7 +41,7 @@ namespace PruebaBiblioteca1.Forms
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,9 +93,9 @@ namespace PruebaBiblioteca1.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(611, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 16);
@@ -114,9 +114,9 @@ namespace PruebaBiblioteca1.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(611, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 16);
@@ -134,9 +134,9 @@ namespace PruebaBiblioteca1.Forms
             // direccion
             // 
             this.direccion.AutoSize = true;
-            this.direccion.BackColor = System.Drawing.SystemColors.Control;
+            this.direccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.direccion.ForeColor = System.Drawing.Color.Black;
+            this.direccion.ForeColor = System.Drawing.Color.White;
             this.direccion.Location = new System.Drawing.Point(611, 102);
             this.direccion.Name = "direccion";
             this.direccion.Size = new System.Drawing.Size(91, 16);
@@ -146,20 +146,21 @@ namespace PruebaBiblioteca1.Forms
             // dgvBibliotecarios
             // 
             this.dgvBibliotecarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBibliotecarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvBibliotecarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBibliotecarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idBibliotecario,
             this.NombreBibliotecario,
             this.Contraseña,
             this.Turno});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBibliotecarios.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBibliotecarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBibliotecarios.Location = new System.Drawing.Point(0, 1);
             this.dgvBibliotecarios.Name = "dgvBibliotecarios";
             this.dgvBibliotecarios.Size = new System.Drawing.Size(600, 460);
@@ -173,9 +174,9 @@ namespace PruebaBiblioteca1.Forms
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.BackColor = System.Drawing.SystemColors.Control;
+            this.Nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Nombre.ForeColor = System.Drawing.Color.Black;
+            this.Nombre.ForeColor = System.Drawing.Color.White;
             this.Nombre.Location = new System.Drawing.Point(611, 74);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(67, 16);
@@ -201,9 +202,9 @@ namespace PruebaBiblioteca1.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(611, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 16);
@@ -287,7 +288,7 @@ namespace PruebaBiblioteca1.Forms
             this.txtAutoresRegistrados.AutoSize = true;
             this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(61, 7);
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(52, 8);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
             this.txtAutoresRegistrados.Size = new System.Drawing.Size(248, 24);
             this.txtAutoresRegistrados.TabIndex = 38;

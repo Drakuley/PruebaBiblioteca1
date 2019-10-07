@@ -51,13 +51,12 @@
             this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNumAdquisicion = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.btnRegistrarAutores = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,17 +66,17 @@
             this.lblLibrosRegistrados.AutoSize = true;
             this.lblLibrosRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLibrosRegistrados.ForeColor = System.Drawing.Color.White;
-            this.lblLibrosRegistrados.Location = new System.Drawing.Point(108, 13);
+            this.lblLibrosRegistrados.Location = new System.Drawing.Point(54, 13);
             this.lblLibrosRegistrados.Name = "lblLibrosRegistrados";
-            this.lblLibrosRegistrados.Size = new System.Drawing.Size(67, 24);
+            this.lblLibrosRegistrados.Size = new System.Drawing.Size(180, 24);
             this.lblLibrosRegistrados.TabIndex = 38;
-            this.lblLibrosRegistrados.Text = "Libros";
+            this.lblLibrosRegistrados.Text = "Registro de Libros";
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 136);
+            this.comboBox1.Location = new System.Drawing.Point(125, 124);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 24);
             this.comboBox1.TabIndex = 37;
@@ -88,7 +87,7 @@
             this.lblAutor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblAutor.ForeColor = System.Drawing.Color.White;
-            this.lblAutor.Location = new System.Drawing.Point(18, 144);
+            this.lblAutor.Location = new System.Drawing.Point(12, 127);
             this.lblAutor.Name = "lblAutor";
             this.lblAutor.Size = new System.Drawing.Size(52, 16);
             this.lblAutor.TabIndex = 36;
@@ -100,7 +99,7 @@
             this.lblEstatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblEstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblEstatus.ForeColor = System.Drawing.Color.White;
-            this.lblEstatus.Location = new System.Drawing.Point(18, 297);
+            this.lblEstatus.Location = new System.Drawing.Point(12, 302);
             this.lblEstatus.Name = "lblEstatus";
             this.lblEstatus.Size = new System.Drawing.Size(67, 16);
             this.lblEstatus.TabIndex = 32;
@@ -109,10 +108,10 @@
             // lblTxtEstatus
             // 
             this.lblTxtEstatus.AutoSize = true;
-            this.lblTxtEstatus.BackColor = System.Drawing.Color.White;
+            this.lblTxtEstatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblTxtEstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTxtEstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblTxtEstatus.Location = new System.Drawing.Point(153, 296);
+            this.lblTxtEstatus.ForeColor = System.Drawing.Color.Lime;
+            this.lblTxtEstatus.Location = new System.Drawing.Point(141, 299);
             this.lblTxtEstatus.Name = "lblTxtEstatus";
             this.lblTxtEstatus.Size = new System.Drawing.Size(93, 20);
             this.lblTxtEstatus.TabIndex = 31;
@@ -124,7 +123,7 @@
             this.lblClasificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblClasificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblClasificacion.ForeColor = System.Drawing.Color.White;
-            this.lblClasificacion.Location = new System.Drawing.Point(16, 263);
+            this.lblClasificacion.Location = new System.Drawing.Point(12, 263);
             this.lblClasificacion.Name = "lblClasificacion";
             this.lblClasificacion.Size = new System.Drawing.Size(105, 16);
             this.lblClasificacion.TabIndex = 30;
@@ -136,7 +135,7 @@
             this.lblEjemplar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblEjemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblEjemplar.ForeColor = System.Drawing.Color.White;
-            this.lblEjemplar.Location = new System.Drawing.Point(18, 233);
+            this.lblEjemplar.Location = new System.Drawing.Point(12, 230);
             this.lblEjemplar.Name = "lblEjemplar";
             this.lblEjemplar.Size = new System.Drawing.Size(78, 16);
             this.lblEjemplar.TabIndex = 29;
@@ -148,7 +147,7 @@
             this.lblUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
-            this.lblUbicacion.Location = new System.Drawing.Point(18, 203);
+            this.lblUbicacion.Location = new System.Drawing.Point(12, 198);
             this.lblUbicacion.Name = "lblUbicacion";
             this.lblUbicacion.Size = new System.Drawing.Size(86, 16);
             this.lblUbicacion.TabIndex = 28;
@@ -158,7 +157,7 @@
             // 
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 258);
+            this.comboBox3.Location = new System.Drawing.Point(125, 255);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(148, 24);
             this.comboBox3.TabIndex = 27;
@@ -167,7 +166,7 @@
             // 
             this.cbb_ejemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_ejemplar.FormattingEnabled = true;
-            this.cbb_ejemplar.Location = new System.Drawing.Point(125, 227);
+            this.cbb_ejemplar.Location = new System.Drawing.Point(125, 222);
             this.cbb_ejemplar.Name = "cbb_ejemplar";
             this.cbb_ejemplar.Size = new System.Drawing.Size(148, 24);
             this.cbb_ejemplar.TabIndex = 26;
@@ -176,7 +175,7 @@
             // 
             this.cbb_Ubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Ubicacion.FormattingEnabled = true;
-            this.cbb_Ubicacion.Location = new System.Drawing.Point(125, 197);
+            this.cbb_Ubicacion.Location = new System.Drawing.Point(125, 190);
             this.cbb_Ubicacion.Name = "cbb_Ubicacion";
             this.cbb_Ubicacion.Size = new System.Drawing.Size(148, 24);
             this.cbb_Ubicacion.TabIndex = 25;
@@ -187,7 +186,7 @@
             this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(18, 114);
+            this.lblTitulo.Location = new System.Drawing.Point(12, 99);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(55, 16);
             this.lblTitulo.TabIndex = 24;
@@ -199,7 +198,7 @@
             this.lblNumAdq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblNumAdq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblNumAdq.ForeColor = System.Drawing.Color.White;
-            this.lblNumAdq.Location = new System.Drawing.Point(16, 71);
+            this.lblNumAdq.Location = new System.Drawing.Point(12, 54);
             this.lblNumAdq.Name = "lblNumAdq";
             this.lblNumAdq.Size = new System.Drawing.Size(97, 32);
             this.lblNumAdq.TabIndex = 23;
@@ -274,7 +273,7 @@
             // txtNumAdquisicion
             // 
             this.txtNumAdquisicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumAdquisicion.Location = new System.Drawing.Point(125, 81);
+            this.txtNumAdquisicion.Location = new System.Drawing.Point(125, 64);
             this.txtNumAdquisicion.Name = "txtNumAdquisicion";
             this.txtNumAdquisicion.Size = new System.Drawing.Size(148, 22);
             this.txtNumAdquisicion.TabIndex = 39;
@@ -282,26 +281,17 @@
             // txtTitulo
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(125, 109);
+            this.txtTitulo.Location = new System.Drawing.Point(125, 94);
             this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(148, 21);
             this.txtTitulo.TabIndex = 40;
             // 
-            // btnRegistrarAutores
-            // 
-            this.btnRegistrarAutores.Location = new System.Drawing.Point(168, 166);
-            this.btnRegistrarAutores.Name = "btnRegistrarAutores";
-            this.btnRegistrarAutores.Size = new System.Drawing.Size(105, 23);
-            this.btnRegistrarAutores.TabIndex = 41;
-            this.btnRegistrarAutores.Text = "Registrar Autores";
-            this.btnRegistrarAutores.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.btnGenerarReporte);
             this.panel1.Controls.Add(this.lblLibrosRegistrados);
-            this.panel1.Controls.Add(this.btnRegistrarAutores);
             this.panel1.Controls.Add(this.btnReporte);
             this.panel1.Controls.Add(this.txtTitulo);
             this.panel1.Controls.Add(this.btnEliminar);
@@ -319,7 +309,6 @@
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.lblEjemplar);
             this.panel1.Controls.Add(this.lblUbicacion);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(625, -4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 450);
@@ -392,14 +381,22 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 43;
             // 
-            // panel3
+            // btnGenerarReporte
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(125, 290);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(148, 33);
-            this.panel3.TabIndex = 65;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
+            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarReporte.AutoSize = true;
+            this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.Enabled = false;
+            this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporte.Location = new System.Drawing.Point(149, 154);
+            this.btnGenerarReporte.Name = "btnGenerarReporte";
+            this.btnGenerarReporte.Size = new System.Drawing.Size(124, 28);
+            this.btnGenerarReporte.TabIndex = 66;
+            this.btnGenerarReporte.Text = "Registrar Autor";
+            this.btnGenerarReporte.UseVisualStyleBackColor = false;
             // 
             // Libros
             // 
@@ -443,12 +440,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
         private System.Windows.Forms.TextBox txtNumAdquisicion;
         private System.Windows.Forms.TextBox txtTitulo;
-        private System.Windows.Forms.Button btnRegistrarAutores;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnGenerarReporte;
     }
 }

@@ -102,7 +102,7 @@
             this.txtAutoresRegistrados.AutoSize = true;
             this.txtAutoresRegistrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAutoresRegistrados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtAutoresRegistrados.Location = new System.Drawing.Point(64, 13);
+            this.txtAutoresRegistrados.Location = new System.Drawing.Point(62, 13);
             this.txtAutoresRegistrados.Name = "txtAutoresRegistrados";
             this.txtAutoresRegistrados.Size = new System.Drawing.Size(250, 24);
             this.txtAutoresRegistrados.TabIndex = 38;
