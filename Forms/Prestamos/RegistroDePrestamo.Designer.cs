@@ -296,7 +296,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(210, 28);
             this.button2.TabIndex = 25;
-            this.button2.Text = "Registrar Usuario";
+            this.button2.Text = "Registrar Prestamo";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // RegistroDePrestamo

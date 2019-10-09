@@ -37,7 +37,6 @@
             this.lblEjemplar = new System.Windows.Forms.Label();
             this.lblUbicacion = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.cbb_ejemplar = new System.Windows.Forms.ComboBox();
             this.cbb_Ubicacion = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNumAdq = new System.Windows.Forms.Label();
@@ -52,11 +51,12 @@
             this.txtNumAdquisicion = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnGenerarReporte = new System.Windows.Forms.Button();
+            this.txtEjemplar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -161,15 +161,6 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(148, 24);
             this.comboBox3.TabIndex = 27;
-            // 
-            // cbb_ejemplar
-            // 
-            this.cbb_ejemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_ejemplar.FormattingEnabled = true;
-            this.cbb_ejemplar.Location = new System.Drawing.Point(125, 222);
-            this.cbb_ejemplar.Name = "cbb_ejemplar";
-            this.cbb_ejemplar.Size = new System.Drawing.Size(148, 24);
-            this.cbb_ejemplar.TabIndex = 26;
             // 
             // cbb_Ubicacion
             // 
@@ -290,6 +281,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.txtEjemplar);
             this.panel1.Controls.Add(this.btnGenerarReporte);
             this.panel1.Controls.Add(this.lblLibrosRegistrados);
             this.panel1.Controls.Add(this.btnReporte);
@@ -304,7 +296,6 @@
             this.panel1.Controls.Add(this.lblEstatus);
             this.panel1.Controls.Add(this.cbb_Ubicacion);
             this.panel1.Controls.Add(this.lblTxtEstatus);
-            this.panel1.Controls.Add(this.cbb_ejemplar);
             this.panel1.Controls.Add(this.lblClasificacion);
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.lblEjemplar);
@@ -313,6 +304,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 450);
             this.panel1.TabIndex = 42;
+            // 
+            // btnGenerarReporte
+            // 
+            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarReporte.AutoSize = true;
+            this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.Enabled = false;
+            this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporte.Location = new System.Drawing.Point(149, 154);
+            this.btnGenerarReporte.Name = "btnGenerarReporte";
+            this.btnGenerarReporte.Size = new System.Drawing.Size(124, 28);
+            this.btnGenerarReporte.TabIndex = 66;
+            this.btnGenerarReporte.Text = "Registrar Autor";
+            this.btnGenerarReporte.UseVisualStyleBackColor = false;
             // 
             // btnReporte
             // 
@@ -381,22 +389,13 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 43;
             // 
-            // btnGenerarReporte
+            // txtEjemplar
             // 
-            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerarReporte.AutoSize = true;
-            this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnGenerarReporte.Enabled = false;
-            this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(149, 154);
-            this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(124, 28);
-            this.btnGenerarReporte.TabIndex = 66;
-            this.btnGenerarReporte.Text = "Registrar Autor";
-            this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            this.txtEjemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEjemplar.Location = new System.Drawing.Point(125, 224);
+            this.txtEjemplar.Name = "txtEjemplar";
+            this.txtEjemplar.Size = new System.Drawing.Size(148, 22);
+            this.txtEjemplar.TabIndex = 67;
             // 
             // Libros
             // 
@@ -426,7 +425,6 @@
         private System.Windows.Forms.Label lblEjemplar;
         private System.Windows.Forms.Label lblUbicacion;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox cbb_ejemplar;
         private System.Windows.Forms.ComboBox cbb_Ubicacion;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblNumAdq;
@@ -446,5 +444,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.TextBox txtEjemplar;
     }
 }
