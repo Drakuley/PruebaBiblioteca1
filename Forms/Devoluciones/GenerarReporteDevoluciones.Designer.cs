@@ -43,7 +43,7 @@
             this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(150, 143);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(44, 143);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(272, 37);
             this.btnGenerarReporte.TabIndex = 57;
@@ -55,7 +55,7 @@
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.lblPrestamos.Location = new System.Drawing.Point(146, 22);
+            this.lblPrestamos.Location = new System.Drawing.Point(40, 27);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(276, 22);
             this.lblPrestamos.TabIndex = 51;
@@ -65,16 +65,16 @@
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.label9.Location = new System.Drawing.Point(28, 89);
+            this.label9.Location = new System.Drawing.Point(12, 68);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 54);
+            this.label9.Size = new System.Drawing.Size(93, 54);
             this.label9.TabIndex = 50;
             this.label9.Text = "Seleccione el libro:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(192, 88);
+            this.comboBox1.Location = new System.Drawing.Point(111, 79);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(202, 21);
             this.comboBox1.TabIndex = 58;
@@ -84,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(578, 192);
+            this.ClientSize = new System.Drawing.Size(363, 192);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.lblPrestamos);

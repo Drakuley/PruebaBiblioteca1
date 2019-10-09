@@ -52,6 +52,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -300,12 +301,21 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 6;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(810, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.Text = "Buscar:";
+            // 
             // Menú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(988, 543);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblPrestamos);
             this.Controls.Add(this.btnModificarPrestamo);
@@ -343,6 +353,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBibliotecario;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
