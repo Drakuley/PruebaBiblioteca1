@@ -32,6 +32,8 @@
             this.lblPrestamos = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_Ejemplar = new System.Windows.Forms.ComboBox();
+            this.lblEjemplar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGenerarReporte
@@ -55,7 +57,7 @@
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.lblPrestamos.Location = new System.Drawing.Point(40, 27);
+            this.lblPrestamos.Location = new System.Drawing.Point(55, 9);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(276, 22);
             this.lblPrestamos.TabIndex = 51;
@@ -65,7 +67,7 @@
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.label9.Location = new System.Drawing.Point(12, 68);
+            this.label9.Location = new System.Drawing.Point(15, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 54);
             this.label9.TabIndex = 50;
@@ -74,10 +76,31 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(111, 79);
+            this.comboBox1.Location = new System.Drawing.Point(114, 55);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(202, 21);
             this.comboBox1.TabIndex = 58;
+            // 
+            // cb_Ejemplar
+            // 
+            this.cb_Ejemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Ejemplar.FormattingEnabled = true;
+            this.cb_Ejemplar.Location = new System.Drawing.Point(114, 90);
+            this.cb_Ejemplar.Name = "cb_Ejemplar";
+            this.cb_Ejemplar.Size = new System.Drawing.Size(202, 24);
+            this.cb_Ejemplar.TabIndex = 59;
+            // 
+            // lblEjemplar
+            // 
+            this.lblEjemplar.AutoSize = true;
+            this.lblEjemplar.BackColor = System.Drawing.Color.White;
+            this.lblEjemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblEjemplar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.lblEjemplar.Location = new System.Drawing.Point(15, 98);
+            this.lblEjemplar.Name = "lblEjemplar";
+            this.lblEjemplar.Size = new System.Drawing.Size(86, 16);
+            this.lblEjemplar.TabIndex = 60;
+            this.lblEjemplar.Text = "Ubicación :";
             // 
             // GenerarReporteDevoluciones
             // 
@@ -85,6 +108,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(363, 192);
+            this.Controls.Add(this.cb_Ejemplar);
+            this.Controls.Add(this.lblEjemplar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.lblPrestamos);
@@ -103,5 +128,7 @@
         private System.Windows.Forms.Label lblPrestamos;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_Ejemplar;
+        private System.Windows.Forms.Label lblEjemplar;
     }
 }
