@@ -82,9 +82,9 @@
             this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblPrestamos.Location = new System.Drawing.Point(94, 19);
             this.lblPrestamos.Name = "lblPrestamos";
-            this.lblPrestamos.Size = new System.Drawing.Size(269, 22);
+            this.lblPrestamos.Size = new System.Drawing.Size(308, 22);
             this.lblPrestamos.TabIndex = 54;
-            this.lblPrestamos.Text = "Biblioteca Jose M. M. y Pavón";
+            this.lblPrestamos.Text = "Biblioteca Jose M. Morelos y Pavón";
             // 
             // btnGenerarReporte
             // 
