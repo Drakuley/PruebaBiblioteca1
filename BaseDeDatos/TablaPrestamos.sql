@@ -7,7 +7,7 @@ create table Devoluciones(
     idBibliotecario numeric(5) not null,
     observaciones varchar(200),
     constraint pk_Devoluciones primary key(idDevolucion, idPrestamo),
-    constraint fk_Dev foreign key(idPrestamo) references Prestamos(idPrestamo)
+    constraint fk_Prestamos foreign key(idPrestamo) references Prestamos(idPrestamo)
 );
 
 create table Prestamos(
@@ -21,5 +21,17 @@ create table Prestamos(
     constraint pk_Prestamos primary key(idPrestamo),
     constraint fk_Usuarios foreign key(idUsuario) references Usuarios(idUsuario),
     constraint fk_Libros foreign key(numeroAdquisicion) references Libros(numeroAdquisicion),
-    constraint fk_Usuarios foreign key(idBibliotecario) references Bibliotecarios(idBibliotecario),
+    constraint fk_Usuarios foreign key(idBibliotecario) references Bibliotecarios(idBibliotecario)
+);
+
+create table clasificaciones(
+    clasificacion numeric(3,3) not null,
+    genero varchar(50) not null,
+    constraint pk_Clasificaciones primary key(clasificacion),
+);
+
+create table ubicaciones(
+    ubicacion varchar(1) not null,
+    genero varchar(50) not null,
+    constraint pk_Clasificaciones primary key(clasificacion),
 );
