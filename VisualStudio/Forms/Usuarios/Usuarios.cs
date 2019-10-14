@@ -103,10 +103,14 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.cbGeneroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGeneroUsuario.FormattingEnabled = true;
+            this.cbGeneroUsuario.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
             this.cbGeneroUsuario.Location = new System.Drawing.Point(102, 192);
             this.cbGeneroUsuario.Name = "cbGeneroUsuario";
             this.cbGeneroUsuario.Size = new System.Drawing.Size(171, 24);
             this.cbGeneroUsuario.TabIndex = 40;
+            this.cbGeneroUsuario.Text = "Masculino";
             // 
             // label4
             // 

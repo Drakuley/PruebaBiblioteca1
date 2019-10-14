@@ -98,9 +98,9 @@
             this.lblEjemplar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
             this.lblEjemplar.Location = new System.Drawing.Point(15, 98);
             this.lblEjemplar.Name = "lblEjemplar";
-            this.lblEjemplar.Size = new System.Drawing.Size(86, 16);
+            this.lblEjemplar.Size = new System.Drawing.Size(78, 16);
             this.lblEjemplar.TabIndex = 60;
-            this.lblEjemplar.Text = "Ubicación :";
+            this.lblEjemplar.Text = "Ejemplar :";
             // 
             // GenerarReporteDevoluciones
             // 
