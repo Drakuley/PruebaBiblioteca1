@@ -63,8 +63,23 @@ namespace PruebaBiblioteca1.Forms
             }
             else if (btnAceptar.Text == "REGISTRAR")
             {
-                librosTableAdapter.InsertQueryLibros(txtNumAdquisicion.Text, txtTitulo.Text, (decimal)cbAutores.SelectedValue, (string)cbUbicaciones.SelectedValue, txtEjemplar.Text, (decimal)cbClasificaciones.SelectedValue, "Disponible");
-                this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                if (librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text) > 0)
+                {
+                    MessageBox.Show("El libro que quieres registrar ya existe");
+                }
+                else
+                {
+                    librosTableAdapter.InsertQueryLibros(txtNumAdquisicion.Text, txtTitulo.Text, (decimal)cbAutores.SelectedValue, (string)cbUbicaciones.SelectedValue, txtEjemplar.Text, (decimal)cbClasificaciones.SelectedValue, "Disponible");
+                    this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                    txtNumAdquisicion.Text = "";
+                    txtTitulo.Text = "";
+                    cbAutores.SelectedValue = (decimal)cbAutores.SelectionStart;
+                    cbUbicaciones.SelectedValue = cbUbicaciones.SelectionStart;
+                    txtEjemplar.Text = "";
+                    cbClasificaciones.SelectedValue = (decimal)cbClasificaciones.SelectionStart;
+
+                    txtNumAdquisicion.Focus();
+                }
             }
         }
 
@@ -74,6 +89,18 @@ namespace PruebaBiblioteca1.Forms
             {
                 librosTableAdapter.DeleteQueryLibros(txtNumAdquisicion.Text);
                 this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                txtNumAdquisicion.Text = "";
+                txtTitulo.Text = "";
+                cbAutores.SelectedValue = (decimal)cbAutores.SelectionStart;
+                cbUbicaciones.SelectedValue = cbUbicaciones.SelectionStart;
+                txtEjemplar.Text = "";
+                cbClasificaciones.SelectedValue = (decimal)cbClasificaciones.SelectionStart;
+
+                txtNumAdquisicion.Focus();
+            }
+            else
+            {
+                MessageBox.Show("El libro que quieres eliminar no existe");
             }
         }
     }
