@@ -286,6 +286,7 @@ namespace PruebaBiblioteca1.Forms
             this.btnAceptar.TabIndex = 59;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // txtAutoresRegistrados
             // 
@@ -332,6 +333,11 @@ namespace PruebaBiblioteca1.Forms
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
 
         }
     }
