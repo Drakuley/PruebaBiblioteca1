@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PruebaBiblioteca1.Forms
 {
-    public partial class Usuarios : Form
+    public partial class Users : Form
     {
 
         private Label label6;
@@ -36,7 +36,7 @@ namespace PruebaBiblioteca1.Forms
         private Panel panel2;
         private TextBox txtNombreUsuario;
 
-        public Usuarios()
+        public Users()
         {
            InitializeComponent();
         }
