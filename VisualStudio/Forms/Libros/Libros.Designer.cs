@@ -1,6 +1,6 @@
 ﻿namespace PruebaBiblioteca1.Forms
 {
-    partial class Libros
+    partial class FrmLibros
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblLibrosRegistrados = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAutores = new System.Windows.Forms.ComboBox();
+            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoresDataSet1 = new PruebaBiblioteca1.AutoresDataSet1();
             this.lblAutor = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
             this.lblTxtEstatus = new System.Windows.Forms.Label();
             this.lblClasificacion = new System.Windows.Forms.Label();
             this.lblEjemplar = new System.Windows.Forms.Label();
             this.lblUbicacion = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.cbb_Ubicacion = new System.Windows.Forms.ComboBox();
+            this.cbClasificaciones = new System.Windows.Forms.ComboBox();
+            this.clasificacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clasificacionesDataSet1 = new PruebaBiblioteca1.ClasificacionesDataSet1();
+            this.cbUbicaciones = new System.Windows.Forms.ComboBox();
+            this.ubicacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ubicacionesDataSet = new PruebaBiblioteca1.UbicacionesDataSet();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNumAdq = new System.Windows.Forms.Label();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
-            this.Num_Adquisicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autores = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ejemplar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.librosDataSet1 = new PruebaBiblioteca1.LibrosDataSet1();
             this.txtNumAdquisicion = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtEjemplar = new System.Windows.Forms.TextBox();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtEjemplar = new System.Windows.Forms.TextBox();
+            this.librosTableAdapter = new PruebaBiblioteca1.LibrosDataSet1TableAdapters.LibrosTableAdapter();
+            this.autoresTableAdapter = new PruebaBiblioteca1.AutoresDataSet1TableAdapters.AutoresTableAdapter();
+            this.ubicacionesTableAdapter = new PruebaBiblioteca1.UbicacionesDataSetTableAdapters.UbicacionesTableAdapter();
+            this.clasificacionesTableAdapter = new PruebaBiblioteca1.ClasificacionesDataSet1TableAdapters.ClasificacionesTableAdapter();
+            this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejemplarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clasificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clasificacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clasificacionesDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librosDataSet1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,14 +96,27 @@
             this.lblLibrosRegistrados.TabIndex = 38;
             this.lblLibrosRegistrados.Text = "Registro de Libros";
             // 
-            // comboBox1
+            // cbAutores
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 24);
-            this.comboBox1.TabIndex = 37;
+            this.cbAutores.DataSource = this.autoresBindingSource;
+            this.cbAutores.DisplayMember = "nombreAutor";
+            this.cbAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAutores.FormattingEnabled = true;
+            this.cbAutores.Location = new System.Drawing.Point(125, 124);
+            this.cbAutores.Name = "cbAutores";
+            this.cbAutores.Size = new System.Drawing.Size(148, 24);
+            this.cbAutores.TabIndex = 37;
+            this.cbAutores.ValueMember = "idAutor";
+            // 
+            // autoresBindingSource
+            // 
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.autoresDataSet1;
+            // 
+            // autoresDataSet1
+            // 
+            this.autoresDataSet1.DataSetName = "AutoresDataSet1";
+            this.autoresDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblAutor
             // 
@@ -153,23 +190,49 @@
             this.lblUbicacion.TabIndex = 28;
             this.lblUbicacion.Text = "Ubicación :";
             // 
-            // comboBox3
+            // cbClasificaciones
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 255);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(148, 24);
-            this.comboBox3.TabIndex = 27;
+            this.cbClasificaciones.DataSource = this.clasificacionesBindingSource;
+            this.cbClasificaciones.DisplayMember = "genero";
+            this.cbClasificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbClasificaciones.FormattingEnabled = true;
+            this.cbClasificaciones.Location = new System.Drawing.Point(125, 255);
+            this.cbClasificaciones.Name = "cbClasificaciones";
+            this.cbClasificaciones.Size = new System.Drawing.Size(148, 24);
+            this.cbClasificaciones.TabIndex = 27;
+            this.cbClasificaciones.ValueMember = "clasificacion";
             // 
-            // cbb_Ubicacion
+            // clasificacionesBindingSource
             // 
-            this.cbb_Ubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_Ubicacion.FormattingEnabled = true;
-            this.cbb_Ubicacion.Location = new System.Drawing.Point(125, 190);
-            this.cbb_Ubicacion.Name = "cbb_Ubicacion";
-            this.cbb_Ubicacion.Size = new System.Drawing.Size(148, 24);
-            this.cbb_Ubicacion.TabIndex = 25;
+            this.clasificacionesBindingSource.DataMember = "Clasificaciones";
+            this.clasificacionesBindingSource.DataSource = this.clasificacionesDataSet1;
+            // 
+            // clasificacionesDataSet1
+            // 
+            this.clasificacionesDataSet1.DataSetName = "ClasificacionesDataSet1";
+            this.clasificacionesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cbUbicaciones
+            // 
+            this.cbUbicaciones.DataSource = this.ubicacionesBindingSource;
+            this.cbUbicaciones.DisplayMember = "descripcion";
+            this.cbUbicaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUbicaciones.FormattingEnabled = true;
+            this.cbUbicaciones.Location = new System.Drawing.Point(125, 190);
+            this.cbUbicaciones.Name = "cbUbicaciones";
+            this.cbUbicaciones.Size = new System.Drawing.Size(148, 24);
+            this.cbUbicaciones.TabIndex = 25;
+            this.cbUbicaciones.ValueMember = "ubicacion";
+            // 
+            // ubicacionesBindingSource
+            // 
+            this.ubicacionesBindingSource.DataMember = "Ubicaciones";
+            this.ubicacionesBindingSource.DataSource = this.ubicacionesDataSet;
+            // 
+            // ubicacionesDataSet
+            // 
+            this.ubicacionesDataSet.DataSetName = "UbicacionesDataSet";
+            this.ubicacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblTitulo
             // 
@@ -197,69 +260,36 @@
             // 
             // dgvLibros
             // 
+            this.dgvLibros.AutoGenerateColumns = false;
             this.dgvLibros.BackgroundColor = System.Drawing.Color.White;
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Num_Adquisicion,
-            this.Titulo,
-            this.Autores,
-            this.Ubicacion,
-            this.Ejemplar,
-            this.Clasificacion,
-            this.Estatus});
+            this.numeroAdquisicionDataGridViewTextBoxColumn,
+            this.tituloDataGridViewTextBoxColumn,
+            this.idAutorDataGridViewTextBoxColumn,
+            this.ubicacionDataGridViewTextBoxColumn,
+            this.ejemplarDataGridViewTextBoxColumn,
+            this.clasificacionDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn,
+            this.Descripcion,
+            this.Autor,
+            this.genero});
+            this.dgvLibros.DataSource = this.librosBindingSource;
             this.dgvLibros.Location = new System.Drawing.Point(-2, -4);
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.Size = new System.Drawing.Size(624, 436);
             this.dgvLibros.TabIndex = 22;
             this.dgvLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLibros_CellContentClick);
             // 
-            // Num_Adquisicion
+            // librosBindingSource
             // 
-            this.Num_Adquisicion.Frozen = true;
-            this.Num_Adquisicion.HeaderText = "Num_Adq";
-            this.Num_Adquisicion.Name = "Num_Adquisicion";
-            this.Num_Adquisicion.ReadOnly = true;
+            this.librosBindingSource.DataMember = "Libros";
+            this.librosBindingSource.DataSource = this.librosDataSet1;
             // 
-            // Titulo
+            // librosDataSet1
             // 
-            this.Titulo.Frozen = true;
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            // 
-            // Autores
-            // 
-            this.Autores.Frozen = true;
-            this.Autores.HeaderText = "Autor";
-            this.Autores.Name = "Autores";
-            // 
-            // Ubicacion
-            // 
-            this.Ubicacion.Frozen = true;
-            this.Ubicacion.HeaderText = "Ubicacion";
-            this.Ubicacion.Name = "Ubicacion";
-            this.Ubicacion.ReadOnly = true;
-            // 
-            // Ejemplar
-            // 
-            this.Ejemplar.Frozen = true;
-            this.Ejemplar.HeaderText = "Ejemplar";
-            this.Ejemplar.Name = "Ejemplar";
-            this.Ejemplar.ReadOnly = true;
-            // 
-            // Clasificacion
-            // 
-            this.Clasificacion.Frozen = true;
-            this.Clasificacion.HeaderText = "Clasificacion";
-            this.Clasificacion.Name = "Clasificacion";
-            this.Clasificacion.ReadOnly = true;
-            // 
-            // Estatus
-            // 
-            this.Estatus.Frozen = true;
-            this.Estatus.HeaderText = "Estatus";
-            this.Estatus.Name = "Estatus";
-            this.Estatus.ReadOnly = true;
+            this.librosDataSet1.DataSetName = "LibrosDataSet1";
+            this.librosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtNumAdquisicion
             // 
@@ -268,6 +298,7 @@
             this.txtNumAdquisicion.Name = "txtNumAdquisicion";
             this.txtNumAdquisicion.Size = new System.Drawing.Size(148, 22);
             this.txtNumAdquisicion.TabIndex = 39;
+            this.txtNumAdquisicion.TextChanged += new System.EventHandler(this.TxtNumAdquisicion_TextChanged);
             // 
             // txtTitulo
             // 
@@ -289,21 +320,29 @@
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.txtNumAdquisicion);
             this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbAutores);
             this.panel1.Controls.Add(this.lblNumAdq);
             this.panel1.Controls.Add(this.lblAutor);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.lblEstatus);
-            this.panel1.Controls.Add(this.cbb_Ubicacion);
+            this.panel1.Controls.Add(this.cbUbicaciones);
             this.panel1.Controls.Add(this.lblTxtEstatus);
             this.panel1.Controls.Add(this.lblClasificacion);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.cbClasificaciones);
             this.panel1.Controls.Add(this.lblEjemplar);
             this.panel1.Controls.Add(this.lblUbicacion);
             this.panel1.Location = new System.Drawing.Point(625, -4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 450);
             this.panel1.TabIndex = 42;
+            // 
+            // txtEjemplar
+            // 
+            this.txtEjemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEjemplar.Location = new System.Drawing.Point(125, 224);
+            this.txtEjemplar.Name = "txtEjemplar";
+            this.txtEjemplar.Size = new System.Drawing.Size(148, 22);
+            this.txtEjemplar.TabIndex = 67;
             // 
             // btnGenerarReporte
             // 
@@ -359,6 +398,7 @@
             this.btnEliminar.TabIndex = 63;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnAceptar
             // 
@@ -378,6 +418,7 @@
             this.btnAceptar.TabIndex = 62;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // panel2
             // 
@@ -389,15 +430,86 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 43;
             // 
-            // txtEjemplar
+            // librosTableAdapter
             // 
-            this.txtEjemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEjemplar.Location = new System.Drawing.Point(125, 224);
-            this.txtEjemplar.Name = "txtEjemplar";
-            this.txtEjemplar.Size = new System.Drawing.Size(148, 22);
-            this.txtEjemplar.TabIndex = 67;
+            this.librosTableAdapter.ClearBeforeFill = true;
             // 
-            // Libros
+            // autoresTableAdapter
+            // 
+            this.autoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // ubicacionesTableAdapter
+            // 
+            this.ubicacionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // clasificacionesTableAdapter
+            // 
+            this.clasificacionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // numeroAdquisicionDataGridViewTextBoxColumn
+            // 
+            this.numeroAdquisicionDataGridViewTextBoxColumn.DataPropertyName = "numeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.HeaderText = "NumeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.Name = "numeroAdquisicionDataGridViewTextBoxColumn";
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            // 
+            // idAutorDataGridViewTextBoxColumn
+            // 
+            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.HeaderText = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
+            this.idAutorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ubicacionDataGridViewTextBoxColumn
+            // 
+            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "ubicacion";
+            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "ubicacion";
+            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
+            this.ubicacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ejemplarDataGridViewTextBoxColumn
+            // 
+            this.ejemplarDataGridViewTextBoxColumn.DataPropertyName = "ejemplar";
+            this.ejemplarDataGridViewTextBoxColumn.HeaderText = "Ejemplar";
+            this.ejemplarDataGridViewTextBoxColumn.Name = "ejemplarDataGridViewTextBoxColumn";
+            // 
+            // clasificacionDataGridViewTextBoxColumn
+            // 
+            this.clasificacionDataGridViewTextBoxColumn.DataPropertyName = "clasificacion";
+            this.clasificacionDataGridViewTextBoxColumn.HeaderText = "clasificacion";
+            this.clasificacionDataGridViewTextBoxColumn.Name = "clasificacionDataGridViewTextBoxColumn";
+            this.clasificacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Ubicacion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // Autor
+            // 
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.Name = "Autor";
+            // 
+            // genero
+            // 
+            this.genero.DataPropertyName = "genero";
+            this.genero.HeaderText = "Genero";
+            this.genero.Name = "genero";
+            // 
+            // FrmLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -405,9 +517,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvLibros);
             this.Controls.Add(this.panel1);
-            this.Name = "Libros";
+            this.Name = "FrmLibros";
             this.Text = "Libros";
+            this.Load += new System.EventHandler(this.Libros_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clasificacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clasificacionesDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubicacionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librosDataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -417,25 +538,18 @@
         #endregion
 
         private System.Windows.Forms.Label lblLibrosRegistrados;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAutores;
         private System.Windows.Forms.Label lblAutor;
         private System.Windows.Forms.Label lblEstatus;
         private System.Windows.Forms.Label lblTxtEstatus;
         private System.Windows.Forms.Label lblClasificacion;
         private System.Windows.Forms.Label lblEjemplar;
         private System.Windows.Forms.Label lblUbicacion;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox cbb_Ubicacion;
+        private System.Windows.Forms.ComboBox cbClasificaciones;
+        private System.Windows.Forms.ComboBox cbUbicaciones;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblNumAdq;
         private System.Windows.Forms.DataGridView dgvLibros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Num_Adquisicion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Autores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ubicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ejemplar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estatus;
         private System.Windows.Forms.TextBox txtNumAdquisicion;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Panel panel1;
@@ -445,5 +559,27 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnGenerarReporte;
         private System.Windows.Forms.TextBox txtEjemplar;
+        private LibrosDataSet1 librosDataSet1;
+        private System.Windows.Forms.BindingSource librosBindingSource;
+        private LibrosDataSet1TableAdapters.LibrosTableAdapter librosTableAdapter;
+        private AutoresDataSet1 autoresDataSet1;
+        private System.Windows.Forms.BindingSource autoresBindingSource;
+        private AutoresDataSet1TableAdapters.AutoresTableAdapter autoresTableAdapter;
+        private UbicacionesDataSet ubicacionesDataSet;
+        private System.Windows.Forms.BindingSource ubicacionesBindingSource;
+        private UbicacionesDataSetTableAdapters.UbicacionesTableAdapter ubicacionesTableAdapter;
+        private ClasificacionesDataSet1 clasificacionesDataSet1;
+        private System.Windows.Forms.BindingSource clasificacionesBindingSource;
+        private ClasificacionesDataSet1TableAdapters.ClasificacionesTableAdapter clasificacionesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroAdquisicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ejemplarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clasificacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genero;
     }
 }

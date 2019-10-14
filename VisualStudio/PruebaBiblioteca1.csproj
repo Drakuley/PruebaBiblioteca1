@@ -50,7 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoresDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoresDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Class1.cs" />
+    <Compile Include="ClasificacionesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClasificacionesDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Devoluciones\Devoluciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +115,18 @@
     <Compile Include="Forms\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LibrosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibrosDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UbicacionesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UbicacionesDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Devoluciones\Devoluciones.resx">
       <DependentUpon>Devoluciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +166,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AutoresDataSet1.xsc">
+      <DependentUpon>AutoresDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="AutoresDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AutoresDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AutoresDataSet1.xss">
+      <DependentUpon>AutoresDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ClasificacionesDataSet1.xsc">
+      <DependentUpon>ClasificacionesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ClasificacionesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClasificacionesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClasificacionesDataSet1.xss">
+      <DependentUpon>ClasificacionesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LibrosDataSet1.xsc">
+      <DependentUpon>LibrosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LibrosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibrosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibrosDataSet1.xss">
+      <DependentUpon>LibrosDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,6 +208,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UbicacionesDataSet.xsc">
+      <DependentUpon>UbicacionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UbicacionesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UbicacionesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UbicacionesDataSet.xss">
+      <DependentUpon>UbicacionesDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

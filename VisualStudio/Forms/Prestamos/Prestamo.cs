@@ -26,5 +26,11 @@ namespace PruebaBiblioteca1
         {
 
         }
+
+        private void BtnLibros_Click(object sender, EventArgs e)
+        {
+            new Forms.FrmLibros().Show();
+            
+        }
     }
 }

@@ -237,6 +237,7 @@
             this.btnLibros.TabIndex = 10;
             this.btnLibros.Text = "Libros";
             this.btnLibros.UseVisualStyleBackColor = false;
+            this.btnLibros.Click += new System.EventHandler(this.BtnLibros_Click);
             // 
             // btnBibliotecarios
             // 
