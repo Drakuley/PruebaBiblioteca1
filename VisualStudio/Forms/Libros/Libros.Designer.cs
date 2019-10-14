@@ -65,14 +65,14 @@
             this.clasificacionesTableAdapter = new PruebaBiblioteca1.ClasificacionesDataSet1TableAdapters.ClasificacionesTableAdapter();
             this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clasificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ejemplarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clasificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clasificacionesBindingSource)).BeginInit();
@@ -266,14 +266,14 @@
             this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeroAdquisicionDataGridViewTextBoxColumn,
             this.tituloDataGridViewTextBoxColumn,
-            this.idAutorDataGridViewTextBoxColumn,
+            this.clasificacionDataGridViewTextBoxColumn,
             this.ubicacionDataGridViewTextBoxColumn,
             this.ejemplarDataGridViewTextBoxColumn,
-            this.clasificacionDataGridViewTextBoxColumn,
             this.estatusDataGridViewTextBoxColumn,
             this.Descripcion,
             this.Autor,
-            this.genero});
+            this.genero,
+            this.idAutorDataGridViewTextBoxColumn});
             this.dgvLibros.DataSource = this.librosBindingSource;
             this.dgvLibros.Location = new System.Drawing.Point(-2, -4);
             this.dgvLibros.Name = "dgvLibros";
@@ -458,12 +458,11 @@
             this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
             this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
             // 
-            // idAutorDataGridViewTextBoxColumn
+            // clasificacionDataGridViewTextBoxColumn
             // 
-            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
-            this.idAutorDataGridViewTextBoxColumn.HeaderText = "idAutor";
-            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
-            this.idAutorDataGridViewTextBoxColumn.Visible = false;
+            this.clasificacionDataGridViewTextBoxColumn.DataPropertyName = "clasificacion";
+            this.clasificacionDataGridViewTextBoxColumn.HeaderText = "clasificacion";
+            this.clasificacionDataGridViewTextBoxColumn.Name = "clasificacionDataGridViewTextBoxColumn";
             // 
             // ubicacionDataGridViewTextBoxColumn
             // 
@@ -477,13 +476,6 @@
             this.ejemplarDataGridViewTextBoxColumn.DataPropertyName = "ejemplar";
             this.ejemplarDataGridViewTextBoxColumn.HeaderText = "Ejemplar";
             this.ejemplarDataGridViewTextBoxColumn.Name = "ejemplarDataGridViewTextBoxColumn";
-            // 
-            // clasificacionDataGridViewTextBoxColumn
-            // 
-            this.clasificacionDataGridViewTextBoxColumn.DataPropertyName = "clasificacion";
-            this.clasificacionDataGridViewTextBoxColumn.HeaderText = "clasificacion";
-            this.clasificacionDataGridViewTextBoxColumn.Name = "clasificacionDataGridViewTextBoxColumn";
-            this.clasificacionDataGridViewTextBoxColumn.Visible = false;
             // 
             // estatusDataGridViewTextBoxColumn
             // 
@@ -508,6 +500,13 @@
             this.genero.DataPropertyName = "genero";
             this.genero.HeaderText = "Genero";
             this.genero.Name = "genero";
+            // 
+            // idAutorDataGridViewTextBoxColumn
+            // 
+            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.HeaderText = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
+            this.idAutorDataGridViewTextBoxColumn.Visible = false;
             // 
             // FrmLibros
             // 
@@ -573,13 +572,13 @@
         private ClasificacionesDataSet1TableAdapters.ClasificacionesTableAdapter clasificacionesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroAdquisicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clasificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ejemplarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clasificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
         private System.Windows.Forms.DataGridViewTextBoxColumn genero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
     }
 }
