@@ -12,6 +12,7 @@ namespace PruebaBiblioteca1.Forms
 {
     public partial class Usuarios : Form
     {
+
         private Label label6;
         private TextBox txtIdUsuario;
         private Label label5;
@@ -37,7 +38,7 @@ namespace PruebaBiblioteca1.Forms
 
         public Usuarios()
         {
-            InitializeComponent();
+           InitializeComponent();
         }
 
         private void InitializeComponent()
