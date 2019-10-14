@@ -112,6 +112,12 @@
     <Compile Include="Forms\Usuarios\Bibliotecarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Usuarios\ReporteDeBibliotecarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\ReporteDeBibliotecarios.Designer.cs">
+      <DependentUpon>ReporteDeBibliotecarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Usuarios\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\Bibliotecarios.resx">
       <DependentUpon>Bibliotecarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\ReporteDeBibliotecarios.resx">
+      <DependentUpon>ReporteDeBibliotecarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
