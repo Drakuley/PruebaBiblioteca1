@@ -1,6 +1,6 @@
 biblioteca1.database.windows.net - nombre del servidor
 biblioteca1 -login
-biblioteca1 - contraseña
+Biblioteca-123 - contraseña
 
 CUENTA AZURE:
 martin.acg@hotmail.com
