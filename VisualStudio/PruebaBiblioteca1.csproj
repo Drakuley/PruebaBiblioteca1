@@ -55,6 +55,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutoresDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BibliotecariosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecariosDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Class1.cs" />
     <Compile Include="ClasificacionesDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -190,6 +195,17 @@
     </None>
     <None Include="AutoresDataSet1.xss">
       <DependentUpon>AutoresDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecariosDataSet1.xsc">
+      <DependentUpon>BibliotecariosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecariosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecariosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecariosDataSet1.xss">
+      <DependentUpon>BibliotecariosDataSet1.xsd</DependentUpon>
     </None>
     <None Include="ClasificacionesDataSet1.xsc">
       <DependentUpon>ClasificacionesDataSet1.xsd</DependentUpon>

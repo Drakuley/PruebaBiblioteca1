@@ -42,5 +42,10 @@ namespace PruebaBiblioteca1
         {
             new Forms.FrmUsuarios().Show();
         }
+
+        private void BtnBibliotecarios_Click(object sender, EventArgs e)
+        {
+            new Forms.FrmBibliotecarios().Show();
+        }
     }
 }

@@ -10,11 +10,8 @@ using System.Windows.Forms;
 
 namespace PruebaBiblioteca1.Forms
 {
-    public partial class Bibliotecarios : Form
+    public partial class FrmBibliotecarios : Form
     {
-        private DataGridViewTextBoxColumn Turno;
-        private DataGridViewTextBoxColumn NombreBibliotecario;
-        private DataGridViewTextBoxColumn idBibliotecario;
         private TextBox txtIdBibliotecario;
         private Label label5;
         private ComboBox cbTurno;
@@ -22,9 +19,8 @@ namespace PruebaBiblioteca1.Forms
         private TextBox txtContraseña;
         private Label direccion;
         private DataGridView dgvBibliotecarios;
-        private DataGridViewTextBoxColumn Contraseña;
         private Label Nombre;
-        private TextBox textBox1;
+        private TextBox txtConfirmarContraseña;
         private Label label1;
         private Panel panel1;
         private Button btnReporte;
@@ -32,19 +28,25 @@ namespace PruebaBiblioteca1.Forms
         private Button btnAceptar;
         private Label txtAutoresRegistrados;
         private Panel panel2;
+        private BibliotecariosDataSet1 bibliotecariosDataSet1;
+        private BindingSource bibliotecariosBindingSource;
+        private IContainer components;
+        private BibliotecariosDataSet1TableAdapters.BibliotecariosTableAdapter bibliotecariosTableAdapter;
+        private DataGridViewTextBoxColumn idBibliotecarioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreBibliotecarioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
         private TextBox txtNombreBibliotecario;
 
-        public Bibliotecarios()
+        public FrmBibliotecarios()
         {
             InitializeComponent();
         }
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtIdBibliotecario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTurno = new System.Windows.Forms.ComboBox();
@@ -52,10 +54,9 @@ namespace PruebaBiblioteca1.Forms
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.direccion = new System.Windows.Forms.Label();
             this.dgvBibliotecarios = new System.Windows.Forms.DataGridView();
-            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.Label();
             this.txtNombreBibliotecario = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReporte = new System.Windows.Forms.Button();
@@ -63,24 +64,18 @@ namespace PruebaBiblioteca1.Forms
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bibliotecariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecariosDataSet1 = new PruebaBiblioteca1.BibliotecariosDataSet1();
+            this.bibliotecariosTableAdapter = new PruebaBiblioteca1.BibliotecariosDataSet1TableAdapters.BibliotecariosTableAdapter();
+            this.idBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Turno
-            // 
-            this.Turno.HeaderText = "Turno";
-            this.Turno.Name = "Turno";
-            // 
-            // NombreBibliotecario
-            // 
-            this.NombreBibliotecario.HeaderText = "Nombre";
-            this.NombreBibliotecario.Name = "NombreBibliotecario";
-            // 
-            // idBibliotecario
-            // 
-            this.idBibliotecario.HeaderText = "ID Bibliotecario";
-            this.idBibliotecario.Name = "idBibliotecario";
             // 
             // txtIdBibliotecario
             // 
@@ -89,6 +84,7 @@ namespace PruebaBiblioteca1.Forms
             this.txtIdBibliotecario.Name = "txtIdBibliotecario";
             this.txtIdBibliotecario.Size = new System.Drawing.Size(170, 22);
             this.txtIdBibliotecario.TabIndex = 39;
+            this.txtIdBibliotecario.TextChanged += new System.EventHandler(this.TxtIdBibliotecario_TextChanged);
             // 
             // label5
             // 
@@ -132,6 +128,7 @@ namespace PruebaBiblioteca1.Forms
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(784, 97);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '•';
             this.txtContraseña.Size = new System.Drawing.Size(170, 22);
             this.txtContraseña.TabIndex = 35;
             // 
@@ -149,31 +146,28 @@ namespace PruebaBiblioteca1.Forms
             // 
             // dgvBibliotecarios
             // 
+            this.dgvBibliotecarios.AutoGenerateColumns = false;
             this.dgvBibliotecarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBibliotecarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvBibliotecarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBibliotecarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idBibliotecario,
-            this.NombreBibliotecario,
-            this.Contraseña,
-            this.Turno});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBibliotecarios.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idBibliotecarioDataGridViewTextBoxColumn,
+            this.nombreBibliotecarioDataGridViewTextBoxColumn,
+            this.contraseñaDataGridViewTextBoxColumn,
+            this.turnoDataGridViewTextBoxColumn});
+            this.dgvBibliotecarios.DataSource = this.bibliotecariosBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBibliotecarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBibliotecarios.Location = new System.Drawing.Point(0, 1);
             this.dgvBibliotecarios.Name = "dgvBibliotecarios";
             this.dgvBibliotecarios.Size = new System.Drawing.Size(600, 460);
             this.dgvBibliotecarios.TabIndex = 33;
-            // 
-            // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Contraseña";
-            this.Contraseña.Name = "Contraseña";
             // 
             // Nombre
             // 
@@ -195,13 +189,14 @@ namespace PruebaBiblioteca1.Forms
             this.txtNombreBibliotecario.Size = new System.Drawing.Size(170, 22);
             this.txtNombreBibliotecario.TabIndex = 31;
             // 
-            // textBox1
+            // txtConfirmarContraseña
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(784, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
-            this.textBox1.TabIndex = 42;
+            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContraseña.Location = new System.Drawing.Point(784, 125);
+            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            this.txtConfirmarContraseña.PasswordChar = '•';
+            this.txtConfirmarContraseña.Size = new System.Drawing.Size(170, 22);
+            this.txtConfirmarContraseña.TabIndex = 42;
             // 
             // label1
             // 
@@ -217,7 +212,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
@@ -267,6 +262,7 @@ namespace PruebaBiblioteca1.Forms
             this.btnEliminar.TabIndex = 60;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnAceptar
             // 
@@ -301,7 +297,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Location = new System.Drawing.Point(600, -43);
@@ -309,12 +305,51 @@ namespace PruebaBiblioteca1.Forms
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 64;
             // 
-            // Bibliotecarios
+            // bibliotecariosBindingSource
+            // 
+            this.bibliotecariosBindingSource.DataMember = "Bibliotecarios";
+            this.bibliotecariosBindingSource.DataSource = this.bibliotecariosDataSet1;
+            // 
+            // bibliotecariosDataSet1
+            // 
+            this.bibliotecariosDataSet1.DataSetName = "BibliotecariosDataSet1";
+            this.bibliotecariosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bibliotecariosTableAdapter
+            // 
+            this.bibliotecariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // idBibliotecarioDataGridViewTextBoxColumn
+            // 
+            this.idBibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "idBibliotecario";
+            this.idBibliotecarioDataGridViewTextBoxColumn.HeaderText = "Id Bibliotecario";
+            this.idBibliotecarioDataGridViewTextBoxColumn.Name = "idBibliotecarioDataGridViewTextBoxColumn";
+            // 
+            // nombreBibliotecarioDataGridViewTextBoxColumn
+            // 
+            this.nombreBibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "nombreBibliotecario";
+            this.nombreBibliotecarioDataGridViewTextBoxColumn.HeaderText = "Nombre Bibliotecario";
+            this.nombreBibliotecarioDataGridViewTextBoxColumn.Name = "nombreBibliotecarioDataGridViewTextBoxColumn";
+            // 
+            // contraseñaDataGridViewTextBoxColumn
+            // 
+            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
+            this.contraseñaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "turno";
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            // 
+            // FrmBibliotecarios
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(958, 461);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtConfirmarContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIdBibliotecario);
             this.Controls.Add(this.label5);
@@ -326,19 +361,136 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.txtNombreBibliotecario);
             this.Controls.Add(this.panel1);
-            this.Name = "Bibliotecarios";
+            this.Name = "FrmBibliotecarios";
             this.Text = "Bibliotecarios";
+            this.Load += new System.EventHandler(this.FrmBibliotecarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+
+        private void FrmBibliotecarios_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'bibliotecariosDataSet1.Bibliotecarios' Puede moverla o quitarla según sea necesario.
+            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+
+        }
+
+        private void TxtIdBibliotecario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIdBibliotecario.Text == "")
+            {
+                btnAceptar.Text = "Aceptar";
+
+            }
+            else if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0)
+            {
+
+                btnAceptar.Text = "Modificar";
+            }
+            else
+            {
+                btnAceptar.Text = "Registrar";
+            }
+        }
+
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
+            if (btnAceptar.Text == "Modificar")
+            {
+                if (txtIdBibliotecario.Text == "" || txtNombreBibliotecario.Text == "" || txtContraseña.Text == "" || txtConfirmarContraseña.Text == "" || cbTurno.Text == "")
+                {
+                    MessageBox.Show("Faltan Campos por llenar");
+                }
+                else
+                {
+                    if (txtContraseña.Text == txtConfirmarContraseña.Text)
+                    {
+                        bibliotecariosTableAdapter.UpdateQueryBibliotecarios(Convert.ToDecimal(txtIdBibliotecario.Text), txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text, Convert.ToDecimal(txtIdBibliotecario.Text));
+                        this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                        txtIdBibliotecario.Text = "";
+                        txtNombreBibliotecario.Text = "";
+                        txtContraseña.Text = "";
+                        txtConfirmarContraseña.Text = "";
+                        cbTurno.Text = "";
 
+                        txtIdBibliotecario.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas no coinciden");
+                    }
+                }
+
+            }
+            else
+            {
+                if (txtIdBibliotecario.Text == "" || txtNombreBibliotecario.Text == "" || txtContraseña.Text == "" || txtConfirmarContraseña.Text == "" || cbTurno.Text == "")
+                {
+                    MessageBox.Show("Faltan Campos por llenar");
+                }
+                else
+                {
+                    if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0 || txtIdBibliotecario.Text == "")
+                    {
+                        MessageBox.Show("El bibliotecario que quieres registrar ya existe en la Base de Datos");
+                    }
+                    else
+                    {
+                        if (txtContraseña.Text == txtConfirmarContraseña.Text)
+                        {
+                            bibliotecariosTableAdapter.InsertQueryBibliotecarios(Convert.ToDecimal(txtIdBibliotecario.Text), txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text);
+                            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                            txtIdBibliotecario.Text = "";
+                            txtNombreBibliotecario.Text = "";
+                            txtContraseña.Text = "";
+                            txtConfirmarContraseña.Text = "";
+                            cbTurno.Text = "";
+
+                            txtIdBibliotecario.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las contraseñas no coinciden");
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtIdBibliotecario.Text == "")
+            {
+                MessageBox.Show("Ingresa el Id del bibliotecario que deseas eliminar");
+            }
+            else
+            {
+                if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0)
+                {
+                    bibliotecariosTableAdapter.DeleteQueryBibliotecarios(Convert.ToDecimal(txtIdBibliotecario.Text));
+                    this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                    txtIdBibliotecario.Text = "";
+                    txtNombreBibliotecario.Text = "";
+                    txtContraseña.Text = "";
+                    txtConfirmarContraseña.Text = "";
+                    cbTurno.Text = "";
+
+                    txtIdBibliotecario.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("El bibliotecario que quieres eliminar no existe en la Base de Datos");
+                }
+            }
         }
     }
 }

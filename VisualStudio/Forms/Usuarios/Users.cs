@@ -155,7 +155,7 @@ namespace PruebaBiblioteca1.Forms
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(171, 22);
             this.txtTelefono.TabIndex = 37;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.TxtTelefono_TextChanged);
+
             // 
             // txtDireccion
             // 
@@ -366,11 +366,6 @@ namespace PruebaBiblioteca1.Forms
             ((System.ComponentModel.ISupportInitialize)(this.usuariosDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
-
-        }
-
-        private void TxtTelefono_TextChanged(object sender, EventArgs e)
-        {
 
         }
 

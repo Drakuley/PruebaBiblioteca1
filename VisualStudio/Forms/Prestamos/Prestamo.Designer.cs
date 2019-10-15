@@ -259,6 +259,7 @@
             this.btnBibliotecarios.TabIndex = 11;
             this.btnBibliotecarios.Text = "    Bibliotecarios";
             this.btnBibliotecarios.UseVisualStyleBackColor = false;
+            this.btnBibliotecarios.Click += new System.EventHandler(this.BtnBibliotecarios_Click);
             // 
             // button5
             // 
