@@ -1,6 +1,6 @@
 ﻿namespace PruebaBiblioteca1.Forms.Autores
 {
-    partial class Autores
+    partial class FrmAutores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvAutores = new System.Windows.Forms.DataGridView();
-            this.IdAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIdAutor = new System.Windows.Forms.TextBox();
+            this.txtNombreAutor = new System.Windows.Forms.TextBox();
             this.lblIdAutor = new System.Windows.Forms.Label();
             this.lblNombreAutor = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.autoresDataSet1 = new PruebaBiblioteca1.AutoresDataSet1();
+            this.autoresDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoresTableAdapter = new PruebaBiblioteca1.AutoresDataSet1TableAdapters.AutoresTableAdapter();
+            this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvAutores
             // 
+            this.dgvAutores.AutoGenerateColumns = false;
             this.dgvAutores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAutores.BackgroundColor = System.Drawing.Color.White;
             this.dgvAutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAutores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdAutor,
-            this.NombreAutor});
+            this.idAutorDataGridViewTextBoxColumn,
+            this.nombreAutorDataGridViewTextBoxColumn});
+            this.dgvAutores.DataSource = this.autoresBindingSource;
             this.dgvAutores.Location = new System.Drawing.Point(-3, -4);
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.Size = new System.Drawing.Size(495, 340);
             this.dgvAutores.TabIndex = 0;
-            // 
-            // IdAutor
-            // 
-            this.IdAutor.HeaderText = "ID Autor";
-            this.IdAutor.Name = "IdAutor";
-            this.IdAutor.ReadOnly = true;
-            // 
-            // NombreAutor
-            // 
-            this.NombreAutor.HeaderText = "Nombre";
-            this.NombreAutor.Name = "NombreAutor";
-            this.NombreAutor.ReadOnly = true;
             // 
             // txtAutoresRegistrados
             // 
@@ -80,21 +78,22 @@
             this.txtAutoresRegistrados.TabIndex = 1;
             this.txtAutoresRegistrados.Text = "Registro de Autores ";
             // 
-            // textBox1
+            // txtIdAutor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(81, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtIdAutor.Location = new System.Drawing.Point(81, 78);
+            this.txtIdAutor.Name = "txtIdAutor";
+            this.txtIdAutor.Size = new System.Drawing.Size(186, 22);
+            this.txtIdAutor.TabIndex = 2;
+            this.txtIdAutor.TextChanged += new System.EventHandler(this.TxtIdAutor_TextChanged);
             // 
-            // textBox2
+            // txtNombreAutor
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox2.Location = new System.Drawing.Point(81, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.txtNombreAutor.Location = new System.Drawing.Point(81, 120);
+            this.txtNombreAutor.Name = "txtNombreAutor";
+            this.txtNombreAutor.Size = new System.Drawing.Size(186, 22);
+            this.txtNombreAutor.TabIndex = 3;
             // 
             // lblIdAutor
             // 
@@ -126,8 +125,8 @@
             this.panel1.Controls.Add(this.txtAutoresRegistrados);
             this.panel1.Controls.Add(this.lblNombreAutor);
             this.panel1.Controls.Add(this.lblIdAutor);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtNombreAutor);
+            this.panel1.Controls.Add(this.txtIdAutor);
             this.panel1.Location = new System.Drawing.Point(494, -4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 373);
@@ -151,6 +150,7 @@
             this.btnEliminar.TabIndex = 62;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnAceptar
             // 
@@ -170,6 +170,7 @@
             this.btnAceptar.TabIndex = 61;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // panel2
             // 
@@ -181,7 +182,38 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 63;
             // 
-            // Autores
+            // autoresDataSet1
+            // 
+            this.autoresDataSet1.DataSetName = "AutoresDataSet1";
+            this.autoresDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autoresDataSet1BindingSource
+            // 
+            this.autoresDataSet1BindingSource.DataSource = this.autoresDataSet1;
+            this.autoresDataSet1BindingSource.Position = 0;
+            // 
+            // autoresBindingSource
+            // 
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.autoresDataSet1BindingSource;
+            // 
+            // autoresTableAdapter
+            // 
+            this.autoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // idAutorDataGridViewTextBoxColumn
+            // 
+            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.HeaderText = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
+            // 
+            // nombreAutorDataGridViewTextBoxColumn
+            // 
+            this.nombreAutorDataGridViewTextBoxColumn.DataPropertyName = "nombreAutor";
+            this.nombreAutorDataGridViewTextBoxColumn.HeaderText = "nombreAutor";
+            this.nombreAutorDataGridViewTextBoxColumn.Name = "nombreAutorDataGridViewTextBoxColumn";
+            // 
+            // FrmAutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,11 +222,15 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvAutores);
-            this.Name = "Autores";
+            this.Name = "FrmAutores";
             this.Text = "Autores";
+            this.Load += new System.EventHandler(this.Autores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,15 +239,19 @@
 
         private System.Windows.Forms.DataGridView dgvAutores;
         private System.Windows.Forms.Label txtAutoresRegistrados;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIdAutor;
+        private System.Windows.Forms.TextBox txtNombreAutor;
         private System.Windows.Forms.Label lblIdAutor;
         private System.Windows.Forms.Label lblNombreAutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdAutor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAutor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.BindingSource autoresDataSet1BindingSource;
+        private AutoresDataSet1 autoresDataSet1;
+        private System.Windows.Forms.BindingSource autoresBindingSource;
+        private AutoresDataSet1TableAdapters.AutoresTableAdapter autoresTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreAutorDataGridViewTextBoxColumn;
     }
 }

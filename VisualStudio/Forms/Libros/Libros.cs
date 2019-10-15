@@ -103,5 +103,11 @@ namespace PruebaBiblioteca1.Forms
                 MessageBox.Show("El libro que quieres eliminar no existe");
             }
         }
+
+        private void BtnRegistrarAutores_Click(object sender, EventArgs e)
+        {
+            
+            new Autores.FrmAutores().Show();
+        }
     }
 }
