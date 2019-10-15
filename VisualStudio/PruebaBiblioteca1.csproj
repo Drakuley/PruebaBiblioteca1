@@ -133,6 +133,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UbicacionesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Devoluciones\Devoluciones.resx">
       <DependentUpon>Devoluciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +232,17 @@
     </None>
     <None Include="UbicacionesDataSet.xss">
       <DependentUpon>UbicacionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UsuariosDataSet1.xsc">
+      <DependentUpon>UsuariosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UsuariosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuariosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsuariosDataSet1.xss">
+      <DependentUpon>UsuariosDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

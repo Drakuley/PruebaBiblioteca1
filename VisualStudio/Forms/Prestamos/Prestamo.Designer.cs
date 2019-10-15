@@ -219,6 +219,7 @@
             this.btnUsuarios.TabIndex = 9;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // btnLibros
             // 
