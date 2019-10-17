@@ -126,7 +126,7 @@
             this.lblAutor.ForeColor = System.Drawing.Color.White;
             this.lblAutor.Location = new System.Drawing.Point(12, 127);
             this.lblAutor.Name = "lblAutor";
-            this.lblAutor.Size = new System.Drawing.Size(52, 16);
+            this.lblAutor.Size = new System.Drawing.Size(55, 16);
             this.lblAutor.TabIndex = 36;
             this.lblAutor.Text = "Autor :";
             // 
@@ -138,7 +138,7 @@
             this.lblEstatus.ForeColor = System.Drawing.Color.White;
             this.lblEstatus.Location = new System.Drawing.Point(12, 302);
             this.lblEstatus.Name = "lblEstatus";
-            this.lblEstatus.Size = new System.Drawing.Size(67, 16);
+            this.lblEstatus.Size = new System.Drawing.Size(70, 16);
             this.lblEstatus.TabIndex = 32;
             this.lblEstatus.Text = "Estatus :";
             // 
@@ -162,7 +162,7 @@
             this.lblClasificacion.ForeColor = System.Drawing.Color.White;
             this.lblClasificacion.Location = new System.Drawing.Point(12, 263);
             this.lblClasificacion.Name = "lblClasificacion";
-            this.lblClasificacion.Size = new System.Drawing.Size(105, 16);
+            this.lblClasificacion.Size = new System.Drawing.Size(109, 16);
             this.lblClasificacion.TabIndex = 30;
             this.lblClasificacion.Text = "Clasificación :";
             // 
@@ -174,7 +174,7 @@
             this.lblEjemplar.ForeColor = System.Drawing.Color.White;
             this.lblEjemplar.Location = new System.Drawing.Point(12, 230);
             this.lblEjemplar.Name = "lblEjemplar";
-            this.lblEjemplar.Size = new System.Drawing.Size(78, 16);
+            this.lblEjemplar.Size = new System.Drawing.Size(81, 16);
             this.lblEjemplar.TabIndex = 29;
             this.lblEjemplar.Text = "Ejemplar :";
             // 
@@ -186,7 +186,7 @@
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
             this.lblUbicacion.Location = new System.Drawing.Point(12, 198);
             this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(86, 16);
+            this.lblUbicacion.Size = new System.Drawing.Size(89, 16);
             this.lblUbicacion.TabIndex = 28;
             this.lblUbicacion.Text = "Ubicación :";
             // 
@@ -242,7 +242,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(12, 99);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(55, 16);
+            this.lblTitulo.Size = new System.Drawing.Size(57, 16);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Título :";
             // 
@@ -254,7 +254,7 @@
             this.lblNumAdq.ForeColor = System.Drawing.Color.White;
             this.lblNumAdq.Location = new System.Drawing.Point(12, 54);
             this.lblNumAdq.Name = "lblNumAdq";
-            this.lblNumAdq.Size = new System.Drawing.Size(97, 32);
+            this.lblNumAdq.Size = new System.Drawing.Size(100, 32);
             this.lblNumAdq.TabIndex = 23;
             this.lblNumAdq.Text = "Numero de \r\nAdquisición :";
             // 
@@ -370,6 +370,7 @@
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(148, 21);
             this.txtTitulo.TabIndex = 40;
+            this.txtTitulo.TextChanged += new System.EventHandler(this.TxtTitulo_TextChanged);
             // 
             // panel1
             // 

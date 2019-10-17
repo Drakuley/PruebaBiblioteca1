@@ -109,5 +109,18 @@ namespace PruebaBiblioteca1.Forms
             
             new Autores.FrmAutores().Show();
         }
+
+        private void TxtTitulo_TextChanged(object sender, EventArgs e)
+        {
+            if(txtTitulo.Text == "")
+            {
+                this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+            }
+            else
+            {
+                this.librosTableAdapter.FillDGVLibrosPorTitulo(this.librosDataSet1.Libros, txtTitulo.Text);
+            }
+            
+        }
     }
 }
