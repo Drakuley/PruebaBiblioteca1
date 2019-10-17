@@ -110,5 +110,18 @@ namespace PruebaBiblioteca1.Forms.Autores
             }
             
         }
+
+        private void TxtNombreAutor_TextChanged(object sender, EventArgs e)
+        {
+            if(txtNombreAutor.Text == "")
+            {
+                this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
+
+            }
+            else
+            {
+                this.autoresTableAdapter.FillDGVAutoresPorNombreAutor(this.autoresDataSet1.Autores,txtNombreAutor.Text);
+            }
+        }
     }
 }

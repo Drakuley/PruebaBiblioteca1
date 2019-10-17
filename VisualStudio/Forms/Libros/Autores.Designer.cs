@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvAutores = new System.Windows.Forms.DataGridView();
+            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.txtIdAutor = new System.Windows.Forms.TextBox();
             this.txtNombreAutor = new System.Windows.Forms.TextBox();
@@ -39,17 +40,16 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.autoresDataSet1 = new PruebaBiblioteca1.AutoresDataSet1();
-            this.autoresDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autoresTableAdapter = new PruebaBiblioteca1.AutoresDataSet1TableAdapters.AutoresTableAdapter();
             this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoresDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoresDataSet1 = new PruebaBiblioteca1.AutoresDataSet1();
+            this.autoresTableAdapter = new PruebaBiblioteca1.AutoresDataSet1TableAdapters.AutoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvAutores
@@ -66,6 +66,11 @@
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.Size = new System.Drawing.Size(495, 340);
             this.dgvAutores.TabIndex = 0;
+            // 
+            // autoresBindingSource
+            // 
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.autoresDataSet1BindingSource;
             // 
             // txtAutoresRegistrados
             // 
@@ -94,6 +99,7 @@
             this.txtNombreAutor.Name = "txtNombreAutor";
             this.txtNombreAutor.Size = new System.Drawing.Size(186, 22);
             this.txtNombreAutor.TabIndex = 3;
+            this.txtNombreAutor.TextChanged += new System.EventHandler(this.TxtNombreAutor_TextChanged);
             // 
             // lblIdAutor
             // 
@@ -102,7 +108,7 @@
             this.lblIdAutor.ForeColor = System.Drawing.SystemColors.Control;
             this.lblIdAutor.Location = new System.Drawing.Point(12, 84);
             this.lblIdAutor.Name = "lblIdAutor";
-            this.lblIdAutor.Size = new System.Drawing.Size(31, 16);
+            this.lblIdAutor.Size = new System.Drawing.Size(35, 16);
             this.lblIdAutor.TabIndex = 4;
             this.lblIdAutor.Text = "ID :";
             // 
@@ -113,7 +119,7 @@
             this.lblNombreAutor.ForeColor = System.Drawing.SystemColors.Control;
             this.lblNombreAutor.Location = new System.Drawing.Point(12, 126);
             this.lblNombreAutor.Name = "lblNombreAutor";
-            this.lblNombreAutor.Size = new System.Drawing.Size(71, 16);
+            this.lblNombreAutor.Size = new System.Drawing.Size(74, 16);
             this.lblNombreAutor.TabIndex = 5;
             this.lblNombreAutor.Text = "Nombre :";
             // 
@@ -182,25 +188,6 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 63;
             // 
-            // autoresDataSet1
-            // 
-            this.autoresDataSet1.DataSetName = "AutoresDataSet1";
-            this.autoresDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // autoresDataSet1BindingSource
-            // 
-            this.autoresDataSet1BindingSource.DataSource = this.autoresDataSet1;
-            this.autoresDataSet1BindingSource.Position = 0;
-            // 
-            // autoresBindingSource
-            // 
-            this.autoresBindingSource.DataMember = "Autores";
-            this.autoresBindingSource.DataSource = this.autoresDataSet1BindingSource;
-            // 
-            // autoresTableAdapter
-            // 
-            this.autoresTableAdapter.ClearBeforeFill = true;
-            // 
             // idAutorDataGridViewTextBoxColumn
             // 
             this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
@@ -212,6 +199,20 @@
             this.nombreAutorDataGridViewTextBoxColumn.DataPropertyName = "nombreAutor";
             this.nombreAutorDataGridViewTextBoxColumn.HeaderText = "nombreAutor";
             this.nombreAutorDataGridViewTextBoxColumn.Name = "nombreAutorDataGridViewTextBoxColumn";
+            // 
+            // autoresDataSet1BindingSource
+            // 
+            this.autoresDataSet1BindingSource.DataSource = this.autoresDataSet1;
+            this.autoresDataSet1BindingSource.Position = 0;
+            // 
+            // autoresDataSet1
+            // 
+            this.autoresDataSet1.DataSetName = "AutoresDataSet1";
+            this.autoresDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autoresTableAdapter
+            // 
+            this.autoresTableAdapter.ClearBeforeFill = true;
             // 
             // FrmAutores
             // 
@@ -226,11 +227,11 @@
             this.Text = "Autores";
             this.Load += new System.EventHandler(this.Autores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
