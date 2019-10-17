@@ -48,16 +48,6 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNumAdq = new System.Windows.Forms.Label();
             this.dgvLibros = new System.Windows.Forms.DataGridView();
-            this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clasificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ejemplarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.librosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.librosDataSet1 = new PruebaBiblioteca1.LibrosDataSet1();
             this.txtNumAdquisicion = new System.Windows.Forms.TextBox();
@@ -73,6 +63,16 @@
             this.autoresTableAdapter = new PruebaBiblioteca1.AutoresDataSet1TableAdapters.AutoresTableAdapter();
             this.ubicacionesTableAdapter = new PruebaBiblioteca1.UbicacionesDataSetTableAdapters.UbicacionesTableAdapter();
             this.clasificacionesTableAdapter = new PruebaBiblioteca1.ClasificacionesDataSet1TableAdapters.ClasificacionesTableAdapter();
+            this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ejemplarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clasificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clasificacionesBindingSource)).BeginInit();
@@ -126,7 +126,7 @@
             this.lblAutor.ForeColor = System.Drawing.Color.White;
             this.lblAutor.Location = new System.Drawing.Point(12, 127);
             this.lblAutor.Name = "lblAutor";
-            this.lblAutor.Size = new System.Drawing.Size(55, 16);
+            this.lblAutor.Size = new System.Drawing.Size(52, 16);
             this.lblAutor.TabIndex = 36;
             this.lblAutor.Text = "Autor :";
             // 
@@ -138,7 +138,7 @@
             this.lblEstatus.ForeColor = System.Drawing.Color.White;
             this.lblEstatus.Location = new System.Drawing.Point(12, 302);
             this.lblEstatus.Name = "lblEstatus";
-            this.lblEstatus.Size = new System.Drawing.Size(70, 16);
+            this.lblEstatus.Size = new System.Drawing.Size(67, 16);
             this.lblEstatus.TabIndex = 32;
             this.lblEstatus.Text = "Estatus :";
             // 
@@ -162,7 +162,7 @@
             this.lblClasificacion.ForeColor = System.Drawing.Color.White;
             this.lblClasificacion.Location = new System.Drawing.Point(12, 263);
             this.lblClasificacion.Name = "lblClasificacion";
-            this.lblClasificacion.Size = new System.Drawing.Size(109, 16);
+            this.lblClasificacion.Size = new System.Drawing.Size(105, 16);
             this.lblClasificacion.TabIndex = 30;
             this.lblClasificacion.Text = "Clasificación :";
             // 
@@ -174,7 +174,7 @@
             this.lblEjemplar.ForeColor = System.Drawing.Color.White;
             this.lblEjemplar.Location = new System.Drawing.Point(12, 230);
             this.lblEjemplar.Name = "lblEjemplar";
-            this.lblEjemplar.Size = new System.Drawing.Size(81, 16);
+            this.lblEjemplar.Size = new System.Drawing.Size(78, 16);
             this.lblEjemplar.TabIndex = 29;
             this.lblEjemplar.Text = "Ejemplar :";
             // 
@@ -186,7 +186,7 @@
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
             this.lblUbicacion.Location = new System.Drawing.Point(12, 198);
             this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(89, 16);
+            this.lblUbicacion.Size = new System.Drawing.Size(86, 16);
             this.lblUbicacion.TabIndex = 28;
             this.lblUbicacion.Text = "Ubicación :";
             // 
@@ -242,7 +242,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(12, 99);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(57, 16);
+            this.lblTitulo.Size = new System.Drawing.Size(55, 16);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Título :";
             // 
@@ -254,7 +254,7 @@
             this.lblNumAdq.ForeColor = System.Drawing.Color.White;
             this.lblNumAdq.Location = new System.Drawing.Point(12, 54);
             this.lblNumAdq.Name = "lblNumAdq";
-            this.lblNumAdq.Size = new System.Drawing.Size(100, 32);
+            this.lblNumAdq.Size = new System.Drawing.Size(97, 32);
             this.lblNumAdq.TabIndex = 23;
             this.lblNumAdq.Text = "Numero de \r\nAdquisición :";
             // 
@@ -266,82 +266,21 @@
             this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeroAdquisicionDataGridViewTextBoxColumn,
             this.tituloDataGridViewTextBoxColumn,
-            this.clasificacionDataGridViewTextBoxColumn,
+            this.idAutorDataGridViewTextBoxColumn,
             this.ubicacionDataGridViewTextBoxColumn,
             this.ejemplarDataGridViewTextBoxColumn,
+            this.clasificacionDataGridViewTextBoxColumn,
             this.estatusDataGridViewTextBoxColumn,
-            this.Descripcion,
             this.Autor,
-            this.genero,
-            this.idAutorDataGridViewTextBoxColumn});
+            this.Descripcion,
+            this.genero});
             this.dgvLibros.DataSource = this.librosBindingSource;
             this.dgvLibros.Location = new System.Drawing.Point(-2, -4);
+            this.dgvLibros.MultiSelect = false;
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.Size = new System.Drawing.Size(624, 436);
             this.dgvLibros.TabIndex = 22;
             this.dgvLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLibros_CellContentClick);
-            // 
-            // numeroAdquisicionDataGridViewTextBoxColumn
-            // 
-            this.numeroAdquisicionDataGridViewTextBoxColumn.DataPropertyName = "numeroAdquisicion";
-            this.numeroAdquisicionDataGridViewTextBoxColumn.HeaderText = "NumeroAdquisicion";
-            this.numeroAdquisicionDataGridViewTextBoxColumn.Name = "numeroAdquisicionDataGridViewTextBoxColumn";
-            // 
-            // tituloDataGridViewTextBoxColumn
-            // 
-            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "titulo";
-            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
-            // 
-            // clasificacionDataGridViewTextBoxColumn
-            // 
-            this.clasificacionDataGridViewTextBoxColumn.DataPropertyName = "clasificacion";
-            this.clasificacionDataGridViewTextBoxColumn.HeaderText = "clasificacion";
-            this.clasificacionDataGridViewTextBoxColumn.Name = "clasificacionDataGridViewTextBoxColumn";
-            // 
-            // ubicacionDataGridViewTextBoxColumn
-            // 
-            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
-            this.ubicacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ejemplarDataGridViewTextBoxColumn
-            // 
-            this.ejemplarDataGridViewTextBoxColumn.DataPropertyName = "ejemplar";
-            this.ejemplarDataGridViewTextBoxColumn.HeaderText = "Ejemplar";
-            this.ejemplarDataGridViewTextBoxColumn.Name = "ejemplarDataGridViewTextBoxColumn";
-            // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Ubicacion";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // Autor
-            // 
-            this.Autor.DataPropertyName = "Autor";
-            this.Autor.HeaderText = "Autor";
-            this.Autor.Name = "Autor";
-            // 
-            // genero
-            // 
-            this.genero.DataPropertyName = "genero";
-            this.genero.HeaderText = "Genero";
-            this.genero.Name = "genero";
-            // 
-            // idAutorDataGridViewTextBoxColumn
-            // 
-            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
-            this.idAutorDataGridViewTextBoxColumn.HeaderText = "idAutor";
-            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
-            this.idAutorDataGridViewTextBoxColumn.Visible = false;
             // 
             // librosBindingSource
             // 
@@ -366,9 +305,8 @@
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Location = new System.Drawing.Point(125, 94);
-            this.txtTitulo.Multiline = true;
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(148, 21);
+            this.txtTitulo.Size = new System.Drawing.Size(148, 22);
             this.txtTitulo.TabIndex = 40;
             this.txtTitulo.TextChanged += new System.EventHandler(this.TxtTitulo_TextChanged);
             // 
@@ -509,6 +447,70 @@
             // 
             this.clasificacionesTableAdapter.ClearBeforeFill = true;
             // 
+            // numeroAdquisicionDataGridViewTextBoxColumn
+            // 
+            this.numeroAdquisicionDataGridViewTextBoxColumn.DataPropertyName = "numeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.HeaderText = "NumeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.Name = "numeroAdquisicionDataGridViewTextBoxColumn";
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // idAutorDataGridViewTextBoxColumn
+            // 
+            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.HeaderText = "idAutor";
+            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
+            this.idAutorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ubicacionDataGridViewTextBoxColumn
+            // 
+            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "ubicacion";
+            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "ubicacion";
+            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
+            this.ubicacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ejemplarDataGridViewTextBoxColumn
+            // 
+            this.ejemplarDataGridViewTextBoxColumn.DataPropertyName = "ejemplar";
+            this.ejemplarDataGridViewTextBoxColumn.HeaderText = "Ejemplar";
+            this.ejemplarDataGridViewTextBoxColumn.Name = "ejemplarDataGridViewTextBoxColumn";
+            // 
+            // clasificacionDataGridViewTextBoxColumn
+            // 
+            this.clasificacionDataGridViewTextBoxColumn.DataPropertyName = "clasificacion";
+            this.clasificacionDataGridViewTextBoxColumn.HeaderText = "clasificacion";
+            this.clasificacionDataGridViewTextBoxColumn.Name = "clasificacionDataGridViewTextBoxColumn";
+            this.clasificacionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            // 
+            // Autor
+            // 
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.Name = "Autor";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Ubicacion";
+            this.Descripcion.Name = "Descripcion";
+            // 
+            // genero
+            // 
+            this.genero.DataPropertyName = "genero";
+            this.genero.HeaderText = "Genero";
+            this.genero.Name = "genero";
+            // 
             // FrmLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,13 +575,13 @@
         private ClasificacionesDataSet1TableAdapters.ClasificacionesTableAdapter clasificacionesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroAdquisicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clasificacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ejemplarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clasificacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn genero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
     }
 }
