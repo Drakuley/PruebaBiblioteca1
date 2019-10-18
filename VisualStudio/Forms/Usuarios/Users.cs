@@ -373,6 +373,7 @@ namespace PruebaBiblioteca1.Forms
         {
             // TODO: esta línea de código carga datos en la tabla 'usuariosDataSet1.Usuarios' Puede moverla o quitarla según sea necesario.
             this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+            cbGeneroUsuario.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
 
@@ -380,12 +381,13 @@ namespace PruebaBiblioteca1.Forms
         {
             if (txtIdUsuario.Text == "")
             {
+                this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
                 btnAceptar.Text = "Aceptar";
 
             }
             else if (usuariosTableAdapter.ExisteUsuarioConIdUsuario(Convert.ToDecimal(txtIdUsuario.Text)) > 0)
             {
-
+                this.usuariosTableAdapter.FillDGVporIdUsuario(this.usuariosDataSet1.Usuarios,Convert.ToDecimal(txtIdUsuario.Text));
                 btnAceptar.Text = "Modificar";
             }
             else
@@ -475,7 +477,14 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            usuariosTableAdapter.FillDGVporNombreDeUsuario(this.usuariosDataSet1.Usuarios, txtNombreUsuario.Text);
+            if (txtNombreUsuario.Text == "")
+            {
+                this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+            }
+            else
+            { 
+                usuariosTableAdapter.FillDGVporNombreDeUsuario(this.usuariosDataSet1.Usuarios, txtNombreUsuario.Text);
+            }
         }
     }
 }
