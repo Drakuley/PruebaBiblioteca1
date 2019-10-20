@@ -16,5 +16,11 @@ namespace PruebaBiblioteca1.Forms.Libros
         {
             InitializeComponent();
         }
+
+        private void ReporteDeLibros_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

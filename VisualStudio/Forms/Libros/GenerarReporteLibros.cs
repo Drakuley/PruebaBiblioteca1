@@ -23,5 +23,10 @@ namespace PruebaBiblioteca1.Forms.Libros
             this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
 
         }
+
+        private void BtnGenerarReporte_Click(object sender, EventArgs e)
+        {
+            new ReporteDeLibros().Show();
+        }
     }
 }
