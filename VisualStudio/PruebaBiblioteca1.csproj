@@ -37,27 +37,6 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportViewer.Common.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -154,18 +133,6 @@
     <Compile Include="Forms\Usuarios\Bibliotecarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Usuarios\FormReporteBibliotecario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Usuarios\FormReporteBibliotecario.Designer.cs">
-      <DependentUpon>FormReporteBibliotecario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Usuarios\FormReporteUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Usuarios\FormReporteUsuario.Designer.cs">
-      <DependentUpon>FormReporteUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,12 +217,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\Bibliotecarios.resx">
       <DependentUpon>Bibliotecarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usuarios\FormReporteBibliotecario.resx">
-      <DependentUpon>FormReporteBibliotecario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usuarios\FormReporteUsuario.resx">
-      <DependentUpon>FormReporteUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.resx">
       <DependentUpon>GenerarReporteDeBibliotecarios.cs</DependentUpon>
