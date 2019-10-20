@@ -16,5 +16,25 @@ namespace PruebaBiblioteca1.Forms.Usuarios
         {
             InitializeComponent();
         }
+
+        private void FormReporteBibliotecario_Load(object sender, EventArgs e)
+        {
+            decimal idBibliotecario = VariablesGlobales.Globales.idBibliotecario;
+            string fechaInicial = VariablesGlobales.Globales.fechaInicial;
+            string fechaFinal = VariablesGlobales.Globales.fechaFinal;
+
+            prestamosTableAdapter.Fill(this.reporteDeBibliotecariosDataSet.Prestamos, idBibliotecario, fechaInicial, fechaFinal);
+
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void ReportViewer1_Load(object sender, EventArgs e)
+        {
+            decimal idBibliotecario = VariablesGlobales.Globales.idBibliotecario;
+            string fechaInicial = VariablesGlobales.Globales.fechaInicial;
+            string fechaFinal = VariablesGlobales.Globales.fechaFinal;
+
+            prestamosTableAdapter.Fill(this.reporteDeBibliotecariosDataSet.Prestamos, idBibliotecario, fechaInicial, fechaFinal);
+        }
     }
 }

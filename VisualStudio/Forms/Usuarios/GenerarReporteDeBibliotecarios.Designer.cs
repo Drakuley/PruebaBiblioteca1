@@ -98,6 +98,7 @@
             this.txtIdBibliotecario.Name = "txtIdBibliotecario";
             this.txtIdBibliotecario.Size = new System.Drawing.Size(92, 20);
             this.txtIdBibliotecario.TabIndex = 33;
+            this.txtIdBibliotecario.TextChanged += new System.EventHandler(this.TxtIdBibliotecario_TextChanged);
             // 
             // btnGenerar
             // 
@@ -114,6 +115,7 @@
             this.btnGenerar.TabIndex = 58;
             this.btnGenerar.Text = "Generar Reporte";
             this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.BtnGenerar_Click);
             // 
             // GenerarReporteDeBibliotecarios
             // 

@@ -283,19 +283,13 @@ namespace PruebaBiblioteca1 {
             
             private global::System.Data.DataColumn columnfechaPrestamo;
             
-            private global::System.Data.DataColumn columnnumeroAdquisicion;
-            
             private global::System.Data.DataColumn columnidUsuario;
-            
-            private global::System.Data.DataColumn columnidBibliotecario;
             
             private global::System.Data.DataColumn columnfechaDevolucion;
             
             private global::System.Data.DataColumn columntitulo;
             
             private global::System.Data.DataColumn columnnombreUsuario;
-            
-            private global::System.Data.DataColumn columnnombreBibliotecario;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -348,25 +342,9 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn numeroAdquisicionColumn {
-                get {
-                    return this.columnnumeroAdquisicion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn idUsuarioColumn {
                 get {
                     return this.columnidUsuario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idBibliotecarioColumn {
-                get {
-                    return this.columnidBibliotecario;
                 }
             }
             
@@ -391,14 +369,6 @@ namespace PruebaBiblioteca1 {
             public global::System.Data.DataColumn nombreUsuarioColumn {
                 get {
                     return this.columnnombreUsuario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nombreBibliotecarioColumn {
-                get {
-                    return this.columnnombreBibliotecario;
                 }
             }
             
@@ -439,18 +409,15 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrestamosRow AddPrestamosRow(decimal idPrestamo, System.DateTime fechaPrestamo, string numeroAdquisicion, decimal idUsuario, decimal idBibliotecario, System.DateTime fechaDevolucion, string titulo, string nombreUsuario, string nombreBibliotecario) {
+            public PrestamosRow AddPrestamosRow(decimal idPrestamo, System.DateTime fechaPrestamo, decimal idUsuario, System.DateTime fechaDevolucion, string titulo, string nombreUsuario) {
                 PrestamosRow rowPrestamosRow = ((PrestamosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idPrestamo,
                         fechaPrestamo,
-                        numeroAdquisicion,
                         idUsuario,
-                        idBibliotecario,
                         fechaDevolucion,
                         titulo,
-                        nombreUsuario,
-                        nombreBibliotecario};
+                        nombreUsuario};
                 rowPrestamosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrestamosRow);
                 return rowPrestamosRow;
@@ -482,13 +449,10 @@ namespace PruebaBiblioteca1 {
             internal void InitVars() {
                 this.columnidPrestamo = base.Columns["idPrestamo"];
                 this.columnfechaPrestamo = base.Columns["fechaPrestamo"];
-                this.columnnumeroAdquisicion = base.Columns["numeroAdquisicion"];
                 this.columnidUsuario = base.Columns["idUsuario"];
-                this.columnidBibliotecario = base.Columns["idBibliotecario"];
                 this.columnfechaDevolucion = base.Columns["fechaDevolucion"];
                 this.columntitulo = base.Columns["titulo"];
                 this.columnnombreUsuario = base.Columns["nombreUsuario"];
-                this.columnnombreBibliotecario = base.Columns["nombreBibliotecario"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -498,36 +462,25 @@ namespace PruebaBiblioteca1 {
                 base.Columns.Add(this.columnidPrestamo);
                 this.columnfechaPrestamo = new global::System.Data.DataColumn("fechaPrestamo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaPrestamo);
-                this.columnnumeroAdquisicion = new global::System.Data.DataColumn("numeroAdquisicion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnumeroAdquisicion);
                 this.columnidUsuario = new global::System.Data.DataColumn("idUsuario", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidUsuario);
-                this.columnidBibliotecario = new global::System.Data.DataColumn("idBibliotecario", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidBibliotecario);
                 this.columnfechaDevolucion = new global::System.Data.DataColumn("fechaDevolucion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaDevolucion);
                 this.columntitulo = new global::System.Data.DataColumn("titulo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntitulo);
                 this.columnnombreUsuario = new global::System.Data.DataColumn("nombreUsuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombreUsuario);
-                this.columnnombreBibliotecario = new global::System.Data.DataColumn("nombreBibliotecario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombreBibliotecario);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidPrestamo}, true));
                 this.columnidPrestamo.AllowDBNull = false;
                 this.columnidPrestamo.Unique = true;
                 this.columnfechaPrestamo.AllowDBNull = false;
-                this.columnnumeroAdquisicion.AllowDBNull = false;
-                this.columnnumeroAdquisicion.MaxLength = 8;
                 this.columnidUsuario.AllowDBNull = false;
-                this.columnidBibliotecario.AllowDBNull = false;
                 this.columnfechaDevolucion.AllowDBNull = false;
                 this.columntitulo.AllowDBNull = false;
                 this.columntitulo.MaxLength = 50;
                 this.columnnombreUsuario.AllowDBNull = false;
                 this.columnnombreUsuario.MaxLength = 50;
-                this.columnnombreBibliotecario.AllowDBNull = false;
-                this.columnnombreBibliotecario.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -692,34 +645,12 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string numeroAdquisicion {
-                get {
-                    return ((string)(this[this.tablePrestamos.numeroAdquisicionColumn]));
-                }
-                set {
-                    this[this.tablePrestamos.numeroAdquisicionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal idUsuario {
                 get {
                     return ((decimal)(this[this.tablePrestamos.idUsuarioColumn]));
                 }
                 set {
                     this[this.tablePrestamos.idUsuarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal idBibliotecario {
-                get {
-                    return ((decimal)(this[this.tablePrestamos.idBibliotecarioColumn]));
-                }
-                set {
-                    this[this.tablePrestamos.idBibliotecarioColumn] = value;
                 }
             }
             
@@ -753,17 +684,6 @@ namespace PruebaBiblioteca1 {
                 }
                 set {
                     this[this.tablePrestamos.nombreUsuarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nombreBibliotecario {
-                get {
-                    return ((string)(this[this.tablePrestamos.nombreBibliotecarioColumn]));
-                }
-                set {
-                    this[this.tablePrestamos.nombreBibliotecarioColumn] = value;
                 }
             }
         }
@@ -929,13 +849,10 @@ namespace PruebaBiblioteca1.ReporteDeUsuariosDataSetTableAdapters {
             tableMapping.DataSetTable = "Prestamos";
             tableMapping.ColumnMappings.Add("idPrestamo", "idPrestamo");
             tableMapping.ColumnMappings.Add("fechaPrestamo", "fechaPrestamo");
-            tableMapping.ColumnMappings.Add("numeroAdquisicion", "numeroAdquisicion");
             tableMapping.ColumnMappings.Add("idUsuario", "idUsuario");
-            tableMapping.ColumnMappings.Add("idBibliotecario", "idBibliotecario");
             tableMapping.ColumnMappings.Add("fechaDevolucion", "fechaDevolucion");
             tableMapping.ColumnMappings.Add("titulo", "titulo");
             tableMapping.ColumnMappings.Add("nombreUsuario", "nombreUsuario");
-            tableMapping.ColumnMappings.Add("nombreBibliotecario", "nombreBibliotecario");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -952,39 +869,22 @@ namespace PruebaBiblioteca1.ReporteDeUsuariosDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Prestamos.idPrestamo, Libros.titulo, Prestamos.fechaPrestamo, Libros.numeroAdquisicion, Usuarios.idUsuario, Usuarios.nombreUsuario, Bibliotecarios.idBibliotecario, Bibliotecarios.nombreBibliotecario, 
-                         Prestamos.fechaDevolucion
+            this._commandCollection[0].CommandText = @"SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Libros.titulo, Prestamos.fechaDevolucion, Usuarios.idUsuario, Usuarios.nombreUsuario
 FROM            Prestamos INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario
-WHERE        (Prestamos.idBibliotecario = @id_Bibliotecario) AND (Prestamos.fechaPrestamo BETWEEN @Fecha_Inicial AND @Fecha_Final)
-ORDER BY Prestamos.fechaPrestamo";
+                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario
+WHERE        (Usuarios.idUsuario = @id_Usuario)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_Bibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_Inicial", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_Final", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_Usuario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ReporteDeUsuariosDataSet.PrestamosDataTable dataTable, decimal id_Bibliotecario, string Fecha_Inicial, string Fecha_Final) {
+        public virtual int Fill(ReporteDeUsuariosDataSet.PrestamosDataTable dataTable, decimal id_Usuario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(id_Bibliotecario));
-            if ((Fecha_Inicial == null)) {
-                throw new global::System.ArgumentNullException("Fecha_Inicial");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Fecha_Inicial));
-            }
-            if ((Fecha_Final == null)) {
-                throw new global::System.ArgumentNullException("Fecha_Final");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Fecha_Final));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(id_Usuario));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -996,21 +896,9 @@ ORDER BY Prestamos.fechaPrestamo";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ReporteDeUsuariosDataSet.PrestamosDataTable GetData(decimal id_Bibliotecario, string Fecha_Inicial, string Fecha_Final) {
+        public virtual ReporteDeUsuariosDataSet.PrestamosDataTable GetData(decimal id_Usuario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(id_Bibliotecario));
-            if ((Fecha_Inicial == null)) {
-                throw new global::System.ArgumentNullException("Fecha_Inicial");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Fecha_Inicial));
-            }
-            if ((Fecha_Final == null)) {
-                throw new global::System.ArgumentNullException("Fecha_Final");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Fecha_Final));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(id_Usuario));
             ReporteDeUsuariosDataSet.PrestamosDataTable dataTable = new ReporteDeUsuariosDataSet.PrestamosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

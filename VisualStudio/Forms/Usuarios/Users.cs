@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -58,13 +59,6 @@ namespace PruebaBiblioteca1.Forms
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.direccion = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosDataSet1 = new PruebaBiblioteca1.UsuariosDataSet1();
             this.Nombre = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -72,11 +66,18 @@ namespace PruebaBiblioteca1.Forms
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosDataSet1 = new PruebaBiblioteca1.UsuariosDataSet1();
             this.usuariosTableAdapter = new PruebaBiblioteca1.UsuariosDataSet1TableAdapters.UsuariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosDataSet1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -194,46 +195,6 @@ namespace PruebaBiblioteca1.Forms
             this.dgvUsuarios.Size = new System.Drawing.Size(616, 460);
             this.dgvUsuarios.TabIndex = 34;
             // 
-            // idUsuarioDataGridViewTextBoxColumn
-            // 
-            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "idUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
-            // 
-            // nombreUsuarioDataGridViewTextBoxColumn
-            // 
-            this.nombreUsuarioDataGridViewTextBoxColumn.DataPropertyName = "nombreUsuario";
-            this.nombreUsuarioDataGridViewTextBoxColumn.HeaderText = "nombreUsuario";
-            this.nombreUsuarioDataGridViewTextBoxColumn.Name = "nombreUsuarioDataGridViewTextBoxColumn";
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            // 
-            // generoDataGridViewTextBoxColumn
-            // 
-            this.generoDataGridViewTextBoxColumn.DataPropertyName = "genero";
-            this.generoDataGridViewTextBoxColumn.HeaderText = "genero";
-            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.usuariosDataSet1;
-            // 
-            // usuariosDataSet1
-            // 
-            this.usuariosDataSet1.DataSetName = "UsuariosDataSet1";
-            this.usuariosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Nombre
             // 
             this.Nombre.AutoSize = true;
@@ -295,6 +256,7 @@ namespace PruebaBiblioteca1.Forms
             this.btnReporte.TabIndex = 67;
             this.btnReporte.Text = "Generar Reporte";
             this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // btnEliminar
             // 
@@ -346,6 +308,46 @@ namespace PruebaBiblioteca1.Forms
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 48;
             // 
+            // idUsuarioDataGridViewTextBoxColumn
+            // 
+            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "idUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "idUsuario";
+            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
+            // 
+            // nombreUsuarioDataGridViewTextBoxColumn
+            // 
+            this.nombreUsuarioDataGridViewTextBoxColumn.DataPropertyName = "nombreUsuario";
+            this.nombreUsuarioDataGridViewTextBoxColumn.HeaderText = "nombreUsuario";
+            this.nombreUsuarioDataGridViewTextBoxColumn.Name = "nombreUsuarioDataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // generoDataGridViewTextBoxColumn
+            // 
+            this.generoDataGridViewTextBoxColumn.DataPropertyName = "genero";
+            this.generoDataGridViewTextBoxColumn.HeaderText = "genero";
+            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.usuariosDataSet1;
+            // 
+            // usuariosDataSet1
+            // 
+            this.usuariosDataSet1.DataSetName = "UsuariosDataSet1";
+            this.usuariosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
@@ -361,10 +363,10 @@ namespace PruebaBiblioteca1.Forms
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Users_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,20 +381,43 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtIdUsuario_TextChanged(object sender, EventArgs e)
         {
+            if (Regex.IsMatch(txtIdUsuario.Text, @"^\d+$") == false)
+            {
+                //MessageBox.Show("Ingrese ID númerico");
+                txtIdUsuario.Text = "";
+            }
             if (txtIdUsuario.Text == "")
             {
                 this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                txtIdUsuario.Text = "";
+                txtNombreUsuario.Text = "";
+                txtDireccion.Text = "";
+                txtTelefono.Text = "";
+                cbGeneroUsuario.Text = "";
+
+                txtIdUsuario.Focus();
                 btnAceptar.Text = "Aceptar";
 
             }
             else if (usuariosTableAdapter.ExisteUsuarioConIdUsuario(Convert.ToDecimal(txtIdUsuario.Text)) > 0)
             {
-                this.usuariosTableAdapter.FillDGVporIdUsuario(this.usuariosDataSet1.Usuarios,Convert.ToDecimal(txtIdUsuario.Text));
+                this.usuariosTableAdapter.FillDGVporIdUsuario(this.usuariosDataSet1.Usuarios, Convert.ToDecimal(txtIdUsuario.Text));
                 btnAceptar.Text = "Modificar";
+                txtNombreUsuario.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
+                txtDireccion.Text = dgvUsuarios.CurrentRow.Cells[2].FormattedValue.ToString();
+                txtTelefono.Text = dgvUsuarios.CurrentRow.Cells[3].FormattedValue.ToString();
+                cbGeneroUsuario.Text = dgvUsuarios.CurrentRow.Cells[4].FormattedValue.ToString();
+
             }
             else
             {
                 btnAceptar.Text = "Registrar";
+                //NUEVA lIMEA
+                txtNombreUsuario.Text = "";
+                txtDireccion.Text = "";
+                txtTelefono.Text = "";
+                cbGeneroUsuario.Text = "";
+                this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
             }
         }
 
@@ -413,38 +438,30 @@ namespace PruebaBiblioteca1.Forms
                     txtDireccion.Text = "";
                     txtTelefono.Text = "";
                     cbGeneroUsuario.Text = "";
-                   
+
                     txtIdUsuario.Focus();
                 }
 
             }
             else
             {
-                if (txtIdUsuario.Text == "" || txtNombreUsuario.Text == "" || txtDireccion.Text == "" || txtTelefono.Text == "" || cbGeneroUsuario.Text == "")
+                if (txtNombreUsuario.Text == "" || txtDireccion.Text == "" || txtTelefono.Text == "" || cbGeneroUsuario.Text == "")
                 {
                     MessageBox.Show("Faltan Campos por llenar");
                 }
                 else
                 {
-                    if (usuariosTableAdapter.ExisteUsuarioConIdUsuario(Convert.ToDecimal(txtIdUsuario.Text)) > 0 || txtIdUsuario.Text == "")
-                    {
-                        MessageBox.Show("El usuario que quieres registrar ya existe en la Base de Datos");
-                    }
-                    else
-                    {
-                        usuariosTableAdapter.InsertQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text,txtTelefono.Text,cbGeneroUsuario.Text);
-                        this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                        txtIdUsuario.Text = "";
-                        txtNombreUsuario.Text = "";
-                        txtDireccion.Text = "";
-                        txtTelefono.Text = "";
-                        cbGeneroUsuario.Text = "";
+                    decimal nuevoIdUsuario = Convert.ToDecimal(usuariosTableAdapter.NuevoIdDeUsuarioQuery());
+                    usuariosTableAdapter.InsertQueryUsuarios(nuevoIdUsuario, txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text);
+                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                    txtIdUsuario.Text = "";
+                    txtNombreUsuario.Text = "";
+                    txtDireccion.Text = "";
+                    txtTelefono.Text = "";
+                    cbGeneroUsuario.Text = "";
 
-                        txtIdUsuario.Focus();
-                    }
+                    txtIdUsuario.Focus();
                 }
-
-
             }
         }
 
@@ -485,6 +502,11 @@ namespace PruebaBiblioteca1.Forms
             { 
                 usuariosTableAdapter.FillDGVporNombreDeUsuario(this.usuariosDataSet1.Usuarios, txtNombreUsuario.Text);
             }
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            new Usuarios.GenerarReporteUsuario().Show();
         }
     }
 }
