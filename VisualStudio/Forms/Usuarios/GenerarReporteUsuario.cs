@@ -18,18 +18,7 @@ namespace PruebaBiblioteca1.Forms.Usuarios
             InitializeComponent();
         }
 
-        private void BtnGenerar_Click(object sender, EventArgs e)
-        {
-            if (txtIdUsuario.Text == "")
-            {
-                MessageBox.Show("Ingrese Id de Usuario");
-            }
-            else
-            {
-                VariablesGlobales.Globales.idUsuario = Convert.ToDecimal(txtIdUsuario.Text);
-                new FormReporteUsuario().Show();
-            }
-        }
+  
 
         private void TxtIdUsuario_TextChanged(object sender, EventArgs e)
         {
@@ -53,7 +42,7 @@ namespace PruebaBiblioteca1.Forms.Usuarios
             }
         }
 
-        private void BtnGenerar_Click_1(object sender, EventArgs e)
+        private void BtnGenerar_Click(object sender, EventArgs e)
         {
             if (txtIdUsuario.Text == "")
             {
@@ -62,7 +51,7 @@ namespace PruebaBiblioteca1.Forms.Usuarios
             else
             {
                 VariablesGlobales.Globales.idUsuario = Convert.ToDecimal(txtIdUsuario.Text);
-                new Usuarios.FormReporteUsuario().Show();
+                new Usuarios.FormReporteDeUsuarios().Show();
             }
         }
     }

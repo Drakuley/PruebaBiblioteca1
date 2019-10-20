@@ -29,7 +29,7 @@ namespace PruebaBiblioteca1.Forms.Usuarios
                 VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(txtIdBibliotecario.Text);
                 VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
                 VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
-                new FormReporteBibliotecario().Show();
+                new FormReporteDeBibliotecarios().Show();
             }
         }
 
