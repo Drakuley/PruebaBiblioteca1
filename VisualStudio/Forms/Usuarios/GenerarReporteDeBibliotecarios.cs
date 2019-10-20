@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PruebaBiblioteca1.Forms.Usuarios
 {
-    public partial class ReporteDeBibliotecarios : Form
+    public partial class GenerarReporteDeBibliotecarios : Form
     {
-        public ReporteDeBibliotecarios()
+        public GenerarReporteDeBibliotecarios()
         {
             InitializeComponent();
         }

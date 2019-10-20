@@ -37,6 +37,30 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.2015.12.0.2.2403\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -123,11 +147,23 @@
     <Compile Include="Forms\Usuarios\Bibliotecarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Usuarios\ReporteDeBibliotecarios.cs">
+    <Compile Include="Forms\Usuarios\FormReporteBibliotecario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Usuarios\ReporteDeBibliotecarios.Designer.cs">
-      <DependentUpon>ReporteDeBibliotecarios.cs</DependentUpon>
+    <Compile Include="Forms\Usuarios\FormReporteBibliotecario.Designer.cs">
+      <DependentUpon>FormReporteBibliotecario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.Designer.cs">
+      <DependentUpon>GenerarReporteDeBibliotecarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Usuarios\GenerarReporteUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Usuarios\GenerarReporteUsuario.Designer.cs">
+      <DependentUpon>GenerarReporteUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Usuarios\Users.cs">
       <SubType>Form</SubType>
@@ -139,11 +175,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteDeBibliotecariosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDeBibliotecariosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDeUsuariosDataSet.cs">
+      <DependentUpon>ReporteDeUsuariosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDeUsuariosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDeUsuariosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReporteLibrosDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteLibrosDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UbicacionesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -184,8 +234,14 @@
     <EmbeddedResource Include="Forms\Usuarios\Bibliotecarios.resx">
       <DependentUpon>Bibliotecarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usuarios\ReporteDeBibliotecarios.resx">
-      <DependentUpon>ReporteDeBibliotecarios.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Usuarios\FormReporteBibliotecario.resx">
+      <DependentUpon>FormReporteBibliotecario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.resx">
+      <DependentUpon>GenerarReporteDeBibliotecarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Usuarios\GenerarReporteUsuario.resx">
+      <DependentUpon>GenerarReporteUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
@@ -199,6 +255,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\ReporteBibliotecario.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteLibros.rdlc" />
     <None Include="AutoresDataSet1.xsc">
       <DependentUpon>AutoresDataSet1.xsd</DependentUpon>
@@ -244,6 +302,7 @@
     <None Include="LibrosDataSet1.xss">
       <DependentUpon>LibrosDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -253,6 +312,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReporteDeBibliotecariosDataSet.xsc">
+      <DependentUpon>ReporteDeBibliotecariosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteDeBibliotecariosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteDeBibliotecariosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteDeBibliotecariosDataSet.xss">
+      <DependentUpon>ReporteDeBibliotecariosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteDeUsuariosDataSet.xsc">
+      <DependentUpon>ReporteDeUsuariosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteDeUsuariosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteDeUsuariosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteDeUsuariosDataSet.xss">
+      <DependentUpon>ReporteDeUsuariosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ReporteLibrosDataSet1.xsc">
       <DependentUpon>ReporteLibrosDataSet1.xsd</DependentUpon>
     </None>
@@ -293,6 +374,11 @@
   <ItemGroup>
     <Content Include="NewFile1.txt" />
     <Content Include="NewFile2.txt" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
