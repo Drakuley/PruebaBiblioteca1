@@ -293,11 +293,11 @@ namespace PruebaBiblioteca1 {
             
             private global::System.Data.DataColumn columnnombreUsuario;
             
-            private global::System.Data.DataColumn columnfechaDevuelto;
-            
             private global::System.Data.DataColumn columnestatus;
             
             private global::System.Data.DataColumn columntitulo;
+            
+            private global::System.Data.DataColumn columnejemplar;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -390,14 +390,6 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fechaDevueltoColumn {
-                get {
-                    return this.columnfechaDevuelto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn estatusColumn {
                 get {
                     return this.columnestatus;
@@ -409,6 +401,14 @@ namespace PruebaBiblioteca1 {
             public global::System.Data.DataColumn tituloColumn {
                 get {
                     return this.columntitulo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ejemplarColumn {
+                get {
+                    return this.columnejemplar;
                 }
             }
             
@@ -449,7 +449,7 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrestamosRow AddPrestamosRow(decimal idPrestamo, System.DateTime fechaPrestamo, string numeroAdquisicion, decimal idUsuario, decimal idBibliotecario, System.DateTime fechaDevolucion, string nombreUsuario, System.DateTime fechaDevuelto, string estatus, string titulo) {
+            public PrestamosRow AddPrestamosRow(decimal idPrestamo, System.DateTime fechaPrestamo, string numeroAdquisicion, decimal idUsuario, decimal idBibliotecario, System.DateTime fechaDevolucion, string nombreUsuario, string estatus, string titulo, string ejemplar) {
                 PrestamosRow rowPrestamosRow = ((PrestamosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idPrestamo,
@@ -459,9 +459,9 @@ namespace PruebaBiblioteca1 {
                         idBibliotecario,
                         fechaDevolucion,
                         nombreUsuario,
-                        fechaDevuelto,
                         estatus,
-                        titulo};
+                        titulo,
+                        ejemplar};
                 rowPrestamosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrestamosRow);
                 return rowPrestamosRow;
@@ -498,9 +498,9 @@ namespace PruebaBiblioteca1 {
                 this.columnidBibliotecario = base.Columns["idBibliotecario"];
                 this.columnfechaDevolucion = base.Columns["fechaDevolucion"];
                 this.columnnombreUsuario = base.Columns["nombreUsuario"];
-                this.columnfechaDevuelto = base.Columns["fechaDevuelto"];
                 this.columnestatus = base.Columns["estatus"];
                 this.columntitulo = base.Columns["titulo"];
+                this.columnejemplar = base.Columns["ejemplar"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -520,12 +520,12 @@ namespace PruebaBiblioteca1 {
                 base.Columns.Add(this.columnfechaDevolucion);
                 this.columnnombreUsuario = new global::System.Data.DataColumn("nombreUsuario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombreUsuario);
-                this.columnfechaDevuelto = new global::System.Data.DataColumn("fechaDevuelto", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfechaDevuelto);
                 this.columnestatus = new global::System.Data.DataColumn("estatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestatus);
                 this.columntitulo = new global::System.Data.DataColumn("titulo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntitulo);
+                this.columnejemplar = new global::System.Data.DataColumn("ejemplar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnejemplar);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidPrestamo}, true));
                 this.columnidPrestamo.AllowDBNull = false;
@@ -538,11 +538,12 @@ namespace PruebaBiblioteca1 {
                 this.columnfechaDevolucion.AllowDBNull = false;
                 this.columnnombreUsuario.AllowDBNull = false;
                 this.columnnombreUsuario.MaxLength = 50;
-                this.columnfechaDevuelto.AllowDBNull = false;
                 this.columnestatus.AllowDBNull = false;
                 this.columnestatus.MaxLength = 20;
                 this.columntitulo.AllowDBNull = false;
                 this.columntitulo.MaxLength = 50;
+                this.columnejemplar.AllowDBNull = false;
+                this.columnejemplar.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -762,17 +763,6 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime fechaDevuelto {
-                get {
-                    return ((global::System.DateTime)(this[this.tablePrestamos.fechaDevueltoColumn]));
-                }
-                set {
-                    this[this.tablePrestamos.fechaDevueltoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string estatus {
                 get {
                     return ((string)(this[this.tablePrestamos.estatusColumn]));
@@ -790,6 +780,17 @@ namespace PruebaBiblioteca1 {
                 }
                 set {
                     this[this.tablePrestamos.tituloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ejemplar {
+                get {
+                    return ((string)(this[this.tablePrestamos.ejemplarColumn]));
+                }
+                set {
+                    this[this.tablePrestamos.ejemplarColumn] = value;
                 }
             }
         }
@@ -960,9 +961,9 @@ namespace PruebaBiblioteca1.ReporteLibrosDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("idBibliotecario", "idBibliotecario");
             tableMapping.ColumnMappings.Add("fechaDevolucion", "fechaDevolucion");
             tableMapping.ColumnMappings.Add("nombreUsuario", "nombreUsuario");
-            tableMapping.ColumnMappings.Add("fechaDevuelto", "fechaDevuelto");
             tableMapping.ColumnMappings.Add("estatus", "estatus");
             tableMapping.ColumnMappings.Add("titulo", "titulo");
+            tableMapping.ColumnMappings.Add("ejemplar", "ejemplar");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -970,7 +971,7 @@ namespace PruebaBiblioteca1.ReporteLibrosDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PruebaBiblioteca1.Properties.Settings.Default.BiblioDBConnectionString;
+            this._connection.ConnectionString = global::PruebaBiblioteca1.Properties.Settings.Default.BibliotecaDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -979,12 +980,11 @@ namespace PruebaBiblioteca1.ReporteLibrosDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Prestamos.numeroAdquisicion, Prestamos.idUsuario, Prestamos.idBibliotecario, Prestamos.fechaDevolucion, Usuarios.nombreUsuario, Devoluciones.fechaDevuelto, 
-                         Libros.estatus, Libros.titulo
+            this._commandCollection[0].CommandText = @"SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Prestamos.numeroAdquisicion, Prestamos.idUsuario, Prestamos.idBibliotecario, Prestamos.fechaDevolucion, Usuarios.nombreUsuario, Libros.estatus, Libros.titulo, 
+                         Libros.ejemplar
 FROM            Prestamos INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Devoluciones ON Prestamos.idPrestamo = Devoluciones.idPrestamo
+                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario
 WHERE        (Libros.titulo = @Titulo_Libro) AND (Prestamos.fechaPrestamo BETWEEN @Fecha_Inicial AND @Fecha_Final)
 ORDER BY Prestamos.fechaPrestamo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

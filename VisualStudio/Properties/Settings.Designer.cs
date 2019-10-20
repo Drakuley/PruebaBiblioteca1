@@ -26,11 +26,21 @@ namespace PruebaBiblioteca1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=biblioteca1.database.windows.net;Initial Catalog=BiblioDB;Persist Sec" +
-            "urity Info=True;User ID=biblioteca1;Password=Biblioteca-123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ASUS-SOFIA;Initial Catalog=BiblioDB;Integrated Security=True")]
         public string BiblioDBConnectionString {
             get {
                 return ((string)(this["BiblioDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-LJN71A1H;Initial Catalog=BibliotecaDB;User ID=biblioteca1;Pass" +
+            "word=Biblioteca-123")]
+        public string BibliotecaDBConnectionString {
+            get {
+                return ((string)(this["BibliotecaDBConnectionString"]));
             }
         }
     }
