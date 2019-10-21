@@ -50,6 +50,8 @@ namespace PruebaBiblioteca1.Forms
             cbAutores.SelectedValue = (decimal)cbAutores.SelectionStart;
             cbUbicaciones.SelectedValue = cbUbicaciones.SelectionStart;
             cbClasificaciones.SelectedValue = (decimal)cbClasificaciones.SelectionStart;
+
+           // new FrmMenú().Hide();
         }
 
         private void TxtNumAdquisicion_TextChanged(object sender, EventArgs e)
@@ -64,10 +66,10 @@ namespace PruebaBiblioteca1.Forms
                 lblTxtEstatus.Text = "Disponible";
                 lblTxtEstatus.ForeColor = Color.Lime;
             }
-            else if (librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text) > 0)
+            else if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
             {
 
-                if (librosTableAdapter.estatusPorNumeroAdquisicion(txtNumAdquisicion.Text) > 0)
+                if (Convert.ToInt32(librosTableAdapter.estatusPorNumeroAdquisicion(txtNumAdquisicion.Text)) > 0)
                 {
                     lblTxtEstatus.Text = "Disponible";
                     lblTxtEstatus.ForeColor = Color.Lime;
@@ -101,7 +103,7 @@ namespace PruebaBiblioteca1.Forms
             }
             else if (btnAceptar.Text == "REGISTRAR")
             {
-                if (librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text) > 0)
+                if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
                 {
                     MessageBox.Show("El libro que quieres registrar ya existe");
                 }
@@ -127,7 +129,7 @@ namespace PruebaBiblioteca1.Forms
             {
                 MessageBox.Show("Faltan campos por llenar");
             }
-            else if (librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text) > 0)
+            else if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
             {
                 librosTableAdapter.DeleteQueryLibros(txtNumAdquisicion.Text);
                 this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
@@ -163,6 +165,27 @@ namespace PruebaBiblioteca1.Forms
                 this.librosTableAdapter.FillDGVLibrosPorTitulo(this.librosDataSet1.Libros, txtTitulo.Text);
             }
             
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            new Forms.Libros.GenerarReporteLibros().Show();
+            this.Hide();
+        }
+
+        private void FrmLibros_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new FrmMenú().Show();
+        }
+
+        private void CbAutores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.librosTableAdapter.FillDGVLibrosPorIdAutor(this.librosDataSet1.Libros, Convert.ToDecimal(cbAutores.SelectedValue));
+        }
+
+        private void CbClasificaciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // this.librosTableAdapter.FillDGVLibrosPorClasificacion(this.librosDataSet1.Libros, Convert.ToDecimal(cbClasificaciones.SelectedValue));
         }
     }
 }

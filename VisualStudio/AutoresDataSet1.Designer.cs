@@ -775,7 +775,7 @@ namespace PruebaBiblioteca1.AutoresDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PruebaBiblioteca1.Properties.Settings.Default.BiblioDBConnectionString;
+            this._connection.ConnectionString = global::PruebaBiblioteca1.Properties.Settings.Default.BibliotecaDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1019,7 +1019,7 @@ namespace PruebaBiblioteca1.AutoresDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> existeAutorConIdAutor(decimal Id_Autor) {
+        public virtual object existeAutorConIdAutor(decimal Id_Autor) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((decimal)(Id_Autor));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -1038,10 +1038,10 @@ namespace PruebaBiblioteca1.AutoresDataSet1TableAdapters {
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         

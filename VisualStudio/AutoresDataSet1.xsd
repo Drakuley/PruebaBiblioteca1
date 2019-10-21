@@ -2,14 +2,15 @@
 <xs:schema id="AutoresDataSet1" targetNamespace="http://tempuri.org/AutoresDataSet1.xsd" xmlns:mstns="http://tempuri.org/AutoresDataSet1.xsd" xmlns="http://tempuri.org/AutoresDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BiblioDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BiblioDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PruebaBiblioteca1.Properties.Settings.GlobalReference.Default.BiblioDBConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BibliotecaDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BibliotecaDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PruebaBiblioteca1.Properties.Settings.GlobalReference.Default.BibliotecaDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AutoresTableAdapter" GeneratorDataComponentClassName="AutoresTableAdapter" Name="Autores" UserDataComponentName="AutoresTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Autores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="BibliotecaDB.dbo.Autores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Autores] WHERE (([idAutor] = @Original_idAutor) AND ([nombreAutor] = @Original_nombreAutor))</CommandText>
@@ -54,7 +55,7 @@ SELECT idAutor, nombreAutor FROM Autores WHERE (idAutor = @idAutor)</CommandText
               <Mapping SourceColumn="nombreAutor" DataSetColumn="nombreAutor" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQueryAutores" Modifier="Public" Name="DeleteQueryAutores" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQueryAutores">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQueryAutores" Modifier="Public" Name="DeleteQueryAutores" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQueryAutores">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Autores
@@ -65,7 +66,7 @@ WHERE        (idAutor = @Original_idAutor)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="existeAutorConIdAutor" Modifier="Public" Name="existeAutorConIdAutor" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="existeAutorConIdAutor">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="existeAutorConIdAutor" Modifier="Public" Name="existeAutorConIdAutor" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="existeAutorConIdAutor">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -77,7 +78,7 @@ WHERE        (idAutor = @Id_Autor)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Autores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDGVAutoresPorNombreAutor" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVAutoresPorNombreAutor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillDGVAutoresPorNombreAutor">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="BibliotecaDB.dbo.Autores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDGVAutoresPorNombreAutor" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVAutoresPorNombreAutor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillDGVAutoresPorNombreAutor">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        idAutor, nombreAutor
@@ -89,7 +90,7 @@ WHERE        (nombreAutor LIKE @nombre + '%')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryAutores" Modifier="Public" Name="InsertQueryAutores" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQueryAutores">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryAutores" Modifier="Public" Name="InsertQueryAutores" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertQueryAutores">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Autores] ([idAutor], [nombreAutor]) VALUES (@idAutor, @nombreAutor);
@@ -101,7 +102,7 @@ SELECT idAutor, nombreAutor FROM Autores WHERE (idAutor = @idAutor)</CommandText
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryAutores" Modifier="Public" Name="UpdateQueryAutores" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateQueryAutores">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryAutores" Modifier="Public" Name="UpdateQueryAutores" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateQueryAutores">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Autores
@@ -126,7 +127,7 @@ SELECT idAutor, nombreAutor FROM Autores WHERE (idAutor = @idAutor)</CommandText
   <xs:element name="AutoresDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AutoresDataSet1" msprop:Generator_UserDSName="AutoresDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Autores" msprop:Generator_TableClassName="AutoresDataTable" msprop:Generator_TableVarName="tableAutores" msprop:Generator_TablePropName="Autores" msprop:Generator_RowDeletingName="AutoresRowDeleting" msprop:Generator_RowChangingName="AutoresRowChanging" msprop:Generator_RowEvHandlerName="AutoresRowChangeEventHandler" msprop:Generator_RowDeletedName="AutoresRowDeleted" msprop:Generator_UserTableName="Autores" msprop:Generator_RowChangedName="AutoresRowChanged" msprop:Generator_RowEvArgName="AutoresRowChangeEvent" msprop:Generator_RowClassName="AutoresRow">
+        <xs:element name="Autores" msprop:Generator_TableClassName="AutoresDataTable" msprop:Generator_TableVarName="tableAutores" msprop:Generator_RowChangedName="AutoresRowChanged" msprop:Generator_TablePropName="Autores" msprop:Generator_RowDeletingName="AutoresRowDeleting" msprop:Generator_RowChangingName="AutoresRowChanging" msprop:Generator_RowEvHandlerName="AutoresRowChangeEventHandler" msprop:Generator_RowDeletedName="AutoresRowDeleted" msprop:Generator_RowClassName="AutoresRow" msprop:Generator_UserTableName="Autores" msprop:Generator_RowEvArgName="AutoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idAutor" msprop:Generator_ColumnVarNameInTable="columnidAutor" msprop:Generator_ColumnPropNameInRow="idAutor" msprop:Generator_ColumnPropNameInTable="idAutorColumn" msprop:Generator_UserColumnName="idAutor" type="xs:decimal" />

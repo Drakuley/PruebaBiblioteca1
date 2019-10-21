@@ -132,6 +132,7 @@
             this.Controls.Add(this.txtIdBibliotecario);
             this.Name = "GenerarReporteDeBibliotecarios";
             this.Text = "Generar Reporte de Préstamos por Bibliotecarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GenerarReporteDeBibliotecarios_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

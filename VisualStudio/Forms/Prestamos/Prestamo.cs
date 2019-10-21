@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PruebaBiblioteca1
 {
-    public partial class Menú : Form
+    public partial class FrmMenú : Form
     {
-        public Menú()
+        public FrmMenú()
         {
             InitializeComponent();
         }
@@ -30,6 +30,7 @@ namespace PruebaBiblioteca1
         private void BtnLibros_Click(object sender, EventArgs e)
         {
             new Forms.FrmLibros().Show();
+            this.Hide();
             
         }
 
@@ -41,11 +42,13 @@ namespace PruebaBiblioteca1
         private void BtnUsuarios_Click(object sender, EventArgs e)
         {
             new Forms.FrmUsuarios().Show();
+            this.Hide();
         }
 
         private void BtnBibliotecarios_Click(object sender, EventArgs e)
         {
             new Forms.FrmBibliotecarios().Show();
+            this.Hide();
         }
     }
 }

@@ -193,6 +193,7 @@
             this.Controls.Add(this.txtIdUsuario);
             this.Name = "GenerarReporteUsuario";
             this.Text = "GenerarReporteDeUsuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GenerarReporteUsuario_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosDataSet1)).EndInit();

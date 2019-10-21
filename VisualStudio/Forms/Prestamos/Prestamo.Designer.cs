@@ -1,6 +1,6 @@
 ﻿namespace PruebaBiblioteca1
 {
-    partial class Menú
+    partial class FrmMenú
     {
      ///holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
      //De quien eres?
@@ -33,7 +33,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menú));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenú));
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -313,7 +313,7 @@
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "Buscar:";
             // 
-            // Menú
+            // FrmMenú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,7 +327,7 @@
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.panel1);
-            this.Name = "Menú";
+            this.Name = "FrmMenú";
             this.Text = "Préstamos";
             this.Load += new System.EventHandler(this.Menú_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();

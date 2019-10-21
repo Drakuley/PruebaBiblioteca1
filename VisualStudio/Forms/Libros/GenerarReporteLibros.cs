@@ -21,12 +21,34 @@ namespace PruebaBiblioteca1.Forms.Libros
         {
             // TODO: esta línea de código carga datos en la tabla 'librosDataSet1.Libros' Puede moverla o quitarla según sea necesario.
             this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+            try
+            {
+                this.librosTableAdapter.selectSinQueSeRepitanTitulosDeLibros(this.librosDataSet1.Libros);
+            }
+            catch (System.Exception ex)
+            {
+                //System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void BtnGenerarReporte_Click(object sender, EventArgs e)
         {
+            VariablesGlobales.Globales.titulo = cbTituloLibro.SelectedText;
+            VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
+            VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
             new ReporteDeLibros().Show();
+        }
+
+        private void GenerarReporteLibros_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Forms.FrmLibros().Show();
+        }
+
+        private void SelectSinQueSeRepitanTitulosDeLibrosToolStripButton_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

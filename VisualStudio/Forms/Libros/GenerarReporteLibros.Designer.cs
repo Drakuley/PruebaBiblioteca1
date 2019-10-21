@@ -37,13 +37,16 @@
             this.librosTableAdapter = new PruebaBiblioteca1.LibrosDataSet1TableAdapters.LibrosTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFechaInicial = new System.Windows.Forms.TextBox();
-            this.txtFechaFinal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
+            this.dtpFechaInicial = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip = new System.Windows.Forms.ToolStrip();
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataSet1)).BeginInit();
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -115,20 +118,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Fecha Final :";
             // 
-            // txtFechaInicial
-            // 
-            this.txtFechaInicial.Location = new System.Drawing.Point(192, 161);
-            this.txtFechaInicial.Name = "txtFechaInicial";
-            this.txtFechaInicial.Size = new System.Drawing.Size(259, 20);
-            this.txtFechaInicial.TabIndex = 5;
-            // 
-            // txtFechaFinal
-            // 
-            this.txtFechaFinal.Location = new System.Drawing.Point(192, 238);
-            this.txtFechaFinal.Name = "txtFechaFinal";
-            this.txtFechaFinal.Size = new System.Drawing.Size(259, 20);
-            this.txtFechaFinal.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -162,16 +151,50 @@
             this.btnGenerarReporte.UseVisualStyleBackColor = false;
             this.btnGenerarReporte.Click += new System.EventHandler(this.BtnGenerarReporte_Click);
             // 
+            // dtpFechaInicial
+            // 
+            this.dtpFechaInicial.Location = new System.Drawing.Point(202, 156);
+            this.dtpFechaInicial.Name = "dtpFechaInicial";
+            this.dtpFechaInicial.Size = new System.Drawing.Size(249, 20);
+            this.dtpFechaInicial.TabIndex = 10;
+            // 
+            // dtpFechaFinal
+            // 
+            this.dtpFechaFinal.Location = new System.Drawing.Point(202, 233);
+            this.dtpFechaFinal.Name = "dtpFechaFinal";
+            this.dtpFechaFinal.Size = new System.Drawing.Size(249, 20);
+            this.dtpFechaFinal.TabIndex = 11;
+            // 
+            // selectSinQueSeRepitanTitulosDeLibrosToolStrip
+            // 
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton});
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.Name = "selectSinQueSeRepitanTitulosDeLibrosToolStrip";
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.Size = new System.Drawing.Size(488, 25);
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.TabIndex = 12;
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.Text = "selectSinQueSeRepitanTitulosDeLibrosToolStrip";
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.Visible = false;
+            // 
+            // selectSinQueSeRepitanTitulosDeLibrosToolStripButton
+            // 
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Name = "selectSinQueSeRepitanTitulosDeLibrosToolStripButton";
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Size = new System.Drawing.Size(23, 23);
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Text = "selectSinQueSeRepitanTitulosDeLibros";
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Click += new System.EventHandler(this.SelectSinQueSeRepitanTitulosDeLibrosToolStripButton_Click);
+            // 
             // GenerarReporteLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 323);
+            this.ClientSize = new System.Drawing.Size(488, 340);
+            this.Controls.Add(this.selectSinQueSeRepitanTitulosDeLibrosToolStrip);
+            this.Controls.Add(this.dtpFechaFinal);
+            this.Controls.Add(this.dtpFechaInicial);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtFechaFinal);
-            this.Controls.Add(this.txtFechaInicial);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -179,9 +202,12 @@
             this.Controls.Add(this.label1);
             this.Name = "GenerarReporteLibros";
             this.Text = "GenerarReporteLibros";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GenerarReporteLibros_FormClosed);
             this.Load += new System.EventHandler(this.GenerarReporteLibros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataSet1)).EndInit();
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.ResumeLayout(false);
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,10 +223,12 @@
         private LibrosDataSet1TableAdapters.LibrosTableAdapter librosTableAdapter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFechaInicial;
-        private System.Windows.Forms.TextBox txtFechaFinal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicial;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinal;
+        private System.Windows.Forms.ToolStrip selectSinQueSeRepitanTitulosDeLibrosToolStrip;
+        private System.Windows.Forms.ToolStripButton selectSinQueSeRepitanTitulosDeLibrosToolStripButton;
     }
 }

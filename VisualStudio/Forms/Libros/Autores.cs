@@ -24,7 +24,7 @@ namespace PruebaBiblioteca1.Forms.Autores
                 btnAceptar.Text = "Aceptar";
 
             }
-            else if(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text)) > 0)
+            else if(Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0)
             {
                 
                 btnAceptar.Text = "Modificar";
@@ -69,7 +69,7 @@ namespace PruebaBiblioteca1.Forms.Autores
                 }
                 else
                 {
-                    if (autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text)) > 0 || txtIdAutor.Text == "")
+                    if (Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0 || txtIdAutor.Text == "")
                     {
                         MessageBox.Show("El Autor que quieres registrar ya existe en la Base de Datos");
                     }
@@ -95,7 +95,7 @@ namespace PruebaBiblioteca1.Forms.Autores
             }
             else
             {
-                if (autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text)) > 0)
+                if (Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0)
                 {
                     autoresTableAdapter.DeleteQueryAutores(Convert.ToDecimal(txtIdAutor.Text));
                     this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
@@ -122,6 +122,11 @@ namespace PruebaBiblioteca1.Forms.Autores
             {
                 this.autoresTableAdapter.FillDGVAutoresPorNombreAutor(this.autoresDataSet1.Autores,txtNombreAutor.Text);
             }
+        }
+
+        private void FrmAutores_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Forms.FrmLibros().Show(); 
         }
     }
 }

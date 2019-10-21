@@ -40,5 +40,10 @@ namespace PruebaBiblioteca1.Forms.Usuarios
                 txtIdBibliotecario.Text = "";
             }
         }
+
+        private void GenerarReporteDeBibliotecarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Forms.FrmBibliotecarios().Show();
+        }
     }
 }

@@ -54,5 +54,11 @@ namespace PruebaBiblioteca1.Forms.Usuarios
                 new Usuarios.FormReporteDeUsuarios().Show();
             }
         }
+
+        private void GenerarReporteUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new FrmUsuarios().Show();
+
+        }
     }
 }

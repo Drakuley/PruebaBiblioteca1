@@ -365,6 +365,7 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.panel1);
             this.Name = "FrmBibliotecarios";
             this.Text = "Bibliotecarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBibliotecarios_FormClosed);
             this.Load += new System.EventHandler(this.FrmBibliotecarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).EndInit();
@@ -520,6 +521,12 @@ namespace PruebaBiblioteca1.Forms
         private void BtnReporte_Click(object sender, EventArgs e)
         {
             new Usuarios.GenerarReporteDeBibliotecarios().Show();
+            this.Hide();
+        }
+
+        private void FrmBibliotecarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new FrmMenú().Show();
         }
     }
 }
