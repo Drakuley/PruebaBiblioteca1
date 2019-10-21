@@ -92,7 +92,8 @@ namespace PruebaBiblioteca1.Forms
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            if(txtNumAdquisicion.Text==""|| txtTitulo.Text == "" || cbAutores.Text == "" || cbUbicaciones.Text == "" || txtEjemplar.Text == "" || cbClasificaciones.SelectedText == "")
+
+            if(txtNumAdquisicion.Text == "" || txtTitulo.Text == ""||txtEjemplar.Text == "")
             {
                 MessageBox.Show("Faltan campos por llenar");
             }
