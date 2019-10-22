@@ -45,5 +45,10 @@ namespace PruebaBiblioteca1.Forms.Usuarios
         {
             new Forms.FrmBibliotecarios().Show();
         }
+
+        private void GenerarReporteDeBibliotecarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

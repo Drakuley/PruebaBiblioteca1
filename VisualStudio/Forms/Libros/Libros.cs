@@ -65,6 +65,7 @@ namespace PruebaBiblioteca1.Forms
                 cbClasificaciones.SelectedValue = (decimal)cbClasificaciones.SelectionStart;
                 lblTxtEstatus.Text = "Disponible";
                 lblTxtEstatus.ForeColor = Color.Lime;
+                btnAceptar.Text = "Aceptar";
             }
             else if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
             {
@@ -101,6 +102,7 @@ namespace PruebaBiblioteca1.Forms
             {
                 librosTableAdapter.UpdateQueryLibros(txtTitulo.Text, (decimal)cbAutores.SelectedValue, (string)cbUbicaciones.SelectedValue, txtEjemplar.Text, (decimal)cbClasificaciones.SelectedValue, lblTxtEstatus.Text, txtNumAdquisicion.Text);
                 this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                btnAceptar.Text = "Aceptar";
             }
             else if (btnAceptar.Text == "REGISTRAR")
             {

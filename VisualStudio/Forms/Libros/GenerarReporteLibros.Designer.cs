@@ -180,7 +180,7 @@
             // 
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Name = "selectSinQueSeRepitanTitulosDeLibrosToolStripButton";
-            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Size = new System.Drawing.Size(23, 23);
+            this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Size = new System.Drawing.Size(212, 22);
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Text = "selectSinQueSeRepitanTitulosDeLibros";
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Click += new System.EventHandler(this.SelectSinQueSeRepitanTitulosDeLibrosToolStripButton_Click);
             // 
@@ -189,9 +189,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 340);
-            this.Controls.Add(this.selectSinQueSeRepitanTitulosDeLibrosToolStrip);
             this.Controls.Add(this.dtpFechaFinal);
             this.Controls.Add(this.dtpFechaInicial);
+            this.Controls.Add(this.selectSinQueSeRepitanTitulosDeLibrosToolStrip);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

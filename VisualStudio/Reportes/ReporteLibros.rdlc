@@ -80,6 +80,9 @@
               <Width>3.71708cm</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>4.24625cm</Width>
             </TablixColumn>
             <TablixColumn>
@@ -116,6 +119,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Fecha del Prestamo</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -316,6 +349,36 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="fechaPrestamo">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!fechaPrestamo.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>fechaPrestamo</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="nombreUsuario">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -476,6 +539,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -490,9 +554,9 @@
         </TablixRowHierarchy>
         <DataSetName>ReporteLibrosDataSet1</DataSetName>
         <Top>7.27287cm</Top>
-        <Left>1.10807cm</Left>
+        <Left>0.48725cm</Left>
         <Height>1.2cm</Height>
-        <Width>21.0725cm</Width>
+        <Width>23.57249cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -569,7 +633,7 @@
     <Height>6.19792in</Height>
     <Style />
   </Body>
-  <Width>9.05567in</Width>
+  <Width>9.71676in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
