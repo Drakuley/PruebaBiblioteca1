@@ -163,12 +163,6 @@
     <Compile Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.Designer.cs">
       <DependentUpon>GenerarReporteDeBibliotecarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Usuarios\GenerarReporteUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Usuarios\GenerarReporteUsuario.Designer.cs">
-      <DependentUpon>GenerarReporteUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Usuarios\Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\GenerarReporteDeBibliotecarios.resx">
       <DependentUpon>GenerarReporteDeBibliotecarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usuarios\GenerarReporteUsuario.resx">
-      <DependentUpon>GenerarReporteUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Usuarios\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
