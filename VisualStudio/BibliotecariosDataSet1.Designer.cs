@@ -287,6 +287,8 @@ namespace PruebaBiblioteca1 {
             
             private global::System.Data.DataColumn columnturno;
             
+            private global::System.Data.DataColumn columnestatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public BibliotecariosDataTable() {
@@ -354,6 +356,14 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn estatusColumn {
+                get {
+                    return this.columnestatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BibliotecariosRow AddBibliotecariosRow(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno) {
+            public BibliotecariosRow AddBibliotecariosRow(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno, string estatus) {
                 BibliotecariosRow rowBibliotecariosRow = ((BibliotecariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idBibliotecario,
                         nombreBibliotecario,
                         contraseña,
-                        turno};
+                        turno,
+                        estatus};
                 rowBibliotecariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBibliotecariosRow);
                 return rowBibliotecariosRow;
@@ -429,6 +440,7 @@ namespace PruebaBiblioteca1 {
                 this.columnnombreBibliotecario = base.Columns["nombreBibliotecario"];
                 this.columncontraseña = base.Columns["contraseña"];
                 this.columnturno = base.Columns["turno"];
+                this.columnestatus = base.Columns["estatus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace PruebaBiblioteca1 {
                 base.Columns.Add(this.columncontraseña);
                 this.columnturno = new global::System.Data.DataColumn("turno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnturno);
+                this.columnestatus = new global::System.Data.DataColumn("estatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidBibliotecario}, true));
                 this.columnidBibliotecario.AllowDBNull = false;
@@ -452,6 +466,8 @@ namespace PruebaBiblioteca1 {
                 this.columncontraseña.MaxLength = 15;
                 this.columnturno.AllowDBNull = false;
                 this.columnturno.MaxLength = 15;
+                this.columnestatus.AllowDBNull = false;
+                this.columnestatus.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -635,6 +651,17 @@ namespace PruebaBiblioteca1 {
                     this[this.tableBibliotecarios.turnoColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string estatus {
+                get {
+                    return ((string)(this[this.tableBibliotecarios.estatusColumn]));
+                }
+                set {
+                    this[this.tableBibliotecarios.estatusColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -800,39 +827,42 @@ namespace PruebaBiblioteca1.BibliotecariosDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("nombreBibliotecario", "nombreBibliotecario");
             tableMapping.ColumnMappings.Add("contraseña", "contraseña");
             tableMapping.ColumnMappings.Add("turno", "turno");
+            tableMapping.ColumnMappings.Add("estatus", "estatus");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Bibliotecarios] WHERE (([idBibliotecario] = @Original_idBiblio" +
-                "tecario) AND ([nombreBibliotecario] = @Original_nombreBibliotecario) AND ([contr" +
-                "aseña] = @Original_contraseña) AND ([turno] = @Original_turno))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Bibliotecarios] WHERE (([idBibliotecario] = @Original_idBibliotecario) AND ([nombreBibliotecario] = @Original_nombreBibliotecario) AND ([contraseña] = @Original_contraseña) AND ([turno] = @Original_turno) AND ([estatus] = @Original_estatus))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBibliotecario", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contraseña", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_turno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Bibliotecarios] ([idBibliotecario], [nombreBibliotecario], [contraseña], [turno]) VALUES (@idBibliotecario, @nombreBibliotecario, @contraseña, @turno);
-SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Bibliotecarios] ([idBibliotecario], [nombreBibliotecario], [contraseña], [turno], [estatus]) VALUES (@idBibliotecario, @nombreBibliotecario, @contraseña, @turno, @estatus);
+SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@turno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Bibliotecarios] SET [idBibliotecario] = @idBibliotecario, [nombreBibliotecario] = @nombreBibliotecario, [contraseña] = @contraseña, [turno] = @turno WHERE (([idBibliotecario] = @Original_idBibliotecario) AND ([nombreBibliotecario] = @Original_nombreBibliotecario) AND ([contraseña] = @Original_contraseña) AND ([turno] = @Original_turno));
-SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Bibliotecarios] SET [idBibliotecario] = @idBibliotecario, [nombreBibliotecario] = @nombreBibliotecario, [contraseña] = @contraseña, [turno] = @turno, [estatus] = @estatus WHERE (([idBibliotecario] = @Original_idBibliotecario) AND ([nombreBibliotecario] = @Original_nombreBibliotecario) AND ([contraseña] = @Original_contraseña) AND ([turno] = @Original_turno) AND ([estatus] = @Original_estatus));
+SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@turno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBibliotecario", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_contraseña", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_turno", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -845,63 +875,72 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM dbo.Bibliotec" +
-                "arios";
+            this._commandCollection[0].CommandText = "SELECT idBibliotecario, nombreBibliotecario, contraseña, turno,estatus FROM dbo.B" +
+                "ibliotecarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM Bibliotecarios\r\nWHERE        (idBibliotecario = @Original_idBibliotec" +
-                "ario)";
+            this._commandCollection[1].CommandText = "UPDATE       Bibliotecarios\r\nSET                estatus = \'Baja\'\r\nWHERE        (i" +
+                "dBibliotecario = @idBibliotecario); \r\nSELECT idBibliotecario, nombreBibliotecari" +
+                "o, contraseña, turno, estatus FROM Bibliotecarios WHERE (idBibliotecario = @idBi" +
+                "bliotecario)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Bibliotecarios\r\nWHERE        (id" +
-                "Bibliotecario = @id_Bibliotecario)";
+            this._commandCollection[2].CommandText = "DELETE FROM Bibliotecarios\r\nWHERE        (idBibliotecario = @Original_idBibliotec" +
+                "ario)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_Bibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        idBibliotecario, nombreBibliotecario, contraseña, turno\r\nFROM      " +
-                "      Bibliotecarios\r\nWHERE        (idBibliotecario = @id_Bibliotecario)";
+            this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Bibliotecarios\r\nWHERE        (id" +
+                "Bibliotecario = @id_Bibliotecario)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_Bibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM dbo.Bibliotec" +
-                "arios\r\nWHERE (nombreBibliotecario  LIKE @nombreBibliotecario + \'%\') ";
+            this._commandCollection[4].CommandText = "SELECT contraseña, estatus, idBibliotecario, nombreBibliotecario, turno FROM Bibl" +
+                "iotecarios WHERE (idBibliotecario = @id_Bibliotecario)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_Bibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO Bibliotecarios
-                         (idBibliotecario, nombreBibliotecario, contraseña, turno)
-VALUES        (@idBibliotecario,@nombreBibliotecario,@contraseña,@turno); 
-SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
+            this._commandCollection[5].CommandText = "SELECT contraseña, estatus, idBibliotecario, nombreBibliotecario, turno FROM Bibl" +
+                "iotecarios WHERE (nombreBibliotecario LIKE @nombreBibliotecario + \'%\') and estat" +
+                "us = \'Alta\'";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@turno", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "select MAX(idBibliotecario)+1 \r\nfrom Bibliotecarios";
+            this._commandCollection[6].CommandText = @"INSERT INTO Bibliotecarios
+                         (idBibliotecario, nombreBibliotecario, contraseña, turno, estatus)
+VALUES        (@idBibliotecario,@nombreBibliotecario,@contraseña,@turno, 'Alta');  
+SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@turno", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"UPDATE       Bibliotecarios
+            this._commandCollection[7].CommandText = "select MAX(idBibliotecario)+1 \r\nfrom Bibliotecarios";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"UPDATE       Bibliotecarios
 SET                idBibliotecario = @idBibliotecario, nombreBibliotecario = @nombreBibliotecario, contraseña = @contraseña, turno = @turno
 WHERE        (idBibliotecario = @Original_idBibliotecario); 
-SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@turno", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bibliotecarios WHERE (idBibliotecario = @idBibliotecario)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@turno", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "turno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -933,7 +972,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillDGVporIdBibliotecario(BibliotecariosDataSet1.BibliotecariosDataTable dataTable, decimal id_Bibliotecario) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(id_Bibliotecario));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -947,7 +986,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillDGVporNombreBibliotecarios(BibliotecariosDataSet1.BibliotecariosDataTable dataTable, string nombreBibliotecario) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("nombreBibliotecario");
             }
@@ -994,7 +1033,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_idBibliotecario, string Original_nombreBibliotecario, string Original_contraseña, string Original_turno) {
+        public virtual int Delete(decimal Original_idBibliotecario, string Original_nombreBibliotecario, string Original_contraseña, string Original_turno, string Original_estatus) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_idBibliotecario));
             if ((Original_nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("Original_nombreBibliotecario");
@@ -1013,6 +1052,12 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_turno));
+            }
+            if ((Original_estatus == null)) {
+                throw new global::System.ArgumentNullException("Original_estatus");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_estatus));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1034,7 +1079,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno) {
+        public virtual int Insert(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno, string estatus) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(idBibliotecario));
             if ((nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("nombreBibliotecario");
@@ -1053,6 +1098,12 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(turno));
+            }
+            if ((estatus == null)) {
+                throw new global::System.ArgumentNullException("estatus");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(estatus));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1074,7 +1125,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno, decimal Original_idBibliotecario, string Original_nombreBibliotecario, string Original_contraseña, string Original_turno) {
+        public virtual int Update(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno, string estatus, decimal Original_idBibliotecario, string Original_nombreBibliotecario, string Original_contraseña, string Original_turno, string Original_estatus) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(idBibliotecario));
             if ((nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("nombreBibliotecario");
@@ -1094,24 +1145,36 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(turno));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_idBibliotecario));
+            if ((estatus == null)) {
+                throw new global::System.ArgumentNullException("estatus");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(estatus));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_idBibliotecario));
             if ((Original_nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("Original_nombreBibliotecario");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_nombreBibliotecario));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_nombreBibliotecario));
             }
             if ((Original_contraseña == null)) {
                 throw new global::System.ArgumentNullException("Original_contraseña");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_contraseña));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_contraseña));
             }
             if ((Original_turno == null)) {
                 throw new global::System.ArgumentNullException("Original_turno");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_turno));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_turno));
+            }
+            if ((Original_estatus == null)) {
+                throw new global::System.ArgumentNullException("Original_estatus");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_estatus));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1133,8 +1196,32 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombreBibliotecario, string contraseña, string turno, decimal Original_idBibliotecario, string Original_nombreBibliotecario, string Original_contraseña, string Original_turno) {
-            return this.Update(Original_idBibliotecario, nombreBibliotecario, contraseña, turno, Original_idBibliotecario, Original_nombreBibliotecario, Original_contraseña, Original_turno);
+        public virtual int Update(string nombreBibliotecario, string contraseña, string turno, string estatus, decimal Original_idBibliotecario, string Original_nombreBibliotecario, string Original_contraseña, string Original_turno, string Original_estatus) {
+            return this.Update(Original_idBibliotecario, nombreBibliotecario, contraseña, turno, estatus, Original_idBibliotecario, Original_nombreBibliotecario, Original_contraseña, Original_turno, Original_estatus);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int DarDeBajaQuery(decimal idBibliotecario) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((decimal)(idBibliotecario));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1142,7 +1229,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQueryBibliotecarios(decimal Original_idBibliotecario) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((decimal)(Original_idBibliotecario));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1165,7 +1252,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> ExisteBibliotecarioConIdBibliotecario(decimal id_Bibliotecario) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((decimal)(id_Bibliotecario));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1195,7 +1282,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQueryBibliotecarios(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((decimal)(idBibliotecario));
             if ((nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("nombreBibliotecario");
@@ -1236,7 +1323,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object NuevoIdDeBibliotecarioQuery() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1265,7 +1352,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno FROM Bibliotecar
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQueryBibliotecarios(decimal idBibliotecario, string nombreBibliotecario, string contraseña, string turno, decimal Original_idBibliotecario) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((decimal)(idBibliotecario));
             if ((nombreBibliotecario == null)) {
                 throw new global::System.ArgumentNullException("nombreBibliotecario");
