@@ -44,8 +44,6 @@
             this.dtpFechaFinal = new System.Windows.Forms.DateTimePicker();
             this.selectSinQueSeRepitanTitulosDeLibrosToolStrip = new System.Windows.Forms.ToolStrip();
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.txtFechaIn = new System.Windows.Forms.TextBox();
-            this.txtFechaFin = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.librosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librosDataSet1)).BeginInit();
             this.selectSinQueSeRepitanTitulosDeLibrosToolStrip.SuspendLayout();
@@ -188,27 +186,11 @@
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Text = "selectSinQueSeRepitanTitulosDeLibros";
             this.selectSinQueSeRepitanTitulosDeLibrosToolStripButton.Click += new System.EventHandler(this.SelectSinQueSeRepitanTitulosDeLibrosToolStripButton_Click);
             // 
-            // txtFechaIn
-            // 
-            this.txtFechaIn.Location = new System.Drawing.Point(202, 125);
-            this.txtFechaIn.Name = "txtFechaIn";
-            this.txtFechaIn.Size = new System.Drawing.Size(249, 20);
-            this.txtFechaIn.TabIndex = 13;
-            // 
-            // txtFechaFin
-            // 
-            this.txtFechaFin.Location = new System.Drawing.Point(202, 207);
-            this.txtFechaFin.Name = "txtFechaFin";
-            this.txtFechaFin.Size = new System.Drawing.Size(249, 20);
-            this.txtFechaFin.TabIndex = 14;
-            // 
             // GenerarReporteLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 340);
-            this.Controls.Add(this.txtFechaFin);
-            this.Controls.Add(this.txtFechaIn);
             this.Controls.Add(this.dtpFechaFinal);
             this.Controls.Add(this.selectSinQueSeRepitanTitulosDeLibrosToolStrip);
             this.Controls.Add(this.dtpFechaInicial);
@@ -250,7 +232,5 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFinal;
         private System.Windows.Forms.ToolStrip selectSinQueSeRepitanTitulosDeLibrosToolStrip;
         private System.Windows.Forms.ToolStripButton selectSinQueSeRepitanTitulosDeLibrosToolStripButton;
-        private System.Windows.Forms.TextBox txtFechaIn;
-        private System.Windows.Forms.TextBox txtFechaFin;
     }
 }
