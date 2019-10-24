@@ -153,7 +153,6 @@
             // 
             // dtpFechaInicial
             // 
-            this.dtpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicial.Location = new System.Drawing.Point(202, 156);
             this.dtpFechaInicial.Name = "dtpFechaInicial";
             this.dtpFechaInicial.Size = new System.Drawing.Size(249, 20);
@@ -161,7 +160,6 @@
             // 
             // dtpFechaFinal
             // 
-            this.dtpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFinal.Location = new System.Drawing.Point(202, 233);
             this.dtpFechaFinal.Name = "dtpFechaFinal";
             this.dtpFechaFinal.Size = new System.Drawing.Size(249, 20);
@@ -192,8 +190,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 340);
             this.Controls.Add(this.dtpFechaFinal);
-            this.Controls.Add(this.selectSinQueSeRepitanTitulosDeLibrosToolStrip);
             this.Controls.Add(this.dtpFechaInicial);
+            this.Controls.Add(this.selectSinQueSeRepitanTitulosDeLibrosToolStrip);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
