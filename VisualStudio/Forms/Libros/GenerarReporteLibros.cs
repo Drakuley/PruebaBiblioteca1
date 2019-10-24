@@ -35,8 +35,8 @@ namespace PruebaBiblioteca1.Forms.Libros
         private void BtnGenerarReporte_Click(object sender, EventArgs e)
         {
             VariablesGlobales.Globales.titulo = cbTituloLibro.SelectedText;
-            VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
-            VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
+            VariablesGlobales.Globales.fechaFinal = txtFechaFin.Text;
+            VariablesGlobales.Globales.fechaInicial = txtFechaIn.Text;
             new ReporteDeLibros().Show();
         }
 
