@@ -454,6 +454,7 @@ namespace PruebaBiblioteca1.Forms
         {
             if (txtNombreUsuario.Text == "")
             {
+                txtIdUsuario.Text = "";
                 txtDireccion.Text = "";
                 txtTelefono.Text = "";
                 cbGeneroUsuario.Text = "";

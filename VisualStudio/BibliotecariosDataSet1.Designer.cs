@@ -879,7 +879,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idBibliotecario, nombreBibliotecario, contraseña, turno,estatus FROM dbo.B" +
-                "ibliotecarios";
+                "ibliotecarios WHERE\r\nestatus = \'Alta\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -910,8 +910,8 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT contraseña, estatus, idBibliotecario, nombreBibliotecario, turno FROM Bibl" +
-                "iotecarios WHERE (nombreBibliotecario LIKE @nombreBibliotecario + \'%\') and estat" +
-                "us = \'Alta\'";
+                "iotecarios WHERE (nombreBibliotecario LIKE @nombreBibliotecario + \'%\') AND (esta" +
+                "tus = \'Alta\')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreBibliotecario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();

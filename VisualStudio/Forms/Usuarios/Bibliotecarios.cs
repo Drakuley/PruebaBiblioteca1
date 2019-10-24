@@ -35,7 +35,6 @@ namespace PruebaBiblioteca1.Forms
         private DataGridViewTextBoxColumn idBibliotecarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreBibliotecarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
         private TextBox txtNombreBibliotecario;
 
         public FrmBibliotecarios()
@@ -53,6 +52,8 @@ namespace PruebaBiblioteca1.Forms
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.direccion = new System.Windows.Forms.Label();
             this.dgvBibliotecarios = new System.Windows.Forms.DataGridView();
+            this.bibliotecariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecariosDataSet1 = new PruebaBiblioteca1.BibliotecariosDataSet1();
             this.Nombre = new System.Windows.Forms.Label();
             this.txtNombreBibliotecario = new System.Windows.Forms.TextBox();
             this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
@@ -63,17 +64,14 @@ namespace PruebaBiblioteca1.Forms
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bibliotecariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bibliotecariosDataSet1 = new PruebaBiblioteca1.BibliotecariosDataSet1();
             this.bibliotecariosTableAdapter = new PruebaBiblioteca1.BibliotecariosDataSet1TableAdapters.BibliotecariosTableAdapter();
             this.idBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtIdBibliotecario
@@ -141,8 +139,7 @@ namespace PruebaBiblioteca1.Forms
             this.dgvBibliotecarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idBibliotecarioDataGridViewTextBoxColumn,
             this.nombreBibliotecarioDataGridViewTextBoxColumn,
-            this.turnoDataGridViewTextBoxColumn,
-            this.contraseñaDataGridViewTextBoxColumn});
+            this.turnoDataGridViewTextBoxColumn});
             this.dgvBibliotecarios.DataSource = this.bibliotecariosBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -157,6 +154,16 @@ namespace PruebaBiblioteca1.Forms
             this.dgvBibliotecarios.Size = new System.Drawing.Size(600, 460);
             this.dgvBibliotecarios.TabIndex = 33;
             this.dgvBibliotecarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBibliotecarios_CellContentClick);
+            // 
+            // bibliotecariosBindingSource
+            // 
+            this.bibliotecariosBindingSource.DataMember = "Bibliotecarios";
+            this.bibliotecariosBindingSource.DataSource = this.bibliotecariosDataSet1;
+            // 
+            // bibliotecariosDataSet1
+            // 
+            this.bibliotecariosDataSet1.DataSetName = "BibliotecariosDataSet1";
+            this.bibliotecariosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Nombre
             // 
@@ -305,16 +312,6 @@ namespace PruebaBiblioteca1.Forms
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 64;
             // 
-            // bibliotecariosBindingSource
-            // 
-            this.bibliotecariosBindingSource.DataMember = "Bibliotecarios";
-            this.bibliotecariosBindingSource.DataSource = this.bibliotecariosDataSet1;
-            // 
-            // bibliotecariosDataSet1
-            // 
-            this.bibliotecariosDataSet1.DataSetName = "BibliotecariosDataSet1";
-            this.bibliotecariosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bibliotecariosTableAdapter
             // 
             this.bibliotecariosTableAdapter.ClearBeforeFill = true;
@@ -337,13 +334,6 @@ namespace PruebaBiblioteca1.Forms
             this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
             this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
             // 
-            // contraseñaDataGridViewTextBoxColumn
-            // 
-            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
-            this.contraseñaDataGridViewTextBoxColumn.Visible = false;
-            // 
             // FrmBibliotecarios
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
@@ -356,10 +346,10 @@ namespace PruebaBiblioteca1.Forms
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBibliotecarios_FormClosed);
             this.Load += new System.EventHandler(this.FrmBibliotecarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +388,7 @@ namespace PruebaBiblioteca1.Forms
                 this.bibliotecariosTableAdapter.FillDGVporIdBibliotecario(this.bibliotecariosDataSet1.Bibliotecarios, Convert.ToDecimal(txtIdBibliotecario.Text));
                 btnAceptar.Text = "Modificar";
                 txtNombreBibliotecario.Text = dgvBibliotecarios.CurrentRow.Cells[1].Value.ToString();
-                cbTurno.Text = dgvBibliotecarios.CurrentRow.Cells[2].Value.ToString();
+                cbTurno.Text = dgvBibliotecarios.CurrentRow.Cells[2].FormattedValue.ToString();
             }
             else
             {
@@ -460,7 +450,7 @@ namespace PruebaBiblioteca1.Forms
                             decimal nuevoIdBibliotecario = Convert.ToDecimal(bibliotecariosTableAdapter.NuevoIdDeBibliotecarioQuery());
                             bibliotecariosTableAdapter.InsertQueryBibliotecarios(nuevoIdBibliotecario, txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text);
                             this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
-                            //txtIdBibliotecario.Text = "";
+                            txtIdBibliotecario.Text = "";
                             txtNombreBibliotecario.Text = "";
                             txtContraseña.Text = "";
                             txtConfirmarContraseña.Text = "";
@@ -521,6 +511,7 @@ namespace PruebaBiblioteca1.Forms
         {
             if (txtNombreBibliotecario.Text == "")
             {
+                txtIdBibliotecario.Text = "";
                 cbTurno.Text = "";
                 this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
             }
