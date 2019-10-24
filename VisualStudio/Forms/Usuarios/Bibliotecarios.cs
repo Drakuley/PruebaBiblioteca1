@@ -479,13 +479,25 @@ namespace PruebaBiblioteca1.Forms
             {
                 if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0)
                 {
-                    bibliotecariosTableAdapter.DarDeBajaQuery(Convert.ToDecimal(txtIdBibliotecario.Text));
-                    this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
-                    txtIdBibliotecario.Text = "";
-                    txtNombreBibliotecario.Text = "";
-                    txtContraseña.Text = "";
-                    txtConfirmarContraseña.Text = "";
-                    cbTurno.Text = "";
+                    var confirmResult = MessageBox.Show("¿Está seguro que desea dar de baja a este bibliotecario?",
+                                     "Dar de baja bibliotecario",
+                                     MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // If 'Yes', do something here.
+                        bibliotecariosTableAdapter.DarDeBajaQuery(Convert.ToDecimal(txtIdBibliotecario.Text));
+                        this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                        txtIdBibliotecario.Text = "";
+                        txtNombreBibliotecario.Text = "";
+                        txtContraseña.Text = "";
+                        txtConfirmarContraseña.Text = "";
+                        cbTurno.Text = "";
+                    }
+                    else
+                    {
+                        // If 'No', do something here.
+                    }
+                    
 
                 }
                 else
