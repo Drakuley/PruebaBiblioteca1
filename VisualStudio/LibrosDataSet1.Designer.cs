@@ -299,6 +299,8 @@ namespace PruebaBiblioteca1 {
             
             private global::System.Data.DataColumn columngenero;
             
+            private global::System.Data.DataColumn columnEstatus2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LibrosDataTable() {
@@ -414,6 +416,14 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Estatus2Column {
+                get {
+                    return this.columnEstatus2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +459,7 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LibrosRow AddLibrosRow(string numeroAdquisicion, string titulo, decimal idAutor, string ubicacion, string ejemplar, decimal clasificacion, string estatus, string Descripcion, string Autor, string genero) {
+            public LibrosRow AddLibrosRow(string numeroAdquisicion, string titulo, decimal idAutor, string ubicacion, string ejemplar, decimal clasificacion, string estatus, string Descripcion, string Autor, string genero, string Estatus2) {
                 LibrosRow rowLibrosRow = ((LibrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numeroAdquisicion,
@@ -461,7 +471,8 @@ namespace PruebaBiblioteca1 {
                         estatus,
                         Descripcion,
                         Autor,
-                        genero};
+                        genero,
+                        Estatus2};
                 rowLibrosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLibrosRow);
                 return rowLibrosRow;
@@ -501,6 +512,7 @@ namespace PruebaBiblioteca1 {
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnAutor = base.Columns["Autor"];
                 this.columngenero = base.Columns["genero"];
+                this.columnEstatus2 = base.Columns["Estatus2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +538,8 @@ namespace PruebaBiblioteca1 {
                 base.Columns.Add(this.columnAutor);
                 this.columngenero = new global::System.Data.DataColumn("genero", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngenero);
+                this.columnEstatus2 = new global::System.Data.DataColumn("Estatus2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstatus2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnnumeroAdquisicion}, true));
                 this.columnnumeroAdquisicion.AllowDBNull = false;
@@ -547,6 +561,7 @@ namespace PruebaBiblioteca1 {
                 this.columnAutor.MaxLength = 50;
                 this.columngenero.AllowDBNull = false;
                 this.columngenero.MaxLength = 30;
+                this.columnEstatus2.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -796,6 +811,34 @@ namespace PruebaBiblioteca1 {
                     this[this.tableLibros.generoColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Estatus2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableLibros.Estatus2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estatus2\' de la tabla \'Libros\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLibros.Estatus2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEstatus2Null() {
+                return this.IsNull(this.tableLibros.Estatus2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEstatus2Null() {
+                this[this.tableLibros.Estatus2Column] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -967,6 +1010,7 @@ namespace PruebaBiblioteca1.LibrosDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Autor", "Autor");
             tableMapping.ColumnMappings.Add("genero", "genero");
+            tableMapping.ColumnMappings.Add("Estatus2", "Estatus2");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -983,8 +1027,8 @@ namespace PruebaBiblioteca1.LibrosDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[11];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
-                         Autores.nombreAutor AS Autor
+            this._commandCollection[0].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, Autores.nombreAutor AS Autor, 
+                         Libros.Estatus2
 FROM            Libros INNER JOIN
                          Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
                          Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN

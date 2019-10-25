@@ -13,8 +13,8 @@
               <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
-                         Autores.nombreAutor AS Autor
+                    <CommandText>SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, Autores.nombreAutor AS Autor, 
+                         Libros.Estatus2
 FROM            Libros INNER JOIN
                          Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
                          Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
@@ -35,6 +35,7 @@ FROM            Libros INNER JOIN
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
               <Mapping SourceColumn="Autor" DataSetColumn="Autor" />
               <Mapping SourceColumn="genero" DataSetColumn="genero" />
+              <Mapping SourceColumn="Estatus2" DataSetColumn="Estatus2" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQueryLibros" Modifier="Public" Name="DeleteQueryLibros" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQueryLibros">
@@ -72,7 +73,7 @@ WHERE        (numeroAdquisicion = @NUMADQ)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorClasificacion" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorClasificacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="FillDGVLibrosPorClasificacion">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorClasificacion" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorClasificacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillDGVLibrosPorClasificacion">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
@@ -88,7 +89,7 @@ WHERE        (Libros.clasificacion = @Clasificacion)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorIdAutor" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorIdAutor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="FillDGVLibrosPorIdAutor">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorIdAutor" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorIdAutor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillDGVLibrosPorIdAutor">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
@@ -104,7 +105,7 @@ WHERE        (Libros.idAutor = @Autor)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorNumeroAdquisicion" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorNumeroAdquisicion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillDGVLibrosPorNumeroAdquisicion">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorNumeroAdquisicion" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorNumeroAdquisicion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillDGVLibrosPorNumeroAdquisicion">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero AS Genero, Ubicaciones.descripcion AS Descripcion, 
@@ -120,7 +121,7 @@ WHERE        (Libros.numeroAdquisicion = @NUMADQ)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorTitulo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorTitulo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillDGVLibrosPorTitulo">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDGVLibrosPorTitulo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVLibrosPorTitulo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="FillDGVLibrosPorTitulo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
@@ -136,7 +137,7 @@ WHERE        (Libros.titulo LIKE @Titulo + '%')</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryLibros" Modifier="Public" Name="InsertQueryLibros" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InsertQueryLibros">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryLibros" Modifier="Public" Name="InsertQueryLibros" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="InsertQueryLibros">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Libros] ([numeroAdquisicion], [titulo], [idAutor], [ubicacion], [ejemplar], [clasificacion], [estatus]) VALUES (@numeroAdquisicion, @titulo, @idAutor, @ubicacion, @ejemplar, @clasificacion, @estatus);
@@ -153,7 +154,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="BibliotecaDB.dbo.Libros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="selectSinQueSeRepitanTitulosDeLibros" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="selectSinQueSeRepitanTitulosDeLibros" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="selectSinQueSeRepitanTitulosDeLibros">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="BibliotecaDB.dbo.Libros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="selectSinQueSeRepitanTitulosDeLibros" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="selectSinQueSeRepitanTitulosDeLibros" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="selectSinQueSeRepitanTitulosDeLibros">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT DISTINCT titulo
@@ -162,7 +163,7 @@ FROM            Libros</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryLibros" Modifier="Public" Name="UpdateQueryLibros" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateQueryLibros">
+              <DbSource ConnectionRef="BibliotecaDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryLibros" Modifier="Public" Name="UpdateQueryLibros" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateQueryLibros">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Libros
@@ -191,7 +192,7 @@ WHERE        (numeroAdquisicion = @Original_numeroAdquisicion);
   <xs:element name="LibrosDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LibrosDataSet1" msprop:Generator_UserDSName="LibrosDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Libros" msprop:Generator_TableClassName="LibrosDataTable" msprop:Generator_TableVarName="tableLibros" msprop:Generator_RowChangedName="LibrosRowChanged" msprop:Generator_TablePropName="Libros" msprop:Generator_RowDeletingName="LibrosRowDeleting" msprop:Generator_RowChangingName="LibrosRowChanging" msprop:Generator_RowEvHandlerName="LibrosRowChangeEventHandler" msprop:Generator_RowDeletedName="LibrosRowDeleted" msprop:Generator_RowClassName="LibrosRow" msprop:Generator_UserTableName="Libros" msprop:Generator_RowEvArgName="LibrosRowChangeEvent">
+        <xs:element name="Libros" msprop:Generator_TableClassName="LibrosDataTable" msprop:Generator_TableVarName="tableLibros" msprop:Generator_TablePropName="Libros" msprop:Generator_RowDeletingName="LibrosRowDeleting" msprop:Generator_RowChangingName="LibrosRowChanging" msprop:Generator_RowEvHandlerName="LibrosRowChangeEventHandler" msprop:Generator_RowDeletedName="LibrosRowDeleted" msprop:Generator_UserTableName="Libros" msprop:Generator_RowChangedName="LibrosRowChanged" msprop:Generator_RowEvArgName="LibrosRowChangeEvent" msprop:Generator_RowClassName="LibrosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="numeroAdquisicion" msprop:Generator_ColumnVarNameInTable="columnnumeroAdquisicion" msprop:Generator_ColumnPropNameInRow="numeroAdquisicion" msprop:Generator_ColumnPropNameInTable="numeroAdquisicionColumn" msprop:Generator_UserColumnName="numeroAdquisicion">
@@ -249,6 +250,13 @@ WHERE        (numeroAdquisicion = @Original_numeroAdquisicion);
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estatus2" msprop:Generator_ColumnVarNameInTable="columnEstatus2" msprop:Generator_ColumnPropNameInRow="Estatus2" msprop:Generator_ColumnPropNameInTable="Estatus2Column" msprop:Generator_UserColumnName="Estatus2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
