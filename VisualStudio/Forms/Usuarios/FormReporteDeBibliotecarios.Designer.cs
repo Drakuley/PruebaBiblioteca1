@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewerBibliotecario = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reporteDeBibliotecariosDataSet = new PruebaBiblioteca1.ReporteDeBibliotecariosDataSet();
             this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteDeBibliotecariosDataSet = new PruebaBiblioteca1.ReporteDeBibliotecariosDataSet();
+            this.reportViewerBibliotecario = new Microsoft.Reporting.WinForms.ReportViewer();
             this.prestamosTableAdapter = new PruebaBiblioteca1.ReporteDeBibliotecariosDataSetTableAdapters.PrestamosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.reporteDeBibliotecariosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteDeBibliotecariosDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // prestamosBindingSource
+            // 
+            this.prestamosBindingSource.DataMember = "Prestamos";
+            this.prestamosBindingSource.DataSource = this.reporteDeBibliotecariosDataSet;
+            // 
+            // reporteDeBibliotecariosDataSet
+            // 
+            this.reporteDeBibliotecariosDataSet.DataSetName = "ReporteDeBibliotecariosDataSet";
+            this.reporteDeBibliotecariosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewerBibliotecario
             // 
@@ -47,19 +57,9 @@
             this.reportViewerBibliotecario.LocalReport.ReportEmbeddedResource = "PruebaBiblioteca1.Reportes.ReporteBibliotecario.rdlc";
             this.reportViewerBibliotecario.Location = new System.Drawing.Point(0, 0);
             this.reportViewerBibliotecario.Name = "reportViewerBibliotecario";
-            this.reportViewerBibliotecario.Size = new System.Drawing.Size(800, 450);
+            this.reportViewerBibliotecario.Size = new System.Drawing.Size(895, 561);
             this.reportViewerBibliotecario.TabIndex = 0;
             this.reportViewerBibliotecario.Load += new System.EventHandler(this.ReportViewerBibliotecario_Load);
-            // 
-            // reporteDeBibliotecariosDataSet
-            // 
-            this.reporteDeBibliotecariosDataSet.DataSetName = "ReporteDeBibliotecariosDataSet";
-            this.reporteDeBibliotecariosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prestamosBindingSource
-            // 
-            this.prestamosBindingSource.DataMember = "Prestamos";
-            this.prestamosBindingSource.DataSource = this.reporteDeBibliotecariosDataSet;
             // 
             // prestamosTableAdapter
             // 
@@ -69,13 +69,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(895, 561);
             this.Controls.Add(this.reportViewerBibliotecario);
             this.Name = "FormReporteDeBibliotecarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Préstamos por Bibliotecario";
             this.Load += new System.EventHandler(this.FormReporteDeBibliotecarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reporteDeBibliotecariosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteDeBibliotecariosDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

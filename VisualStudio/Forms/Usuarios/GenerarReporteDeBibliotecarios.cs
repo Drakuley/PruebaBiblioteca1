@@ -20,30 +20,25 @@ namespace PruebaBiblioteca1.Forms.Usuarios
 
         private void BtnGenerar_Click(object sender, EventArgs e)
         {
-            if (txtIdBibliotecario.Text == "")//|| txtFechaFinal.Text == "" || txtFechaInicial.Text == "")
-            {
-                MessageBox.Show("Ingrese ID Bibliotecario");
-            }
-            else
-            {
-                VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(txtIdBibliotecario.Text);
+            
+                VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(cbNombreBibliotecario.SelectedValue);
                 VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
                 VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
                 new FormReporteDeBibliotecarios().Show();
-            }
+
         }
 
-        private void TxtIdBibliotecario_TextChanged(object sender, EventArgs e)
-        {
-            if (Regex.IsMatch(txtIdBibliotecario.Text, @"^\d+$") == false)
-            {
-                txtIdBibliotecario.Text = "";
-            }
-        }
 
         private void GenerarReporteDeBibliotecarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             new Forms.FrmBibliotecarios().Show();
+        }
+
+        private void GenerarReporteDeBibliotecarios_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'bibliotecariosDataSet1.Bibliotecarios' Puede moverla o quitarla según sea necesario.
+            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+
         }
     }
 }

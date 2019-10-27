@@ -328,6 +328,7 @@
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.panel1);
             this.Name = "FrmMenú";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Préstamos";
             this.Load += new System.EventHandler(this.Menú_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();

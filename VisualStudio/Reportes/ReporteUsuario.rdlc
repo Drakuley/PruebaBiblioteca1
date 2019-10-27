@@ -21,8 +21,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>1.34042cm</Top>
-        <Left>4.39563cm</Left>
+        <Top>1.30514cm</Top>
+        <Left>1.77042cm</Left>
         <Height>1.12917cm</Height>
         <Width>21.41771cm</Width>
         <Style>
@@ -53,8 +53,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox43</rd:DefaultName>
-        <Top>3.16604cm</Top>
-        <Left>7.22667cm</Left>
+        <Top>3.13076cm</Top>
+        <Left>4.60146cm</Left>
         <Height>1.07625cm</Height>
         <Width>15.66916cm</Width>
         <ZIndex>1</ZIndex>
@@ -86,8 +86,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.08cm</Top>
-        <Left>7.22667cm</Left>
+        <Top>5.04472cm</Top>
+        <Left>4.60146cm</Left>
         <Height>0.9175cm</Height>
         <Width>4.93417cm</Width>
         <ZIndex>2</ZIndex>
@@ -118,8 +118,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>5.08cm</Top>
-        <Left>12.16084cm</Left>
+        <Top>5.04472cm</Top>
+        <Left>9.53563cm</Left>
         <Height>0.89104cm</Height>
         <Width>2.93562cm</Width>
         <ZIndex>3</ZIndex>
@@ -151,8 +151,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.17389cm</Top>
-        <Left>7.22667cm</Left>
+        <Top>6.13861cm</Top>
+        <Left>4.60146cm</Left>
         <Height>0.9175cm</Height>
         <Width>4.93417cm</Width>
         <ZIndex>4</ZIndex>
@@ -183,8 +183,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>6.20917cm</Top>
-        <Left>12.16084cm</Left>
+        <Top>6.17389cm</Top>
+        <Left>9.53563cm</Left>
         <Height>0.89104cm</Height>
         <Width>13.3602cm</Width>
         <ZIndex>5</ZIndex>
@@ -486,8 +486,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReporteDeUsuariosDataSet1</DataSetName>
-        <Top>8.25341cm</Top>
-        <Left>5.88108cm</Left>
+        <Top>8.21813cm</Top>
+        <Left>3.25587cm</Left>
         <Height>1.17354cm</Height>
         <Width>18.43076cm</Width>
         <ZIndex>6</ZIndex>

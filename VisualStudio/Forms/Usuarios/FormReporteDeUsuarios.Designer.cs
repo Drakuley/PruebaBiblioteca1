@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewerUsuarios = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reporteDeUsuariosDataSet = new PruebaBiblioteca1.ReporteDeUsuariosDataSet();
             this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteDeUsuariosDataSet = new PruebaBiblioteca1.ReporteDeUsuariosDataSet();
+            this.reportViewerUsuarios = new Microsoft.Reporting.WinForms.ReportViewer();
             this.prestamosTableAdapter = new PruebaBiblioteca1.ReporteDeUsuariosDataSetTableAdapters.PrestamosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.reporteDeUsuariosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteDeUsuariosDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // prestamosBindingSource
+            // 
+            this.prestamosBindingSource.DataMember = "Prestamos";
+            this.prestamosBindingSource.DataSource = this.reporteDeUsuariosDataSet;
+            // 
+            // reporteDeUsuariosDataSet
+            // 
+            this.reporteDeUsuariosDataSet.DataSetName = "ReporteDeUsuariosDataSet";
+            this.reporteDeUsuariosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewerUsuarios
             // 
@@ -47,19 +57,9 @@
             this.reportViewerUsuarios.LocalReport.ReportEmbeddedResource = "PruebaBiblioteca1.Reportes.ReporteUsuario.rdlc";
             this.reportViewerUsuarios.Location = new System.Drawing.Point(0, 0);
             this.reportViewerUsuarios.Name = "reportViewerUsuarios";
-            this.reportViewerUsuarios.Size = new System.Drawing.Size(800, 450);
+            this.reportViewerUsuarios.Size = new System.Drawing.Size(927, 522);
             this.reportViewerUsuarios.TabIndex = 0;
             this.reportViewerUsuarios.Load += new System.EventHandler(this.ReportViewerUsuarios_Load);
-            // 
-            // reporteDeUsuariosDataSet
-            // 
-            this.reporteDeUsuariosDataSet.DataSetName = "ReporteDeUsuariosDataSet";
-            this.reporteDeUsuariosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prestamosBindingSource
-            // 
-            this.prestamosBindingSource.DataMember = "Prestamos";
-            this.prestamosBindingSource.DataSource = this.reporteDeUsuariosDataSet;
             // 
             // prestamosTableAdapter
             // 
@@ -69,13 +69,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(927, 522);
             this.Controls.Add(this.reportViewerUsuarios);
             this.Name = "FormReporteDeUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReporteDeUsuarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReporteDeUsuarios_FormClosed);
             this.Load += new System.EventHandler(this.FormReporteDeUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reporteDeUsuariosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reporteDeUsuariosDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

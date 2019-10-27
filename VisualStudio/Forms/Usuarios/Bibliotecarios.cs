@@ -35,6 +35,9 @@ namespace PruebaBiblioteca1.Forms
         private DataGridViewTextBoxColumn idBibliotecarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreBibliotecarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn estatus;
+        private Label lblEstatus;
+        private Label label2;
         private TextBox txtNombreBibliotecario;
 
         public FrmBibliotecarios()
@@ -52,6 +55,10 @@ namespace PruebaBiblioteca1.Forms
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.direccion = new System.Windows.Forms.Label();
             this.dgvBibliotecarios = new System.Windows.Forms.DataGridView();
+            this.idBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bibliotecariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bibliotecariosDataSet1 = new PruebaBiblioteca1.BibliotecariosDataSet1();
             this.Nombre = new System.Windows.Forms.Label();
@@ -59,15 +66,14 @@ namespace PruebaBiblioteca1.Forms
             this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEstatus = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bibliotecariosTableAdapter = new PruebaBiblioteca1.BibliotecariosDataSet1TableAdapters.BibliotecariosTableAdapter();
-            this.idBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreBibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet1)).BeginInit();
@@ -139,7 +145,8 @@ namespace PruebaBiblioteca1.Forms
             this.dgvBibliotecarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idBibliotecarioDataGridViewTextBoxColumn,
             this.nombreBibliotecarioDataGridViewTextBoxColumn,
-            this.turnoDataGridViewTextBoxColumn});
+            this.turnoDataGridViewTextBoxColumn,
+            this.estatus});
             this.dgvBibliotecarios.DataSource = this.bibliotecariosBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -154,6 +161,30 @@ namespace PruebaBiblioteca1.Forms
             this.dgvBibliotecarios.Size = new System.Drawing.Size(600, 460);
             this.dgvBibliotecarios.TabIndex = 33;
             this.dgvBibliotecarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBibliotecarios_CellContentClick);
+            // 
+            // idBibliotecarioDataGridViewTextBoxColumn
+            // 
+            this.idBibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "idBibliotecario";
+            this.idBibliotecarioDataGridViewTextBoxColumn.HeaderText = "Id Bibliotecario";
+            this.idBibliotecarioDataGridViewTextBoxColumn.Name = "idBibliotecarioDataGridViewTextBoxColumn";
+            // 
+            // nombreBibliotecarioDataGridViewTextBoxColumn
+            // 
+            this.nombreBibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "nombreBibliotecario";
+            this.nombreBibliotecarioDataGridViewTextBoxColumn.HeaderText = "Nombre Bibliotecario";
+            this.nombreBibliotecarioDataGridViewTextBoxColumn.Name = "nombreBibliotecarioDataGridViewTextBoxColumn";
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "turno";
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            // 
+            // estatus
+            // 
+            this.estatus.DataPropertyName = "estatus";
+            this.estatus.HeaderText = "Estatus";
+            this.estatus.Name = "estatus";
             // 
             // bibliotecariosBindingSource
             // 
@@ -213,6 +244,8 @@ namespace PruebaBiblioteca1.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel1.Controls.Add(this.lblEstatus);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnReporte);
             this.panel1.Controls.Add(this.txtConfirmarContraseña);
             this.panel1.Controls.Add(this.btnEliminar);
@@ -230,6 +263,30 @@ namespace PruebaBiblioteca1.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(353, 469);
             this.panel1.TabIndex = 59;
+            // 
+            // lblEstatus
+            // 
+            this.lblEstatus.AutoSize = true;
+            this.lblEstatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.lblEstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblEstatus.ForeColor = System.Drawing.Color.White;
+            this.lblEstatus.Location = new System.Drawing.Point(173, 160);
+            this.lblEstatus.Name = "lblEstatus";
+            this.lblEstatus.Size = new System.Drawing.Size(38, 16);
+            this.lblEstatus.TabIndex = 63;
+            this.lblEstatus.Text = "*****";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(7, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Estatus:";
             // 
             // btnReporte
             // 
@@ -316,24 +373,6 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.bibliotecariosTableAdapter.ClearBeforeFill = true;
             // 
-            // idBibliotecarioDataGridViewTextBoxColumn
-            // 
-            this.idBibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "idBibliotecario";
-            this.idBibliotecarioDataGridViewTextBoxColumn.HeaderText = "Id Bibliotecario";
-            this.idBibliotecarioDataGridViewTextBoxColumn.Name = "idBibliotecarioDataGridViewTextBoxColumn";
-            // 
-            // nombreBibliotecarioDataGridViewTextBoxColumn
-            // 
-            this.nombreBibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "nombreBibliotecario";
-            this.nombreBibliotecarioDataGridViewTextBoxColumn.HeaderText = "Nombre Bibliotecario";
-            this.nombreBibliotecarioDataGridViewTextBoxColumn.Name = "nombreBibliotecarioDataGridViewTextBoxColumn";
-            // 
-            // turnoDataGridViewTextBoxColumn
-            // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "turno";
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            // 
             // FrmBibliotecarios
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
@@ -342,6 +381,7 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.dgvBibliotecarios);
             this.Controls.Add(this.panel1);
             this.Name = "FrmBibliotecarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bibliotecarios";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmBibliotecarios_FormClosed);
             this.Load += new System.EventHandler(this.FrmBibliotecarios_Load);
@@ -378,9 +418,11 @@ namespace PruebaBiblioteca1.Forms
                 txtContraseña.Text = "";
                 txtConfirmarContraseña.Text = "";
                 cbTurno.Text = "";
+                lblEstatus.Text = "****";
 
                 txtIdBibliotecario.Focus();
                 btnAceptar.Text = "Aceptar";
+                btnEliminar.Text = "Dar de Baja";
 
             }
             else if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0)
@@ -389,6 +431,17 @@ namespace PruebaBiblioteca1.Forms
                 btnAceptar.Text = "Modificar";
                 txtNombreBibliotecario.Text = dgvBibliotecarios.CurrentRow.Cells[1].Value.ToString();
                 cbTurno.Text = dgvBibliotecarios.CurrentRow.Cells[2].FormattedValue.ToString();
+                lblEstatus.Text = dgvBibliotecarios.CurrentRow.Cells[3].FormattedValue.ToString();
+                if(lblEstatus.Text == "Alta")
+                {
+                    lblEstatus.ForeColor = Color.FromArgb(51, 204, 51);
+                    btnEliminar.Text = "Dar de Baja";
+                }
+                else
+                {
+                    lblEstatus.ForeColor = Color.FromArgb(255, 0, 0);
+                    btnEliminar.Text = "Dar de Alta";
+                }
             }
             else
             {
@@ -398,6 +451,8 @@ namespace PruebaBiblioteca1.Forms
                 txtContraseña.Text = "";
                 txtConfirmarContraseña.Text = "";
                 cbTurno.Text = "";
+                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                lblEstatus.Text = "****";
                 this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
             }
         }
@@ -421,6 +476,8 @@ namespace PruebaBiblioteca1.Forms
                         txtContraseña.Text = "";
                         txtConfirmarContraseña.Text = "";
                         cbTurno.Text = "";
+                        lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                        lblEstatus.Text = "****";
 
                         txtIdBibliotecario.Focus();
                     }
@@ -455,8 +512,10 @@ namespace PruebaBiblioteca1.Forms
                             txtContraseña.Text = "";
                             txtConfirmarContraseña.Text = "";
                             cbTurno.Text = "";
+                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                            lblEstatus.Text = "****";
 
-                            txtIdBibliotecario.Focus();
+                        txtIdBibliotecario.Focus();
                         }
                         else
                         {
@@ -479,23 +538,51 @@ namespace PruebaBiblioteca1.Forms
             {
                 if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0)
                 {
-                    var confirmResult = MessageBox.Show("¿Está seguro que desea dar de baja a este bibliotecario?",
-                                     "Dar de baja bibliotecario",
-                                     MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
+                    if (btnEliminar.Text == "Dar de Baja")
                     {
-                        // If 'Yes', do something here.
-                        bibliotecariosTableAdapter.DarDeBajaQuery(Convert.ToDecimal(txtIdBibliotecario.Text));
-                        this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
-                        txtIdBibliotecario.Text = "";
-                        txtNombreBibliotecario.Text = "";
-                        txtContraseña.Text = "";
-                        txtConfirmarContraseña.Text = "";
-                        cbTurno.Text = "";
+                        var confirmResult = MessageBox.Show("¿Está seguro que desea dar de baja a este bibliotecario?",
+                                         "Dar de baja bibliotecario",
+                                         MessageBoxButtons.YesNo);
+                        if (confirmResult == DialogResult.Yes)
+                        {
+                            // If 'Yes', do something here.
+                            bibliotecariosTableAdapter.DarDeBajaQuery(Convert.ToDecimal(txtIdBibliotecario.Text));
+                            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                            txtIdBibliotecario.Text = "";
+                            txtNombreBibliotecario.Text = "";
+                            txtContraseña.Text = "";
+                            txtConfirmarContraseña.Text = "";
+                            cbTurno.Text = "";
+                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                            lblEstatus.Text = "****";
+                        }
+                        else
+                        {
+                            // If 'No', do something here.
+                        }
                     }
                     else
                     {
-                        // If 'No', do something here.
+                        var confirmResult = MessageBox.Show("¿Está seguro que desea dar de alta a este bibliotecario?",
+                                         "Dar de alta bibliotecario",
+                                         MessageBoxButtons.YesNo);
+                        if (confirmResult == DialogResult.Yes)
+                        {
+                            // If 'Yes', do something here.
+                            bibliotecariosTableAdapter.DarDeAltaQuery(Convert.ToDecimal(txtIdBibliotecario.Text));
+                            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                            txtIdBibliotecario.Text = "";
+                            txtNombreBibliotecario.Text = "";
+                            txtContraseña.Text = "";
+                            txtConfirmarContraseña.Text = "";
+                            cbTurno.Text = "";
+                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                            lblEstatus.Text = "****";
+                        }
+                        else
+                        {
+                            // If 'No', do something here.
+                        }
                     }
                     
 
@@ -525,6 +612,8 @@ namespace PruebaBiblioteca1.Forms
             {
                 txtIdBibliotecario.Text = "";
                 cbTurno.Text = "";
+                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                lblEstatus.Text = "****";
                 this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
             }
             else
@@ -540,6 +629,15 @@ namespace PruebaBiblioteca1.Forms
             txtIdBibliotecario.Text = dgvBibliotecarios.Rows[renglon].Cells[0].FormattedValue.ToString();
             txtNombreBibliotecario.Text = dgvBibliotecarios.CurrentRow.Cells[1].Value.ToString();
             cbTurno.Text = dgvBibliotecarios.CurrentRow.Cells[2].Value.ToString();
+            lblEstatus.Text = dgvBibliotecarios.CurrentRow.Cells[3].FormattedValue.ToString();
+            if (lblEstatus.Text == "Alta")
+            {
+                lblEstatus.ForeColor = Color.FromArgb(51, 204, 51);
+            }
+            else
+            {
+                lblEstatus.ForeColor = Color.FromArgb(255, 0, 0);
+            }
         }
     }
 }

@@ -30,5 +30,10 @@ namespace PruebaBiblioteca1.Forms.Usuarios
             decimal idUsuario = VariablesGlobales.Globales.idUsuario;
             prestamosTableAdapter.Fill(this.reporteDeUsuariosDataSet.Prestamos, idUsuario);
         }
+
+        private void FormReporteDeUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new FrmUsuarios().Show();
+        }
     }
 }
