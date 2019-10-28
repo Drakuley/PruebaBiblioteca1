@@ -79,6 +79,15 @@ namespace PruebaBiblioteca1.Forms
                     lblTxtEstatus.Text = "No Disponible";
                     lblTxtEstatus.ForeColor = Color.Gold;
                 }
+
+                if(Convert.ToInt32(librosTableAdapter.estaDadoDeAltaElLibro(txtNumAdquisicion.Text)) > 0)
+                {
+                    btnEliminar.Text = "Dar de Baja";
+                }
+                else
+                {
+                    btnEliminar.Text = "Dar de Alta";
+                }
                 librosTableAdapter.FillDGVLibrosPorNumeroAdquisicion(this.librosDataSet1.Libros, txtNumAdquisicion.Text);
                 btnAceptar.Text = "MODIFICAR";
             }
@@ -131,8 +140,22 @@ namespace PruebaBiblioteca1.Forms
             }
             else if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
             {
-                librosTableAdapter.DeleteQueryLibros(txtNumAdquisicion.Text);
+                if(btnEliminar.Text == "Dar de Baja")
+                {
+                    var confirmResult = MessageBox.Show("¿Está seguro que desea dar de baja a este Libro?",
+                                        "Dar de baja Libro",
+                                        MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        librosTableAdapter.UpdateDarDeBajaLibros(txtNumAdquisicion.Text);
+                    }
+                        
+                }else if(btnEliminar.Text == "Dar de Alta")
+                {
+                    librosTableAdapter.UpdateDarDeAltaLibros(txtNumAdquisicion.Text);
+                }
                 this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                btnAceptar.Text = "Registrar";
                 txtNumAdquisicion.Text = "";
                 txtTitulo.Text = "";
                 cbAutores.SelectedValue = (decimal)cbAutores.SelectionStart;

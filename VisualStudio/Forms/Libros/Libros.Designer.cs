@@ -402,7 +402,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 36);
             this.btnEliminar.TabIndex = 63;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Text = "Dar de Baja";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
