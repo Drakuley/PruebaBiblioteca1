@@ -69,7 +69,7 @@ namespace PruebaBiblioteca1.Forms
             else if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
             {
 
-                if (Convert.ToInt32(librosTableAdapter.estatusPorNumeroAdquisicion(txtNumAdquisicion.Text)) > 0)
+                if (Convert.ToInt32(librosTableAdapter.estatusPorNumeroAdquisicion(txtNumAdquisicion.Text)) > 0 )
                 {
                     lblTxtEstatus.Text = "Disponible";
                     lblTxtEstatus.ForeColor = Color.Lime;
@@ -115,6 +115,10 @@ namespace PruebaBiblioteca1.Forms
                 if (Convert.ToInt32(librosTableAdapter.exixtenLibrosConNumAdquisicion(txtNumAdquisicion.Text)) > 0)
                 {
                     MessageBox.Show("El libro que quieres registrar ya existe");
+                }
+                else if(Convert.ToInt32(librosTableAdapter.existenLibrosconMismoTituloYEjemplar(txtEjemplar.Text, txtTitulo.Text)) > 0)
+                {
+                    MessageBox.Show("No puedes registrar el libro porque ya existe un libro con ese titulo y ejemplar");
                 }
                 else
                 {
