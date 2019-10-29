@@ -77,10 +77,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.71708cm</Width>
+              <Width>3.3202cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.66417cm</Width>
+              <Width>4.24751cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>4.24625cm</Width>
@@ -108,7 +108,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Clave de Prestamo</Value>
+                              <Value>No. de Prestamo</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -321,7 +321,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idPrestamo</rd:DefaultName>
@@ -516,7 +518,7 @@
         <Top>7.27287cm</Top>
         <Left>1.10807cm</Left>
         <Height>1.2cm</Height>
-        <Width>21.11187cm</Width>
+        <Width>21.29833cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
