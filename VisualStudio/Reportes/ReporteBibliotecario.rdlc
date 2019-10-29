@@ -19,8 +19,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>5.39751cm</Top>
-        <Left>10.85791cm</Left>
+        <Top>6.41587cm</Top>
+        <Left>8.03457cm</Left>
         <Height>0.89104cm</Height>
         <Width>3.75582cm</Width>
         <Style>
@@ -51,8 +51,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.39751cm</Top>
-        <Left>4.23041cm</Left>
+        <Top>6.41587cm</Top>
+        <Left>1.40707cm</Left>
         <Height>0.9175cm</Height>
         <Width>6.52167cm</Width>
         <ZIndex>1</ZIndex>
@@ -73,8 +73,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>REPORTE DE PRÉSTAMOS POR BIBLIOTECARIO</Value>
+                <Value>Reporte de préstamos por bibliotecario</Value>
                 <Style>
+                  <FontStyle>Italic</FontStyle>
                   <FontSize>22pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -84,10 +85,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox43</rd:DefaultName>
-        <Top>3.25438cm</Top>
-        <Left>3.46666cm</Left>
+        <Top>4.7625cm</Top>
+        <Left>4.73312cm</Left>
         <Height>1.07625cm</Height>
-        <Width>18.07687cm</Width>
+        <Width>14.74312cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -106,22 +107,24 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>BIBLIOTECA MUNICIPAL "JOSE MARIA MORELOS Y PAVON"</Value>
+                <Value>Biblioteca Municipal "Jose Maria Morelos y Pavon"</Value>
                 <Style>
-                  <FontSize>20pt</FontSize>
+                  <FontSize>28pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>Underline</TextDecoration>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>1.48167cm</Top>
-        <Left>1.11479cm</Left>
-        <Height>1.12917cm</Height>
-        <Width>21.41771cm</Width>
+        <Top>1.79007cm</Top>
+        <Left>3.03271cm</Left>
+        <Height>2.47854cm</Height>
+        <Width>18.13688cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -151,8 +154,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.4914cm</Top>
-        <Left>4.23041cm</Left>
+        <Top>7.50976cm</Top>
+        <Left>1.40707cm</Left>
         <Height>0.9175cm</Height>
         <Width>4.93417cm</Width>
         <ZIndex>4</ZIndex>
@@ -183,8 +186,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>6.4914cm</Top>
-        <Left>9.23513cm</Left>
+        <Top>7.50976cm</Top>
+        <Left>6.41179cm</Left>
         <Height>0.89104cm</Height>
         <Width>13.3602cm</Width>
         <ZIndex>5</ZIndex>
@@ -208,7 +211,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.39603cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>5.09292cm</Width>
@@ -217,7 +220,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.10313cm</Width>
+              <Width>1.6798cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>4.90771cm</Width>
@@ -236,11 +239,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>No. Préstamo</Value>
-                              <Style />
+                              <Value>No. de Préstamo</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -267,10 +274,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha de Préstamo</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -297,10 +308,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Número de Adquisición</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -327,10 +342,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Título de Libro</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -357,10 +376,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha de Devolución</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -387,10 +410,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>No. Usuario</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -417,10 +444,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre de Usuario</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -455,7 +486,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idPrestamo</rd:DefaultName>
@@ -485,7 +518,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>fechaPrestamo</rd:DefaultName>
@@ -515,7 +550,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>numeroAdquisicion</rd:DefaultName>
@@ -545,7 +582,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>titulo</rd:DefaultName>
@@ -575,7 +614,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>fechaDevolucion</rd:DefaultName>
@@ -605,7 +646,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idUsuario</rd:DefaultName>
@@ -635,7 +678,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombreUsuario</rd:DefaultName>
@@ -678,10 +723,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReporteDeBibliotecariosDataSet1</DataSetName>
-        <Top>8.06539cm</Top>
-        <Left>1.11479cm</Left>
+        <Top>9.05729cm</Top>
+        <Left>1.40707cm</Left>
         <Height>1.70271cm</Height>
-        <Width>21.52168cm</Width>
+        <Width>20.99438cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -690,7 +735,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4in</Height>
+    <Height>4.23622in</Height>
     <Style />
   </Body>
   <Width>9.49786in</Width>

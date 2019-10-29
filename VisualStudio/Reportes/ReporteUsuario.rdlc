@@ -2,39 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox42">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>BIBLIOTECA MUNICIPAL "JOSE MARIA MORELOS Y PAVON"</Value>
-                <Style>
-                  <FontSize>20pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox42</rd:DefaultName>
-        <Top>1.30514cm</Top>
-        <Left>1.77042cm</Left>
-        <Height>1.12917cm</Height>
-        <Width>21.41771cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox43">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -42,8 +9,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>REPORTE DE PRÉSTAMOS POR USUARIO</Value>
+                <Value>Reporte de préstamos por usuario</Value>
                 <Style>
+                  <FontStyle>Italic</FontStyle>
                   <FontSize>22pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -53,11 +21,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox43</rd:DefaultName>
-        <Top>3.13076cm</Top>
-        <Left>4.60146cm</Left>
+        <Top>3.97743cm</Top>
+        <Left>5.87918cm</Left>
         <Height>1.07625cm</Height>
-        <Width>15.66916cm</Width>
-        <ZIndex>1</ZIndex>
+        <Width>13.04979cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -86,11 +53,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>5.04472cm</Top>
-        <Left>4.60146cm</Left>
+        <Top>5.84833cm</Top>
+        <Left>1.63458cm</Left>
         <Height>0.9175cm</Height>
         <Width>4.93417cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -118,11 +85,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>5.04472cm</Top>
-        <Left>9.53563cm</Left>
+        <Top>5.84833cm</Top>
+        <Left>6.56875cm</Left>
         <Height>0.89104cm</Height>
         <Width>2.93562cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -151,11 +118,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.13861cm</Top>
-        <Left>4.60146cm</Left>
+        <Top>6.94222cm</Top>
+        <Left>1.63458cm</Left>
         <Height>0.9175cm</Height>
         <Width>4.93417cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -183,11 +150,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox44</rd:DefaultName>
-        <Top>6.17389cm</Top>
-        <Left>9.53563cm</Left>
+        <Top>6.9775cm</Top>
+        <Left>6.56875cm</Left>
         <Height>0.89104cm</Height>
         <Width>13.3602cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -202,7 +169,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.60769cm</Width>
+              <Width>2.62331cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>4.60769cm</Width>
@@ -228,10 +195,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>No. Préstamo</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -258,10 +229,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Título del libro</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox30</rd:DefaultName>
@@ -288,10 +263,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha de Préstamo</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox32</rd:DefaultName>
@@ -318,10 +297,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Fecha de Devolución</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox34</rd:DefaultName>
@@ -486,22 +469,58 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ReporteDeUsuariosDataSet1</DataSetName>
-        <Top>8.21813cm</Top>
-        <Left>3.25587cm</Left>
+        <Top>8.98646cm</Top>
+        <Left>3.94543cm</Left>
         <Height>1.17354cm</Height>
-        <Width>18.43076cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>16.44638cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Biblioteca Municipal "Jose Maria Morelos y Pavon"</Value>
+                <Style>
+                  <FontSize>28pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox42</rd:DefaultName>
+        <Top>0.98323cm</Top>
+        <Left>3.06727cm</Left>
+        <Height>2.47854cm</Height>
+        <Width>18.13688cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>4in</Height>
     <Style />
   </Body>
-  <Width>11.45151in</Width>
+  <Width>9.49in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
