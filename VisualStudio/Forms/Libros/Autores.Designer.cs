@@ -66,6 +66,7 @@
             this.dgvAutores.Name = "dgvAutores";
             this.dgvAutores.Size = new System.Drawing.Size(495, 340);
             this.dgvAutores.TabIndex = 0;
+            this.dgvAutores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAutores_CellContentClick);
             // 
             // idAutorDataGridViewTextBoxColumn
             // 

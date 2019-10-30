@@ -12,6 +12,7 @@ namespace PruebaBiblioteca1.Forms.Autores
 {
     public partial class FrmAutores : Form
     {
+        public int renglon;
         public FrmAutores()
         {
             InitializeComponent();
@@ -21,7 +22,9 @@ namespace PruebaBiblioteca1.Forms.Autores
         {
             if(txtIdAutor.Text == "")
             {
+                this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
                 btnAceptar.Text = "Aceptar";
+                txtNombreAutor.Text = "";
 
             }
             else if(Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0)
@@ -97,7 +100,15 @@ namespace PruebaBiblioteca1.Forms.Autores
             {
                 if (Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0)
                 {
-                    autoresTableAdapter.DeleteQueryAutores(Convert.ToDecimal(txtIdAutor.Text));
+                    try
+                    {
+                        autoresTableAdapter.DeleteQueryAutores(Convert.ToDecimal(txtIdAutor.Text));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("No se puede eliminar este autor porque existen libros con su nombre en la biblioteca");
+                    }
+                    
                     this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
                     txtIdAutor.Text = "";
                     txtNombreAutor.Text = "";
@@ -116,7 +127,8 @@ namespace PruebaBiblioteca1.Forms.Autores
             if(txtNombreAutor.Text == "")
             {
                 this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
-
+                txtIdAutor.Text = "";
+                txtNombreAutor.Text = "";
             }
             else
             {
@@ -127,6 +139,13 @@ namespace PruebaBiblioteca1.Forms.Autores
         private void FrmAutores_FormClosed(object sender, FormClosedEventArgs e)
         {
             new Forms.FrmLibros().Show(); 
+        }
+
+        private void DgvAutores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            renglon = dgvAutores.CurrentCellAddress.Y;
+            txtIdAutor.Text = dgvAutores.CurrentRow.Cells[0].FormattedValue.ToString();
+            txtNombreAutor.Text = dgvAutores.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }
