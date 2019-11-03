@@ -49,7 +49,7 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnLibros = new System.Windows.Forms.Button();
             this.btnBibliotecarios = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnCambiarBibliotecario = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -261,22 +261,23 @@
             this.btnBibliotecarios.UseVisualStyleBackColor = false;
             this.btnBibliotecarios.Click += new System.EventHandler(this.BtnBibliotecarios_Click);
             // 
-            // button5
+            // btnCambiarBibliotecario
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 415);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(251, 66);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Cambiar Bibliotecario";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnCambiarBibliotecario.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCambiarBibliotecario.AutoSize = true;
+            this.btnCambiarBibliotecario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.btnCambiarBibliotecario.FlatAppearance.BorderSize = 0;
+            this.btnCambiarBibliotecario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCambiarBibliotecario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarBibliotecario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarBibliotecario.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarBibliotecario.Location = new System.Drawing.Point(0, 415);
+            this.btnCambiarBibliotecario.Name = "btnCambiarBibliotecario";
+            this.btnCambiarBibliotecario.Size = new System.Drawing.Size(251, 66);
+            this.btnCambiarBibliotecario.TabIndex = 12;
+            this.btnCambiarBibliotecario.Text = "Cambiar Bibliotecario";
+            this.btnCambiarBibliotecario.UseVisualStyleBackColor = false;
+            this.btnCambiarBibliotecario.Click += new System.EventHandler(this.BtnCambiarBibliotecario_Click);
             // 
             // panel1
             // 
@@ -284,7 +285,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btnCambiarBibliotecario);
             this.panel1.Controls.Add(this.btnBibliotecarios);
             this.panel1.Controls.Add(this.btnLibros);
             this.panel1.Controls.Add(this.btnUsuarios);
@@ -350,7 +351,7 @@
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnLibros;
         private System.Windows.Forms.Button btnBibliotecarios;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCambiarBibliotecario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;

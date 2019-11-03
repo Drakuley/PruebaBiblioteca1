@@ -50,5 +50,11 @@ namespace PruebaBiblioteca1
             new Forms.FrmBibliotecarios().Show();
             this.Hide();
         }
+
+        private void BtnCambiarBibliotecario_Click(object sender, EventArgs e)
+        {
+            new Forms.Login().Show();
+            this.Close();
+        }
     }
 }
