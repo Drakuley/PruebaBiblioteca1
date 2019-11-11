@@ -49,5 +49,10 @@ namespace PruebaBiblioteca1.Forms
                 txtIdBibliotecario.Text = "";
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

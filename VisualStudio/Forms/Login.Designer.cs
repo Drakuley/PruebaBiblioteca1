@@ -149,6 +149,7 @@
             this.Controls.Add(this.txtIdBibliotecario);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

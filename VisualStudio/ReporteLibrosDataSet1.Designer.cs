@@ -301,6 +301,8 @@ namespace PruebaBiblioteca1 {
             
             private global::System.Data.DataColumn columnEstatus2;
             
+            private global::System.Data.DataColumn columnFecha_Devuelto;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PrestamosDataTable() {
@@ -424,6 +426,14 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Fecha_DevueltoColumn {
+                get {
+                    return this.columnFecha_Devuelto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PrestamosRow AddPrestamosRow(decimal idPrestamo, System.DateTime fechaPrestamo, string numeroAdquisicion, decimal idUsuario, decimal idBibliotecario, System.DateTime fechaDevolucion, string nombreUsuario, string estatus, string titulo, string ejemplar, string Estatus2) {
+            public PrestamosRow AddPrestamosRow(decimal idPrestamo, System.DateTime fechaPrestamo, string numeroAdquisicion, decimal idUsuario, decimal idBibliotecario, System.DateTime fechaDevolucion, string nombreUsuario, string estatus, string titulo, string ejemplar, string Estatus2, System.DateTime Fecha_Devuelto) {
                 PrestamosRow rowPrestamosRow = ((PrestamosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idPrestamo,
@@ -472,7 +482,8 @@ namespace PruebaBiblioteca1 {
                         estatus,
                         titulo,
                         ejemplar,
-                        Estatus2};
+                        Estatus2,
+                        Fecha_Devuelto};
                 rowPrestamosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPrestamosRow);
                 return rowPrestamosRow;
@@ -513,6 +524,7 @@ namespace PruebaBiblioteca1 {
                 this.columntitulo = base.Columns["titulo"];
                 this.columnejemplar = base.Columns["ejemplar"];
                 this.columnEstatus2 = base.Columns["Estatus2"];
+                this.columnFecha_Devuelto = base.Columns["Fecha_Devuelto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +552,8 @@ namespace PruebaBiblioteca1 {
                 base.Columns.Add(this.columnejemplar);
                 this.columnEstatus2 = new global::System.Data.DataColumn("Estatus2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstatus2);
+                this.columnFecha_Devuelto = new global::System.Data.DataColumn("Fecha_Devuelto", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha_Devuelto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidPrestamo}, true));
                 this.columnidPrestamo.AllowDBNull = false;
@@ -559,6 +573,7 @@ namespace PruebaBiblioteca1 {
                 this.columnejemplar.AllowDBNull = false;
                 this.columnejemplar.MaxLength = 5;
                 this.columnEstatus2.MaxLength = 10;
+                this.columnFecha_Devuelto.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -827,6 +842,22 @@ namespace PruebaBiblioteca1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Fecha_Devuelto {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablePrestamos.Fecha_DevueltoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_Devuelto\' de la tabla \'Prestamos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePrestamos.Fecha_DevueltoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsEstatus2Null() {
                 return this.IsNull(this.tablePrestamos.Estatus2Column);
             }
@@ -835,6 +866,18 @@ namespace PruebaBiblioteca1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEstatus2Null() {
                 this[this.tablePrestamos.Estatus2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFecha_DevueltoNull() {
+                return this.IsNull(this.tablePrestamos.Fecha_DevueltoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFecha_DevueltoNull() {
+                this[this.tablePrestamos.Fecha_DevueltoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1008,6 +1051,7 @@ namespace PruebaBiblioteca1.ReporteLibrosDataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("titulo", "titulo");
             tableMapping.ColumnMappings.Add("ejemplar", "ejemplar");
             tableMapping.ColumnMappings.Add("Estatus2", "Estatus2");
+            tableMapping.ColumnMappings.Add("Fecha_Devuelto", "Fecha_Devuelto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1025,7 +1069,10 @@ namespace PruebaBiblioteca1.ReporteLibrosDataSet1TableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Prestamos.numeroAdquisicion, Prestamos.idUsuario, Prestamos.idBibliotecario, Prestamos.fechaDevolucion, Usuarios.nombreUsuario, Libros.estatus, Libros.titulo, 
-                         Libros.ejemplar, Libros.Estatus2
+                         Libros.ejemplar, Libros.Estatus2,
+                             (SELECT        fechaDevuelto
+                               FROM            Devoluciones
+                               WHERE        (Prestamos.idPrestamo = idPrestamo)) AS [Fecha_Devuelto]
 FROM            Prestamos INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion INNER JOIN
                          Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario

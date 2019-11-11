@@ -14,7 +14,10 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Prestamos.numeroAdquisicion, Prestamos.idUsuario, Prestamos.idBibliotecario, Prestamos.fechaDevolucion, Usuarios.nombreUsuario, Libros.estatus, Libros.titulo, 
-                         Libros.ejemplar, Libros.Estatus2
+                         Libros.ejemplar, Libros.Estatus2,
+                             (SELECT        fechaDevuelto
+                               FROM            Devoluciones
+                               WHERE        (Prestamos.idPrestamo = idPrestamo)) AS [Fecha_Devuelto]
 FROM            Prestamos INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion INNER JOIN
                          Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario
@@ -41,6 +44,7 @@ ORDER BY Prestamos.fechaPrestamo</CommandText>
               <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
               <Mapping SourceColumn="ejemplar" DataSetColumn="ejemplar" />
               <Mapping SourceColumn="Estatus2" DataSetColumn="Estatus2" />
+              <Mapping SourceColumn="Fecha_Devuelto" DataSetColumn="Fecha_Devuelto" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -52,7 +56,7 @@ ORDER BY Prestamos.fechaPrestamo</CommandText>
   <xs:element name="ReporteLibrosDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ReporteLibrosDataSet1" msprop:Generator_UserDSName="ReporteLibrosDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Prestamos" msprop:Generator_TableClassName="PrestamosDataTable" msprop:Generator_TableVarName="tablePrestamos" msprop:Generator_RowChangedName="PrestamosRowChanged" msprop:Generator_TablePropName="Prestamos" msprop:Generator_RowDeletingName="PrestamosRowDeleting" msprop:Generator_RowChangingName="PrestamosRowChanging" msprop:Generator_RowEvHandlerName="PrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="PrestamosRowDeleted" msprop:Generator_RowClassName="PrestamosRow" msprop:Generator_UserTableName="Prestamos" msprop:Generator_RowEvArgName="PrestamosRowChangeEvent">
+        <xs:element name="Prestamos" msprop:Generator_TableClassName="PrestamosDataTable" msprop:Generator_TableVarName="tablePrestamos" msprop:Generator_TablePropName="Prestamos" msprop:Generator_RowDeletingName="PrestamosRowDeleting" msprop:Generator_RowChangingName="PrestamosRowChanging" msprop:Generator_RowEvHandlerName="PrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="PrestamosRowDeleted" msprop:Generator_UserTableName="Prestamos" msprop:Generator_RowChangedName="PrestamosRowChanged" msprop:Generator_RowEvArgName="PrestamosRowChangeEvent" msprop:Generator_RowClassName="PrestamosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idPrestamo" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:decimal" />
@@ -102,6 +106,7 @@ ORDER BY Prestamos.fechaPrestamo</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Fecha_Devuelto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFecha_Devuelto" msprop:Generator_ColumnPropNameInRow="Fecha_Devuelto" msprop:Generator_ColumnPropNameInTable="Fecha_DevueltoColumn" msprop:Generator_UserColumnName="Fecha_Devuelto" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
