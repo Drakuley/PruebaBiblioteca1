@@ -912,10 +912,11 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Bibliotecarios\r\nWHERE        (id" +
-                "Bibliotecario = @id_bibliotecario) AND (contraseña = @contraseña)";
+                "Bibliotecario = @id_bibliotecario) AND (BINARY_CHECKSUM(contraseña) = BINARY_CHE" +
+                "CKSUM(@contraseña)) AND (estatus = \'Alta\')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_bibliotecario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idBibliotecario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "contraseña", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contraseña", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT contraseña, estatus, idBibliotecario, nombreBibliotecario, turno FROM Bibl" +
@@ -1319,7 +1320,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> ExisteBibliotecarioConIdyContraseña(decimal id_bibliotecario, string contraseña) {
+        public virtual object ExisteBibliotecarioConIdyContraseña(decimal id_bibliotecario, string contraseña) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((decimal)(id_bibliotecario));
             if ((contraseña == null)) {
@@ -1344,10 +1345,10 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         

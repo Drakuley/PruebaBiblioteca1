@@ -38,7 +38,6 @@ namespace PruebaBiblioteca1.Forms
         private DataGridViewTextBoxColumn estatus;
         private Label lblEstatus;
         private Label label2;
-        private Button button1;
         private TextBox txtNombreBibliotecario;
 
         public FrmBibliotecarios()
@@ -75,7 +74,6 @@ namespace PruebaBiblioteca1.Forms
             this.txtAutoresRegistrados = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bibliotecariosTableAdapter = new PruebaBiblioteca1.BibliotecariosDataSet1TableAdapters.BibliotecariosTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBibliotecarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecariosDataSet1)).BeginInit();
@@ -113,7 +111,7 @@ namespace PruebaBiblioteca1.Forms
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 130);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 36;
             this.label4.Text = "Turno:";
             // 
@@ -134,7 +132,7 @@ namespace PruebaBiblioteca1.Forms
             this.direccion.ForeColor = System.Drawing.Color.White;
             this.direccion.Location = new System.Drawing.Point(3, 72);
             this.direccion.Name = "direccion";
-            this.direccion.Size = new System.Drawing.Size(94, 16);
+            this.direccion.Size = new System.Drawing.Size(91, 16);
             this.direccion.TabIndex = 34;
             this.direccion.Text = "Contraseña:";
             // 
@@ -206,7 +204,7 @@ namespace PruebaBiblioteca1.Forms
             this.Nombre.ForeColor = System.Drawing.Color.White;
             this.Nombre.Location = new System.Drawing.Point(3, 44);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(69, 16);
+            this.Nombre.Size = new System.Drawing.Size(67, 16);
             this.Nombre.TabIndex = 32;
             this.Nombre.Text = "Nombre:";
             // 
@@ -236,7 +234,7 @@ namespace PruebaBiblioteca1.Forms
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 16);
+            this.label1.Size = new System.Drawing.Size(161, 16);
             this.label1.TabIndex = 41;
             this.label1.Text = "Confirmar Contraseña:";
             // 
@@ -246,7 +244,6 @@ namespace PruebaBiblioteca1.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblEstatus);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnReporte);
@@ -275,7 +272,7 @@ namespace PruebaBiblioteca1.Forms
             this.lblEstatus.ForeColor = System.Drawing.Color.White;
             this.lblEstatus.Location = new System.Drawing.Point(173, 160);
             this.lblEstatus.Name = "lblEstatus";
-            this.lblEstatus.Size = new System.Drawing.Size(43, 16);
+            this.lblEstatus.Size = new System.Drawing.Size(38, 16);
             this.lblEstatus.TabIndex = 63;
             this.lblEstatus.Text = "*****";
             // 
@@ -287,7 +284,7 @@ namespace PruebaBiblioteca1.Forms
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(7, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 16);
+            this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 62;
             this.label2.Text = "Estatus:";
             // 
@@ -375,16 +372,6 @@ namespace PruebaBiblioteca1.Forms
             // bibliotecariosTableAdapter
             // 
             this.bibliotecariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(114, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // FrmBibliotecarios
             // 
@@ -680,18 +667,6 @@ namespace PruebaBiblioteca1.Forms
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            if (Regex.IsMatch(txtContraseña.Text, @"^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{5,15}$") == true)
-            {
-                MessageBox.Show("true");
-            }
-            else
-            {
-                MessageBox.Show("* La contraseña debe tener al entre 5 y 15 caracteres \n* Al menos un dígito\n* Al menos una minúscula \n* Al menos una mayúscula \n* Puede tener otros símbolos"
-);
-            }
-
-        }
+        
     }
 }

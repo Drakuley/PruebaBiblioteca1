@@ -22,11 +22,7 @@ namespace PruebaBiblioteca1
 
         private void BtnDevoluciones_Click(object sender, EventArgs e) => new Forms.Devoluciones.Devoluciones().Show();
 
-        private void Menú_Load(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         private void BtnLibros_Click(object sender, EventArgs e)
         {
             new Forms.FrmLibros().Show();
@@ -54,7 +50,13 @@ namespace PruebaBiblioteca1
         private void BtnCambiarBibliotecario_Click(object sender, EventArgs e)
         {
             new Forms.Login().Show();
-            this.Close();
+            this.Hide();
+        }
+
+        private void FrmMenú_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new Forms.Login().Show();
+            this.Hide();
         }
     }
 }
