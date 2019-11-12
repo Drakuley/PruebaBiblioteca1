@@ -431,17 +431,24 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    usuariosTableAdapter.UpdateQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text, Convert.ToDecimal(txtIdUsuario.Text));
-                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                    txtIdUsuario.Text = "";
-                    txtNombreUsuario.Text = "";
-                    txtDireccion.Text = "";
-                    txtTelefono.Text = "";
-                    cbGeneroUsuario.Text = "";
-                    lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                    lblEstatus.Text = "****";
+                    if (Regex.IsMatch(txtTelefono.Text, @"^[0-9]{10}$") == true)
+                    {
+                        usuariosTableAdapter.UpdateQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text, Convert.ToDecimal(txtIdUsuario.Text));
+                        this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                        txtIdUsuario.Text = "";
+                        txtNombreUsuario.Text = "";
+                        txtDireccion.Text = "";
+                        txtTelefono.Text = "";
+                        cbGeneroUsuario.Text = "";
+                        lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                        lblEstatus.Text = "";
 
-                    txtIdUsuario.Focus();
+                        txtIdUsuario.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese número telefónico de 10 digitos");
+                    }
                 }
 
             }
@@ -453,18 +460,32 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    decimal nuevoIdUsuario = Convert.ToDecimal(usuariosTableAdapter.NuevoIdDeUsuarioQuery());
-                    usuariosTableAdapter.InsertQueryUsuarios(nuevoIdUsuario, txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text);
-                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                    txtIdUsuario.Text = "";
-                    txtNombreUsuario.Text = "";
-                    txtDireccion.Text = "";
-                    txtTelefono.Text = "";
-                    cbGeneroUsuario.Text = "";
-                    lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                    lblEstatus.Text = "****";
+                    if (usuariosTableAdapter.ExisteUsuarioConMismosDatos(txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text) == 1)
+                    {
+                        MessageBox.Show("Ya está registrado un usuario con los mismos datos");
+                    }
+                    else
+                    {
+                        if (Regex.IsMatch(txtTelefono.Text, @"^[0-9]{10}$") == true)
+                        {
+                            decimal nuevoIdUsuario = Convert.ToDecimal(usuariosTableAdapter.NuevoIdDeUsuarioQuery());
+                            usuariosTableAdapter.InsertQueryUsuarios(nuevoIdUsuario, txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text);
+                            this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                            txtIdUsuario.Text = "";
+                            txtNombreUsuario.Text = "";
+                            txtDireccion.Text = "";
+                            txtTelefono.Text = "";
+                            cbGeneroUsuario.Text = "";
+                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                            lblEstatus.Text = "";
 
-                    txtIdUsuario.Focus();
+                            txtIdUsuario.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingrese número telefónico de 10 digitos");
+                        }
+                    }
                 }
             }
         }
@@ -494,7 +515,7 @@ namespace PruebaBiblioteca1.Forms
                             txtTelefono.Text = "";
                             cbGeneroUsuario.Text = "";
                             lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                            lblEstatus.Text = "****";
+                            lblEstatus.Text = "";
                         }
                         else
                         {
@@ -518,7 +539,7 @@ namespace PruebaBiblioteca1.Forms
                             txtTelefono.Text = "";
                             cbGeneroUsuario.Text = "";
                             lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                            lblEstatus.Text = "****";
+                            lblEstatus.Text = "";
                         }
                         else
                         {
@@ -543,7 +564,7 @@ namespace PruebaBiblioteca1.Forms
                 txtTelefono.Text = "";
                 cbGeneroUsuario.Text = "";
                 lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                lblEstatus.Text = "****";
+                lblEstatus.Text = "";
                 this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
             }
             else
@@ -600,7 +621,7 @@ namespace PruebaBiblioteca1.Forms
                 txtDireccion.Text = "";
                 txtTelefono.Text = "";
                 cbGeneroUsuario.Text = "";
-                lblEstatus.Text = "****";
+                lblEstatus.Text = "";
                 lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
 
                 btnAceptar.Text = "Aceptar";
@@ -636,7 +657,7 @@ namespace PruebaBiblioteca1.Forms
                 txtTelefono.Text = "";
                 cbGeneroUsuario.Text = "";
                 lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                lblEstatus.Text = "****";
+                lblEstatus.Text = "";
                 this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
             }
 

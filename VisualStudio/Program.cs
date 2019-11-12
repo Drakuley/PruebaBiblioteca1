@@ -16,7 +16,7 @@ namespace PruebaBiblioteca1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.FrmLibros());
+            Application.Run(new Forms.Login());
         }
     }
 }
