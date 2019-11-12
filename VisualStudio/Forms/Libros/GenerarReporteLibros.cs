@@ -37,7 +37,15 @@ namespace PruebaBiblioteca1.Forms.Libros
             VariablesGlobales.Globales.titulo = Convert.ToString(cbTituloLibro.SelectedValue);
             VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
             VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
-            new ReporteDeLibros().Show();
+            if(Convert.ToDateTime(dtpFechaInicial.Text) >= Convert.ToDateTime(dtpFechaFinal.Text))
+            {
+                MessageBox.Show("Rango de fechas incorrecto, Asegurese que la fecha inicial se anterior a la fecha final");
+            }
+            else
+            {
+                new ReporteDeLibros().Show();
+            }
+            
         }
 
         private void GenerarReporteLibros_FormClosed(object sender, FormClosedEventArgs e)

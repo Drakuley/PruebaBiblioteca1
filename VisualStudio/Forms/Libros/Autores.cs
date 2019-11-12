@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,22 +21,30 @@ namespace PruebaBiblioteca1.Forms.Autores
 
         private void TxtIdAutor_TextChanged(object sender, EventArgs e)
         {
-            if(txtIdAutor.Text == "")
+            if (Regex.IsMatch(txtIdAutor.Text, @"^\d+$") == false)
             {
-                this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
-                btnAceptar.Text = "Aceptar";
-                txtNombreAutor.Text = "";
-
-            }
-            else if(Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0)
-            {
-                
-                btnAceptar.Text = "Modificar";
+                txtIdAutor.Text = "";
             }
             else
             {
-                btnAceptar.Text = "Registrar";
+                if (txtIdAutor.Text == "")
+                {
+                    this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
+                    btnAceptar.Text = "Aceptar";
+                    txtNombreAutor.Text = "";
+
+                }
+                else if (Convert.ToDecimal(autoresTableAdapter.existeAutorConIdAutor(Convert.ToDecimal(txtIdAutor.Text))) > 0)
+                {
+
+                    btnAceptar.Text = "Modificar";
+                }
+                else
+                {
+                    btnAceptar.Text = "Registrar";
+                }
             }
+           
         }
 
         private void Autores_Load(object sender, EventArgs e)

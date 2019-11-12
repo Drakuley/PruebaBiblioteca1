@@ -107,8 +107,18 @@ namespace PruebaBiblioteca1.Forms
             }
             else if (btnAceptar.Text == "MODIFICAR")
             {
-                librosTableAdapter.UpdateQueryLibros(txtTitulo.Text, (decimal)cbAutores.SelectedValue, (string)cbUbicaciones.SelectedValue, txtEjemplar.Text, (decimal)cbClasificaciones.SelectedValue, lblTxtEstatus.Text, txtNumAdquisicion.Text);
-                this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                if(Convert.ToInt32(librosTableAdapter.existenLibrosconMismoTituloYEjemplar(txtEjemplar.Text, txtTitulo.Text)) > 0)
+                {
+                   // MessageBox.Show("No se puede modificar los datos del libro, asegurese que el ejemplar no coincida con otro ya registrado");
+                    librosTableAdapter.UpdateQueryLibrosSinEjemplar(txtTitulo.Text, (decimal)cbAutores.SelectedValue, (string)cbUbicaciones.SelectedValue, (decimal)cbClasificaciones.SelectedValue, lblTxtEstatus.Text, txtNumAdquisicion.Text);
+                    this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                }
+                else
+                {
+                    librosTableAdapter.UpdateQueryLibros(txtTitulo.Text, (decimal)cbAutores.SelectedValue, (string)cbUbicaciones.SelectedValue, txtEjemplar.Text, (decimal)cbClasificaciones.SelectedValue, lblTxtEstatus.Text, txtNumAdquisicion.Text);
+                    this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
+                }
+               
             }
             else if (btnAceptar.Text == "REGISTRAR")
             {
