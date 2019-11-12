@@ -180,10 +180,13 @@
             <TablixColumn>
               <Width>4.60769cm</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>3.55833cm</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.58677cm</Height>
+              <Height>1.17354cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -296,7 +299,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Fecha de Devolución</Value>
+                              <Value>Fecha de Devolución Programada</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -308,6 +311,40 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Fecha Devuelto</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -448,12 +485,43 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Fecha_Devuelto">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Fecha_Devuelto.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Fecha_Devuelto</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -472,9 +540,9 @@
         </TablixRowHierarchy>
         <DataSetName>ReporteDeUsuariosDataSet1</DataSetName>
         <Top>8.98646cm</Top>
-        <Left>3.94543cm</Left>
-        <Height>1.17354cm</Height>
-        <Width>16.44638cm</Width>
+        <Left>1.63458cm</Left>
+        <Height>1.76031cm</Height>
+        <Width>20.00471cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -519,7 +587,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>4in</Height>
+    <Height>4.23101in</Height>
     <Style />
   </Body>
   <Width>9.49in</Width>
@@ -558,16 +626,8 @@
           <DataField>fechaPrestamo</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="numeroAdquisicion">
-          <DataField>numeroAdquisicion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="idUsuario">
           <DataField>idUsuario</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="idBibliotecario">
-          <DataField>idBibliotecario</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="fechaDevolucion">
@@ -582,9 +642,9 @@
           <DataField>nombreUsuario</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="nombreBibliotecario">
-          <DataField>nombreBibliotecario</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="Fecha_Devuelto">
+          <DataField>Fecha_Devuelto</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

@@ -12,7 +12,10 @@
               <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Libros.titulo, Prestamos.fechaDevolucion, Usuarios.idUsuario, Usuarios.nombreUsuario
+                    <CommandText>SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Libros.titulo, Prestamos.fechaDevolucion, Usuarios.idUsuario, Usuarios.nombreUsuario,
+                             (SELECT        fechaDevuelto
+                               FROM            Devoluciones
+                               WHERE        (Prestamos.idPrestamo = idPrestamo)) AS Fecha_Devuelto
 FROM            Prestamos INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion INNER JOIN
                          Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario
@@ -31,6 +34,7 @@ WHERE        (Usuarios.idUsuario = @id_Usuario)</CommandText>
               <Mapping SourceColumn="fechaDevolucion" DataSetColumn="fechaDevolucion" />
               <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
               <Mapping SourceColumn="nombreUsuario" DataSetColumn="nombreUsuario" />
+              <Mapping SourceColumn="Fecha_Devuelto" DataSetColumn="Fecha_Devuelto" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -42,7 +46,7 @@ WHERE        (Usuarios.idUsuario = @id_Usuario)</CommandText>
   <xs:element name="ReporteDeUsuariosDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ReporteDeUsuariosDataSet" msprop:Generator_UserDSName="ReporteDeUsuariosDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Prestamos" msprop:Generator_TableClassName="PrestamosDataTable" msprop:Generator_TableVarName="tablePrestamos" msprop:Generator_TablePropName="Prestamos" msprop:Generator_RowDeletingName="PrestamosRowDeleting" msprop:Generator_RowChangingName="PrestamosRowChanging" msprop:Generator_RowEvHandlerName="PrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="PrestamosRowDeleted" msprop:Generator_UserTableName="Prestamos" msprop:Generator_RowChangedName="PrestamosRowChanged" msprop:Generator_RowEvArgName="PrestamosRowChangeEvent" msprop:Generator_RowClassName="PrestamosRow">
+        <xs:element name="Prestamos" msprop:Generator_TableClassName="PrestamosDataTable" msprop:Generator_TableVarName="tablePrestamos" msprop:Generator_RowChangedName="PrestamosRowChanged" msprop:Generator_TablePropName="Prestamos" msprop:Generator_RowDeletingName="PrestamosRowDeleting" msprop:Generator_RowChangingName="PrestamosRowChanging" msprop:Generator_RowEvHandlerName="PrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="PrestamosRowDeleted" msprop:Generator_RowClassName="PrestamosRow" msprop:Generator_UserTableName="Prestamos" msprop:Generator_RowEvArgName="PrestamosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idPrestamo" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:decimal" />
@@ -63,6 +67,7 @@ WHERE        (Usuarios.idUsuario = @id_Usuario)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Fecha_Devuelto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFecha_Devuelto" msprop:Generator_ColumnPropNameInRow="Fecha_Devuelto" msprop:Generator_ColumnPropNameInTable="Fecha_DevueltoColumn" msprop:Generator_UserColumnName="Fecha_Devuelto" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
