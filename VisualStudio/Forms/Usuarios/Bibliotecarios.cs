@@ -635,12 +635,21 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtNombreBibliotecario_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombreBibliotecario.Text == "")
+            if (txtNombreBibliotecario.Text.Length > 50)
             {
-                txtIdBibliotecario.Text = "";
-                cbTurno.Text = "";
-                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                lblEstatus.Text = "";
+                if (txtNombreBibliotecario.Text == "")
+                    this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                else
+                { 
+                    MessageBox.Show("El nombre no debe exceder los 50 cáracteres");
+                }
+            }
+            else if (txtNombreBibliotecario.Text == "")
+            {
+                //txtIdBibliotecario.Text = "";
+                //cbTurno.Text = "";
+                //lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                //lblEstatus.Text = "";
                 this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
             }
             else

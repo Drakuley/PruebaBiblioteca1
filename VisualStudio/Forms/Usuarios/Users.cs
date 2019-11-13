@@ -149,6 +149,7 @@ namespace PruebaBiblioteca1.Forms
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(171, 22);
             this.txtTelefono.TabIndex = 37;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.TxtTelefono_TextChanged);
             // 
             // txtDireccion
             // 
@@ -157,6 +158,7 @@ namespace PruebaBiblioteca1.Forms
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(171, 22);
             this.txtDireccion.TabIndex = 36;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.TxtDireccion_TextChanged);
             // 
             // direccion
             // 
@@ -557,12 +559,12 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            if(Regex.IsMatch(txtNombreUsuario.Text, @"^\d+$") == true)
+            /*if(Regex.IsMatch(txtNombreUsuario.Text, @"^\d+$") == true)
             {
                    MessageBox.Show("No se pueden introducir números en el nombre");
                 txtNombreUsuario.Text = "";
             }
-            else if (Regex.IsMatch(txtNombreUsuario.Text, @"^[\sA-Za-z]{1,50}$") == false)
+            else*/ if (txtNombreUsuario.Text.Length > 50)
             {
                 if(txtNombreUsuario.Text == "")
                     this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
@@ -674,6 +676,36 @@ namespace PruebaBiblioteca1.Forms
                 this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
             }
 
+        }
+
+        private void TxtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDireccion.Text.Length > 100)
+            {
+                if (txtDireccion.Text == "")
+                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                else
+                {
+
+                    MessageBox.Show("La dirección no debe exceder los 100 cáracteres");
+                    txtDireccion.Text = "";
+                }
+
+            }
+        }
+
+        private void TxtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefono.Text.Length > 10)
+            {
+                if (txtTelefono.Text == "")
+                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                else
+                {
+                    MessageBox.Show("El teléfono no debe exceder los 10 cáracteres");
+                }
+
+            }
         }
     }
 }
