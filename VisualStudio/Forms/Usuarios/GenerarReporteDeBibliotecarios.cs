@@ -16,6 +16,7 @@ namespace PruebaBiblioteca1.Forms.Usuarios
         public GenerarReporteDeBibliotecarios()
         {
             InitializeComponent();
+            cbNombreBibliotecario.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void BtnGenerar_Click(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace PruebaBiblioteca1.Forms.Usuarios
             VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(cbNombreBibliotecario.SelectedValue);
             VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
             VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
-            if (Convert.ToDateTime(dtpFechaInicial.Text) >= Convert.ToDateTime(dtpFechaFinal.Text))
+            if (Convert.ToDateTime(dtpFechaInicial.Text) > Convert.ToDateTime(dtpFechaFinal.Text))
             {
                 MessageBox.Show("Rango de fechas incorrecto, Asegurese que la fecha inicial se anterior a la fecha final");
             }

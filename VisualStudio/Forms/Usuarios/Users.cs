@@ -557,20 +557,33 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombreUsuario.Text == "")
+            if(Regex.IsMatch(txtNombreUsuario.Text, @"^\d+$") == true)
             {
-                txtIdUsuario.Text = "";
-                txtDireccion.Text = "";
-                txtTelefono.Text = "";
-                cbGeneroUsuario.Text = "";
-                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                lblEstatus.Text = "";
-                this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                   MessageBox.Show("No se pueden introducir números en el nombre");
+                txtNombreUsuario.Text = "";
             }
-            else
-            { 
-                usuariosTableAdapter.FillDGVporNombreDeUsuario(this.usuariosDataSet1.Usuarios, txtNombreUsuario.Text);
+            else if (Regex.IsMatch(txtNombreUsuario.Text, @"^[\sA-Za-z]{1,50}$") == false)
+            {
+                if(txtNombreUsuario.Text == "")
+                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                else
+                    MessageBox.Show("El nombre no debe exceder los 50 cáracteres");
             }
+            else if (txtNombreUsuario.Text == "")
+                {
+                    //txtIdUsuario.Text = "";
+                    //txtDireccion.Text = "";
+                    //txtTelefono.Text = "";
+                    //cbGeneroUsuario.Text = "";
+                    //lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                    //lblEstatus.Text = "";
+                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                }
+                else
+                {
+                    usuariosTableAdapter.FillDGVporNombreDeUsuario(this.usuariosDataSet1.Usuarios, txtNombreUsuario.Text);
+                }
+            
         }
 
         private void BtnReporte_Click(object sender, EventArgs e)

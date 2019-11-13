@@ -331,7 +331,7 @@
             this.Name = "FrmMenú";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Préstamos";
-            this.Load += new System.EventHandler(this.Menú_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenú_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

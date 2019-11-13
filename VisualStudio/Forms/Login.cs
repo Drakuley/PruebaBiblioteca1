@@ -24,7 +24,7 @@ namespace PruebaBiblioteca1.Forms
             {
                 MessageBox.Show("Faltan datos por completar");
             }
-            else if (bibliotecariosTableAdapter1.ExisteBibliotecarioConIdyContraseña(Convert.ToDecimal(txtIdBibliotecario.Text),txtContraseña.Text) == 1)
+            else if (Convert.ToInt32(bibliotecariosTableAdapter1.ExisteBibliotecarioConIdyContraseña(Convert.ToDecimal(txtIdBibliotecario.Text),txtContraseña.Text)) == 1)
             {
                 VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(txtIdBibliotecario.Text);
                 new FrmMenú().Show();
