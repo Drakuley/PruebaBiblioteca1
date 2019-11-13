@@ -137,7 +137,12 @@ namespace PruebaBiblioteca1.Forms.Autores
 
         private void TxtNombreAutor_TextChanged(object sender, EventArgs e)
         {
-            if(txtNombreAutor.Text == "")
+            if(txtNombreAutor.TextLength > 50)
+            {
+                MessageBox.Show("El nombre del autor no puede exceder los 50 caracteres");
+                txtNombreAutor.Text = "";
+            }
+            if (txtNombreAutor.Text == "")
             {
                 this.autoresTableAdapter.Fill(this.autoresDataSet1.Autores);
                 txtIdAutor.Text = "";

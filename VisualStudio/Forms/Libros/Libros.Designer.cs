@@ -421,6 +421,7 @@
             this.txtEjemplar.Name = "txtEjemplar";
             this.txtEjemplar.Size = new System.Drawing.Size(148, 22);
             this.txtEjemplar.TabIndex = 67;
+            this.txtEjemplar.TextChanged += new System.EventHandler(this.TxtEjemplar_TextChanged);
             // 
             // btnRegistrarAutores
             // 
