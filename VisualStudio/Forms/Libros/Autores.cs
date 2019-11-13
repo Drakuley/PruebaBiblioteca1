@@ -25,6 +25,10 @@ namespace PruebaBiblioteca1.Forms.Autores
             {
                 txtIdAutor.Text = "";
             }
+            if(txtIdAutor.Text == "")
+            {
+                btnAceptar.Text = "Aceptar";
+            }
             else
             {
                 if (txtIdAutor.Text == "")
