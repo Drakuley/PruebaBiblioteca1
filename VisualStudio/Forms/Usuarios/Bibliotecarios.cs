@@ -119,6 +119,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(176, 67);
+            this.txtContraseña.MaxLength = 15;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '•';
             this.txtContraseña.Size = new System.Drawing.Size(170, 22);
@@ -212,6 +213,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.txtNombreBibliotecario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreBibliotecario.Location = new System.Drawing.Point(176, 39);
+            this.txtNombreBibliotecario.MaxLength = 50;
             this.txtNombreBibliotecario.Name = "txtNombreBibliotecario";
             this.txtNombreBibliotecario.Size = new System.Drawing.Size(170, 22);
             this.txtNombreBibliotecario.TabIndex = 31;
@@ -221,6 +223,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContraseña.Location = new System.Drawing.Point(176, 95);
+            this.txtConfirmarContraseña.MaxLength = 15;
             this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             this.txtConfirmarContraseña.PasswordChar = '•';
             this.txtConfirmarContraseña.Size = new System.Drawing.Size(170, 22);

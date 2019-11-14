@@ -146,6 +146,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(102, 115);
+            this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(171, 22);
             this.txtTelefono.TabIndex = 37;
@@ -155,6 +156,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(102, 81);
+            this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(171, 22);
             this.txtDireccion.TabIndex = 36;
@@ -267,6 +269,7 @@ namespace PruebaBiblioteca1.Forms
             // 
             this.txtNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreUsuario.Location = new System.Drawing.Point(102, 46);
+            this.txtNombreUsuario.MaxLength = 50;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(171, 22);
             this.txtNombreUsuario.TabIndex = 32;
