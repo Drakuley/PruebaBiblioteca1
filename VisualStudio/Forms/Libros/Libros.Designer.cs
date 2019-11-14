@@ -373,6 +373,7 @@
             // 
             this.txtNumAdquisicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumAdquisicion.Location = new System.Drawing.Point(125, 64);
+            this.txtNumAdquisicion.MaxLength = 8;
             this.txtNumAdquisicion.Name = "txtNumAdquisicion";
             this.txtNumAdquisicion.Size = new System.Drawing.Size(148, 22);
             this.txtNumAdquisicion.TabIndex = 39;
@@ -382,6 +383,7 @@
             // 
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.Location = new System.Drawing.Point(125, 94);
+            this.txtTitulo.MaxLength = 50;
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(148, 22);
             this.txtTitulo.TabIndex = 40;
@@ -418,6 +420,7 @@
             // 
             this.txtEjemplar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEjemplar.Location = new System.Drawing.Point(125, 224);
+            this.txtEjemplar.MaxLength = 4;
             this.txtEjemplar.Name = "txtEjemplar";
             this.txtEjemplar.Size = new System.Drawing.Size(148, 22);
             this.txtEjemplar.TabIndex = 67;

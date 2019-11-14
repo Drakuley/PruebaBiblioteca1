@@ -110,6 +110,7 @@
             // 
             this.txtIdAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtIdAutor.Location = new System.Drawing.Point(81, 78);
+            this.txtIdAutor.MaxLength = 5;
             this.txtIdAutor.Name = "txtIdAutor";
             this.txtIdAutor.Size = new System.Drawing.Size(186, 22);
             this.txtIdAutor.TabIndex = 2;
@@ -119,6 +120,7 @@
             // 
             this.txtNombreAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtNombreAutor.Location = new System.Drawing.Point(81, 120);
+            this.txtNombreAutor.MaxLength = 50;
             this.txtNombreAutor.Name = "txtNombreAutor";
             this.txtNombreAutor.Size = new System.Drawing.Size(186, 22);
             this.txtNombreAutor.TabIndex = 3;

@@ -193,12 +193,12 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtTitulo_TextChanged(object sender, EventArgs e)
         {
-            if(txtTitulo.TextLength >= 50 )
+            /*if(txtTitulo.TextLength >= 50 )
             {
                 MessageBox.Show("El titulo no debe de exceder los 50 caracteres");
                 txtTitulo.Text = "";
 
-            }
+            }*/
             if (txtTitulo.Text == "")
             {
                 this.librosTableAdapter.Fill(this.librosDataSet1.Libros);
@@ -233,11 +233,11 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtEjemplar_TextChanged(object sender, EventArgs e)
         {
-            if(txtEjemplar.TextLength >= 4)
+           /* if(txtEjemplar.TextLength >= 4)
             {
                 MessageBox.Show("El ejemplar no puede exceder de 4 caracteres");
                 txtEjemplar.Text = "";
-            }
+            }*/
         }
     }
 }
