@@ -150,7 +150,6 @@ namespace PruebaBiblioteca1.Forms
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(171, 22);
             this.txtTelefono.TabIndex = 37;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.TxtTelefono_TextChanged);
             // 
             // txtDireccion
             // 
@@ -160,7 +159,6 @@ namespace PruebaBiblioteca1.Forms
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(171, 22);
             this.txtDireccion.TabIndex = 36;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.TxtDireccion_TextChanged);
             // 
             // direccion
             // 
@@ -432,27 +430,34 @@ namespace PruebaBiblioteca1.Forms
             {
                 if (txtIdUsuario.Text == "" || txtNombreUsuario.Text == "" || txtDireccion.Text == "" || txtTelefono.Text == "" || cbGeneroUsuario.Text == "")
                 {
-                    MessageBox.Show("Faltan Campos por llenar");
+                    MessageBox.Show("Faltan campos por llenar");
                 }
                 else
                 {
-                    if (Regex.IsMatch(txtTelefono.Text, @"^[0-9]{10}$") == true)
+                    if (usuariosTableAdapter.ExisteUsuarioConMismosDatos(txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text) == 1)
                     {
-                        usuariosTableAdapter.UpdateQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text, Convert.ToDecimal(txtIdUsuario.Text));
-                        this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                        txtIdUsuario.Text = "";
-                        txtNombreUsuario.Text = "";
-                        txtDireccion.Text = "";
-                        txtTelefono.Text = "";
-                        cbGeneroUsuario.Text = "";
-                        lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                        lblEstatus.Text = "";
-
-                        txtIdUsuario.Focus();
+                        MessageBox.Show("Ya está registrado un usuario con los mismos datos");
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese número telefónico de 10 digitos");
+                        if (Regex.IsMatch(txtTelefono.Text, @"^[0-9]{10}$") == true)
+                        {
+                            usuariosTableAdapter.UpdateQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text, Convert.ToDecimal(txtIdUsuario.Text));
+                            this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                            txtIdUsuario.Text = "";
+                            txtNombreUsuario.Text = "";
+                            txtDireccion.Text = "";
+                            txtTelefono.Text = "";
+                            cbGeneroUsuario.Text = "";
+                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                            lblEstatus.Text = "";
+
+                            txtIdUsuario.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingrese número telefónico de 10 digitos");
+                        }
                     }
                 }
 
@@ -461,7 +466,7 @@ namespace PruebaBiblioteca1.Forms
             {
                 if (txtNombreUsuario.Text == "" || txtDireccion.Text == "" || txtTelefono.Text == "" || cbGeneroUsuario.Text == "")
                 {
-                    MessageBox.Show("Faltan Campos por llenar");
+                    MessageBox.Show("Faltan campos por llenar");
                 }
                 else
                 {
@@ -562,19 +567,7 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            /*if(Regex.IsMatch(txtNombreUsuario.Text, @"^\d+$") == true)
-            {
-                   MessageBox.Show("No se pueden introducir números en el nombre");
-                txtNombreUsuario.Text = "";
-            }
-            else*/ if (txtNombreUsuario.Text.Length > 50)
-            {
-                if(txtNombreUsuario.Text == "")
-                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                else
-                    MessageBox.Show("El nombre no debe exceder los 50 cáracteres");
-            }
-            else if (txtNombreUsuario.Text == "")
+            if (txtNombreUsuario.Text == "")
                 {
                     //txtIdUsuario.Text = "";
                     //txtDireccion.Text = "";
@@ -681,34 +674,6 @@ namespace PruebaBiblioteca1.Forms
 
         }
 
-        private void TxtDireccion_TextChanged(object sender, EventArgs e)
-        {
-            if (txtDireccion.Text.Length > 100)
-            {
-                if (txtDireccion.Text == "")
-                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                else
-                {
 
-                    MessageBox.Show("La dirección no debe exceder los 100 cáracteres");
-                    txtDireccion.Text = "";
-                }
-
-            }
-        }
-
-        private void TxtTelefono_TextChanged(object sender, EventArgs e)
-        {
-            if (txtTelefono.Text.Length > 10)
-            {
-                if (txtTelefono.Text == "")
-                    this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
-                else
-                {
-                    MessageBox.Show("El teléfono no debe exceder los 10 cáracteres");
-                }
-
-            }
-        }
     }
 }
