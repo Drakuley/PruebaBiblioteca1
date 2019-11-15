@@ -1024,7 +1024,7 @@ namespace PruebaBiblioteca1.LibrosDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[16];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[17];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, Autores.nombreAutor AS Autor, 
@@ -1043,43 +1043,42 @@ FROM            Libros INNER JOIN
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        COUNT(*) AS Expr1
+FROM            Prestamos INNER JOIN
+                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
+WHERE        (Libros.titulo = @Titulo) AND (Prestamos.fechaPrestamo BETWEEN @Fecha_Inicial AND @Fecha_Final)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_Inicial", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_Final", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        COUNT(*) AS Expr1
 FROM            Libros INNER JOIN
                          Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
                          Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
                          Autores ON Libros.idAutor = Autores.idAutor
 WHERE        (Libros.numeroAdquisicion = @num_adq) AND (Libros.Estatus2 = 'Alta')";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Libros\r\nWHERE        (numeroAdqu" +
-                "isicion = @Num_Adq) AND (estatus = \'Disponible\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Num_Adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Libros\r\nWHERE        (ejemplar =" +
-                " @Ejemplar) AND (titulo = @Titulo)";
+            this._commandCollection[4].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Libros\r\nWHERE        (numeroAdqu" +
+                "isicion = @Num_Adq) AND (estatus = \'Disponible\')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ejemplar", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ejemplar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Num_Adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Libros\r\nWHERE        (numeroAdqu" +
-                "isicion = @NUMADQ)";
+            this._commandCollection[5].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Libros\r\nWHERE        (ejemplar =" +
+                " @Ejemplar) AND (titulo = @Titulo)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMADQ", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ejemplar", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ejemplar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
-                         Autores.nombreAutor AS Autor
-FROM            Libros INNER JOIN
-                         Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
-                         Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
-                         Autores ON Libros.idAutor = Autores.idAutor
-WHERE        (Libros.clasificacion = @Clasificacion)";
+            this._commandCollection[6].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Libros\r\nWHERE        (numeroAdqu" +
+                "isicion = @NUMADQ)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMADQ", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
@@ -1088,87 +1087,98 @@ FROM            Libros INNER JOIN
                          Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
                          Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
                          Autores ON Libros.idAutor = Autores.idAutor
-WHERE        (Libros.idAutor = @Autor)";
+WHERE        (Libros.clasificacion = @Clasificacion)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero AS Genero, Ubicaciones.descripcion AS Descripcion, 
+            this._commandCollection[8].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, 
+                         Autores.nombreAutor AS Autor
+FROM            Libros INNER JOIN
+                         Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
+                         Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
+                         Autores ON Libros.idAutor = Autores.idAutor
+WHERE        (Libros.idAutor = @Autor)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero AS Genero, Ubicaciones.descripcion AS Descripcion, 
                          Autores.nombreAutor AS Autor, Libros.Estatus2
 FROM            Libros INNER JOIN
                          Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
                          Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
                          Autores ON Libros.idAutor = Autores.idAutor
 WHERE        (Libros.numeroAdquisicion = @NUMADQ)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMADQ", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, Autores.nombreAutor AS Autor, 
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NUMADQ", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = @"SELECT        Libros.numeroAdquisicion, Libros.titulo, Libros.idAutor, Libros.ubicacion, Libros.ejemplar, Libros.clasificacion, Libros.estatus, Clasificaciones.genero, Ubicaciones.descripcion AS Descripcion, Autores.nombreAutor AS Autor, 
                          Libros.Estatus2
 FROM            Libros INNER JOIN
                          Clasificaciones ON Libros.clasificacion = Clasificaciones.clasificacion INNER JOIN
                          Ubicaciones ON Libros.ubicacion = Ubicaciones.ubicacion INNER JOIN
                          Autores ON Libros.idAutor = Autores.idAutor
 WHERE        (Libros.titulo LIKE @Titulo + '%')";
-            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = @"INSERT INTO Libros
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = @"INSERT INTO Libros
                          (numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, estatus, Estatus2)
 VALUES        (@numeroAdquisicion,@titulo,@idAutor,@ubicacion,@ejemplar,@clasificacion,@estatus, 'Alta'); 
 SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, estatus FROM Libros WHERE (numeroAdquisicion = @numeroAdquisicion)";
-            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroAdquisicion", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idAutor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ubicacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ejemplar", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ejemplar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "SELECT DISTINCT titulo\r\nFROM            Libros";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroAdquisicion", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idAutor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ubicacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ejemplar", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ejemplar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = "UPDATE       Libros\r\nSET                Estatus2 = \'Alta\'\r\nWHERE        (Estatus2" +
-                " = \'Baja\') AND (numeroAdquisicion = @num_adq)";
+            this._commandCollection[12].CommandText = "SELECT DISTINCT titulo\r\nFROM            Libros";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = "UPDATE       Libros\r\nSET                Estatus2 = \'Baja\'\r\nWHERE        (Estatus2" +
-                " = \'Alta\') AND (numeroAdquisicion = @num_adq)";
+            this._commandCollection[13].CommandText = "UPDATE       Libros\r\nSET                Estatus2 = \'Alta\'\r\nWHERE        (Estatus2" +
+                " = \'Baja\') AND (numeroAdquisicion = @num_adq)";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[14] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = "UPDATE       Libros\r\nSET                titulo = @titulo, idAutor = @idAutor, ubi" +
-                "cacion = @ubicacion, ejemplar = @ejemplar, clasificacion = @clasificacion, estat" +
-                "us = @estatus\r\nWHERE        (numeroAdquisicion = @Original_numeroAdquisicion); \r" +
-                "\n";
+            this._commandCollection[14].CommandText = "UPDATE       Libros\r\nSET                Estatus2 = \'Baja\'\r\nWHERE        (Estatus2" +
+                " = \'Alta\') AND (numeroAdquisicion = @num_adq)";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idAutor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ubicacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ejemplar", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ejemplar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroAdquisicion", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num_adq", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[15] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[15].Connection = this.Connection;
             this._commandCollection[15].CommandText = "UPDATE       Libros\r\nSET                titulo = @titulo, idAutor = @idAutor, ubi" +
-                "cacion = @ubicacion, clasificacion = @clasificacion, estatus = @estatus\r\nWHERE  " +
-                "      (numeroAdquisicion = @Original_numeroAdquisicion); \r\n";
+                "cacion = @ubicacion, ejemplar = @ejemplar, clasificacion = @clasificacion, estat" +
+                "us = @estatus\r\nWHERE        (numeroAdquisicion = @Original_numeroAdquisicion); \r" +
+                "\n";
             this._commandCollection[15].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idAutor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ubicacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ejemplar", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "ejemplar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroAdquisicion", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[16] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[16].Connection = this.Connection;
+            this._commandCollection[16].CommandText = "UPDATE       Libros\r\nSET                titulo = @titulo, idAutor = @idAutor, ubi" +
+                "cacion = @ubicacion, clasificacion = @clasificacion, estatus = @estatus\r\nWHERE  " +
+                "      (numeroAdquisicion = @Original_numeroAdquisicion); \r\n";
+            this._commandCollection[16].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idAutor", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idAutor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ubicacion", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ubicacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clasificacion", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 1, "clasificacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estatus", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "estatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroAdquisicion", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1200,7 +1210,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillDGVLibrosPorClasificacion(LibrosDataSet1.LibrosDataTable dataTable, decimal Clasificacion) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(Clasificacion));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1214,7 +1224,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillDGVLibrosPorIdAutor(LibrosDataSet1.LibrosDataTable dataTable, decimal Autor) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(Autor));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1228,7 +1238,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillDGVLibrosPorNumeroAdquisicion(LibrosDataSet1.LibrosDataTable dataTable, string NUMADQ) {
-            this.Adapter.SelectCommand = this.CommandCollection[8];
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             if ((NUMADQ == null)) {
                 throw new global::System.ArgumentNullException("NUMADQ");
             }
@@ -1247,7 +1257,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillDGVLibrosPorTitulo(LibrosDataSet1.LibrosDataTable dataTable, string Titulo) {
-            this.Adapter.SelectCommand = this.CommandCollection[9];
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             if ((Titulo == null)) {
                 throw new global::System.ArgumentNullException("Titulo");
             }
@@ -1266,7 +1276,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int selectSinQueSeRepitanTitulosDeLibros(LibrosDataSet1.LibrosDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[11];
+            this.Adapter.SelectCommand = this.CommandCollection[12];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1306,8 +1316,54 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> estaDadoDeAltaElLibro(string num_adq) {
+        public virtual global::System.Nullable<int> ElLibroTienePrestamosEntreFechas(string Titulo, string Fecha_Inicial, string Fecha_Final) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Titulo == null)) {
+                throw new global::System.ArgumentNullException("Titulo");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Titulo));
+            }
+            if ((Fecha_Inicial == null)) {
+                throw new global::System.ArgumentNullException("Fecha_Inicial");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Fecha_Inicial));
+            }
+            if ((Fecha_Final == null)) {
+                throw new global::System.ArgumentNullException("Fecha_Final");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Fecha_Final));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> estaDadoDeAltaElLibro(string num_adq) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((num_adq == null)) {
                 throw new global::System.ArgumentNullException("num_adq");
             }
@@ -1341,7 +1397,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object estatusPorNumeroAdquisicion(string Num_Adq) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((Num_Adq == null)) {
                 throw new global::System.ArgumentNullException("Num_Adq");
             }
@@ -1375,7 +1431,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> existenLibrosconMismoTituloYEjemplar(string Ejemplar, string Titulo) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Ejemplar == null)) {
                 throw new global::System.ArgumentNullException("Ejemplar");
             }
@@ -1415,7 +1471,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object exixtenLibrosConNumAdquisicion(string NUMADQ) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((NUMADQ == null)) {
                 throw new global::System.ArgumentNullException("NUMADQ");
             }
@@ -1450,7 +1506,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQueryLibros(string numeroAdquisicion, string titulo, decimal idAutor, string ubicacion, string ejemplar, decimal clasificacion, string estatus) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
             if ((numeroAdquisicion == null)) {
                 throw new global::System.ArgumentNullException("numeroAdquisicion");
             }
@@ -1505,35 +1561,6 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateDarDeAltaLibros(string num_adq) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[12];
-            if ((num_adq == null)) {
-                throw new global::System.ArgumentNullException("num_adq");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(num_adq));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateDarDeBajaLibros(string num_adq) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[13];
             if ((num_adq == null)) {
                 throw new global::System.ArgumentNullException("num_adq");
@@ -1562,8 +1589,37 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQueryLibros(string titulo, decimal idAutor, string ubicacion, string ejemplar, decimal clasificacion, string estatus, string Original_numeroAdquisicion) {
+        public virtual int UpdateDarDeBajaLibros(string num_adq) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[14];
+            if ((num_adq == null)) {
+                throw new global::System.ArgumentNullException("num_adq");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(num_adq));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryLibros(string titulo, decimal idAutor, string ubicacion, string ejemplar, decimal clasificacion, string estatus, string Original_numeroAdquisicion) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[15];
             if ((titulo == null)) {
                 throw new global::System.ArgumentNullException("titulo");
             }
@@ -1618,7 +1674,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQueryLibrosSinEjemplar(string titulo, decimal idAutor, string ubicacion, decimal clasificacion, string estatus, string Original_numeroAdquisicion) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[15];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[16];
             if ((titulo == null)) {
                 throw new global::System.ArgumentNullException("titulo");
             }

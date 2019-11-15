@@ -37,9 +37,19 @@ namespace PruebaBiblioteca1.Forms.Libros
             VariablesGlobales.Globales.titulo = Convert.ToString(cbTituloLibro.SelectedValue);
             VariablesGlobales.Globales.fechaFinal = dtpFechaFinal.Text;
             VariablesGlobales.Globales.fechaInicial = dtpFechaInicial.Text;
-            if(Convert.ToDateTime(dtpFechaInicial.Text) >= Convert.ToDateTime(dtpFechaFinal.Text))
+            String titulo = Convert.ToString(cbTituloLibro.SelectedValue);
+            String fechaFin = dtpFechaFinal.Text;
+            String fechaIn = dtpFechaInicial.Text;
+
+            if (Convert.ToDateTime(dtpFechaInicial.Text) >= Convert.ToDateTime(dtpFechaFinal.Text))
             {
                 MessageBox.Show("Rango de fechas incorrecto, Asegurese que la fecha inicial se anterior a la fecha final");
+            }
+            //MessageBox.Show("Titulo : " + titulo + "\nFechaInicial : " + fechaIn + "\nFechaFinal : " + fechaFin);
+            if (this.librosTableAdapter.ElLibroTienePrestamosEntreFechas(titulo, fechaIn, fechaFin) == 0)
+            {
+                
+                MessageBox.Show("No hay prestamos de ese libro en el rango de fechas seleccioandas");
             }
             else
             {
