@@ -58,5 +58,10 @@ namespace PruebaBiblioteca1
             new Forms.Login().Show();
             this.Hide();
         }
+
+        private void FrmMenú_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
