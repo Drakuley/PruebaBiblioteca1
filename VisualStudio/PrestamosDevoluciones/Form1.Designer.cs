@@ -1,4 +1,4 @@
-﻿namespace Biblioteca4
+﻿namespace PruebaBiblioteca1
 {
     partial class Form1
     {

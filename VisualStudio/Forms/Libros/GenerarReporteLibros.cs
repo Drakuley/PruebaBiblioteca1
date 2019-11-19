@@ -46,7 +46,7 @@ namespace PruebaBiblioteca1.Forms.Libros
                 MessageBox.Show("Rango de fechas incorrecto, Asegurese que la fecha inicial se anterior a la fecha final");
             }
             //MessageBox.Show("Titulo : " + titulo + "\nFechaInicial : " + fechaIn + "\nFechaFinal : " + fechaFin);
-            if (this.librosTableAdapter.ElLibroTienePrestamosEntreFechas(titulo, fechaIn, fechaFin) == 0)
+            if (Convert.ToInt32(this.librosTableAdapter.ElLibroTienePrestamosEntreFechas(titulo, fechaIn, fechaFin)) == 0)
             {
                 
                 MessageBox.Show("No hay prestamos de ese libro en el rango de fechas seleccioandas");

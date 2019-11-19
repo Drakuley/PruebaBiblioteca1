@@ -2428,7 +2428,7 @@ namespace Biblioteca4.PrestamosDevolucionesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.Prestamos;
+            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2685,7 +2685,7 @@ WHERE        (CONVERT(varchar(20), Devoluciones.idDevolucion) LIKE @numero + '%'
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.Prestamos;
+            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3104,7 +3104,7 @@ WHERE        (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> numeroPrestamo() {
+        public virtual object numeroPrestamo() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[13];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3122,10 +3122,10 @@ WHERE        (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<decimal>();
+                return null;
             }
             else {
-                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+                return ((object)(returnValue));
             }
         }
     }
@@ -3266,7 +3266,7 @@ WHERE        (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.Prestamos;
+            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3853,7 +3853,7 @@ WHERE        (Devoluciones.fechaDevuelto BETWEEN @FechaInicial AND @FechaFinal)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.Prestamos;
+            this._connection.ConnectionString = global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3983,73 +3983,73 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
         private void InitCommandCollection() {
             this._commandCollection = new global::System.Data.IDbCommand[12];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT        MAX(titulo) AS titulo\r\nFROM            Libros\r\nWHERE        (numero" +
                 "Adquisicion = @num)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@num", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "SELECT        estatus\r\nFROM            Libros\r\nWHERE        (numeroAdquisicion = " +
                 "@numeroAdquisicion)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroAdquisicion", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numeroAdquisicion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandText = "SELECT        MAX(idUsuario)\r\nFROM            Usuarios\r\nWHERE        (nombreUsuar" +
                 "io = @NombreUsuario)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[2])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreUsuario", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandText = "SELECT        MAX(nombreUsuario) AS Expr1\r\nFROM            Usuarios\r\nWHERE       " +
                 " (idUsuario = @Usuario)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usuario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "SELECT nombreBibliotecario\r\nfrom Bibliotecarios, prestamos\r\nwhere Bibliotecarios." +
                 "idBibliotecario = Prestamos.idBibliotecario\r\nAND Prestamos.idPrestamo = @idPrest" +
                 "amo;";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrestamo", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandText = "SELECT        COUNT(idPrestamo) AS Expr1\r\nFROM            Prestamos\r\nWHERE       " +
                 " (idUsuario = @idUsuario)\r\nand estatus = \'Y\'";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandText = "select *\r\nfrom prestamos\r\nwhere idPrestamo = @idPrestamo\r\nand estatus = \'DISPONIB" +
                 "LE\';";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrestamo", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).CommandText = "SELECT        Libros.titulo\r\nFROM            Libros INNER JOIN\r\n                 " +
                 "        Prestamos ON Libros.numeroAdquisicion = Prestamos.numeroAdquisicion\r\nWHE" +
                 "RE        (Prestamos.idPrestamo = @idPrestamo)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[7])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrestamo", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).CommandText = "SELECT        Libros.numeroAdquisicion\r\nFROM            Libros INNER JOIN\r\n      " +
                 "                   Prestamos ON Libros.numeroAdquisicion = Prestamos.numeroAdqui" +
                 "sicion\r\nWHERE        (Prestamos.idPrestamo = @idPrestamo)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[8])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrestamo", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).CommandText = "select estatus\r\nfrom prestamos\r\nwhere idPrestamo = @idPrestamo";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[9])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrestamo", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idPrestamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).CommandText = "SELECT        MAX(idDevolucion) AS Expr1\r\nFROM            Devoluciones";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[10])).CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.Prestamos);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Biblioteca4.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandText = "SELECT nombreBibliotecario\r\nfrom Bibliotecarios, devoluciones\r\nwhere Bibliotecari" +
                 "os.idBibliotecario = devoluciones.idBibliotecario\r\nAND Devoluciones.idDevolucion" +
                 " = @idDevoluciones;";
@@ -4060,7 +4060,7 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string TituloLibro(string num) {
+        public virtual object TituloLibro(string num) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
             if ((num == null)) {
                 throw new global::System.ArgumentNullException("num");
@@ -4087,14 +4087,14 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string EstatusLibro(string numeroAdquisicion) {
+        public virtual object EstatusLibro(string numeroAdquisicion) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[1]));
             if ((numeroAdquisicion == null)) {
                 throw new global::System.ArgumentNullException("numeroAdquisicion");
@@ -4121,14 +4121,14 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> idUsuarioPorNombre(string NombreUsuario) {
+        public virtual object idUsuarioPorNombre(string NombreUsuario) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[2]));
             if ((NombreUsuario == null)) {
                 throw new global::System.ArgumentNullException("NombreUsuario");
@@ -4152,17 +4152,17 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<decimal>();
+                return null;
             }
             else {
-                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string nombreUsuarioPorID(decimal Usuario) {
+        public virtual object nombreUsuarioPorID(decimal Usuario) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[3]));
             command.Parameters[0].Value = ((decimal)(Usuario));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4184,14 +4184,14 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string NombreBibliotecarioPorPrestamo(decimal idPrestamo) {
+        public virtual object NombreBibliotecarioPorPrestamo(decimal idPrestamo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[4]));
             command.Parameters[0].Value = ((decimal)(idPrestamo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4213,7 +4213,7 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
@@ -4249,7 +4249,7 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> PrestamoDisponible(decimal idPrestamo) {
+        public virtual object PrestamoDisponible(decimal idPrestamo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[6]));
             command.Parameters[0].Value = ((decimal)(idPrestamo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4268,17 +4268,17 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<decimal>();
+                return null;
             }
             else {
-                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string TituloDeLibroPorIdPrestamo(decimal idPrestamo) {
+        public virtual object TituloDeLibroPorIdPrestamo(decimal idPrestamo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[7]));
             command.Parameters[0].Value = ((decimal)(idPrestamo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4300,14 +4300,14 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string NumAdquisicionPorIdPrestamo(decimal idPrestamo) {
+        public virtual object NumAdquisicionPorIdPrestamo(decimal idPrestamo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[8]));
             command.Parameters[0].Value = ((decimal)(idPrestamo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4329,14 +4329,14 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string EstatusPorIdPrestamo(decimal idPrestamo) {
+        public virtual object EstatusPorIdPrestamo(decimal idPrestamo) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[9]));
             command.Parameters[0].Value = ((decimal)(idPrestamo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4358,14 +4358,14 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> ultimoIdDevolucion() {
+        public virtual object ultimoIdDevolucion() {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[10]));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4383,17 +4383,17 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<decimal>();
+                return null;
             }
             else {
-                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string NombreBibliotecarioPorIdDevolucion(decimal idDevoluciones) {
+        public virtual object NombreBibliotecarioPorIdDevolucion(decimal idDevoluciones) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[11]));
             command.Parameters[0].Value = ((decimal)(idDevoluciones));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -4415,7 +4415,7 @@ where (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
     }

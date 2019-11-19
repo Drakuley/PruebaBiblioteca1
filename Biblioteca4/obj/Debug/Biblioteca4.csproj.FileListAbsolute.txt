@@ -97,3 +97,19 @@ C:\Users\Mike\source\repos\Biblioteca4\obj\Debug\RdlCompile.cache
 C:\Users\Mike\source\repos\Biblioteca4\obj\Debug\RdlCompile.compiled
 C:\Users\Mike\source\repos\Biblioteca4\obj\Debug\Biblioteca4.csproj.CopyComplete
 C:\Users\Mike\source\repos\Biblioteca4\obj\Debug\Biblioteca4.ReportePrestamos.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.csprojAssemblyReference.cache
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.exe.config
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.Form1.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.Devoluciones.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.GenerarReporteDevoluciones.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.GenerarReportePrestamos.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.Properties.Resources.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.RegistroDePrestamo.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.ReporteDevoluciones.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.ReportePrestamos.resources
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.csproj.GenerateResource.cache
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\RdlCompile.cache
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\RdlCompile.compiled
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.csproj.CoreCompileInputs.cache
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.exe
+C:\Users\Sofia Belmares\Documents\GitHub\PruebaBiblioteca2\Biblioteca4\obj\Debug\Biblioteca4.pdb

@@ -27,7 +27,7 @@ namespace PruebaBiblioteca1.Forms
             else if (Convert.ToInt32(bibliotecariosTableAdapter1.ExisteBibliotecarioConIdyContraseña(Convert.ToDecimal(txtIdBibliotecario.Text),txtContraseña.Text)) == 1)
             {
                 VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(txtIdBibliotecario.Text);
-                new Biblioteca4.Form1().Show();
+                new FrmMenú().Show();
                 this.Hide();
             }
             else
