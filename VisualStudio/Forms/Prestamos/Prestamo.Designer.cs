@@ -33,13 +33,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenú));
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
-            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDevolver = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosDevolucionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosDevoluciones = new PruebaBiblioteca1.PrestamosDevoluciones();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.btnPrestamoNuevo = new System.Windows.Forms.Button();
             this.btnModificarPrestamo = new System.Windows.Forms.Button();
@@ -53,8 +58,32 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.PrestamosTableAdapter();
+            this.devolucionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devolucionesTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter();
+            this.dataTable2TableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable2TableAdapter();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevolucionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devolucionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvPrestamos
@@ -62,25 +91,24 @@
             this.dgvPrestamos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPrestamos.AutoGenerateColumns = false;
             this.dgvPrestamos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrestamos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPrestamos.BackgroundColor = System.Drawing.Color.White;
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPrestamo,
             this.titulo,
             this.fechaDevolver,
             this.nombreUsuario,
-            this.idBibliotecario});
+            this.idBibliotecario,
+            this.idPrestamoDataGridViewTextBoxColumn,
+            this.numeroAdquisicionDataGridViewTextBoxColumn});
+            this.dgvPrestamos.DataSource = this.dataTable2BindingSource;
             this.dgvPrestamos.Location = new System.Drawing.Point(258, 55);
             this.dgvPrestamos.Name = "dgvPrestamos";
             this.dgvPrestamos.Size = new System.Drawing.Size(723, 433);
             this.dgvPrestamos.TabIndex = 1;
-            // 
-            // idPrestamo
-            // 
-            this.idPrestamo.HeaderText = "ID Préstamo";
-            this.idPrestamo.Name = "idPrestamo";
+            this.dgvPrestamos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPrestamos_CellContentClick);
             // 
             // titulo
             // 
@@ -101,6 +129,33 @@
             // 
             this.idBibliotecario.HeaderText = "ID Bibliotecario";
             this.idBibliotecario.Name = "idBibliotecario";
+            // 
+            // idPrestamoDataGridViewTextBoxColumn
+            // 
+            this.idPrestamoDataGridViewTextBoxColumn.DataPropertyName = "idPrestamo";
+            this.idPrestamoDataGridViewTextBoxColumn.HeaderText = "idPrestamo";
+            this.idPrestamoDataGridViewTextBoxColumn.Name = "idPrestamoDataGridViewTextBoxColumn";
+            // 
+            // numeroAdquisicionDataGridViewTextBoxColumn
+            // 
+            this.numeroAdquisicionDataGridViewTextBoxColumn.DataPropertyName = "numeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.HeaderText = "numeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.Name = "numeroAdquisicionDataGridViewTextBoxColumn";
+            // 
+            // dataTable2BindingSource
+            // 
+            this.dataTable2BindingSource.DataMember = "DataTable2";
+            this.dataTable2BindingSource.DataSource = this.prestamosDevolucionesBindingSource;
+            // 
+            // prestamosDevolucionesBindingSource
+            // 
+            this.prestamosDevolucionesBindingSource.DataSource = this.prestamosDevoluciones;
+            this.prestamosDevolucionesBindingSource.Position = 0;
+            // 
+            // prestamosDevoluciones
+            // 
+            this.prestamosDevoluciones.DataSetName = "PrestamosDevoluciones";
+            this.prestamosDevoluciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnGenerarReporte
             // 
@@ -313,6 +368,144 @@
             this.textBox1.Size = new System.Drawing.Size(165, 20);
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "Buscar:";
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // prestamosBindingSource
+            // 
+            this.prestamosBindingSource.DataMember = "Prestamos";
+            this.prestamosBindingSource.DataSource = this.prestamosDevolucionesBindingSource;
+            // 
+            // prestamosTableAdapter
+            // 
+            this.prestamosTableAdapter.ClearBeforeFill = true;
+            // 
+            // devolucionesBindingSource
+            // 
+            this.devolucionesBindingSource.DataMember = "Devoluciones";
+            this.devolucionesBindingSource.DataSource = this.prestamosDevolucionesBindingSource;
+            // 
+            // devolucionesTableAdapter
+            // 
+            this.devolucionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataTable2TableAdapter
+            // 
+            this.dataTable2TableAdapter.ClearBeforeFill = true;
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(988, 25);
+            this.bindingNavigator1.TabIndex = 8;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bindingNavigator1.RefreshItems += new System.EventHandler(this.BindingNavigator1_RefreshItems);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // FrmMenú
             // 
@@ -320,6 +513,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(988, 543);
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblPrestamos);
@@ -334,8 +528,16 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenú_FormClosed);
             this.Load += new System.EventHandler(this.FrmMenú_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevolucionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devolucionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,13 +556,34 @@
         private System.Windows.Forms.Button btnBibliotecarios;
         private System.Windows.Forms.Button btnCambiarBibliotecario;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBibliotecario;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource prestamosDevolucionesBindingSource;
+        private PrestamosDevoluciones prestamosDevoluciones;
+        private System.Windows.Forms.BindingSource prestamosBindingSource;
+        private PrestamosDevolucionesTableAdapters.PrestamosTableAdapter prestamosTableAdapter;
+        private System.Windows.Forms.BindingSource devolucionesBindingSource;
+        private PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter devolucionesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroAdquisicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource dataTable2BindingSource;
+        private PrestamosDevolucionesTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }
 

@@ -36,7 +36,7 @@ namespace Biblioteca4
         {
             
             this.prestamosTableAdapter.Fill(this.prestamosDevoluciones.Prestamos);
-            txtIdPrestamo.Text = "" + (prestamosTableAdapter.numeroPrestamo() + 1);
+            txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1);
             
             txtBibliotecario.Text = "1";
 
@@ -58,7 +58,7 @@ namespace Biblioteca4
                     txtFechaPrestamo.Text = Convert.ToDateTime(row["fechaPrestamo"].ToString()).ToString("dd/MMMM/yyyy");
                 }
                 btnRegistrar.Text = "Modificar Prestamo";
-                txtBibliotecario.Text = new Consultas().NombreBibliotecarioPorPrestamo(idPrestamo);
+                txtBibliotecario.Text = Convert.ToString(new Consultas().NombreBibliotecarioPorPrestamo(idPrestamo));
                 txtNumeroAdquisicion.Enabled = false;
                 txtUsuario.Enabled = false;
                 btnRegistrar.Enabled = true;
@@ -74,7 +74,7 @@ namespace Biblioteca4
             lblDisponible.Visible = false;
             if (txtNumeroAdquisicion.Text != "")
             {
-                txtTitulo.Text = new Consultas().TituloLibro(txtNumeroAdquisicion.Text);
+                txtTitulo.Text = Convert.ToString(new Consultas().TituloLibro(txtNumeroAdquisicion.Text));
                 lblDisponible.Visible = false;
                 try
                 {
@@ -141,7 +141,7 @@ namespace Biblioteca4
 
                     if (isNumeric)
                     {
-                        txtNombreUsuario.Text = new Consultas().nombreUsuarioPorID(n);
+                        txtNombreUsuario.Text = Convert.ToString(new Consultas().nombreUsuarioPorID(n));
                         txtIdUsuario.Text = new Consultas().idUsuarioPorNombre(txtNombreUsuario.Text) + "";
                     }
                     else
@@ -150,7 +150,7 @@ namespace Biblioteca4
                         txtIdUsuario.Text = new Consultas().idUsuarioPorNombre(txtUsuario.Text) + "";
                         if (txtIdUsuario.Text != "")
                         {
-                            txtNombreUsuario.Text = new Consultas().nombreUsuarioPorID(Int32.Parse(txtIdUsuario.Text));
+                            txtNombreUsuario.Text = Convert.ToString(new Consultas().nombreUsuarioPorID(Int32.Parse(txtIdUsuario.Text)));
                         }
                     }
 
@@ -175,7 +175,7 @@ namespace Biblioteca4
                     if (txtUsuario.Text != "")
                     {
                         txtIdUsuario.Text = new Consultas().idUsuarioPorNombre(txtUsuario.Text) + "";
-                        txtNombreUsuario.Text = new Consultas().nombreUsuarioPorID(Int32.Parse(txtIdUsuario.Text));
+                        txtNombreUsuario.Text = Convert.ToString(new Consultas().nombreUsuarioPorID(Int32.Parse(txtIdUsuario.Text)));
                         if (usuarioTresPrestamos(Int32.Parse(txtIdUsuario.Text)))
                         {
                             lblTresPrestamos.Visible = true;
@@ -237,13 +237,13 @@ namespace Biblioteca4
             //this.Dispose();
             txtUsuario.Text = "";
             txtNumeroAdquisicion.Text = "";
-            txtIdPrestamo.Text = "" + (prestamosTableAdapter.numeroPrestamo() + 1);
+            txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1);
             raiseUpdate();
         }
 
         private void BtnNuevoPrestamo_Click(object sender, EventArgs e)
         {
-            txtIdPrestamo.Text = (prestamosTableAdapter.numeroPrestamo() + 1) + "";
+            txtIdPrestamo.Text = (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1) + "";
             btnNuevoPrestamo.Visible = false;
             txtUsuario.Text = "";
             txtNumeroAdquisicion.Text = "";
@@ -267,7 +267,7 @@ namespace Biblioteca4
 
         private void datosNuevoPrestamo()
         {
-            txtIdPrestamo.Text = (prestamosTableAdapter.numeroPrestamo() + 1) + "";
+            txtIdPrestamo.Text = (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1) + "";
             btnNuevoPrestamo.Visible = false;
             txtFechaPrestamo.Text = DateTime.Now.ToString("dd/MMMM/yyyy");
             cbFechaDevolucion.Text = DateTime.Now.ToString("dd/MMMM/yyyy");

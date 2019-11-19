@@ -1,4 +1,4 @@
-﻿namespace Biblioteca4
+﻿namespace PruebaBiblioteca1
 {
 
 
@@ -14,12 +14,13 @@
     }
 }
 
-namespace Biblioteca4.PrestamosDevolucionesTableAdapters
+namespace PruebaBiblioteca1.PrestamosDevolucionesTableAdapters
 {
     partial class DataTable1TableAdapter
     {
     }
 
-    public partial class PrestamosTableAdapter {
+    public partial class PrestamosTableAdapter
+    {
     }
 }

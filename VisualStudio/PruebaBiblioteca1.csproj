@@ -174,6 +174,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibrosDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PrestamosDevoluciones.cs">
+      <DependentUpon>PrestamosDevoluciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDevoluciones.Designer.cs">
+      <DependentUpon>PrestamosDevoluciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrestamosDevoluciones1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrestamosDevoluciones.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PrestamosDevoluciones\BiblioDBDataSet.Designer.cs" />
     <Compile Include="PrestamosDevoluciones\Devoluciones.cs">
       <SubType>Form</SubType>
@@ -348,6 +359,17 @@
       <DependentUpon>LibrosDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="PrestamosDevoluciones.xsc">
+      <DependentUpon>PrestamosDevoluciones.xsd</DependentUpon>
+    </None>
+    <None Include="PrestamosDevoluciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrestamosDevoluciones1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PrestamosDevoluciones.xss">
+      <DependentUpon>PrestamosDevoluciones.xsd</DependentUpon>
+    </None>
     <None Include="PrestamosDevoluciones\BiblioDBDataSet.xsd" />
     <None Include="PrestamosDevoluciones\PrestamosDevoluciones.xsd" />
     <None Include="Properties\Settings.settings">

@@ -38,7 +38,7 @@ namespace Biblioteca4
             this.dataTable1TableAdapter.FillBy1(this.prestamosDevoluciones.DataTable1);
             if (devolver == 1)
             {
-                this.txtIdDev.Text = (1 + new Consultas().ultimoIdDevolucion()) + "";
+                this.txtIdDev.Text = (1 + Convert.ToInt32(new Consultas().ultimoIdDevolucion())) + "";
                 txtPrestamo.Text = idPrestamo + "";
                 txtBiblio.Text = 1 + ""; //TOMAR BLIOTECARIO DEL LOGIN
 
@@ -93,7 +93,7 @@ namespace Biblioteca4
                 if (txtPrestamo.Text != "")
                 {
                     idPrestamo = Int32.Parse(txtPrestamo.Text);
-                    string str = new Consultas().EstatusPorIdPrestamo(idPrestamo);
+                    string str = Convert.ToString(new Consultas().EstatusPorIdPrestamo(idPrestamo));
                     if (str == "N")
                     {
                         if (idPrestamo != 0)
@@ -146,7 +146,7 @@ namespace Biblioteca4
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            String numAdqui = new Consultas().NumAdquisicionPorIdPrestamo(Int32.Parse(txtPrestamo.Text)); ;
+            String numAdqui = Convert.ToString(new Consultas().NumAdquisicionPorIdPrestamo(Int32.Parse(txtPrestamo.Text))); ;
             new DataTable1TableAdapter().InsertDevoluciones(Int32.Parse(txtIdDev.Text), Int32.Parse(txtPrestamo.Text),
                 numAdqui, Int32.Parse(txtBiblio.Text), txtFechaDev.Text, txtObs.Text);
             new DataTable1TableAdapter().UpdateEstatusLibro("Disponible", numAdqui);
@@ -179,11 +179,11 @@ namespace Biblioteca4
                 foreach (DataRow row in new DevolucionesTableAdapter().DatosDevoluciones(Int32.Parse(txtIdDev.Text)).Rows)
                 {
                     txtPrestamo.Text = row["idPrestamo"].ToString();
-                    txtTitulo.Text = new Consultas().TituloDeLibroPorIdPrestamo(Int32.Parse(txtPrestamo.Text));
+                    txtTitulo.Text = Convert.ToString(new Consultas().TituloDeLibroPorIdPrestamo(Int32.Parse(txtPrestamo.Text)));
                     cbFechaDev.Text = row["fechaDevuelto"].ToString();
                     txtObs.Text = row["observaciones"].ToString();
                     int idBiblio = Int32.Parse (row["idBibliotecario"].ToString());
-                    txtBiblio.Text = new Consultas().NombreBibliotecarioPorIdDevolucion(idBiblio);
+                    txtBiblio.Text = Convert.ToString(new Consultas().NombreBibliotecarioPorIdDevolucion(idBiblio));
                    // txtFechaPrestamo.Text = Convert.ToDateTime(row["fechaPrestamo"].ToString()).ToString("dd/MMMM/yyyy");
                 }
             }
