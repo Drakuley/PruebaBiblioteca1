@@ -34,15 +34,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenú));
-            this.dgvPrestamos = new System.Windows.Forms.DataGridView();
-            this.idPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevolver = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBibliotecario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGenerarReporte = new System.Windows.Forms.Button();
-            this.btnPrestamoNuevo = new System.Windows.Forms.Button();
-            this.btnModificarPrestamo = new System.Windows.Forms.Button();
             this.lblPrestamos = new System.Windows.Forms.Label();
             this.btnPrestamos = new System.Windows.Forms.Button();
             this.btnDevoluciones = new System.Windows.Forms.Button();
@@ -52,111 +43,24 @@
             this.btnCambiarBibliotecario = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
+            this.prestamosDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnDevolverPrestamo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
+            this.idPrestamoTextBox = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvPrestamos
-            // 
-            this.dgvPrestamos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPrestamos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPrestamos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPrestamos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPrestamo,
-            this.titulo,
-            this.fechaDevolver,
-            this.nombreUsuario,
-            this.idBibliotecario});
-            this.dgvPrestamos.Location = new System.Drawing.Point(258, 55);
-            this.dgvPrestamos.Name = "dgvPrestamos";
-            this.dgvPrestamos.Size = new System.Drawing.Size(723, 433);
-            this.dgvPrestamos.TabIndex = 1;
-            // 
-            // idPrestamo
-            // 
-            this.idPrestamo.HeaderText = "ID Préstamo";
-            this.idPrestamo.Name = "idPrestamo";
-            // 
-            // titulo
-            // 
-            this.titulo.HeaderText = "Título";
-            this.titulo.Name = "titulo";
-            // 
-            // fechaDevolver
-            // 
-            this.fechaDevolver.HeaderText = "Fecha a devolver";
-            this.fechaDevolver.Name = "fechaDevolver";
-            // 
-            // nombreUsuario
-            // 
-            this.nombreUsuario.HeaderText = "Nombre del Usuario";
-            this.nombreUsuario.Name = "nombreUsuario";
-            // 
-            // idBibliotecario
-            // 
-            this.idBibliotecario.HeaderText = "ID Bibliotecario";
-            this.idBibliotecario.Name = "idBibliotecario";
-            // 
-            // btnGenerarReporte
-            // 
-            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerarReporte.AutoSize = true;
-            this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(468, 494);
-            this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(165, 37);
-            this.btnGenerarReporte.TabIndex = 2;
-            this.btnGenerarReporte.Text = "Generar Reporte";
-            this.btnGenerarReporte.UseVisualStyleBackColor = false;
-            this.btnGenerarReporte.Click += new System.EventHandler(this.BtnGenerarReporte_Click);
-            // 
-            // btnPrestamoNuevo
-            // 
-            this.btnPrestamoNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrestamoNuevo.AutoSize = true;
-            this.btnPrestamoNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnPrestamoNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnPrestamoNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrestamoNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrestamoNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnPrestamoNuevo.Location = new System.Drawing.Point(810, 494);
-            this.btnPrestamoNuevo.Name = "btnPrestamoNuevo";
-            this.btnPrestamoNuevo.Size = new System.Drawing.Size(165, 37);
-            this.btnPrestamoNuevo.TabIndex = 3;
-            this.btnPrestamoNuevo.Text = "Nuevo Préstamo";
-            this.btnPrestamoNuevo.UseVisualStyleBackColor = false;
-            this.btnPrestamoNuevo.Click += new System.EventHandler(this.BtnPrestamoNuevo_Click);
-            // 
-            // btnModificarPrestamo
-            // 
-            this.btnModificarPrestamo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarPrestamo.AutoSize = true;
-            this.btnModificarPrestamo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnModificarPrestamo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.btnModificarPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarPrestamo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarPrestamo.ForeColor = System.Drawing.Color.White;
-            this.btnModificarPrestamo.Location = new System.Drawing.Point(639, 494);
-            this.btnModificarPrestamo.Name = "btnModificarPrestamo";
-            this.btnModificarPrestamo.Size = new System.Drawing.Size(165, 37);
-            this.btnModificarPrestamo.TabIndex = 4;
-            this.btnModificarPrestamo.Text = "Modificar Préstamo";
-            this.btnModificarPrestamo.UseVisualStyleBackColor = false;
             // 
             // lblPrestamos
             // 
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrestamos.Location = new System.Drawing.Point(583, 19);
+            this.lblPrestamos.Location = new System.Drawing.Point(641, 19);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(107, 22);
             this.lblPrestamos.TabIndex = 5;
@@ -306,45 +210,150 @@
             this.panel2.Size = new System.Drawing.Size(8, 546);
             this.panel2.TabIndex = 6;
             // 
-            // textBox1
+            // prestamosDataGridView
             // 
-            this.textBox1.Location = new System.Drawing.Point(810, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "Buscar:";
+            this.prestamosDataGridView.AllowUserToAddRows = false;
+            this.prestamosDataGridView.AllowUserToDeleteRows = false;
+            this.prestamosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prestamosDataGridView.Location = new System.Drawing.Point(281, 66);
+            this.prestamosDataGridView.Name = "prestamosDataGridView";
+            this.prestamosDataGridView.ReadOnly = true;
+            this.prestamosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.prestamosDataGridView.Size = new System.Drawing.Size(808, 405);
+            this.prestamosDataGridView.TabIndex = 24;
+            // 
+            // btnDevolverPrestamo
+            // 
+            this.btnDevolverPrestamo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDevolverPrestamo.AutoSize = true;
+            this.btnDevolverPrestamo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnDevolverPrestamo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnDevolverPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDevolverPrestamo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolverPrestamo.ForeColor = System.Drawing.Color.White;
+            this.btnDevolverPrestamo.Location = new System.Drawing.Point(411, 494);
+            this.btnDevolverPrestamo.Name = "btnDevolverPrestamo";
+            this.btnDevolverPrestamo.Size = new System.Drawing.Size(165, 37);
+            this.btnDevolverPrestamo.TabIndex = 28;
+            this.btnDevolverPrestamo.Text = "Devolver Prestamo";
+            this.btnDevolverPrestamo.UseVisualStyleBackColor = false;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.AutoSize = true;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(753, 494);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(165, 37);
+            this.btnModificar.TabIndex = 27;
+            this.btnModificar.Text = "Modificar Préstamo";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(924, 494);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(165, 37);
+            this.btnNuevo.TabIndex = 26;
+            this.btnNuevo.Text = "Nuevo Préstamo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnGenerarReporte
+            // 
+            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarReporte.AutoSize = true;
+            this.btnGenerarReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporte.Location = new System.Drawing.Point(582, 494);
+            this.btnGenerarReporte.Name = "btnGenerarReporte";
+            this.btnGenerarReporte.Size = new System.Drawing.Size(165, 37);
+            this.btnGenerarReporte.TabIndex = 25;
+            this.btnGenerarReporte.Text = "Generar Reporte";
+            this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            // 
+            // idPrestamoTextBox
+            // 
+            this.idPrestamoTextBox.Location = new System.Drawing.Point(295, 12);
+            this.idPrestamoTextBox.Name = "idPrestamoTextBox";
+            this.idPrestamoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idPrestamoTextBox.TabIndex = 29;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(295, 38);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 30;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.White;
+            this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
+            this.txtBusqueda.Location = new System.Drawing.Point(910, 26);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(179, 15);
+            this.txtBusqueda.TabIndex = 80;
+            this.txtBusqueda.Text = "Buscar";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
+            this.panel3.Location = new System.Drawing.Point(910, 44);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(180, 3);
+            this.panel3.TabIndex = 81;
             // 
             // FrmMenú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(988, 543);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1104, 543);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.idPrestamoTextBox);
+            this.Controls.Add(this.btnDevolverPrestamo);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnGenerarReporte);
+            this.Controls.Add(this.prestamosDataGridView);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblPrestamos);
-            this.Controls.Add(this.btnModificarPrestamo);
-            this.Controls.Add(this.btnPrestamoNuevo);
-            this.Controls.Add(this.btnGenerarReporte);
-            this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.panel1);
             this.Name = "FrmMenú";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Préstamos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenú_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvPrestamos;
-        private System.Windows.Forms.Button btnGenerarReporte;
-        private System.Windows.Forms.Button btnPrestamoNuevo;
-        private System.Windows.Forms.Button btnModificarPrestamo;
         private System.Windows.Forms.Label lblPrestamos;
         private System.Windows.Forms.Button btnPrestamos;
         private System.Windows.Forms.Button btnDevoluciones;
@@ -353,13 +362,16 @@
         private System.Windows.Forms.Button btnBibliotecarios;
         private System.Windows.Forms.Button btnCambiarBibliotecario;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPrestamo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevolver;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idBibliotecario;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.DataGridView prestamosDataGridView;
+        private System.Windows.Forms.Button btnDevolverPrestamo;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnGenerarReporte;
+        private System.Windows.Forms.TextBox idPrestamoTextBox;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
