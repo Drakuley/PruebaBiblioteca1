@@ -23,9 +23,7 @@ namespace PruebaBiblioteca1
         {
             new Forms.RegistroDePrestamo().Show();
         }
-            
-   
-
+ 
 
         private void BtnDevoluciones_Click(object sender, EventArgs e)
         {
@@ -154,6 +152,14 @@ namespace PruebaBiblioteca1
         private void IdPrestamoTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            idPrestamo = Int32.Parse(idPrestamoTextBox.Text);
+            Forms.RegistroDePrestamo r1 = new Forms.RegistroDePrestamo(idPrestamo, this);
+            r1.UpdateEventHandler += F3_UpdateEventHandler1;
+            r1.ShowDialog();
         }
     }
 }

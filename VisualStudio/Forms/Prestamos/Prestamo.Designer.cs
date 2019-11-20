@@ -292,6 +292,7 @@
             this.btnModificar.TabIndex = 27;
             this.btnModificar.Text = "Modificar Préstamo";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnNuevo
             // 
