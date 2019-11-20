@@ -135,6 +135,7 @@ namespace PruebaBiblioteca1.Forms.Devoluciones
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
+            
             String numAdqui = Convert.ToString(new Consultas().NumAdquisicionPorIdPrestamo(Int32.Parse(txtPrestamo.Text))); ;
             new DataTable1TableAdapter().InsertDevoluciones(Int32.Parse(txtIdDev.Text), Int32.Parse(txtPrestamo.Text),
                 numAdqui, Int32.Parse(txtBiblio.Text), txtFechaDev.Text, txtObs.Text);
@@ -151,6 +152,7 @@ namespace PruebaBiblioteca1.Forms.Devoluciones
             estadoBusqueda();
             //this.Dispose();
             raiseUpdate();
+            this.dataTable1TableAdapter.FillBy1(this.prestamosDevoluciones1.DataTable1);
         }
 
         private void DevolucionesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

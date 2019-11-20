@@ -1018,7 +1018,7 @@ namespace PruebaBiblioteca1.LibrosDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::PruebaBiblioteca1.Properties.Settings.Default.BibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::PruebaBiblioteca1.Properties.Settings.Default.BiblioDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1316,7 +1316,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> ElLibroTienePrestamosEntreFechas(string Titulo, string Fecha_Inicial, string Fecha_Final) {
+        public virtual object ElLibroTienePrestamosEntreFechas(string Titulo, string Fecha_Inicial, string Fecha_Final) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((Titulo == null)) {
                 throw new global::System.ArgumentNullException("Titulo");
@@ -1352,17 +1352,17 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> estaDadoDeAltaElLibro(string num_adq) {
+        public virtual object estaDadoDeAltaElLibro(string num_adq) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((num_adq == null)) {
                 throw new global::System.ArgumentNullException("num_adq");
@@ -1386,10 +1386,10 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
@@ -1430,7 +1430,7 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> existenLibrosconMismoTituloYEjemplar(string Ejemplar, string Titulo) {
+        public virtual object existenLibrosconMismoTituloYEjemplar(string Ejemplar, string Titulo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Ejemplar == null)) {
                 throw new global::System.ArgumentNullException("Ejemplar");
@@ -1460,10 +1460,10 @@ SELECT numeroAdquisicion, titulo, idAutor, ubicacion, ejemplar, clasificacion, e
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         

@@ -45,6 +45,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.prestamosDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDelPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numAdquiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaADevolverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamosDevoluciones = new PruebaBiblioteca1.PrestamosDevoluciones();
             this.btnDevolverPrestamo = new System.Windows.Forms.Button();
@@ -56,13 +63,6 @@
             this.txt = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.prestamosTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.PrestamosTableAdapter();
-            this.iDPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDelPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numAdquiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bibliotecarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaADevolverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picture = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).BeginInit();
@@ -250,6 +250,55 @@
             this.prestamosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrestamosDataGridView_CellContentClick);
             this.prestamosDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrestamosDataGridView_CellContentDoubleClick);
             // 
+            // iDPrestamoDataGridViewTextBoxColumn
+            // 
+            this.iDPrestamoDataGridViewTextBoxColumn.DataPropertyName = "ID Prestamo";
+            this.iDPrestamoDataGridViewTextBoxColumn.HeaderText = "ID Prestamo";
+            this.iDPrestamoDataGridViewTextBoxColumn.Name = "iDPrestamoDataGridViewTextBoxColumn";
+            this.iDPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDelPrestamoDataGridViewTextBoxColumn
+            // 
+            this.fechaDelPrestamoDataGridViewTextBoxColumn.DataPropertyName = "Fecha del Prestamo";
+            this.fechaDelPrestamoDataGridViewTextBoxColumn.HeaderText = "Fecha del Prestamo";
+            this.fechaDelPrestamoDataGridViewTextBoxColumn.Name = "fechaDelPrestamoDataGridViewTextBoxColumn";
+            this.fechaDelPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numAdquiDataGridViewTextBoxColumn
+            // 
+            this.numAdquiDataGridViewTextBoxColumn.DataPropertyName = "Num_ Adqui_";
+            this.numAdquiDataGridViewTextBoxColumn.HeaderText = "Núm. de Adquisición";
+            this.numAdquiDataGridViewTextBoxColumn.Name = "numAdquiDataGridViewTextBoxColumn";
+            this.numAdquiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bibliotecarioDataGridViewTextBoxColumn
+            // 
+            this.bibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "Bibliotecario";
+            this.bibliotecarioDataGridViewTextBoxColumn.HeaderText = "Bibliotecario";
+            this.bibliotecarioDataGridViewTextBoxColumn.Name = "bibliotecarioDataGridViewTextBoxColumn";
+            this.bibliotecarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaADevolverDataGridViewTextBoxColumn
+            // 
+            this.fechaADevolverDataGridViewTextBoxColumn.DataPropertyName = "Fecha a Devolver";
+            this.fechaADevolverDataGridViewTextBoxColumn.HeaderText = "Fecha a Devolver";
+            this.fechaADevolverDataGridViewTextBoxColumn.Name = "fechaADevolverDataGridViewTextBoxColumn";
+            this.fechaADevolverDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // prestamosBindingSource
             // 
             this.prestamosBindingSource.DataMember = "Prestamos";
@@ -330,6 +379,7 @@
             // 
             // idPrestamoTextBox
             // 
+            this.idPrestamoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.prestamosBindingSource, "ID Prestamo", true));
             this.idPrestamoTextBox.Location = new System.Drawing.Point(295, 12);
             this.idPrestamoTextBox.Name = "idPrestamoTextBox";
             this.idPrestamoTextBox.Size = new System.Drawing.Size(100, 20);
@@ -372,55 +422,6 @@
             // prestamosTableAdapter
             // 
             this.prestamosTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDPrestamoDataGridViewTextBoxColumn
-            // 
-            this.iDPrestamoDataGridViewTextBoxColumn.DataPropertyName = "ID Prestamo";
-            this.iDPrestamoDataGridViewTextBoxColumn.HeaderText = "ID Prestamo";
-            this.iDPrestamoDataGridViewTextBoxColumn.Name = "iDPrestamoDataGridViewTextBoxColumn";
-            this.iDPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDelPrestamoDataGridViewTextBoxColumn
-            // 
-            this.fechaDelPrestamoDataGridViewTextBoxColumn.DataPropertyName = "Fecha del Prestamo";
-            this.fechaDelPrestamoDataGridViewTextBoxColumn.HeaderText = "Fecha del Prestamo";
-            this.fechaDelPrestamoDataGridViewTextBoxColumn.Name = "fechaDelPrestamoDataGridViewTextBoxColumn";
-            this.fechaDelPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numAdquiDataGridViewTextBoxColumn
-            // 
-            this.numAdquiDataGridViewTextBoxColumn.DataPropertyName = "Num_ Adqui_";
-            this.numAdquiDataGridViewTextBoxColumn.HeaderText = "Núm. de Adquisición";
-            this.numAdquiDataGridViewTextBoxColumn.Name = "numAdquiDataGridViewTextBoxColumn";
-            this.numAdquiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tituloDataGridViewTextBoxColumn
-            // 
-            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
-            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bibliotecarioDataGridViewTextBoxColumn
-            // 
-            this.bibliotecarioDataGridViewTextBoxColumn.DataPropertyName = "Bibliotecario";
-            this.bibliotecarioDataGridViewTextBoxColumn.HeaderText = "Bibliotecario";
-            this.bibliotecarioDataGridViewTextBoxColumn.Name = "bibliotecarioDataGridViewTextBoxColumn";
-            this.bibliotecarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaADevolverDataGridViewTextBoxColumn
-            // 
-            this.fechaADevolverDataGridViewTextBoxColumn.DataPropertyName = "Fecha a Devolver";
-            this.fechaADevolverDataGridViewTextBoxColumn.HeaderText = "Fecha a Devolver";
-            this.fechaADevolverDataGridViewTextBoxColumn.Name = "fechaADevolverDataGridViewTextBoxColumn";
-            this.fechaADevolverDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // picture
             // 

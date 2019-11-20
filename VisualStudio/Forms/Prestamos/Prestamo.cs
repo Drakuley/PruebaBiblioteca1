@@ -120,12 +120,14 @@ namespace PruebaBiblioteca1
 
         private void PrestamosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            idPrestamo = Int32.Parse(idPrestamoTextBox.Text);
+            
+            //idPrestamoTextBox.Text = prestamosDataGridView.CurrentRow.Cells[0].Value.ToString();
+            idPrestamo = Convert.ToInt32(idPrestamoTextBox.Text);
         }
 
         private void PrestamosDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            idPrestamo = Int32.Parse(idPrestamoTextBox.Text);
+            idPrestamo = Convert.ToInt32(idPrestamoTextBox.Text);
             Forms.RegistroDePrestamo r1 = new Forms.RegistroDePrestamo(idPrestamo, this);
             r1.UpdateEventHandler += F3_UpdateEventHandler1;
             r1.ShowDialog();
@@ -133,10 +135,18 @@ namespace PruebaBiblioteca1
 
         private void BtnDevolverPrestamo_Click(object sender, EventArgs e)
         {
-            idPrestamo = Int32.Parse(idPrestamoTextBox.Text);
-            Forms.Devoluciones.Devoluciones r1 = new Forms.Devoluciones.Devoluciones(idPrestamo, this);
-            r1.UpdateEventHandler += F3_UpdateEventHandler1;
-            r1.ShowDialog();
+            if(idPrestamoTextBox.Text == "")
+            {
+                MessageBox.Show("Seleccione un prestamo en la tabla");
+
+            }else
+            {
+                idPrestamo = Convert.ToInt32(idPrestamoTextBox.Text);
+                Forms.Devoluciones.Devoluciones r1 = new Forms.Devoluciones.Devoluciones(idPrestamo, this);
+                r1.UpdateEventHandler += F3_UpdateEventHandler1;
+                r1.ShowDialog();
+            }
+            
         }
 
         private void F3_UpdateEventHandler1(object sender, Forms.RegistroDePrestamo.UpdateEventArgs args)
@@ -156,10 +166,18 @@ namespace PruebaBiblioteca1
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            idPrestamo = Int32.Parse(idPrestamoTextBox.Text);
-            Forms.RegistroDePrestamo r1 = new Forms.RegistroDePrestamo(idPrestamo, this);
-            r1.UpdateEventHandler += F3_UpdateEventHandler1;
-            r1.ShowDialog();
+            if (idPrestamoTextBox.Text == "")
+            {
+                MessageBox.Show("Seleccione prestamo en la tabla");
+            }
+            else
+            {
+                idPrestamo = Convert.ToInt32(idPrestamoTextBox.Text);
+                Forms.RegistroDePrestamo r1 = new Forms.RegistroDePrestamo(idPrestamo, this);
+                r1.UpdateEventHandler += F3_UpdateEventHandler1;
+                r1.ShowDialog();
+            }
+            
         }
     }
 }
