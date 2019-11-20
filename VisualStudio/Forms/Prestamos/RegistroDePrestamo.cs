@@ -99,8 +99,8 @@ namespace PruebaBiblioteca1.Forms
         {
             // TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones1.Prestamos' Puede moverla o quitarla según sea necesario.
             this.prestamosTableAdapter.Fill(this.prestamosDevoluciones1.Prestamos);
-            this.prestamosTableAdapter1.Fill(this.prestamosDevoluciones.Prestamos);
-            txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamos1TableAdapter1.numeroPrestamo()) + 1);
+            //this.prestamosTableAdapter1.Fill(this.prestamosDevoluciones.Prestamos);
+            txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1);
 
             txtBibliotecario.Text = "1";
 
@@ -222,7 +222,7 @@ namespace PruebaBiblioteca1.Forms
 
         private void BtnNuevoPrestamo_Click(object sender, EventArgs e)
         {
-            txtIdPrestamo.Text = (Convert.ToInt32(prestamos1TableAdapter1.numeroPrestamo()) + 1) + "";
+            txtIdPrestamo.Text = (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1) + "";
             btnNuevoPrestamo.Visible = false;
             txtUsuario.Text = "";
             txtNumeroAdquisicion.Text = "";
@@ -241,7 +241,7 @@ namespace PruebaBiblioteca1.Forms
 
         private void datosNuevoPrestamo()
         {
-            txtIdPrestamo.Text = (Convert.ToInt32(prestamos1TableAdapter1.numeroPrestamo()) + 1) + "";
+            txtIdPrestamo.Text = (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1) + "";
             btnNuevoPrestamo.Visible = false;
             txtFechaPrestamo.Text = DateTime.Now.ToString("dd/MMMM/yyyy");
             cbFechaDevolucion.Text = DateTime.Now.ToString("dd/MMMM/yyyy");
@@ -274,7 +274,7 @@ namespace PruebaBiblioteca1.Forms
             //this.Dispose();
             txtUsuario.Text = "";
             txtNumeroAdquisicion.Text = "";
-            txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamos1TableAdapter1.numeroPrestamo()) + 1);
+            txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1);
             raiseUpdate();
         }
         public delegate void UpdateDelegate(object sender, UpdateEventArgs args);

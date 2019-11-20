@@ -47,7 +47,7 @@ namespace PruebaBiblioteca1.Forms.Devoluciones
                 txtTitulo.Text = new Consultas().TituloDeLibroPorIdPrestamo(idPrestamo).ToString();
                 txtPrestamo.Enabled = false;
                 txtBusqueda.Visible = false;
-                //picture.Visible = false;
+                picture.Visible = false;
                 panel3.Visible = false;
                 cbFechaDev.Enabled = false;
             }
