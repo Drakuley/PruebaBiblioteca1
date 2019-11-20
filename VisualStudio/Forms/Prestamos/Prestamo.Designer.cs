@@ -221,6 +221,8 @@
             this.prestamosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.prestamosDataGridView.Size = new System.Drawing.Size(808, 405);
             this.prestamosDataGridView.TabIndex = 24;
+            this.prestamosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrestamosDataGridView_CellContentClick);
+            this.prestamosDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PrestamosDataGridView_CellContentDoubleClick);
             // 
             // btnDevolverPrestamo
             // 
@@ -237,6 +239,7 @@
             this.btnDevolverPrestamo.TabIndex = 28;
             this.btnDevolverPrestamo.Text = "Devolver Prestamo";
             this.btnDevolverPrestamo.UseVisualStyleBackColor = false;
+            this.btnDevolverPrestamo.Click += new System.EventHandler(this.BtnDevolverPrestamo_Click);
             // 
             // btnModificar
             // 
@@ -269,6 +272,7 @@
             this.btnNuevo.TabIndex = 26;
             this.btnNuevo.Text = "Nuevo Préstamo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
             // 
             // btnGenerarReporte
             // 
@@ -285,6 +289,7 @@
             this.btnGenerarReporte.TabIndex = 25;
             this.btnGenerarReporte.Text = "Generar Reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.BtnGenerarReporte_Click_1);
             // 
             // idPrestamoTextBox
             // 
@@ -301,6 +306,7 @@
             this.btnRefresh.TabIndex = 30;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // txtBusqueda
             // 
@@ -308,11 +314,13 @@
             this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.txtBusqueda.Location = new System.Drawing.Point(910, 26);
+            this.txtBusqueda.Location = new System.Drawing.Point(910, 25);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(179, 15);
             this.txtBusqueda.TabIndex = 80;
             this.txtBusqueda.Text = "Buscar";
+            this.txtBusqueda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBusqueda_MouseClick);
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
             // 
             // panel3
             // 
@@ -345,6 +353,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Préstamos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMenú_FormClosed);
+            this.Load += new System.EventHandler(this.FrmMenú_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).EndInit();

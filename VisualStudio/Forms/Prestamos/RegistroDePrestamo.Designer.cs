@@ -54,6 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.prestamosDevoluciones1 = new PruebaBiblioteca1.PrestamosDevoluciones();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFechaDev
@@ -78,6 +80,7 @@
             this.btnNuevoPrestamo.TabIndex = 76;
             this.btnNuevoPrestamo.Text = "Nuevo Prestamo";
             this.btnNuevoPrestamo.UseVisualStyleBackColor = false;
+            this.btnNuevoPrestamo.Click += new System.EventHandler(this.BtnNuevoPrestamo_Click);
             // 
             // lblTresPrestamos
             // 
@@ -118,6 +121,7 @@
             this.btnRegistrar.TabIndex = 73;
             this.btnRegistrar.Text = "Registrar Prestamo";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // btnUsuario
             // 
@@ -179,6 +183,7 @@
             this.cbFechaDevolucion.Name = "cbFechaDevolucion";
             this.cbFechaDevolucion.Size = new System.Drawing.Size(205, 20);
             this.cbFechaDevolucion.TabIndex = 68;
+            this.cbFechaDevolucion.ValueChanged += new System.EventHandler(this.CbFechaDevolucion_ValueChanged);
             // 
             // txtNombreUsuario
             // 
@@ -197,6 +202,7 @@
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(135, 22);
             this.txtIdUsuario.TabIndex = 66;
+            this.txtIdUsuario.TextChanged += new System.EventHandler(this.TxtIdUsuario_TextChanged);
             // 
             // txtUsuario
             // 
@@ -205,6 +211,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(205, 22);
             this.txtUsuario.TabIndex = 65;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.TxtUsuario_TextChanged);
             // 
             // txtTitulo
             // 
@@ -222,6 +229,7 @@
             this.txtNumeroAdquisicion.Name = "txtNumeroAdquisicion";
             this.txtNumeroAdquisicion.Size = new System.Drawing.Size(205, 22);
             this.txtNumeroAdquisicion.TabIndex = 63;
+            this.txtNumeroAdquisicion.TextChanged += new System.EventHandler(this.TxtNumeroAdquisicion_TextChanged);
             // 
             // txtBibliotecario
             // 
@@ -343,6 +351,11 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "ID";
             // 
+            // prestamosDevoluciones1
+            // 
+            this.prestamosDevoluciones1.DataSetName = "PrestamosDevoluciones";
+            this.prestamosDevoluciones1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // RegistroDePrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +390,8 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistroDePrestamo";
             this.Text = "RegistroDePrestamo";
+            this.Load += new System.EventHandler(this.RegistroDePrestamo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +425,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private PrestamosDevoluciones prestamosDevoluciones1;
     }
 }

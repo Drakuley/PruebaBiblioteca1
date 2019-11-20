@@ -84,6 +84,7 @@
             this.txtFechaInicio.Name = "txtFechaInicio";
             this.txtFechaInicio.Size = new System.Drawing.Size(145, 22);
             this.txtFechaInicio.TabIndex = 84;
+            this.txtFechaInicio.TextChanged += new System.EventHandler(this.TxtFechaInicio_TextChanged);
             // 
             // txtFechaFin
             // 
@@ -122,6 +123,7 @@
             this.monthCalendar.MaxDate = new System.DateTime(2019, 11, 18, 0, 0, 0, 0);
             this.monthCalendar.Name = "monthCalendar";
             this.monthCalendar.TabIndex = 80;
+            this.monthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar_DateChanged);
             // 
             // label9
             // 
@@ -148,6 +150,7 @@
             this.btnGenerarReporte.TabIndex = 78;
             this.btnGenerarReporte.Text = "Generar Reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.BtnGenerarReporte_Click);
             // 
             // lblPrestamos
             // 

@@ -2,7 +2,7 @@
 <xs:schema id="PrestamosDevoluciones" targetNamespace="http://tempuri.org/PrestamosDevoluciones.xsd" xmlns:mstns="http://tempuri.org/PrestamosDevoluciones.xsd" xmlns="http://tempuri.org/PrestamosDevoluciones.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="Consultas" GeneratorFunctionsComponentClassName="Consultas" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="Consultas" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BiblioDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BiblioDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PruebaBiblioteca1.Properties.Settings.GlobalReference.Default.BiblioDBConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
@@ -317,16 +317,17 @@ FROM            Prestamos</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Prestamos1TableAdapter" GeneratorDataComponentClassName="Prestamos1TableAdapter" Name="Prestamos1" UserDataComponentName="Prestamos1TableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="DatosPrestamo" GetMethodModifier="Public" GetMethodName="DatosPrestamo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="DatosPrestamo" UserSourceName="DatosPrestamo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
+                    <CommandText>SELECT        Devoluciones.idDevolucion, Devoluciones.idPrestamo, Devoluciones.numeroAdquisicion, Libros.titulo, Devoluciones.fechaDevuelto, Usuarios.nombreUsuario, Bibliotecarios.nombreBibliotecario, 
+                         Devoluciones.observaciones
+FROM            Devoluciones INNER JOIN
+                         Prestamos ON Devoluciones.idPrestamo = Prestamos.idPrestamo INNER JOIN
                          Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
+                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -334,16 +335,53 @@ FROM            Prestamos INNER JOIN
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="ID Prestamo" DataSetColumn="ID Prestamo" />
-              <Mapping SourceColumn="Fecha del Prestamo" DataSetColumn="Fecha del Prestamo" />
-              <Mapping SourceColumn="Num. Adqui." DataSetColumn="Num_ Adqui_" />
-              <Mapping SourceColumn="Titulo" DataSetColumn="Titulo" />
-              <Mapping SourceColumn="Usuario" DataSetColumn="Usuario" />
-              <Mapping SourceColumn="Bibliotecario" DataSetColumn="Bibliotecario" />
-              <Mapping SourceColumn="Fecha a Devolver" DataSetColumn="Fecha a Devolver" />
+              <Mapping SourceColumn="idPrestamo" DataSetColumn="idPrestamo" />
+              <Mapping SourceColumn="titulo" DataSetColumn="titulo" />
+              <Mapping SourceColumn="nombreUsuario" DataSetColumn="nombreUsuario" />
+              <Mapping SourceColumn="nombreBibliotecario" DataSetColumn="nombreBibliotecario" />
+              <Mapping SourceColumn="idDevolucion" DataSetColumn="idDevolucion" />
+              <Mapping SourceColumn="numeroAdquisicion" DataSetColumn="numeroAdquisicion" />
+              <Mapping SourceColumn="fechaDevuelto" DataSetColumn="fechaDevuelto" />
+              <Mapping SourceColumn="observaciones" DataSetColumn="observaciones" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="absolutamenteTodosLosDatos" GetMethodModifier="Public" GetMethodName="absolutamenteTodosLosDatos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="absolutamenteTodosLosDatos" UserSourceName="absolutamenteTodosLosDatos">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Devoluciones" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="datosDevolucion" GetMethodModifier="Public" GetMethodName="datosDevolucion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="datosDevolucion" UserSourceName="datosDevolucion">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        idDevolucion, idPrestamo, numeroAdquisicion, idBibliotecario, fechaDevuelto, observaciones
+FROM            Devoluciones
+where idDevolucion = @idDevolucion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idDevolucion" ColumnName="idDevolucion" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@idDevolucion" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idDevolucion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="fillBusquedaDevolucionPrestamoAdquisicion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="BusquedaDevolucionPrestamoAdquisicion" GeneratorSourceName="fillBusquedaDevolucionPrestamoAdquisicion" GetMethodModifier="Public" GetMethodName="BusquedaDevolucionPrestamoAdquisicion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="BusquedaDevolucionPrestamoAdquisicion" UserSourceName="fillBusquedaDevolucionPrestamoAdquisicion">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        idDevolucion, Devoluciones.idPrestamo, Prestamos.numeroAdquisicion,Libros.titulo, Devoluciones.fechaDevuelto, 
+              usuarios.nombreUsuario, bibliotecarios.nombreBibliotecario, observaciones
+FROM          Devoluciones, Prestamos, usuarios, bibliotecarios, libros
+WHERE         Devoluciones.idPrestamo = Prestamos.idPrestamo 
+and           Devoluciones.idBibliotecario = bibliotecarios.idBibliotecario
+and           Prestamos.idUsuario = usuarios.idUsuario
+and           Prestamos.numeroAdquisicion = libros.numeroAdquisicion
+and          ((CONVERT(varchar(20), idDevolucion) LIKE @numero + '%') 
+                OR           (CONVERT(varchar(20), Devoluciones.idPrestamo) LIKE @numero + '%')
+                OR           devoluciones.numeroAdquisicion LIKE @numero + '%'
+                OR           titulo LIKE @numero + '%' 
+                OR           nombreUsuario LIKE @numero + '%'
+                OR           nombreBibliotecario LIKE @numero + '%'
+                OR           (CONVERT(varchar(20), fechaDevuelto,103) LIKE @numero + '%'))
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="" DataSourceName="" DataTypeServer="varchar(8)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="AbsolutamenteTodosDatos" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="AbsolutamenteTodosDatos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="AbsolutamenteTodosDatos" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Prestamos.numeroAdquisicion, Libros.titulo, Prestamos.idUsuario, Usuarios.nombreUsuario, Prestamos.idBibliotecario, Bibliotecarios.nombreBibliotecario, 
@@ -359,176 +397,110 @@ WHERE        (Prestamos.idPrestamo LIKE @variable)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="busquedaRellenar" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="busquedaDevolver" GeneratorSourceName="busquedaRellenar" GetMethodModifier="Public" GetMethodName="busquedaDevolver" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="busquedaDevolver" UserSourceName="busquedaRellenar">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy4" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy4" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Libros.titulo, Usuarios.nombreUsuario, Bibliotecarios.nombreBibliotecario, Prestamos.fechaDevolucion
-FROM            Prestamos INNER JOIN
+                    <CommandText>SELECT        Devoluciones.idDevolucion, Devoluciones.idPrestamo, Devoluciones.numeroAdquisicion, Libros.titulo, Devoluciones.fechaDevuelto, Usuarios.nombreUsuario, Bibliotecarios.nombreBibliotecario, 
+                         Devoluciones.observaciones
+FROM            Devoluciones INNER JOIN
+                         Prestamos ON Devoluciones.idPrestamo = Prestamos.idPrestamo INNER JOIN
+                         Bibliotecarios ON Devoluciones.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
                          Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
+                         Libros ON Devoluciones.numeroAdquisicion = Libros.numeroAdquisicion
+order by Devoluciones.fechaDevuelto DESC, idDevolucion desc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDevolucionesPorFecha" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DevolucionesPorFecha" GeneratorSourceName="FillDevolucionesPorFecha" GetMethodModifier="Public" GetMethodName="DevolucionesPorFecha" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DevolucionesPorFecha" UserSourceName="FillDevolucionesPorFecha">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        Devoluciones.idDevolucion, Devoluciones.idPrestamo, Devoluciones.numeroAdquisicion, Libros.titulo, Devoluciones.fechaDevuelto, Usuarios.nombreUsuario, Bibliotecarios.nombreBibliotecario, 
+                         Devoluciones.observaciones
+FROM            Devoluciones INNER JOIN
+                         Prestamos ON Devoluciones.idPrestamo = Prestamos.idPrestamo INNER JOIN
                          Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
+                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
                          Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
-WHERE        (Libros.titulo LIKE @variable + '%') OR
-                         (Usuarios.nombreUsuario LIKE @variable + '%') OR
-                         (Bibliotecarios.nombreBibliotecario LIKE @variable + '%')</CommandText>
+WHERE        (Devoluciones.fechaDevuelto BETWEEN @FechaInicial AND @FechaFinal)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="variable" ColumnName="titulo" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@variable" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="titulo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaInicial" ColumnName="fechaDevuelto" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaInicial" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaDevuelto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaFinal" ColumnName="fechaDevuelto" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaFinal" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaDevuelto" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="BusquedaUsuarioId" GetMethodModifier="Public" GetMethodName="BusquedaUsuarioId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="BusquedaUsuarioId" UserSourceName="BusquedaUsuarioId">
-                <SelectCommand>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertDevoluciones" Modifier="Public" Name="InsertDevoluciones" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertDevoluciones">
+                <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        MAX(idUsuario) AS Expr1, MAX(nombreUsuario) AS Expr2
-FROM            Usuarios
-WHERE        (idUsuario = @Usuario)</CommandText>
+                    <CommandText>INSERT INTO Devoluciones
+                         (idDevolucion, idPrestamo, numeroAdquisicion, idBibliotecario, fechaDevuelto, observaciones)
+VALUES        (@idDev,@idPrestamo,@numAdq, @idBibliotecario,@fechaDev,@observa)</CommandText>
                     <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="idDev" ColumnName="idDevolucion" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@idDev" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idDevolucion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idPrestamo" ColumnName="idPrestamo" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@idPrestamo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idPrestamo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numAdq" ColumnName="numeroAdquisicion" DataSourceName="" DataTypeServer="varchar(8)" DbType="AnsiString" Direction="Input" ParameterName="@numAdq" Precision="0" ProviderType="VarChar" Scale="0" Size="8" SourceColumn="numeroAdquisicion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idBibliotecario" ColumnName="idBibliotecario" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@idBibliotecario" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idBibliotecario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="fechaDev" ColumnName="fechaDevuelto" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@fechaDev" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaDevuelto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="observa" ColumnName="observaciones" DataSourceName="" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@observa" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="observaciones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="insertPrestamo" Modifier="Public" Name="insertPrestamo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="insertPrestamo">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO Prestamos VALUES(@IdPrestamo,@FechaActual,@NumAdqui,@Usuario,@Biblio,@FechaDevolver,@Status);
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdPrestamo" ColumnName="idPrestamo" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@IdPrestamo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idPrestamo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaActual" ColumnName="fechaPrestamo" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaActual" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaPrestamo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="NumAdqui" ColumnName="numeroAdquisicion" DataSourceName="" DataTypeServer="varchar(8)" DbType="AnsiString" Direction="Input" ParameterName="@NumAdqui" Precision="0" ProviderType="VarChar" Scale="0" Size="8" SourceColumn="numeroAdquisicion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="Usuario" ColumnName="idUsuario" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@Usuario" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Biblio" ColumnName="idBibliotecario" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@Biblio" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idBibliotecario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaDevolver" ColumnName="fechaDevolucion" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaDevolver" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaDevolucion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Status" ColumnName="estatus" DataSourceName="" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@Status" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="estatus" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
-                </SelectCommand>
+                </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="BusquedaUsuarioNombre" GetMethodModifier="Public" GetMethodName="BusquedaUsuarioNombre" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="BusquedaUsuarioNombre" UserSourceName="BusquedaUsuarioNombre">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Prestamos" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="ModificarPrestamo" GetMethodModifier="Public" GetMethodName="ModificarPrestamo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ModificarPrestamo" UserSourceName="ModificarPrestamo">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        MAX(idUsuario) AS Expr2, MAX(nombreUsuario) AS Expr1
-FROM            Usuarios
-WHERE        (nombreUsuario = @NombreUsuario)</CommandText>
+                    <CommandText>UPDATE Prestamos
+SET fechaDevolucion = @FechaNueva
+WHERE idPrestamo = @idPrestamo; </CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="NombreUsuario" ColumnName="nombreUsuario" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@NombreUsuario" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="nombreUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FechaNueva" ColumnName="fechaDevolucion" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaNueva" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="fechaDevolucion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idPrestamo" ColumnName="idPrestamo" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@idPrestamo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idPrestamo" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="datosDePrestamo" GetMethodModifier="Public" GetMethodName="datosDePrestamo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="datosDePrestamo" UserSourceName="datosDePrestamo">
-                <SelectCommand>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateEstatusLibro" Modifier="Public" Name="UpdateEstatusLibro" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateEstatusLibro">
+                <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo, Prestamos.fechaPrestamo, Libros.titulo, Usuarios.nombreUsuario, Bibliotecarios.nombreBibliotecario, Prestamos.fechaDevolucion
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
-WHERE        (Prestamos.idPrestamo LIKE @variable)</CommandText>
+                    <CommandText>UPDATE Libros
+SET estatus = @Estatus
+WHERE numeroAdquisicion = @numeroAdquisicion; </CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="variable" ColumnName="idPrestamo" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@variable" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idPrestamo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Estatus" ColumnName="estatus" DataSourceName="" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@Estatus" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="estatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="numeroAdquisicion" ColumnName="numeroAdquisicion" DataSourceName="" DataTypeServer="varchar(8)" DbType="AnsiString" Direction="Input" ParameterName="@numeroAdquisicion" Precision="0" ProviderType="VarChar" Scale="0" Size="8" SourceColumn="numeroAdquisicion" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
-                </SelectCommand>
+                </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateEstatusPrestamo" Modifier="Public" Name="UpdateEstatusPrestamo" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateEstatusPrestamo">
+                <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy3">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
-WHERE        (Prestamos.estatus = 'Y')</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy4" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy4" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillBy4">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
-WHERE        (Prestamos.estatus = 'Y')</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy5" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy6" GeneratorSourceName="FillBy5" GetMethodModifier="Public" GetMethodName="GetDataBy6" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="FillBy5">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
-WHERE        (Prestamos.estatus = 'Y') AND (CONVERT(varchar(20), Prestamos.idPrestamo) LIKE @numero + '%') OR
-                         (Prestamos.estatus = 'Y') AND (Prestamos.numeroAdquisicion LIKE @numero + '%') OR
-                         (Prestamos.estatus = 'Y') AND (Libros.titulo LIKE @numero + '%') OR
-                         (Prestamos.estatus = 'Y') AND (Usuarios.nombreUsuario LIKE @numero + '%') OR
-                         (Prestamos.estatus = 'Y') AND (Bibliotecarios.nombreBibliotecario LIKE @numero + '%') OR
-                         (Prestamos.estatus = 'Y') AND (CONVERT(varchar(20), Prestamos.fechaPrestamo, 103) LIKE @numero + '%') OR
-                         (Prestamos.estatus = 'Y') AND (CONVERT(varchar(20), Prestamos.fechaDevolucion, 103) LIKE @numero + '%')</CommandText>
+                    <CommandText>UPDATE prestamos
+SET estatus = 'N'
+WHERE idPrestamo = @idPrestamo; </CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="numero" ColumnName="" DataSourceName="" DataTypeServer="varchar(8)" DbType="AnsiString" Direction="Input" ParameterName="@numero" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idPrestamo" ColumnName="idPrestamo" DataSourceName="" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@idPrestamo" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idPrestamo" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillReportePrestamos" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="ReportePrestamos" GeneratorSourceName="FillReportePrestamos" GetMethodModifier="Public" GetMethodName="ReportePrestamos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="ReportePrestamos" UserSourceName="FillReportePrestamos">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Prestamos.idPrestamo AS 'ID Prestamo', Prestamos.fechaPrestamo AS 'Fecha del Prestamo', Prestamos.numeroAdquisicion AS 'Num. Adqui.', Libros.titulo AS 'Titulo', Usuarios.nombreUsuario AS 'Usuario', 
-                         Bibliotecarios.nombreBibliotecario AS 'Bibliotecario', Prestamos.fechaDevolucion AS 'Fecha a Devolver'
-FROM            Prestamos INNER JOIN
-                         Usuarios ON Prestamos.idUsuario = Usuarios.idUsuario INNER JOIN
-                         Bibliotecarios ON Prestamos.idBibliotecario = Bibliotecarios.idBibliotecario INNER JOIN
-                         Libros ON Prestamos.numeroAdquisicion = Libros.numeroAdquisicion
-WHERE        (Prestamos.fechaPrestamo BETWEEN @FechaInicial AND @FechaFinal)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="FechaInicial" ColumnName="fechaPrestamo" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaInicial" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Fecha del Prestamo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="FechaFinal" ColumnName="fechaPrestamo" DataSourceName="" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@FechaFinal" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="Fecha del Prestamo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="numeroPrestamo" Modifier="Public" Name="numeroPrestamo" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="numeroPrestamo">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        MAX(idPrestamo) AS Expr1
-FROM            Prestamos</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
+                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -688,7 +660,7 @@ FROM            Devoluciones</CommandText>
   <xs:element name="PrestamosDevoluciones" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PrestamosDevoluciones" msprop:Generator_UserDSName="PrestamosDevoluciones">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idPrestamo" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:decimal" />
@@ -725,7 +697,7 @@ FROM            Devoluciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Devoluciones" msprop:Generator_TableClassName="DevolucionesDataTable" msprop:Generator_TableVarName="tableDevoluciones" msprop:Generator_TablePropName="Devoluciones" msprop:Generator_RowDeletingName="DevolucionesRowDeleting" msprop:Generator_RowChangingName="DevolucionesRowChanging" msprop:Generator_RowEvHandlerName="DevolucionesRowChangeEventHandler" msprop:Generator_RowDeletedName="DevolucionesRowDeleted" msprop:Generator_UserTableName="Devoluciones" msprop:Generator_RowChangedName="DevolucionesRowChanged" msprop:Generator_RowEvArgName="DevolucionesRowChangeEvent" msprop:Generator_RowClassName="DevolucionesRow">
+        <xs:element name="Devoluciones" msprop:Generator_TableClassName="DevolucionesDataTable" msprop:Generator_TableVarName="tableDevoluciones" msprop:Generator_RowChangedName="DevolucionesRowChanged" msprop:Generator_TablePropName="Devoluciones" msprop:Generator_RowDeletingName="DevolucionesRowDeleting" msprop:Generator_RowChangingName="DevolucionesRowChanging" msprop:Generator_RowEvHandlerName="DevolucionesRowChangeEventHandler" msprop:Generator_RowDeletedName="DevolucionesRowDeleted" msprop:Generator_RowClassName="DevolucionesRow" msprop:Generator_UserTableName="Devoluciones" msprop:Generator_RowEvArgName="DevolucionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idDevolucion" msprop:Generator_ColumnVarNameInTable="columnidDevolucion" msprop:Generator_ColumnPropNameInRow="idDevolucion" msprop:Generator_ColumnPropNameInTable="idDevolucionColumn" msprop:Generator_UserColumnName="idDevolucion" type="xs:decimal" />
@@ -749,7 +721,7 @@ FROM            Devoluciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Prestamos" msprop:Generator_TableClassName="PrestamosDataTable" msprop:Generator_TableVarName="tablePrestamos" msprop:Generator_TablePropName="Prestamos" msprop:Generator_RowDeletingName="PrestamosRowDeleting" msprop:Generator_RowChangingName="PrestamosRowChanging" msprop:Generator_RowEvHandlerName="PrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="PrestamosRowDeleted" msprop:Generator_UserTableName="Prestamos" msprop:Generator_RowChangedName="PrestamosRowChanged" msprop:Generator_RowEvArgName="PrestamosRowChangeEvent" msprop:Generator_RowClassName="PrestamosRow">
+        <xs:element name="Prestamos" msprop:Generator_TableClassName="PrestamosDataTable" msprop:Generator_TableVarName="tablePrestamos" msprop:Generator_RowChangedName="PrestamosRowChanged" msprop:Generator_TablePropName="Prestamos" msprop:Generator_RowDeletingName="PrestamosRowDeleting" msprop:Generator_RowChangingName="PrestamosRowChanging" msprop:Generator_RowEvHandlerName="PrestamosRowChangeEventHandler" msprop:Generator_RowDeletedName="PrestamosRowDeleted" msprop:Generator_RowClassName="PrestamosRow" msprop:Generator_UserTableName="Prestamos" msprop:Generator_RowEvArgName="PrestamosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_x0020_Prestamo" msprop:Generator_ColumnVarNameInTable="columnID_Prestamo" msprop:Generator_ColumnPropNameInRow="ID_Prestamo" msprop:Generator_ColumnPropNameInTable="ID_PrestamoColumn" msprop:Generator_UserColumnName="ID Prestamo" type="xs:decimal" />
@@ -786,40 +758,47 @@ FROM            Devoluciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Prestamos1" msprop:Generator_TableClassName="Prestamos1DataTable" msprop:Generator_TableVarName="tablePrestamos1" msprop:Generator_TablePropName="Prestamos1" msprop:Generator_RowDeletingName="Prestamos1RowDeleting" msprop:Generator_RowChangingName="Prestamos1RowChanging" msprop:Generator_RowEvHandlerName="Prestamos1RowChangeEventHandler" msprop:Generator_RowDeletedName="Prestamos1RowDeleted" msprop:Generator_UserTableName="Prestamos1" msprop:Generator_RowChangedName="Prestamos1RowChanged" msprop:Generator_RowEvArgName="Prestamos1RowChangeEvent" msprop:Generator_RowClassName="Prestamos1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID_x0020_Prestamo" msprop:Generator_ColumnVarNameInTable="columnID_Prestamo" msprop:Generator_ColumnPropNameInRow="ID_Prestamo" msprop:Generator_ColumnPropNameInTable="ID_PrestamoColumn" msprop:Generator_UserColumnName="ID Prestamo" type="xs:decimal" />
-              <xs:element name="Fecha_x0020_del_x0020_Prestamo" msprop:Generator_ColumnVarNameInTable="columnFecha_del_Prestamo" msprop:Generator_ColumnPropNameInRow="Fecha_del_Prestamo" msprop:Generator_ColumnPropNameInTable="Fecha_del_PrestamoColumn" msprop:Generator_UserColumnName="Fecha del Prestamo" type="xs:dateTime" />
-              <xs:element name="Num__x0020_Adqui_" msdata:Caption="Num. Adqui." msprop:Generator_ColumnVarNameInTable="columnNum__Adqui_" msprop:Generator_ColumnPropNameInRow="Num__Adqui_" msprop:Generator_ColumnPropNameInTable="Num__Adqui_Column" msprop:Generator_UserColumnName="Num_ Adqui_">
+              <xs:element name="idPrestamo" msprop:Generator_ColumnVarNameInTable="columnidPrestamo" msprop:Generator_ColumnPropNameInRow="idPrestamo" msprop:Generator_ColumnPropNameInTable="idPrestamoColumn" msprop:Generator_UserColumnName="idPrestamo" type="xs:decimal" />
+              <xs:element name="titulo" msprop:Generator_ColumnVarNameInTable="columntitulo" msprop:Generator_ColumnPropNameInRow="titulo" msprop:Generator_ColumnPropNameInTable="tituloColumn" msprop:Generator_UserColumnName="titulo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreUsuario" msprop:Generator_ColumnVarNameInTable="columnnombreUsuario" msprop:Generator_ColumnPropNameInRow="nombreUsuario" msprop:Generator_ColumnPropNameInTable="nombreUsuarioColumn" msprop:Generator_UserColumnName="nombreUsuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreBibliotecario" msprop:Generator_ColumnVarNameInTable="columnnombreBibliotecario" msprop:Generator_ColumnPropNameInRow="nombreBibliotecario" msprop:Generator_ColumnPropNameInTable="nombreBibliotecarioColumn" msprop:Generator_UserColumnName="nombreBibliotecario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idDevolucion" msprop:Generator_ColumnVarNameInTable="columnidDevolucion" msprop:Generator_ColumnPropNameInRow="idDevolucion" msprop:Generator_ColumnPropNameInTable="idDevolucionColumn" msprop:Generator_UserColumnName="idDevolucion" type="xs:decimal" />
+              <xs:element name="numeroAdquisicion" msprop:Generator_ColumnVarNameInTable="columnnumeroAdquisicion" msprop:Generator_ColumnPropNameInRow="numeroAdquisicion" msprop:Generator_ColumnPropNameInTable="numeroAdquisicionColumn" msprop:Generator_UserColumnName="numeroAdquisicion">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo">
+              <xs:element name="fechaDevuelto" msprop:Generator_ColumnVarNameInTable="columnfechaDevuelto" msprop:Generator_ColumnPropNameInRow="fechaDevuelto" msprop:Generator_ColumnPropNameInTable="fechaDevueltoColumn" msprop:Generator_UserColumnName="fechaDevuelto" type="xs:dateTime" />
+              <xs:element name="observaciones" msprop:Generator_ColumnVarNameInTable="columnobservaciones" msprop:Generator_ColumnPropNameInRow="observaciones" msprop:Generator_ColumnPropNameInTable="observacionesColumn" msprop:Generator_UserColumnName="observaciones">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Bibliotecario" msprop:Generator_ColumnVarNameInTable="columnBibliotecario" msprop:Generator_ColumnPropNameInRow="Bibliotecario" msprop:Generator_ColumnPropNameInTable="BibliotecarioColumn" msprop:Generator_UserColumnName="Bibliotecario">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Fecha_x0020_a_x0020_Devolver" msprop:Generator_ColumnVarNameInTable="columnFecha_a_Devolver" msprop:Generator_ColumnPropNameInRow="Fecha_a_Devolver" msprop:Generator_ColumnPropNameInTable="Fecha_a_DevolverColumn" msprop:Generator_UserColumnName="Fecha a Devolver" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -838,9 +817,9 @@ FROM            Devoluciones</CommandText>
       <xs:selector xpath=".//mstns:Prestamos" />
       <xs:field xpath="mstns:ID_x0020_Prestamo" />
     </xs:unique>
-    <xs:unique name="Prestamos1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Prestamos1" />
-      <xs:field xpath="mstns:ID_x0020_Prestamo" />
+    <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:idPrestamo" />
     </xs:unique>
   </xs:element>
 </xs:schema>

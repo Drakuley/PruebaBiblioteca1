@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label observacionesLabel;
             System.Windows.Forms.Label fechaDevueltoLabel;
             System.Windows.Forms.Label idBibliotecarioLabel;
@@ -54,6 +55,14 @@
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.prestamosDevoluciones1 = new PruebaBiblioteca1.PrestamosDevoluciones();
+            this.dataTable2TableAdapter1 = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable2TableAdapter();
+            this.devolucionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devolucionesTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter();
+            this.devolucionesTableAdapter1 = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter();
+            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1TableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable1TableAdapter();
+            this.tableAdapterManager1 = new PruebaBiblioteca1.UsuariosDataSet1TableAdapters.TableAdapterManager();
             observacionesLabel = new System.Windows.Forms.Label();
             fechaDevueltoLabel = new System.Windows.Forms.Label();
             idBibliotecarioLabel = new System.Windows.Forms.Label();
@@ -62,6 +71,9 @@
             idDevolucionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devolucionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -131,6 +143,7 @@
             this.cbFechaDev.Name = "cbFechaDev";
             this.cbFechaDev.Size = new System.Drawing.Size(196, 20);
             this.cbFechaDev.TabIndex = 70;
+            this.cbFechaDev.ValueChanged += new System.EventHandler(this.CbFechaDev_ValueChanged);
             // 
             // idBibliotecarioLabel
             // 
@@ -205,6 +218,7 @@
             this.btnReporte.TabIndex = 61;
             this.btnReporte.Text = "Generar Reporte";
             this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // btnAceptar
             // 
@@ -224,6 +238,7 @@
             this.btnAceptar.TabIndex = 59;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // devolucionesDataGridView
             // 
@@ -242,6 +257,7 @@
             this.devolucionesDataGridView.ReadOnly = true;
             this.devolucionesDataGridView.Size = new System.Drawing.Size(625, 480);
             this.devolucionesDataGridView.TabIndex = 71;
+            this.devolucionesDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DevolucionesDataGridView_CellContentDoubleClick);
             // 
             // idDevolucion
             // 
@@ -304,6 +320,7 @@
             this.txtPrestamo.Name = "txtPrestamo";
             this.txtPrestamo.Size = new System.Drawing.Size(182, 20);
             this.txtPrestamo.TabIndex = 74;
+            this.txtPrestamo.TextChanged += new System.EventHandler(this.TxtPrestamo_TextChanged);
             // 
             // txtTitulo
             // 
@@ -337,6 +354,7 @@
             this.txtObs.Name = "txtObs";
             this.txtObs.Size = new System.Drawing.Size(335, 104);
             this.txtObs.TabIndex = 78;
+            this.txtObs.TextChanged += new System.EventHandler(this.TxtObs_TextChanged);
             // 
             // txtBusqueda
             // 
@@ -349,6 +367,8 @@
             this.txtBusqueda.Size = new System.Drawing.Size(179, 15);
             this.txtBusqueda.TabIndex = 79;
             this.txtBusqueda.Text = "Buscar";
+            this.txtBusqueda.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TxtBusqueda_MouseClick);
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
             // 
             // panel3
             // 
@@ -358,6 +378,44 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(180, 3);
             this.panel3.TabIndex = 80;
+            // 
+            // prestamosDevoluciones1
+            // 
+            this.prestamosDevoluciones1.DataSetName = "PrestamosDevoluciones";
+            this.prestamosDevoluciones1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTable2TableAdapter1
+            // 
+            this.dataTable2TableAdapter1.ClearBeforeFill = true;
+            // 
+            // devolucionesBindingSource
+            // 
+            this.devolucionesBindingSource.DataMember = "Devoluciones";
+            this.devolucionesBindingSource.DataSource = this.prestamosDevoluciones1;
+            // 
+            // devolucionesTableAdapter
+            // 
+            this.devolucionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // devolucionesTableAdapter1
+            // 
+            this.devolucionesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataTable1BindingSource1
+            // 
+            this.dataTable1BindingSource1.DataMember = "DataTable1";
+            this.dataTable1BindingSource1.DataSource = this.prestamosDevoluciones1;
+            // 
+            // dataTable1TableAdapter
+            // 
+            this.dataTable1TableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = PruebaBiblioteca1.UsuariosDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.UsuariosTableAdapter = null;
             // 
             // Devoluciones
             // 
@@ -370,9 +428,13 @@
             this.Controls.Add(this.panel2);
             this.Name = "Devoluciones";
             this.Text = "Devoluciones";
+            this.Load += new System.EventHandler(this.Devoluciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devolucionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +461,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroAdquisicion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDevuelto;
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
+        private PrestamosDevoluciones prestamosDevoluciones1;
+        private PrestamosDevolucionesTableAdapters.DataTable2TableAdapter dataTable2TableAdapter1;
+        private System.Windows.Forms.BindingSource devolucionesBindingSource;
+        private PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter devolucionesTableAdapter;
+        private PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter devolucionesTableAdapter1;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource1;
+        private PrestamosDevolucionesTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private UsuariosDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
     }
 }
