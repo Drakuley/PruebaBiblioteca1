@@ -81,6 +81,8 @@ namespace PruebaBiblioteca1
 
         private void FrmMenú_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones.Prestamos' Puede moverla o quitarla según sea necesario.
+            this.prestamosTableAdapter.Fill(this.prestamosDevoluciones.Prestamos);
             //// TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones.Prestamos1' Puede moverla o quitarla según sea necesario.
             //this.prestamos1TableAdapter.Fill(this.prestamosDevoluciones.Prestamos1);
             //// TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones.Prestamos' Puede moverla o quitarla según sea necesario.
@@ -91,14 +93,14 @@ namespace PruebaBiblioteca1
 
         private void TxtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            //if (txt.Text != "")
-            //{
-            //    this.prestamosTableAdapter.FillBy5(this.prestamosDevoluciones.Prestamos, txt.Text);
-            //}
-            //else
-            //{
-            //    this.prestamosTableAdapter.FillBy4(this.prestamosDevoluciones.Prestamos);
-            //}
+            if (txt.Text != "")
+            {
+                this.prestamosTableAdapter.FillBy5(this.prestamosDevoluciones.Prestamos, txt.Text);
+            }
+            else
+            {
+                this.prestamosTableAdapter.FillBy4(this.prestamosDevoluciones.Prestamos);
+            }
         }
 
         private void BtnRefresh_Click(object sender, EventArgs e)
@@ -108,10 +110,10 @@ namespace PruebaBiblioteca1
 
         private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            //RegistroDePrestamo r1 = new RegistroDePrestamo(this);
-            //r1.UpdateEventHandler += F3_UpdateEventHandler1;
-            //r1.ShowDialog();
-            
+            Forms.RegistroDePrestamo r1 = new Forms.RegistroDePrestamo(this);
+            r1.UpdateEventHandler += F3_UpdateEventHandler1;
+            r1.ShowDialog();
+
 
         }
 

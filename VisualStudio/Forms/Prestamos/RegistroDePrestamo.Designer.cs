@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtFechaDev = new System.Windows.Forms.TextBox();
             this.btnNuevoPrestamo = new System.Windows.Forms.Button();
             this.lblTresPrestamos = new System.Windows.Forms.Label();
@@ -55,7 +56,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.prestamosDevoluciones1 = new PruebaBiblioteca1.PrestamosDevoluciones();
+            this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.PrestamosTableAdapter();
+            this.tableAdapterManager = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFechaDev
@@ -74,7 +79,7 @@
             this.btnNuevoPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoPrestamo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoPrestamo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoPrestamo.Location = new System.Drawing.Point(181, 423);
+            this.btnNuevoPrestamo.Location = new System.Drawing.Point(354, 431);
             this.btnNuevoPrestamo.Name = "btnNuevoPrestamo";
             this.btnNuevoPrestamo.Size = new System.Drawing.Size(210, 28);
             this.btnNuevoPrestamo.TabIndex = 76;
@@ -115,7 +120,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(410, 423);
+            this.btnRegistrar.Location = new System.Drawing.Point(583, 431);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(210, 28);
             this.btnRegistrar.TabIndex = 73;
@@ -133,7 +138,7 @@
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Location = new System.Drawing.Point(472, 338);
+            this.btnUsuario.Location = new System.Drawing.Point(645, 346);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(124, 28);
             this.btnUsuario.TabIndex = 72;
@@ -150,7 +155,7 @@
             this.btnLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibro.ForeColor = System.Drawing.Color.White;
-            this.btnLibro.Location = new System.Drawing.Point(472, 196);
+            this.btnLibro.Location = new System.Drawing.Point(645, 204);
             this.btnLibro.Name = "btnLibro";
             this.btnLibro.Size = new System.Drawing.Size(124, 28);
             this.btnLibro.TabIndex = 71;
@@ -162,7 +167,7 @@
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.lblPrestamos.Location = new System.Drawing.Point(224, 11);
+            this.lblPrestamos.Location = new System.Drawing.Point(310, 11);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(167, 22);
             this.lblPrestamos.TabIndex = 70;
@@ -356,12 +361,27 @@
             this.prestamosDevoluciones1.DataSetName = "PrestamosDevoluciones";
             this.prestamosDevoluciones1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // prestamosBindingSource
+            // 
+            this.prestamosBindingSource.DataMember = "Prestamos";
+            this.prestamosBindingSource.DataSource = this.prestamosDevoluciones1;
+            // 
+            // prestamosTableAdapter
+            // 
+            this.prestamosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.UpdateOrder = PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // RegistroDePrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(628, 463);
+            this.ClientSize = new System.Drawing.Size(801, 471);
             this.Controls.Add(this.txtFechaDev);
             this.Controls.Add(this.btnNuevoPrestamo);
             this.Controls.Add(this.lblTresPrestamos);
@@ -392,6 +412,7 @@
             this.Text = "RegistroDePrestamo";
             this.Load += new System.EventHandler(this.RegistroDePrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +447,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private PrestamosDevoluciones prestamosDevoluciones1;
+        private System.Windows.Forms.BindingSource prestamosBindingSource;
+        private PrestamosDevolucionesTableAdapters.PrestamosTableAdapter prestamosTableAdapter;
+        private PrestamosDevolucionesTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

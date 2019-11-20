@@ -97,6 +97,8 @@ namespace PruebaBiblioteca1.Forms
 
         private void RegistroDePrestamo_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones1.Prestamos' Puede moverla o quitarla según sea necesario.
+            this.prestamosTableAdapter.Fill(this.prestamosDevoluciones1.Prestamos);
             this.prestamosTableAdapter1.Fill(this.prestamosDevoluciones.Prestamos);
             txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamos1TableAdapter1.numeroPrestamo()) + 1);
 

@@ -327,6 +327,13 @@
     <None Include="PrestamosDevoluciones.xss">
       <DependentUpon>PrestamosDevoluciones.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.Consultas.datasource" />
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable1TableAdapter.datasource" />
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable2TableAdapter.datasource" />
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.PrestamosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
