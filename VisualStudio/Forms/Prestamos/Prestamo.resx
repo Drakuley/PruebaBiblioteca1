@@ -237,6 +237,36 @@
         g/YAYJ9eVPMHAEe0wJpqS7WjmvygqMH2fKayM8x4Z1ZW/gFCitHIkV9dWAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="prestamosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>198, 17</value>
+  </metadata>
+  <metadata name="prestamosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>198, 17</value>
+  </metadata>
+  <metadata name="prestamosDevoluciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="prestamosDevoluciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="picture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAhpJREFUOE+tVE2rEmEUVjIlnXH8WgiKIhgOOC4UwfFrlDQDbdGfaN+i3xC1aBFc
+        uIvi3oI29/6AFsH9AVEtC/oBEUXQoujjSjM9z+u8Ojcdk0sPHJ7znnPeZ877NYFtcBxHqdfrJ7FYbM6h
+        11Kp1PdOp/MYNSGM/w0U6olE4gfdbZbP5z/Ztp2B7w+IGaFQyKZLy2QyX5vN5rN+v/+g2+0+rNVqL1RV
+        PZV5fthXFGJJ7xLb7fYTxC5XKpW3mqb9VBTlNJvNfkFsZhjGK1nHThFbX361Wn0NEkW9Xm+vVCqdBINB
+        MfZaPB7/ha4uQvSljHFPwSvgC2okEvlNt1gsvi+Xy4f0aVj2x8lkcnM6nV63LOs+ag13TpRd0+VBMbbE
+        eDy+BRICw+HwDgpZ4ORyuXfM+4F7CpLdr4CWH4FEYjabXcXXb6TT6c/gS6LABzws0EbBA5AUvCKCO2Aw
+        GNwDrQuORqPbIJFw/Z3QaDSeg9YFsTQtHA6LQ9F1/c0iuh2YcwEH9o2ue93OwhVyeFWAyiLqD9M0n4JE
+        d3ymIuhFq9U6AomCaDQ63yaKe7oPErV8LahVREICAfPvS8wxu+ae8qBg13AIdwuFwgdZw2eKuTr8FTaJ
+        7WLcN8wVl3wJv86w/GN2Jw/Ka3xRfKaYm8R4BQSsTWJAm3kCvsYl857y8vNFIaa66bPwETOZOy/+q1iA
+        /zaQFLMW0fMiEPgD+dQ1Ik/Vlh4AAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="prestamosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>385, 17</value>
+  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -309,30 +339,6 @@
         iIh6XknJ/wFZu/mlYNvNDQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="prestamosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>198, 17</value>
-  </metadata>
-  <metadata name="prestamosDevoluciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="picture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAhpJREFUOE+tVE2rEmEUVjIlnXH8WgiKIhgOOC4UwfFrlDQDbdGfaN+i3xC1aBFc
-        uIvi3oI29/6AFsH9AVEtC/oBEUXQoujjSjM9z+u8Ojcdk0sPHJ7znnPeZ877NYFtcBxHqdfrJ7FYbM6h
-        11Kp1PdOp/MYNSGM/w0U6olE4gfdbZbP5z/Ztp2B7w+IGaFQyKZLy2QyX5vN5rN+v/+g2+0+rNVqL1RV
-        PZV5fthXFGJJ7xLb7fYTxC5XKpW3mqb9VBTlNJvNfkFsZhjGK1nHThFbX361Wn0NEkW9Xm+vVCqdBINB
-        MfZaPB7/ha4uQvSljHFPwSvgC2okEvlNt1gsvi+Xy4f0aVj2x8lkcnM6nV63LOs+ag13TpRd0+VBMbbE
-        eDy+BRICw+HwDgpZ4ORyuXfM+4F7CpLdr4CWH4FEYjabXcXXb6TT6c/gS6LABzws0EbBA5AUvCKCO2Aw
-        GNwDrQuORqPbIJFw/Z3QaDSeg9YFsTQtHA6LQ9F1/c0iuh2YcwEH9o2ue93OwhVyeFWAyiLqD9M0n4JE
-        d3ymIuhFq9U6AomCaDQ63yaKe7oPErV8LahVREICAfPvS8wxu+ae8qBg13AIdwuFwgdZw2eKuTr8FTaJ
-        7WLcN8wVl3wJv86w/GN2Jw/Ka3xRfKaYm8R4BQSsTWJAm3kCvsYl857y8vNFIaa66bPwETOZOy/+q1iA
-        /zaQFLMW0fMiEPgD+dQ1Ik/Vlh4AAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="prestamosTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>385, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

@@ -429,9 +429,9 @@
             // picture
             // 
             this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(885, 25);
+            this.picture.Location = new System.Drawing.Point(883, 25);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(22, 1);
+            this.picture.Size = new System.Drawing.Size(24, 21);
             this.picture.TabIndex = 82;
             this.picture.TabStop = false;
             // 
