@@ -434,9 +434,9 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    if (usuariosTableAdapter.ExisteUsuarioConMismosDatos(txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text) == 1)
+                    if (Convert.ToInt32(usuariosTableAdapter.ExisteUsuarioConMismoNombre(txtNombreUsuario.Text)) == 1)
                     {
-                        MessageBox.Show("Ya está registrado un usuario con los mismos datos");
+                        MessageBox.Show("Ya está registrado el usuario: "+txtNombreUsuario.Text);
                     }
                     else
                     {
@@ -470,9 +470,9 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    if (usuariosTableAdapter.ExisteUsuarioConMismosDatos(txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text) == 1)
+                    if (Convert.ToInt32(usuariosTableAdapter.ExisteUsuarioConMismoNombre(txtNombreUsuario.Text)) == 1)
                     {
-                        MessageBox.Show("Ya está registrado un usuario con los mismos datos");
+                        MessageBox.Show("Ya está registrado el usuario: " + txtNombreUsuario.Text);
                     }
                     else
                     {

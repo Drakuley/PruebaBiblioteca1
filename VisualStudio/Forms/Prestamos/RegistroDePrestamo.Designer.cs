@@ -59,8 +59,11 @@
             this.prestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamosTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.PrestamosTableAdapter();
             this.tableAdapterManager = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager();
+            this.dataTable3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable3TableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable3TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable3BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFechaDev
@@ -79,11 +82,11 @@
             this.btnNuevoPrestamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoPrestamo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoPrestamo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoPrestamo.Location = new System.Drawing.Point(354, 431);
+            this.btnNuevoPrestamo.Location = new System.Drawing.Point(162, 411);
             this.btnNuevoPrestamo.Name = "btnNuevoPrestamo";
             this.btnNuevoPrestamo.Size = new System.Drawing.Size(210, 28);
             this.btnNuevoPrestamo.TabIndex = 76;
-            this.btnNuevoPrestamo.Text = "Nuevo Prestamo";
+            this.btnNuevoPrestamo.Text = "Nuevo Préstamo";
             this.btnNuevoPrestamo.UseVisualStyleBackColor = false;
             this.btnNuevoPrestamo.Click += new System.EventHandler(this.BtnNuevoPrestamo_Click);
             // 
@@ -92,11 +95,11 @@
             this.lblTresPrestamos.AutoSize = true;
             this.lblTresPrestamos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTresPrestamos.ForeColor = System.Drawing.Color.Red;
-            this.lblTresPrestamos.Location = new System.Drawing.Point(190, 339);
+            this.lblTresPrestamos.Location = new System.Drawing.Point(190, 344);
             this.lblTresPrestamos.Name = "lblTresPrestamos";
             this.lblTresPrestamos.Size = new System.Drawing.Size(261, 19);
             this.lblTresPrestamos.TabIndex = 75;
-            this.lblTresPrestamos.Text = "* Usuario con 3 prestamos * ";
+            this.lblTresPrestamos.Text = "* Usuario con 3 préstamos * ";
             this.lblTresPrestamos.Visible = false;
             // 
             // lblDisponible
@@ -104,7 +107,7 @@
             this.lblDisponible.AutoSize = true;
             this.lblDisponible.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisponible.ForeColor = System.Drawing.Color.Red;
-            this.lblDisponible.Location = new System.Drawing.Point(234, 200);
+            this.lblDisponible.Location = new System.Drawing.Point(234, 203);
             this.lblDisponible.Name = "lblDisponible";
             this.lblDisponible.Size = new System.Drawing.Size(180, 19);
             this.lblDisponible.TabIndex = 74;
@@ -120,11 +123,11 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(583, 431);
+            this.btnRegistrar.Location = new System.Drawing.Point(378, 412);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(210, 28);
             this.btnRegistrar.TabIndex = 73;
-            this.btnRegistrar.Text = "Registrar Prestamo";
+            this.btnRegistrar.Text = "Registrar Préstamo";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
@@ -138,12 +141,13 @@
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Location = new System.Drawing.Point(645, 346);
+            this.btnUsuario.Location = new System.Drawing.Point(464, 232);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(124, 28);
             this.btnUsuario.TabIndex = 72;
             this.btnUsuario.Text = "Registrar Usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
             // 
             // btnLibro
             // 
@@ -155,19 +159,20 @@
             this.btnLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLibro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLibro.ForeColor = System.Drawing.Color.White;
-            this.btnLibro.Location = new System.Drawing.Point(645, 204);
+            this.btnLibro.Location = new System.Drawing.Point(464, 135);
             this.btnLibro.Name = "btnLibro";
             this.btnLibro.Size = new System.Drawing.Size(124, 28);
             this.btnLibro.TabIndex = 71;
             this.btnLibro.Text = "Registrar Libro";
             this.btnLibro.UseVisualStyleBackColor = false;
+            this.btnLibro.Click += new System.EventHandler(this.BtnLibro_Click);
             // 
             // lblPrestamos
             // 
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.lblPrestamos.Location = new System.Drawing.Point(310, 11);
+            this.lblPrestamos.Location = new System.Drawing.Point(219, 11);
             this.lblPrestamos.Name = "lblPrestamos";
             this.lblPrestamos.Size = new System.Drawing.Size(167, 22);
             this.lblPrestamos.TabIndex = 70;
@@ -253,6 +258,7 @@
             this.txtIdPrestamo.Name = "txtIdPrestamo";
             this.txtIdPrestamo.Size = new System.Drawing.Size(48, 22);
             this.txtIdPrestamo.TabIndex = 61;
+            this.txtIdPrestamo.TextChanged += new System.EventHandler(this.TxtIdPrestamo_TextChanged);
             // 
             // label9
             // 
@@ -376,12 +382,21 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dataTable3BindingSource
+            // 
+            this.dataTable3BindingSource.DataMember = "DataTable3";
+            this.dataTable3BindingSource.DataSource = this.prestamosDevoluciones1;
+            // 
+            // dataTable3TableAdapter
+            // 
+            this.dataTable3TableAdapter.ClearBeforeFill = true;
+            // 
             // RegistroDePrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(801, 471);
+            this.ClientSize = new System.Drawing.Size(619, 457);
             this.Controls.Add(this.txtFechaDev);
             this.Controls.Add(this.btnNuevoPrestamo);
             this.Controls.Add(this.lblTresPrestamos);
@@ -413,6 +428,7 @@
             this.Load += new System.EventHandler(this.RegistroDePrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable3BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +466,7 @@
         private System.Windows.Forms.BindingSource prestamosBindingSource;
         private PrestamosDevolucionesTableAdapters.PrestamosTableAdapter prestamosTableAdapter;
         private PrestamosDevolucionesTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource dataTable3BindingSource;
+        private PrestamosDevolucionesTableAdapters.DataTable3TableAdapter dataTable3TableAdapter;
     }
 }

@@ -86,7 +86,7 @@ namespace PruebaBiblioteca1
             //// TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones.Prestamos' Puede moverla o quitarla según sea necesario.
             //this.prestamosTableAdapter.Fill(this.prestamosDevoluciones.Prestamos);
             this.prestamosTableAdapter.FillBy4(this.prestamosDevoluciones.Prestamos);
-
+            idPrestamoTextBox.Visible = false;
         }
 
         public DataTable FrmMenuCarga()

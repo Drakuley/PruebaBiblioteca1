@@ -100,9 +100,10 @@ namespace PruebaBiblioteca1.Forms
             // TODO: esta línea de código carga datos en la tabla 'prestamosDevoluciones1.Prestamos' Puede moverla o quitarla según sea necesario.
             this.prestamosTableAdapter.Fill(this.prestamosDevoluciones1.Prestamos);
             //this.prestamosTableAdapter1.Fill(this.prestamosDevoluciones.Prestamos);
+            txtFechaDev.Visible = false;
             txtIdPrestamo.Text = "" + (Convert.ToInt32(prestamosTableAdapter.numeroPrestamo()) + 1);
 
-            txtBibliotecario.Text = "1";
+            txtBibliotecario.Text = Convert.ToString(VariablesGlobales.Globales.idBibliotecario);
 
 
 
@@ -114,7 +115,7 @@ namespace PruebaBiblioteca1.Forms
             else //modificar
             {
                 txtIdPrestamo.Text = idPrestamo + "";
-                foreach (DataRow row in new DataTable1TableAdapter().AbsolutamenteTodosDatos(idPrestamo).Rows)
+                foreach (DataRow row in new DataTable3TableAdapter().GetData(idPrestamo).Rows)
                 {
                     txtNumeroAdquisicion.Text = row["numeroAdquisicion"].ToString();
                     txtUsuario.Text = row["nombreUsuario"].ToString();
@@ -251,12 +252,12 @@ namespace PruebaBiblioteca1.Forms
 
             btnRegistrar.Enabled = false;
 
-            txtBibliotecario.Text = 1 + ""; //CAMBIAR POR EL BIBLIOTECARIO DEL LOGIN
+            txtBibliotecario.Text = Convert.ToString(VariablesGlobales.Globales.idBibliotecario); //CAMBIAR POR EL BIBLIOTECARIO DEL LOGIN
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            if (btnRegistrar.Text == "Registrar Prestamo")
+            if (btnRegistrar.Text == "Registrar Préstamo")
             {
                 new DataTable1TableAdapter().insertPrestamo(Int32.Parse(txtIdPrestamo.Text),
                   DateTime.Now.ToString("yyyy/MM/dd"), txtNumeroAdquisicion.Text,
@@ -295,6 +296,21 @@ namespace PruebaBiblioteca1.Forms
         private void CbFechaDevolucion_ValueChanged(object sender, EventArgs e)
         {
             txtFechaDev.Text = cbFechaDevolucion.Value.ToString("yyyy/MM/dd") + "";
+        }
+
+        private void TxtIdPrestamo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnUsuario_Click(object sender, EventArgs e)
+        {
+            new Forms.FrmUsuarios().Show();
+        }
+
+        private void BtnLibro_Click(object sender, EventArgs e)
+        {
+            new Forms.FrmLibros().Show();
         }
     }
 }

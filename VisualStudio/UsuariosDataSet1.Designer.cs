@@ -941,13 +941,9 @@ SELECT idUsuario, nombreUsuario, direccion, telefono, genero, estatus FROM Usuar
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT        COUNT(*) AS Expr1\r\nFROM            Usuarios\r\nWHERE        (nombreUs" +
-                "uario = @nombre) AND (direccion = @direccion) AND (telefono = @telefono) AND (ge" +
-                "nero = @genero)";
+                "uario = @nombre)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "direccion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@genero", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "genero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT direccion, estatus, genero, idUsuario, nombreUsuario, telefono FROM Usuari" +
@@ -1374,31 +1370,13 @@ SELECT idUsuario, nombreUsuario, direccion, telefono, genero, estatus FROM Usuar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> ExisteUsuarioConMismosDatos(string nombre, string direccion, string telefono, string genero) {
+        public virtual object ExisteUsuarioConMismoNombre(string nombre) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
             else {
                 command.Parameters[0].Value = ((string)(nombre));
-            }
-            if ((direccion == null)) {
-                throw new global::System.ArgumentNullException("direccion");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(direccion));
-            }
-            if ((telefono == null)) {
-                throw new global::System.ArgumentNullException("telefono");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(telefono));
-            }
-            if ((genero == null)) {
-                throw new global::System.ArgumentNullException("genero");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(genero));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1416,10 +1394,10 @@ SELECT idUsuario, nombreUsuario, direccion, telefono, genero, estatus FROM Usuar
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
