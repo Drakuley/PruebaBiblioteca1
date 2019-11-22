@@ -160,6 +160,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaInicial);
             this.Controls.Add(this.Tiutlo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GenerarReporteDeBibliotecarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Reporte de Préstamos por Bibliotecarios";

@@ -38,6 +38,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Devoluciones));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picture = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.txtObs = new System.Windows.Forms.TextBox();
@@ -52,6 +53,11 @@
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.devolucionesDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDevueltoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.prestamosDevoluciones1 = new PruebaBiblioteca1.PrestamosDevoluciones();
             this.dataTable2TableAdapter1 = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable2TableAdapter();
@@ -60,12 +66,6 @@
             this.devolucionesTableAdapter1 = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DevolucionesTableAdapter();
             this.dataTable1TableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.DataTable1TableAdapter();
             this.tableAdapterManager1 = new PruebaBiblioteca1.UsuariosDataSet1TableAdapters.TableAdapterManager();
-            this.idDevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroAdquisicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDevueltoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picture = new System.Windows.Forms.PictureBox();
             observacionesLabel = new System.Windows.Forms.Label();
             fechaDevueltoLabel = new System.Windows.Forms.Label();
             idBibliotecarioLabel = new System.Windows.Forms.Label();
@@ -73,11 +73,11 @@
             idPrestamoLabel = new System.Windows.Forms.Label();
             idDevolucionLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // observacionesLabel
@@ -185,6 +185,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(949, 696);
             this.panel1.TabIndex = 66;
+            // 
+            // picture
+            // 
+            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
+            this.picture.Location = new System.Drawing.Point(150, 143);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(22, 20);
+            this.picture.TabIndex = 83;
+            this.picture.TabStop = false;
             // 
             // panel3
             // 
@@ -351,6 +360,41 @@
             this.devolucionesDataGridView.TabIndex = 71;
             this.devolucionesDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DevolucionesDataGridView_CellContentDoubleClick);
             // 
+            // idDevolucionDataGridViewTextBoxColumn
+            // 
+            this.idDevolucionDataGridViewTextBoxColumn.DataPropertyName = "idDevolucion";
+            this.idDevolucionDataGridViewTextBoxColumn.HeaderText = "ID Devolución";
+            this.idDevolucionDataGridViewTextBoxColumn.Name = "idDevolucionDataGridViewTextBoxColumn";
+            this.idDevolucionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idPrestamoDataGridViewTextBoxColumn
+            // 
+            this.idPrestamoDataGridViewTextBoxColumn.DataPropertyName = "idPrestamo";
+            this.idPrestamoDataGridViewTextBoxColumn.HeaderText = "ID Préstamo";
+            this.idPrestamoDataGridViewTextBoxColumn.Name = "idPrestamoDataGridViewTextBoxColumn";
+            this.idPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroAdquisicionDataGridViewTextBoxColumn
+            // 
+            this.numeroAdquisicionDataGridViewTextBoxColumn.DataPropertyName = "numeroAdquisicion";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.HeaderText = "Núm. de Adquisición";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.Name = "numeroAdquisicionDataGridViewTextBoxColumn";
+            this.numeroAdquisicionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDevueltoDataGridViewTextBoxColumn
+            // 
+            this.fechaDevueltoDataGridViewTextBoxColumn.DataPropertyName = "fechaDevuelto";
+            this.fechaDevueltoDataGridViewTextBoxColumn.HeaderText = "Fecha Devuelto";
+            this.fechaDevueltoDataGridViewTextBoxColumn.Name = "fechaDevueltoDataGridViewTextBoxColumn";
+            this.fechaDevueltoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // observacionesDataGridViewTextBoxColumn
+            // 
+            this.observacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones";
+            this.observacionesDataGridViewTextBoxColumn.HeaderText = "Observaciones";
+            this.observacionesDataGridViewTextBoxColumn.Name = "observacionesDataGridViewTextBoxColumn";
+            this.observacionesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // dataTable1BindingSource1
             // 
             this.dataTable1BindingSource1.DataMember = "DataTable1";
@@ -389,50 +433,6 @@
             this.tableAdapterManager1.UpdateOrder = PruebaBiblioteca1.UsuariosDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UsuariosTableAdapter = null;
             // 
-            // idDevolucionDataGridViewTextBoxColumn
-            // 
-            this.idDevolucionDataGridViewTextBoxColumn.DataPropertyName = "idDevolucion";
-            this.idDevolucionDataGridViewTextBoxColumn.HeaderText = "ID Devolución";
-            this.idDevolucionDataGridViewTextBoxColumn.Name = "idDevolucionDataGridViewTextBoxColumn";
-            this.idDevolucionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idPrestamoDataGridViewTextBoxColumn
-            // 
-            this.idPrestamoDataGridViewTextBoxColumn.DataPropertyName = "idPrestamo";
-            this.idPrestamoDataGridViewTextBoxColumn.HeaderText = "ID Préstamo";
-            this.idPrestamoDataGridViewTextBoxColumn.Name = "idPrestamoDataGridViewTextBoxColumn";
-            this.idPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroAdquisicionDataGridViewTextBoxColumn
-            // 
-            this.numeroAdquisicionDataGridViewTextBoxColumn.DataPropertyName = "numeroAdquisicion";
-            this.numeroAdquisicionDataGridViewTextBoxColumn.HeaderText = "Núm. de Adquisición";
-            this.numeroAdquisicionDataGridViewTextBoxColumn.Name = "numeroAdquisicionDataGridViewTextBoxColumn";
-            this.numeroAdquisicionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDevueltoDataGridViewTextBoxColumn
-            // 
-            this.fechaDevueltoDataGridViewTextBoxColumn.DataPropertyName = "fechaDevuelto";
-            this.fechaDevueltoDataGridViewTextBoxColumn.HeaderText = "Fecha Devuelto";
-            this.fechaDevueltoDataGridViewTextBoxColumn.Name = "fechaDevueltoDataGridViewTextBoxColumn";
-            this.fechaDevueltoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // observacionesDataGridViewTextBoxColumn
-            // 
-            this.observacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones";
-            this.observacionesDataGridViewTextBoxColumn.HeaderText = "Observaciones";
-            this.observacionesDataGridViewTextBoxColumn.Name = "observacionesDataGridViewTextBoxColumn";
-            this.observacionesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // picture
-            // 
-            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(150, 143);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(22, 20);
-            this.picture.TabIndex = 83;
-            this.picture.TabStop = false;
-            // 
             // Devoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,16 +442,18 @@
             this.Controls.Add(this.devolucionesDataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Devoluciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Devoluciones";
             this.Load += new System.EventHandler(this.Devoluciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

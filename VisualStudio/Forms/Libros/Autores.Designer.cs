@@ -226,7 +226,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvAutores);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmAutores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autores";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAutores_FormClosed);
             this.Load += new System.EventHandler(this.Autores_Load);

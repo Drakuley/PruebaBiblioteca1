@@ -401,6 +401,7 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvUsuarios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
@@ -434,9 +435,25 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    if (Convert.ToInt32(usuariosTableAdapter.ExisteUsuarioConMismoNombre(txtNombreUsuario.Text)) == 1)
+                    /*if (Convert.ToInt32(usuariosTableAdapter.ExisteUsuarioConMismoNombre(txtNombreUsuario.Text)) == 1)
                     {
                         MessageBox.Show("Ya está registrado el usuario: "+txtNombreUsuario.Text);
+                    }*/
+                    if (usuariosTableAdapter.EsElMismoNombreYid(Convert.ToInt32(txtIdUsuario.Text), txtNombreUsuario.Text) == 1)
+                    {
+                        usuariosTableAdapter.UpdateQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text, Convert.ToDecimal(txtIdUsuario.Text));
+                        this.usuariosTableAdapter.Fill(this.usuariosDataSet1.Usuarios);
+                        txtIdUsuario.Text = "";
+                        txtNombreUsuario.Text = "";
+                        txtDireccion.Text = "";
+                        txtTelefono.Text = "";
+                        cbGeneroUsuario.Text = "";
+                        lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                        lblEstatus.Text = "";
+                    }
+                    else if (Convert.ToInt32(usuariosTableAdapter.ExisteUsuarioConMismoNombre(txtNombreUsuario.Text)) == 1)
+                    {
+                        MessageBox.Show("Ya está registrado el usuario: " + txtNombreUsuario.Text);
                     }
                     else
                     {

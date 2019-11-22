@@ -147,6 +147,7 @@
             this.Controls.Add(this.lblNombreAutor);
             this.Controls.Add(this.lblIdAutor);
             this.Controls.Add(this.txtIdBibliotecario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

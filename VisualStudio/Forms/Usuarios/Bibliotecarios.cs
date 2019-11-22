@@ -383,6 +383,7 @@ namespace PruebaBiblioteca1.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvBibliotecarios);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmBibliotecarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bibliotecarios";

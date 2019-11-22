@@ -537,7 +537,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvLibros);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmLibros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Libros";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLibros_FormClosed);
             this.Load += new System.EventHandler(this.Libros_Load);

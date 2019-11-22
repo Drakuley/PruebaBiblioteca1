@@ -43,6 +43,7 @@
             this.btnBibliotecarios = new System.Windows.Forms.Button();
             this.btnCambiarBibliotecario = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.prestamosDataGridView = new System.Windows.Forms.DataGridView();
             this.iDPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,13 +65,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.picture = new System.Windows.Forms.PictureBox();
             this.prestamosTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.PrestamosTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrestamos
@@ -95,7 +95,7 @@
             this.btnPrestamos.ForeColor = System.Drawing.Color.White;
             this.btnPrestamos.Image = ((System.Drawing.Image)(resources.GetObject("btnPrestamos.Image")));
             this.btnPrestamos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrestamos.Location = new System.Drawing.Point(0, 417);
+            this.btnPrestamos.Location = new System.Drawing.Point(3, 403);
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Size = new System.Drawing.Size(251, 58);
             this.btnPrestamos.TabIndex = 7;
@@ -115,7 +115,7 @@
             this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
             this.btnDevoluciones.Image = ((System.Drawing.Image)(resources.GetObject("btnDevoluciones.Image")));
             this.btnDevoluciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDevoluciones.Location = new System.Drawing.Point(2, 108);
+            this.btnDevoluciones.Location = new System.Drawing.Point(2, 129);
             this.btnDevoluciones.Name = "btnDevoluciones";
             this.btnDevoluciones.Size = new System.Drawing.Size(251, 66);
             this.btnDevoluciones.TabIndex = 8;
@@ -135,7 +135,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(3, 180);
+            this.btnUsuarios.Location = new System.Drawing.Point(3, 201);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(251, 66);
             this.btnUsuarios.TabIndex = 9;
@@ -155,7 +155,7 @@
             this.btnLibros.ForeColor = System.Drawing.Color.White;
             this.btnLibros.Image = ((System.Drawing.Image)(resources.GetObject("btnLibros.Image")));
             this.btnLibros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibros.Location = new System.Drawing.Point(2, 252);
+            this.btnLibros.Location = new System.Drawing.Point(2, 273);
             this.btnLibros.Name = "btnLibros";
             this.btnLibros.Size = new System.Drawing.Size(251, 66);
             this.btnLibros.TabIndex = 10;
@@ -175,7 +175,7 @@
             this.btnBibliotecarios.ForeColor = System.Drawing.Color.White;
             this.btnBibliotecarios.Image = ((System.Drawing.Image)(resources.GetObject("btnBibliotecarios.Image")));
             this.btnBibliotecarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBibliotecarios.Location = new System.Drawing.Point(3, 310);
+            this.btnBibliotecarios.Location = new System.Drawing.Point(3, 331);
             this.btnBibliotecarios.Name = "btnBibliotecarios";
             this.btnBibliotecarios.Size = new System.Drawing.Size(251, 66);
             this.btnBibliotecarios.TabIndex = 11;
@@ -195,7 +195,7 @@
             this.btnCambiarBibliotecario.ForeColor = System.Drawing.Color.White;
             this.btnCambiarBibliotecario.Image = ((System.Drawing.Image)(resources.GetObject("btnCambiarBibliotecario.Image")));
             this.btnCambiarBibliotecario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCambiarBibliotecario.Location = new System.Drawing.Point(0, 466);
+            this.btnCambiarBibliotecario.Location = new System.Drawing.Point(0, 472);
             this.btnCambiarBibliotecario.Name = "btnCambiarBibliotecario";
             this.btnCambiarBibliotecario.Size = new System.Drawing.Size(251, 58);
             this.btnCambiarBibliotecario.TabIndex = 12;
@@ -218,8 +218,18 @@
             this.panel1.Controls.Add(this.btnPrestamos);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 608);
+            this.panel1.Size = new System.Drawing.Size(247, 651);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, -43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(211, 133);
+            this.pictureBox1.TabIndex = 83;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -328,7 +338,7 @@
             this.btnDevolverPrestamo.Name = "btnDevolverPrestamo";
             this.btnDevolverPrestamo.Size = new System.Drawing.Size(165, 37);
             this.btnDevolverPrestamo.TabIndex = 28;
-            this.btnDevolverPrestamo.Text = "Devolver Prestamo";
+            this.btnDevolverPrestamo.Text = "Devolver Préstamo";
             this.btnDevolverPrestamo.UseVisualStyleBackColor = false;
             this.btnDevolverPrestamo.Click += new System.EventHandler(this.BtnDevolverPrestamo_Click);
             // 
@@ -439,16 +449,6 @@
             // 
             this.prestamosTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, -43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 133);
-            this.pictureBox1.TabIndex = 83;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmMenú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +468,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblPrestamos);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmMenú";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Préstamos";
@@ -475,11 +476,11 @@
             this.Load += new System.EventHandler(this.FrmMenú_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -227,7 +227,7 @@ namespace PruebaBiblioteca1.Forms
             btnNuevoPrestamo.Visible = false;
             txtUsuario.Text = "";
             txtNumeroAdquisicion.Text = "";
-            btnRegistrar.Text = "Registrar Prestamo";
+            btnRegistrar.Text = "Registrar Préstamo";
             estatus = 0;
             txtBibliotecario.Text = "";
             txtIdUsuario.Text = "";

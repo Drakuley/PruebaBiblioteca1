@@ -108,7 +108,6 @@
             this.Controls.Add(this.dtpFechaInicial);
             this.Name = "GenerarReporteDevoluciones";
             this.Text = "GenerarReporteDevoluciones";
-            this.Load += new System.EventHandler(this.GenerarReporteDevoluciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
