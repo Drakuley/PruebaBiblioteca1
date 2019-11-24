@@ -435,10 +435,6 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    /*if (Convert.ToInt32(usuariosTableAdapter.ExisteUsuarioConMismoNombre(txtNombreUsuario.Text)) == 1)
-                    {
-                        MessageBox.Show("Ya está registrado el usuario: "+txtNombreUsuario.Text);
-                    }*/
                     if (usuariosTableAdapter.EsElMismoNombreYid(Convert.ToInt32(txtIdUsuario.Text), txtNombreUsuario.Text) == 1)
                     {
                         usuariosTableAdapter.UpdateQueryUsuarios(Convert.ToDecimal(txtIdUsuario.Text), txtNombreUsuario.Text, txtDireccion.Text, txtTelefono.Text, cbGeneroUsuario.Text, Convert.ToDecimal(txtIdUsuario.Text));

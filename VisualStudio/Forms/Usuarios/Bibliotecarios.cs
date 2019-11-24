@@ -462,18 +462,44 @@ namespace PruebaBiblioteca1.Forms
                     {
                         if (txtContraseña.Text == txtConfirmarContraseña.Text)
                         {
-                            bibliotecariosTableAdapter.UpdateQueryBibliotecarios(Convert.ToDecimal(txtIdBibliotecario.Text), txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text, Convert.ToDecimal(txtIdBibliotecario.Text));
-                            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
-                            txtIdBibliotecario.Text = "";
-                            txtNombreBibliotecario.Text = "";
-                            txtContraseña.Text = "";
-                            txtConfirmarContraseña.Text = "";
-                            cbTurno.Text = "";
-                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                            lblEstatus.Text = "";
-                            btnAceptar.Text = "Aceptar";
+                            if (bibliotecariosTableAdapter.EsElMismoNombreYId(Convert.ToInt32(txtIdBibliotecario.Text), txtNombreBibliotecario.Text) == 1)
+                            {
+                                bibliotecariosTableAdapter.UpdateQueryBibliotecarios(Convert.ToDecimal(txtIdBibliotecario.Text), txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text, Convert.ToDecimal(txtIdBibliotecario.Text));
+                                this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                                txtIdBibliotecario.Text = "";
+                                txtNombreBibliotecario.Text = "";
+                                txtContraseña.Text = "";
+                                txtConfirmarContraseña.Text = "";
+                                cbTurno.Text = "";
+                                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                                lblEstatus.Text = "";
+                                btnAceptar.Text = "Aceptar";
 
-                            txtIdBibliotecario.Focus();
+                                txtIdBibliotecario.Focus();
+
+                                
+                            }
+                            else if (bibliotecariosTableAdapter.ExisteBibliotecarioConMismoNombre(txtNombreBibliotecario.Text) == 0)
+                            {
+                                bibliotecariosTableAdapter.UpdateQueryBibliotecarios(Convert.ToDecimal(txtIdBibliotecario.Text), txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text, Convert.ToDecimal(txtIdBibliotecario.Text));
+                                this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                                txtIdBibliotecario.Text = "";
+                                txtNombreBibliotecario.Text = "";
+                                txtContraseña.Text = "";
+                                txtConfirmarContraseña.Text = "";
+                                cbTurno.Text = "";
+                                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                                lblEstatus.Text = "";
+                                btnAceptar.Text = "Aceptar";
+
+                                txtIdBibliotecario.Focus();
+
+
+                            }
+                            else if (bibliotecariosTableAdapter.ExisteBibliotecarioConMismoNombre(txtNombreBibliotecario.Text) == 1)
+                            {
+                                MessageBox.Show("Ya está registrado el bibliotecario: "+txtNombreBibliotecario.Text);
+                            }
                         }
                         else
                         {
@@ -497,29 +523,31 @@ namespace PruebaBiblioteca1.Forms
                 }
                 else
                 {
-                    //if (bibliotecariosTableAdapter.ExisteBibliotecarioConIdBibliotecario(Convert.ToDecimal(txtIdBibliotecario.Text)) > 0 || txtIdBibliotecario.Text == "")
-                    //{
-                    //    MessageBox.Show("El bibliotecario que quieres registrar ya existe en la Base de Datos");
-                    //}
-                    //else
-                    //{
+
                     if (Regex.IsMatch(txtContraseña.Text, @"^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{5,15}$") == true)
                     {
                         if (txtContraseña.Text == txtConfirmarContraseña.Text)
                         {
-                            decimal nuevoIdBibliotecario = Convert.ToDecimal(bibliotecariosTableAdapter.NuevoIdDeBibliotecarioQuery());
-                            bibliotecariosTableAdapter.InsertQueryBibliotecarios(nuevoIdBibliotecario, txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text);
-                            this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
-                            txtIdBibliotecario.Text = "";
-                            txtNombreBibliotecario.Text = "";
-                            txtContraseña.Text = "";
-                            txtConfirmarContraseña.Text = "";
-                            cbTurno.Text = "";
-                            lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
-                            lblEstatus.Text = "";
-                            btnAceptar.Text = "Aceptar";
+                            if (bibliotecariosTableAdapter.ExisteBibliotecarioConMismoNombre(txtNombreBibliotecario.Text) == 0)
+                            {
+                                decimal nuevoIdBibliotecario = Convert.ToDecimal(bibliotecariosTableAdapter.NuevoIdDeBibliotecarioQuery());
+                                bibliotecariosTableAdapter.InsertQueryBibliotecarios(nuevoIdBibliotecario, txtNombreBibliotecario.Text, txtConfirmarContraseña.Text, cbTurno.Text);
+                                this.bibliotecariosTableAdapter.Fill(this.bibliotecariosDataSet1.Bibliotecarios);
+                                txtIdBibliotecario.Text = "";
+                                txtNombreBibliotecario.Text = "";
+                                txtContraseña.Text = "";
+                                txtConfirmarContraseña.Text = "";
+                                cbTurno.Text = "";
+                                lblEstatus.ForeColor = Color.FromArgb(255, 255, 255);
+                                lblEstatus.Text = "";
+                                btnAceptar.Text = "Aceptar";
 
-                            txtIdBibliotecario.Focus();
+                                txtIdBibliotecario.Focus();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya está registrado el bibliotecario: " + txtNombreBibliotecario.Text);
+                            }
                         }
                         else
                         {
@@ -532,7 +560,7 @@ namespace PruebaBiblioteca1.Forms
                         txtContraseña.Text = "";
                         txtConfirmarContraseña.Text = "";
                     }
-                    //}
+                   
                 }
 
 
