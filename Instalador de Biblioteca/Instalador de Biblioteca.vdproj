@@ -118,6 +118,24 @@
         "Entry"
         {
         "MsmKey" = "8:_09072F2A68B90548413CA26828709120"
+        "OwnerKey" = "8:_93413C2D0E987F6D62D11A0A086C8032"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09072F2A68B90548413CA26828709120"
+        "OwnerKey" = "8:_6CE770D4516F7630BB1426D837CEB549"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09072F2A68B90548413CA26828709120"
+        "OwnerKey" = "8:_001C49D78206D2C886EA1C560F1C6FB0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09072F2A68B90548413CA26828709120"
         "OwnerKey" = "8:_BBD0EA936326FCBE2FE7D8ECAF3AC4A4"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -10076,7 +10094,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Instalador de Biblioteca"
         "ProductCode" = "8:{3F9200C5-61C1-4036-BDF4-ED12D3C4F20C}"
-        "PackageCode" = "8:{330E964C-BBAA-4733-A8E1-8DA2B9ADACA0}"
+        "PackageCode" = "8:{2BCAE7B3-881E-4F17-9283-1BBF0A837EA3}"
         "UpgradeCode" = "8:{A7449670-8717-4D34-AD26-1911BB68CC8A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -10198,7 +10216,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_20781A031C714D8FB5F200344E4120B6"
             {
-            "Name" = "8:Instalador de Biblioteca"
+            "Name" = "8:Sistema de Biblioteca"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -10212,7 +10230,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3048BDDE4FAF45DFA3B0D7B716E98925"
             {
-            "Name" = "8:Instalador de Biblioteca"
+            "Name" = "8:Sistema de Biblioteca"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
