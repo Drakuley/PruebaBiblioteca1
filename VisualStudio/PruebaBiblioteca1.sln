@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaBiblioteca1", "PruebaBiblioteca1.csproj", "{3E0774C9-9C68-46EE-A4C8-E6F178BF9CF3}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador de Biblioteca", "..\Instalador de Biblioteca\Instalador de Biblioteca.vdproj", "{F5A03C12-5534-4020-9AF2-4B3416B8FCBA}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Sistema de Biblioteca", "..\Sistema de Biblioteca\Sistema de Biblioteca.vdproj", "{320FA3ED-5761-40B1-96FF-4B6CAF14ACEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{3E0774C9-9C68-46EE-A4C8-E6F178BF9CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E0774C9-9C68-46EE-A4C8-E6F178BF9CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E0774C9-9C68-46EE-A4C8-E6F178BF9CF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5A03C12-5534-4020-9AF2-4B3416B8FCBA}.Debug|Any CPU.ActiveCfg = Debug
-		{F5A03C12-5534-4020-9AF2-4B3416B8FCBA}.Release|Any CPU.ActiveCfg = Release
+		{320FA3ED-5761-40B1-96FF-4B6CAF14ACEF}.Debug|Any CPU.ActiveCfg = Debug
+		{320FA3ED-5761-40B1-96FF-4B6CAF14ACEF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
