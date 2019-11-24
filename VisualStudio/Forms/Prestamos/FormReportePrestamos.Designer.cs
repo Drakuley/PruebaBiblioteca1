@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewerPrestamos = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.prestamosDevoluciones = new PruebaBiblioteca1.PrestamosDevoluciones();
             this.reporteDePrestamosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prestamosDevoluciones = new PruebaBiblioteca1.PrestamosDevoluciones();
+            this.reportViewerPrestamos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteDePrestamosTableAdapter = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.ReporteDePrestamosTableAdapter();
             this.tableAdapterManager = new PruebaBiblioteca1.PrestamosDevolucionesTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteDePrestamosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reporteDePrestamosBindingSource
+            // 
+            this.reporteDePrestamosBindingSource.DataMember = "ReporteDePrestamos";
+            this.reporteDePrestamosBindingSource.DataSource = this.prestamosDevoluciones;
+            // 
+            // prestamosDevoluciones
+            // 
+            this.prestamosDevoluciones.DataSetName = "PrestamosDevoluciones";
+            this.prestamosDevoluciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewerPrestamos
             // 
@@ -49,19 +59,9 @@
             this.reportViewerPrestamos.LocalReport.ReportEmbeddedResource = "PruebaBiblioteca1.Reportes.ReportePrestamos.rdlc";
             this.reportViewerPrestamos.Location = new System.Drawing.Point(0, 0);
             this.reportViewerPrestamos.Name = "reportViewerPrestamos";
-            this.reportViewerPrestamos.Size = new System.Drawing.Size(885, 450);
+            this.reportViewerPrestamos.Size = new System.Drawing.Size(940, 450);
             this.reportViewerPrestamos.TabIndex = 0;
             this.reportViewerPrestamos.Load += new System.EventHandler(this.ReportViewerPrestamos_Load);
-            // 
-            // prestamosDevoluciones
-            // 
-            this.prestamosDevoluciones.DataSetName = "PrestamosDevoluciones";
-            this.prestamosDevoluciones.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reporteDePrestamosBindingSource
-            // 
-            this.reporteDePrestamosBindingSource.DataMember = "ReporteDePrestamos";
-            this.reporteDePrestamosBindingSource.DataSource = this.prestamosDevoluciones;
             // 
             // reporteDePrestamosTableAdapter
             // 
@@ -77,13 +77,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 450);
+            this.ClientSize = new System.Drawing.Size(940, 450);
             this.Controls.Add(this.reportViewerPrestamos);
             this.Name = "FormReportePrestamos";
-            this.Text = "FormReportePrestamos";
+            this.Text = "Reporte de Préstamos";
             this.Load += new System.EventHandler(this.FormReportePrestamos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteDePrestamosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones)).EndInit();
             this.ResumeLayout(false);
 
         }

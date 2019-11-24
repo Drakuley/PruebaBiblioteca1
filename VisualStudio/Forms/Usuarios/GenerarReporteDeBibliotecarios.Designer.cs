@@ -54,7 +54,7 @@
             this.dtpFechaFinal.Name = "dtpFechaFinal";
             this.dtpFechaFinal.Size = new System.Drawing.Size(199, 20);
             this.dtpFechaFinal.TabIndex = 39;
-            this.dtpFechaFinal.Value = new System.DateTime(2019, 10, 18, 0, 0, 0, 0);
+            this.dtpFechaFinal.Value = new System.DateTime(2019, 11, 23, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -87,7 +87,7 @@
             this.dtpFechaInicial.Name = "dtpFechaInicial";
             this.dtpFechaInicial.Size = new System.Drawing.Size(199, 20);
             this.dtpFechaInicial.TabIndex = 35;
-            this.dtpFechaInicial.Value = new System.DateTime(2019, 10, 18, 0, 0, 0, 0);
+            this.dtpFechaInicial.Value = new System.DateTime(2019, 11, 23, 0, 0, 0, 0);
             // 
             // Tiutlo
             // 

@@ -74,7 +74,7 @@
             this.dtpFechaFinal.Name = "dtpFechaFinal";
             this.dtpFechaFinal.Size = new System.Drawing.Size(199, 20);
             this.dtpFechaFinal.TabIndex = 89;
-            this.dtpFechaFinal.Value = new System.DateTime(2019, 10, 18, 0, 0, 0, 0);
+            this.dtpFechaFinal.Value = new System.DateTime(2019, 11, 23, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             this.dtpFechaInicial.Name = "dtpFechaInicial";
             this.dtpFechaInicial.Size = new System.Drawing.Size(199, 20);
             this.dtpFechaInicial.TabIndex = 86;
-            this.dtpFechaInicial.Value = new System.DateTime(2019, 10, 18, 0, 0, 0, 0);
+            this.dtpFechaInicial.Value = new System.DateTime(2019, 11, 23, 0, 0, 0, 0);
             // 
             // GenerarReportePrestamos
             // 
@@ -121,6 +121,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaInicial);
             this.Controls.Add(this.lblPrestamos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GenerarReportePrestamos";
             this.Text = "Generar Reporte de Préstamos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GenerarReportePrestamos_FormClosed);
