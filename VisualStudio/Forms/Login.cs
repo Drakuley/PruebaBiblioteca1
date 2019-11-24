@@ -24,6 +24,12 @@ namespace PruebaBiblioteca1.Forms
             {
                 MessageBox.Show("Faltan datos por completar");
             }
+            else if (Convert.ToInt32(bibliotecariosTableAdapter1.IdBibliotecarioEstaDadoDeBaja(Convert.ToInt32(txtIdBibliotecario.Text))) == 1)
+            {
+                MessageBox.Show("No puedes ingresar al sistema, estás dado de baja");
+                txtContraseña.Text = "";
+                txtIdBibliotecario.Text = "";
+            }
             else if (Convert.ToInt32(bibliotecariosTableAdapter1.ExisteBibliotecarioConIdyContraseña(Convert.ToDecimal(txtIdBibliotecario.Text),txtContraseña.Text)) == 1)
             {
                 VariablesGlobales.Globales.idBibliotecario = Convert.ToDecimal(txtIdBibliotecario.Text);

@@ -107,7 +107,7 @@ WHERE        (idBibliotecario = @Original_idBibliotecario)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EsElMismoNombreYId" Modifier="Public" Name="EsElMismoNombreYId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="EsElMismoNombreYId">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EsElMismoNombreYId" Modifier="Public" Name="EsElMismoNombreYId" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="EsElMismoNombreYId">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -120,7 +120,7 @@ WHERE        (idBibliotecario = @id) AND (nombreBibliotecario = @nombre)</Comman
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteBibliotecarioConIdBibliotecario" Modifier="Public" Name="ExisteBibliotecarioConIdBibliotecario" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ExisteBibliotecarioConIdBibliotecario">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteBibliotecarioConIdBibliotecario" Modifier="Public" Name="ExisteBibliotecarioConIdBibliotecario" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ExisteBibliotecarioConIdBibliotecario">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -132,7 +132,7 @@ WHERE        (idBibliotecario = @id_Bibliotecario)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteBibliotecarioConIdyContraseña" Modifier="Public" Name="ExisteBibliotecarioConIdyContraseña" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ExisteBibliotecarioConIdyContraseña">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteBibliotecarioConIdyContraseña" Modifier="Public" Name="ExisteBibliotecarioConIdyContraseña" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ExisteBibliotecarioConIdyContraseña">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -145,7 +145,7 @@ WHERE        (idBibliotecario = @id_bibliotecario) AND (BINARY_CHECKSUM(contrase
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteBibliotecarioConMismoNombre" Modifier="Public" Name="ExisteBibliotecarioConMismoNombre" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="ExisteBibliotecarioConMismoNombre">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ExisteBibliotecarioConMismoNombre" Modifier="Public" Name="ExisteBibliotecarioConMismoNombre" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="ExisteBibliotecarioConMismoNombre">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        COUNT(*) AS Expr1
@@ -157,7 +157,7 @@ WHERE        (nombreBibliotecario = @nombre)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Bibliotecarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDGVporIdBibliotecario" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVporIdBibliotecario" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillDGVporIdBibliotecario">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Bibliotecarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDGVporIdBibliotecario" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVporIdBibliotecario" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="FillDGVporIdBibliotecario">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT contraseña, estatus, idBibliotecario, nombreBibliotecario, turno FROM Bibliotecarios WHERE (idBibliotecario = @id_Bibliotecario)</CommandText>
@@ -167,7 +167,7 @@ WHERE        (nombreBibliotecario = @nombre)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Bibliotecarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDGVporNombreBibliotecarios" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVporNombreBibliotecarios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="FillDGVporNombreBibliotecarios">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="BiblioDB.dbo.Bibliotecarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDGVporNombreBibliotecarios" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillDGVporNombreBibliotecarios" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="FillDGVporNombreBibliotecarios">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT contraseña, estatus, idBibliotecario, nombreBibliotecario, turno FROM Bibliotecarios WHERE (nombreBibliotecario LIKE @nombreBibliotecario + '%') ORDER BY estatus asc</CommandText>
@@ -177,7 +177,19 @@ WHERE        (nombreBibliotecario = @nombre)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryBibliotecarios" Modifier="Public" Name="InsertQueryBibliotecarios" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="InsertQueryBibliotecarios">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="IdBibliotecarioEstaDadoDeBaja" Modifier="Public" Name="IdBibliotecarioEstaDadoDeBaja" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="IdBibliotecarioEstaDadoDeBaja">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(*) AS Expr1
+FROM            Bibliotecarios
+WHERE        (idBibliotecario = @id) AND (estatus = 'Baja')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="idBibliotecario" DataSourceName="BiblioDB.dbo.Bibliotecarios" DataTypeServer="numeric(18, 0)" DbType="Decimal" Direction="Input" ParameterName="@id" Precision="18" ProviderType="Decimal" Scale="0" Size="9" SourceColumn="idBibliotecario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryBibliotecarios" Modifier="Public" Name="InsertQueryBibliotecarios" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="InsertQueryBibliotecarios">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Bibliotecarios
@@ -193,7 +205,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NuevoIdDeBibliotecarioQuery" Modifier="Public" Name="NuevoIdDeBibliotecarioQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="NuevoIdDeBibliotecarioQuery">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NuevoIdDeBibliotecarioQuery" Modifier="Public" Name="NuevoIdDeBibliotecarioQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="NuevoIdDeBibliotecarioQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>select MAX(idBibliotecario)+1 
@@ -202,7 +214,7 @@ from Bibliotecarios</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryBibliotecarios" Modifier="Public" Name="UpdateQueryBibliotecarios" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="UpdateQueryBibliotecarios">
+              <DbSource ConnectionRef="BiblioDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQueryBibliotecarios" Modifier="Public" Name="UpdateQueryBibliotecarios" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="UpdateQueryBibliotecarios">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Bibliotecarios
@@ -229,7 +241,7 @@ SELECT idBibliotecario, nombreBibliotecario, contraseña, turno, estatus FROM Bi
   <xs:element name="BibliotecariosDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BibliotecariosDataSet1" msprop:Generator_UserDSName="BibliotecariosDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Bibliotecarios" msprop:Generator_TableClassName="BibliotecariosDataTable" msprop:Generator_TableVarName="tableBibliotecarios" msprop:Generator_TablePropName="Bibliotecarios" msprop:Generator_RowDeletingName="BibliotecariosRowDeleting" msprop:Generator_RowChangingName="BibliotecariosRowChanging" msprop:Generator_RowEvHandlerName="BibliotecariosRowChangeEventHandler" msprop:Generator_RowDeletedName="BibliotecariosRowDeleted" msprop:Generator_UserTableName="Bibliotecarios" msprop:Generator_RowChangedName="BibliotecariosRowChanged" msprop:Generator_RowEvArgName="BibliotecariosRowChangeEvent" msprop:Generator_RowClassName="BibliotecariosRow">
+        <xs:element name="Bibliotecarios" msprop:Generator_TableClassName="BibliotecariosDataTable" msprop:Generator_TableVarName="tableBibliotecarios" msprop:Generator_RowChangedName="BibliotecariosRowChanged" msprop:Generator_TablePropName="Bibliotecarios" msprop:Generator_RowDeletingName="BibliotecariosRowDeleting" msprop:Generator_RowChangingName="BibliotecariosRowChanging" msprop:Generator_RowEvHandlerName="BibliotecariosRowChangeEventHandler" msprop:Generator_RowDeletedName="BibliotecariosRowDeleted" msprop:Generator_RowClassName="BibliotecariosRow" msprop:Generator_UserTableName="Bibliotecarios" msprop:Generator_RowEvArgName="BibliotecariosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idBibliotecario" msprop:Generator_ColumnVarNameInTable="columnidBibliotecario" msprop:Generator_ColumnPropNameInRow="idBibliotecario" msprop:Generator_ColumnPropNameInTable="idBibliotecarioColumn" msprop:Generator_UserColumnName="idBibliotecario" type="xs:decimal" />
