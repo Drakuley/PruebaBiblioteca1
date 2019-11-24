@@ -124,6 +124,12 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Prestamos\FormReportePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prestamos\FormReportePrestamos.Designer.cs">
+      <DependentUpon>FormReportePrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Prestamos\GenerarReportePrestamos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteDeBibliotecariosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReporteDePrestamosDataSet.cs">
+      <DependentUpon>ReporteDePrestamosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDePrestamosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDePrestamosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ReporteDeUsuariosDataSet.cs">
       <DependentUpon>ReporteDeUsuariosDataSet.xsd</DependentUpon>
     </Compile>
@@ -235,6 +249,9 @@
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prestamos\FormReportePrestamos.resx">
+      <DependentUpon>FormReportePrestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prestamos\GenerarReportePrestamos.resx">
       <DependentUpon>GenerarReportePrestamos.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +286,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reportes\ReporteBibliotecario.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteDevoluciones.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrestamos.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteLibros.rdlc" />
     <None Include="AutoresDataSet1.xsc">
@@ -353,6 +372,17 @@
     </None>
     <None Include="ReporteDeBibliotecariosDataSet.xss">
       <DependentUpon>ReporteDeBibliotecariosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteDePrestamosDataSet.xsc">
+      <DependentUpon>ReporteDePrestamosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteDePrestamosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteDePrestamosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteDePrestamosDataSet.xss">
+      <DependentUpon>ReporteDePrestamosDataSet.xsd</DependentUpon>
     </None>
     <None Include="ReporteDeUsuariosDataSet.xsc">
       <DependentUpon>ReporteDeUsuariosDataSet.xsd</DependentUpon>

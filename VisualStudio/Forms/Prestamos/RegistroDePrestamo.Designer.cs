@@ -93,11 +93,11 @@
             // lblTresPrestamos
             // 
             this.lblTresPrestamos.AutoSize = true;
-            this.lblTresPrestamos.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTresPrestamos.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTresPrestamos.ForeColor = System.Drawing.Color.Red;
-            this.lblTresPrestamos.Location = new System.Drawing.Point(190, 344);
+            this.lblTresPrestamos.Location = new System.Drawing.Point(219, 341);
             this.lblTresPrestamos.Name = "lblTresPrestamos";
-            this.lblTresPrestamos.Size = new System.Drawing.Size(261, 19);
+            this.lblTresPrestamos.Size = new System.Drawing.Size(188, 19);
             this.lblTresPrestamos.TabIndex = 75;
             this.lblTresPrestamos.Text = "* Usuario con 3 préstamos * ";
             this.lblTresPrestamos.Visible = false;
@@ -105,11 +105,11 @@
             // lblDisponible
             // 
             this.lblDisponible.AutoSize = true;
-            this.lblDisponible.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisponible.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisponible.ForeColor = System.Drawing.Color.Red;
-            this.lblDisponible.Location = new System.Drawing.Point(234, 203);
+            this.lblDisponible.Location = new System.Drawing.Point(260, 202);
             this.lblDisponible.Name = "lblDisponible";
-            this.lblDisponible.Size = new System.Drawing.Size(180, 19);
+            this.lblDisponible.Size = new System.Drawing.Size(126, 19);
             this.lblDisponible.TabIndex = 74;
             this.lblDisponible.Text = "* Libro prestado * ";
             this.lblDisponible.Visible = false;
@@ -172,19 +172,20 @@
             this.lblPrestamos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPrestamos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrestamos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(59)))), ((int)(((byte)(122)))));
-            this.lblPrestamos.Location = new System.Drawing.Point(219, 11);
+            this.lblPrestamos.Location = new System.Drawing.Point(211, 9);
             this.lblPrestamos.Name = "lblPrestamos";
-            this.lblPrestamos.Size = new System.Drawing.Size(167, 22);
+            this.lblPrestamos.Size = new System.Drawing.Size(196, 22);
             this.lblPrestamos.TabIndex = 70;
-            this.lblPrestamos.Text = "Registro Prestamos";
+            this.lblPrestamos.Text = "Registro de Préstamos";
             // 
             // txtFechaPrestamo
             // 
+            this.txtFechaPrestamo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaPrestamo.Enabled = false;
             this.txtFechaPrestamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtFechaPrestamo.Location = new System.Drawing.Point(464, 63);
+            this.txtFechaPrestamo.Location = new System.Drawing.Point(464, 65);
             this.txtFechaPrestamo.Name = "txtFechaPrestamo";
-            this.txtFechaPrestamo.Size = new System.Drawing.Size(135, 22);
+            this.txtFechaPrestamo.Size = new System.Drawing.Size(135, 15);
             this.txtFechaPrestamo.TabIndex = 69;
             // 
             // cbFechaDevolucion
@@ -197,20 +198,23 @@
             // 
             // txtNombreUsuario
             // 
+            this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreUsuario.Enabled = false;
             this.txtNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtNombreUsuario.Location = new System.Drawing.Point(252, 316);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(252, 322);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(135, 22);
+            this.txtNombreUsuario.Size = new System.Drawing.Size(135, 15);
             this.txtNombreUsuario.TabIndex = 67;
+            this.txtNombreUsuario.TextChanged += new System.EventHandler(this.TxtNombreUsuario_TextChanged);
             // 
             // txtIdUsuario
             // 
+            this.txtIdUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtIdUsuario.Location = new System.Drawing.Point(252, 279);
+            this.txtIdUsuario.Location = new System.Drawing.Point(252, 285);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(135, 22);
+            this.txtIdUsuario.Size = new System.Drawing.Size(135, 15);
             this.txtIdUsuario.TabIndex = 66;
             this.txtIdUsuario.TextChanged += new System.EventHandler(this.TxtIdUsuario_TextChanged);
             // 
@@ -225,17 +229,18 @@
             // 
             // txtTitulo
             // 
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTitulo.Enabled = false;
             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtTitulo.Location = new System.Drawing.Point(252, 177);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(135, 22);
+            this.txtTitulo.Size = new System.Drawing.Size(135, 15);
             this.txtTitulo.TabIndex = 64;
             // 
             // txtNumeroAdquisicion
             // 
             this.txtNumeroAdquisicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtNumeroAdquisicion.Location = new System.Drawing.Point(210, 138);
+            this.txtNumeroAdquisicion.Location = new System.Drawing.Point(210, 141);
             this.txtNumeroAdquisicion.Name = "txtNumeroAdquisicion";
             this.txtNumeroAdquisicion.Size = new System.Drawing.Size(205, 22);
             this.txtNumeroAdquisicion.TabIndex = 63;
@@ -243,20 +248,22 @@
             // 
             // txtBibliotecario
             // 
+            this.txtBibliotecario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBibliotecario.Enabled = false;
             this.txtBibliotecario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtBibliotecario.Location = new System.Drawing.Point(195, 62);
+            this.txtBibliotecario.Location = new System.Drawing.Point(195, 65);
             this.txtBibliotecario.Name = "txtBibliotecario";
-            this.txtBibliotecario.Size = new System.Drawing.Size(135, 22);
+            this.txtBibliotecario.Size = new System.Drawing.Size(135, 15);
             this.txtBibliotecario.TabIndex = 62;
             // 
             // txtIdPrestamo
             // 
+            this.txtIdPrestamo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdPrestamo.Enabled = false;
             this.txtIdPrestamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtIdPrestamo.Location = new System.Drawing.Point(39, 59);
+            this.txtIdPrestamo.Location = new System.Drawing.Point(37, 62);
             this.txtIdPrestamo.Name = "txtIdPrestamo";
-            this.txtIdPrestamo.Size = new System.Drawing.Size(48, 22);
+            this.txtIdPrestamo.Size = new System.Drawing.Size(48, 15);
             this.txtIdPrestamo.TabIndex = 61;
             this.txtIdPrestamo.TextChanged += new System.EventHandler(this.TxtIdPrestamo_TextChanged);
             // 
@@ -338,7 +345,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 16);
             this.label3.TabIndex = 54;
-            this.label3.Text = "Fecha Prestamo";
+            this.label3.Text = "Fecha Préstamo";
             // 
             // label2
             // 
@@ -426,7 +433,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegistroDePrestamo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroDePrestamo";
+            this.Text = "Nuevo Préstamo";
             this.Load += new System.EventHandler(this.RegistroDePrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamosDevoluciones1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamosBindingSource)).EndInit();

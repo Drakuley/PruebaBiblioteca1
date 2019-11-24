@@ -312,5 +312,10 @@ namespace PruebaBiblioteca1.Forms
         {
             new Forms.FrmLibros().Show();
         }
+
+        private void TxtNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
