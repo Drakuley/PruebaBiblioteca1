@@ -50,6 +50,7 @@ namespace PruebaBiblioteca1.Forms
                         lblDisponible.Visible = false;
 
                     }
+
                     else
                     {
                         lblDisponible.Visible = true;
@@ -93,6 +94,11 @@ namespace PruebaBiblioteca1.Forms
                 btnLibro.Enabled = false;
                 btnRegistrar.Enabled = false;
             }
+
+            if (txtIdUsuario.Text != "")
+            {
+
+            }
         }
 
         private void RegistroDePrestamo_Load(object sender, EventArgs e)
@@ -132,7 +138,7 @@ namespace PruebaBiblioteca1.Forms
 
         private void TxtIdUsuario_TextChanged(object sender, EventArgs e)
         {
-
+            btnUsuario.Enabled = true;
         }
 
         private void TxtUsuario_TextChanged(object sender, EventArgs e)
