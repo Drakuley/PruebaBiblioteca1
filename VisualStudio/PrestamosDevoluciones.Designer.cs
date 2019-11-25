@@ -6524,13 +6524,13 @@ ORDER BY Prestamos.fechaPrestamo";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandText = "SELECT        MAX(idDevolucion) AS Expr1\r\nFROM            Devoluciones";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[11])).CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Connection = new global::System.Data.SqlClient.SqlConnection(global::PruebaBiblioteca1.Properties.Settings.Default.ConexionMiguel);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Connection = new global::System.Data.SqlClient.SqlConnection(global::PruebaBiblioteca1.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).CommandText = "SELECT        estatus\r\nFROM            Usuarios\r\nWHERE        (idUsuario = @numID" +
                 ")";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[12])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Connection = new global::System.Data.SqlClient.SqlConnection(global::PruebaBiblioteca1.Properties.Settings.Default.ConexionMiguel);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).Connection = new global::System.Data.SqlClient.SqlConnection(global::PruebaBiblioteca1.Properties.Settings.Default.BiblioDBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).CommandText = "SELECT        Estatus2\r\nFROM            Libros\r\nWHERE        (numeroAdquisicion =" +
                 " @a)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[13])).CommandType = global::System.Data.CommandType.Text;
@@ -6902,7 +6902,7 @@ ORDER BY Prestamos.fechaPrestamo";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string EstatusUsuario(decimal numID) {
+        public virtual object EstatusUsuario(decimal numID) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[12]));
             command.Parameters[0].Value = ((decimal)(numID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -6924,14 +6924,14 @@ ORDER BY Prestamos.fechaPrestamo";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string EstatusLibroAltaBaja(string a) {
+        public virtual object EstatusLibroAltaBaja(string a) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[13]));
             if ((a == null)) {
                 throw new global::System.ArgumentNullException("a");
@@ -6958,7 +6958,7 @@ ORDER BY Prestamos.fechaPrestamo";
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
     }

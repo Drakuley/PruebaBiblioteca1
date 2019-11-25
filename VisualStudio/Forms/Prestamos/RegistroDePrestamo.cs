@@ -96,7 +96,7 @@ namespace PruebaBiblioteca1.Forms
             }
             if (txtTitulo.Text != "")
             {
-                if (new Consultas().EstatusUsuario(Int32.Parse(txtNumeroAdquisicion.Text)) == "baja")
+                if (Convert.ToString(new Consultas().EstatusLibroAltaBaja(txtNumeroAdquisicion.Text)) == "Baja")
                 {
                     lblDisponible.Text = "Libro dado de baja";
                     lblDisponible.Visible = true;
@@ -222,7 +222,7 @@ namespace PruebaBiblioteca1.Forms
 
             if (txtIdUsuario.Text != "")
             {
-                if (new Consultas().EstatusUsuario(Int32.Parse(txtIdUsuario.Text)) == "baja")
+                if (Convert.ToString(new Consultas().EstatusUsuario(Int32.Parse(txtIdUsuario.Text))) == "Baja")
                 {
                     lblTresPrestamos.Text = "Usuario dado de baja";
                     lblTresPrestamos.Visible = true;
