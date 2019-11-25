@@ -43,5 +43,16 @@ namespace PruebaBiblioteca1.Properties {
                 return ((string)(this["BibliotecaDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-LNPNOHH\\MIKE;Initial Catalog=BiblioDB;Integrated Security=Tru" +
+            "e")]
+        public string ConexionMiguel {
+            get {
+                return ((string)(this["ConexionMiguel"]));
+            }
+        }
     }
 }
