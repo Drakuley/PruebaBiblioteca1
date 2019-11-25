@@ -94,8 +94,16 @@ namespace PruebaBiblioteca1.Forms
                 btnLibro.Enabled = false;
                 btnRegistrar.Enabled = false;
             }
+            if (txtTitulo.Text != "")
+            {
+                if (new Consultas().EstatusUsuario(Int32.Parse(txtNumeroAdquisicion.Text)) == "baja")
+                {
+                    lblDisponible.Text = "Libro dado de baja";
+                    lblDisponible.Visible = true;
+                    btnRegistrar.Enabled = false;
+                }
+            }
 
-          
         }
 
         private void RegistroDePrestamo_Load(object sender, EventArgs e)
@@ -217,6 +225,7 @@ namespace PruebaBiblioteca1.Forms
                 if (new Consultas().EstatusUsuario(Int32.Parse(txtIdUsuario.Text)) == "baja")
                 {
                     lblTresPrestamos.Text = "Usuario dado de baja";
+                    lblTresPrestamos.Visible = true;
                     btnRegistrar.Enabled = false;
                 }
             }
